@@ -1,16 +1,16 @@
 edit_uri: ''
 repo_url: https://github.com/Formabble-xyz/shards/
-site_name: Formabble documentation
+site_name: Formabble Reference
 site_url: https://docs.Formabble.com
 copyright: Copyright © 2023 Formabble
 extra:
   generator: false
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/Formabble-xyz
+      link: https://github.com/formabble
       name: Formabble is on GitHub
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/Formabble
+      link: https://twitter.com/formabble
       name: Follow us on Twitter
 markdown_extensions:
   - admonition
@@ -48,8 +48,8 @@ theme:
     code: Fira Code
     text: Hind
   language: custom
-  logo: assets/images/logo.svg
-  favicon: assets/images/favicon.svg
+  logo: assets/Logo.png
+  favicon: assets/Logo.png
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: Formabble-light

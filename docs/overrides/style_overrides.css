@@ -41,14 +41,14 @@ article h2 {
 
 /* override slate color (dark theme) */
 [data-md-color-scheme="slate"] {
-    --md-primary-fg-color: #8658FD;
-    --md-typeset-a-color: #8658FD;
-    --md-accent-fg-color: #FF78FF;
+    --md-primary-fg-color: #003835;
+    --md-typeset-a-color: #003835;
+    --md-accent-fg-color: #00E1C6;
 }
 
 /* custom light theme */
 [data-md-color-scheme="Formabble-light"] {
-    --md-primary-fg-color: #5A82E1;
-    --md-typeset-a-color: #5A82E1;
-    --md-accent-fg-color: #5FE5EB;
+    --md-primary-fg-color: #009A91;
+    --md-typeset-a-color: #009A91;
+    --md-accent-fg-color: #00E1C6;
 }
