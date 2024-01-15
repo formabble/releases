@@ -2,7 +2,7 @@
 
 Once a match is found the shard of that matched case is activated/executed and `Match` execution stops. All subsequent cases (even matching ones) are ignored.
 
-A `nil` case matches anything, so it's a good practice to declare a `nil` case at the end of `Cases:` to execute some default logic if no valid matches exist for a given input. If you do not have a `nil` case, then a non-matching input to `Match` will fail the shard.
+A `none` case matches anything, so it's a good practice to declare a `none` case at the end of `Cases:` to execute some default logic if no valid matches exist for a given input. If you do not have a `none` case, then a non-matching input to `Match` will fail the shard.
 
 ### A note on `Passthrough:` ###
 

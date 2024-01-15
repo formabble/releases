@@ -12,7 +12,7 @@ For tables `Push` can update only those existing keys whose values are of the ty
 
 The `Global:` parameter controls whether the created variables can be referenced across wires (`Global:` set to `true`) or only within the current wire (`Global:` set to `false`, default behaviour).
 
-Variables may be locally scoped (created with `(Global: false)`; exists only for current wire) or globally scoped (created with `(Global: true)`; exists for all wires of that mesh). Hence, in update mode (i.e. when you apply `Push` to an existing variable) the `Global:` parameter is used in conjunction with the `Name:` parameter to identify the correct variable to update. 
+Variables may be locally scoped (created with `Global: false`; exists only for current wire) or globally scoped (created with `Global: true`; exists for all wires of that mesh). Hence, in update mode (i.e. when you apply `Push` to an existing variable) the `Global:` parameter is used in conjunction with the `Name:` parameter to identify the correct variable to update. 
 
 The parameter `Clear:` controls whether we should clear out this sequence after every wire iteration (`Clear` set to `true`, default behaviour) or should the sequence data persist across wire iterations (`Clear` set to `false`).
 

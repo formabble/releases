@@ -13,4 +13,4 @@ As a result, the aforementioned method gives a pseudo-pass-through capability to
 By nesting `Sub` shards you can simulate even more flexible and powerful shard execution paths.
 
 !!! note
-    `Sub` has an alias `|` which is more convenient to use. `|` also removes the need to use `->` as, unlike `Sub`, it doesn't require the parameter shards to be grouped.
+    `Sub` has an alias `|`.

@@ -4,7 +4,7 @@ A constant value declared with `Const` is un-named i.e., it is not assigned to a
 
 You can even skip this shard and pass the constant value directly but internally it will be translated to a `Const`shard that outputs this constant value. However, it's good practice to use this keyword in while passing constants in Shards programs.
 
-You can also use `Const(nil)` to overwrite/nullify (since `nil` stands for null data) the input to the subsequent shard, if required (see the last code sample).
+You can also use `Const(none)` to overwrite/nullify (since `none` stands for null data) the input to the subsequent shard, if required (see the last code sample).
 
 Input field is ignored and the output of this shard is the constant value defined by it.
 

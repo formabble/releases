@@ -163,11 +163,11 @@ The shard [`Math.Inc`](../Math/Inc/) accepts only **ContextVar** type numeric da
 === "Code"
 
 ```clojure linenums="1"
-11 = intvar  ;; intvar is of type `ContextVar`
+11 >= intvar  ;; intvar is of type `ContextVar`
 Math.Inc(intvar)
 intvar | Log ;; => 12
 
-@f2(4.5 5.7) = floatvar ;; floatvar is of type `ContextVar`
+@f2(4.5 5.7) >= floatvar ;; floatvar is of type `ContextVar`
 Math.Inc(floatvar)
 floatvar | Log ;; => (5.5, 6.7)
 ```
