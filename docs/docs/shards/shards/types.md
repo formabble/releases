@@ -10,7 +10,7 @@ This section documents all the valid data types that are accepted by various sha
 Valid data types for every shard are listed under the `Type` column of their Parameters, Input, and Output sections (types are enclosed within parentheses and if multiple types apply then they are separated by a space).
 
 ??? note "Compound types"
-    While this section lists the simple (or primitive) data types, you can combine these to create compound data types. For example, combining `Int`, `String`, and `Seq`, can give you a sequence of sequences `[ [ Any ] ]`, a sequence of integers and strings `[ Int String ]`), and so on.
+    While this section lists the simple (or primitive) data types, you can combine these to create compound data types. For example, combining `Int`, `String`, and `Seq`, can give you a sequence of sequences `[ [ Any ] ]`, a sequence of integers and strings `[Int String ]`, and so on.
 
 ??? note "Why types?"
     Types are helpful as they reduce errors in programming. They are also very useful in visual programming as type-matching can be used to reduce the dropdown options when prompting a user on what shard to use next (depending on which shard's input type matches with the current shard's output type).
@@ -22,11 +22,11 @@ Valid data types for every shard are listed under the `Type` column of their Par
 
 Type **Any** indicates that all data types are allowed.
 
-For example, **Any** as the allowed data type for input and `Value:` parameter of shard [`(All)`](../General/All/) means that `(All)` accepts and compares across all data types.
+For example, **Any** as the allowed data type for input and `Value:` parameter of shard [`All`](../General/All/) means that `All` accepts and compares across all data types.
 
 ```clojure linenums="1"
 [1]
-All( Value: [(Any)])
+All(Value: [(Any)])
 ```
 
 `All` compares the input and `Value:` parameter values and returns `true` only if both the value and data type of these entities is equal/same.
@@ -37,18 +37,18 @@ All( Value: [(Any)])
 [4 5 6] | All(Value: [4 5 6])
 Log   ;; value and type match => true
 
-"I'm a string" >= var1
-"I'm a string" >= var2
+"I'm a string" = var1
+"I'm a string" = var2
 var1 | All(Value: var2)
 Log   ;; value and type match => true
 
-"I'm a string" >= var3
-"I'm a different string" >= var4
+"I'm a string" = var3
+"I'm a different string" = var4
 var3 | All(Value: var4)
 Log   ;; value mismatch => false
 
-4.0 >= var5
-4 >= var6
+4.0 = var5
+4 = var6
 var5 | All(Value: var6)
 Log   ;; type mismatch => false
 ```
@@ -56,10 +56,10 @@ Log   ;; type mismatch => false
 === "Output"
 
 ```
-[info] [2022-07-22 13:05:25.848] [T-18072] [logging.cpp::55] [mywire] true
-[info] [2022-07-22 13:05:25.861] [T-18072] [logging.cpp::55] [mywire] true
-[info] [2022-07-22 13:05:25.862] [T-18072] [logging.cpp::55] [mywire] false
-[info] [2022-07-22 13:05:25.864] [T-18072] [logging.cpp::55] [mywire] false
+[info] [2023-07-22 13:05:25.848] [T-18072] [logging.cpp::55] [mywire] true
+[info] [2023-07-22 13:05:25.861] [T-18072] [logging.cpp::55] [mywire] true
+[info] [2023-07-22 13:05:25.862] [T-18072] [logging.cpp::55] [mywire] false
+[info] [2023-07-22 13:05:25.864] [T-18072] [logging.cpp::55] [mywire] false
 ```
 
 ## Sequence
@@ -97,8 +97,8 @@ Log   ;; Is not equal => false
 === "Output"
 
 ```
-[info] [2022-07-22 18:38:24.383] [T-25360] [logging.cpp::55] [mywire] true
-[info] [2022-07-22 18:38:24.395] [T-25360] [logging.cpp::55] [mywire] false
+[info] [2023-07-22 18:38:24.383] [T-25360] [logging.cpp::55] [mywire] true
+[info] [2023-07-22 18:38:24.395] [T-25360] [logging.cpp::55] [mywire] false
 ```
 
 ## Bytes
@@ -129,22 +129,26 @@ The shard [`ToColor`](../General/ToColor/) converts its input into a **Color** t
 === "Code"
 
 ```clojure linenums="1"
-@i4(255 10 10 257) | ToColor
-Log    ;; if input > 255, 256 is subtracted from it => 255, 10, 10, 1
+@color(0xFFFFFFFF)
+Log ;; Logs: (255 255 255 255)
 
-[23 45 56 78] | ToColor
-Log   ;; input in range 0-255 so => 23, 45, 56, 78
+@color(0xFF)
+Log ;; Logs: (255 0 0 255)
 
-"Hello" | ToColor
-Log   ;; non-numeric input so => 0, 0, 0, 0
+@color(130 140 150 200)
+Log ;; Logs: (130 140 150 200)
+
+@i4(130 140 150 200) | ToColor
+Log ;; Logs: (130 140 150 200)
 ```
 
 === "Output"
 
 ```
-[info] [2022-07-26 19:08:24.520] [T-24408] [logging.cpp::55] [mywire] 255, 10, 10, 1
-[info] [2022-07-26 19:08:24.533] [T-24408] [logging.cpp::55] [mywire] 23, 45, 56, 78
-[info] [2022-07-26 19:08:24.534] [T-24408] [logging.cpp::55] [mywire] 0, 0, 0, 0
+[info] [2024-01-15 13:58:17.428] [T-25672] [logging.cpp::71] [main-wire] (255 255 255 255)
+[info] [2024-01-15 13:58:17.429] [T-25672] [logging.cpp::71] [main-wire] (255 0 0 255)
+[info] [2024-01-15 13:58:17.429] [T-25672] [logging.cpp::71] [main-wire] (130 140 150 200)
+[info] [2024-01-15 13:58:17.429] [T-25672] [logging.cpp::71] [main-wire] (130 140 150 200)
 ```
 
 ## ContextVar
@@ -159,11 +163,11 @@ The shard [`Math.Inc`](../Math/Inc/) accepts only **ContextVar** type numeric da
 === "Code"
 
 ```clojure linenums="1"
-11 >= intvar  ;; intvar is of type `ContextVar`
+11 = intvar  ;; intvar is of type `ContextVar`
 Math.Inc(intvar)
 intvar | Log ;; => 12
 
-@f2(4.5 5.7) >= floatvar ;; floatvar is of type `ContextVar`
+@f2(4.5 5.7) = floatvar ;; floatvar is of type `ContextVar`
 Math.Inc(floatvar)
 floatvar | Log ;; => (5.5, 6.7)
 ```
@@ -171,8 +175,8 @@ floatvar | Log ;; => (5.5, 6.7)
 === "Output"
 
 ```
-[info] [2022-07-26 19:30:22.837] [T-27800] [logging.cpp::55] [mywire] 12
-[info] [2022-07-26 19:30:22.843] [T-27800] [logging.cpp::55] [mywire] (5.5, 6.7)
+[info] [2023-07-26 19:30:22.837] [T-27800] [logging.cpp::55] [mywire] 12
+[info] [2023-07-26 19:30:22.843] [T-27800] [logging.cpp::55] [mywire] (5.5, 6.7)
 ```
 
 ## Enum
@@ -224,10 +228,10 @@ Log
 === "Output"
 
 ```
-[info] [2022-07-22 15:35:00.868] [T-15316] [logging.cpp::55] [mywire] 6
-[info] [2022-07-22 15:35:00.881] [T-15316] [logging.cpp::55] [mywire] 4.47214
-[info] [2022-07-22 15:35:00.882] [T-15316] [logging.cpp::55] [mywire] 3.33333
-[info] [2022-07-22 15:35:00.883] [T-15316] [logging.cpp::55] [mywire] 6
+[info] [2023-07-22 15:35:00.868] [T-15316] [logging.cpp::55] [mywire] 6
+[info] [2023-07-22 15:35:00.881] [T-15316] [logging.cpp::55] [mywire] 4.47214
+[info] [2023-07-22 15:35:00.882] [T-15316] [logging.cpp::55] [mywire] 3.33333
+[info] [2023-07-22 15:35:00.883] [T-15316] [logging.cpp::55] [mywire] 6
 ```
 
 ## Float
@@ -255,8 +259,8 @@ Log   ;; float output => 3.83
 === "Output"
 
     ```
-    [info] [2022-07-22 22:06:32.856] [T-20204] [logging.cpp::55] [mywire] 3.83
-    [info] [2022-07-22 22:06:32.873] [T-20204] [logging.cpp::55] [mywire] 3.83
+    [info] [2023-07-22 22:06:32.856] [T-20204] [logging.cpp::55] [mywire] 3.83
+    [info] [2023-07-22 22:06:32.873] [T-20204] [logging.cpp::55] [mywire] 3.83
     ```
 
 ## Float2
@@ -282,7 +286,7 @@ Log  ;; float2 output => (10.4 14.2)
 === "Output"
 
 ```
-[info] [2022-07-22 22:10:00.688] [T-24616] [logging.cpp::55] [mywire] (10.4 14.2)
+[info] [2023-07-22 22:10:00.688] [T-24616] [logging.cpp::55] [mywire] (10.4 14.2)
 ```
 
 ## Float3
@@ -310,7 +314,7 @@ Log ;; float3 output => (7.7 7.7 7.7)
 === "Output"
 
 ```
-[info] [2022-07-22 22:19:36.923] [T-16128] [logging.cpp::55] [mywire] (7.7 7.7 7.7)
+[info] [2023-07-22 22:19:36.923] [T-16128] [logging.cpp::55] [mywire] (7.7 7.7 7.7)
 ```
 
 ## Float4
@@ -335,7 +339,7 @@ Log   ;; Int4 output => (9.9, 9.9, 9.9, 9.9)
 === "Output"
 
 ```
-[info] [2022-07-22 22:23:24.076] [T-25152] [logging.cpp::55] [mywire] (9.9 9.9 10.1 9.9)
+[info] [2023-07-22 22:23:24.076] [T-25152] [logging.cpp::55] [mywire] (9.9 9.9 10.1 9.9)
 ```
 
 ## Image
@@ -370,8 +374,8 @@ Log   ;; int output => 5
 === "Output"
 
 ```
-[info] [2022-07-22 21:20:18.771] [T-4568] [logging.cpp::55] [mywire] 5
-[info] [2022-07-22 21:20:18.782] [T-4568] [logging.cpp::55] [mywire] 5
+[info] [2023-07-22 21:20:18.771] [T-4568] [logging.cpp::55] [mywire] 5
+[info] [2023-07-22 21:20:18.782] [T-4568] [logging.cpp::55] [mywire] 5
 ```
 
 ## Int2
@@ -397,7 +401,7 @@ Log   ;; int2 output => (10, 14)
 === "Output"
 
 ```
-[info] [2022-07-22 21:22:26.381] [T-17748] [logging.cpp::55] [mywire] (10, 14)
+[info] [2023-07-22 21:22:26.381] [T-17748] [logging.cpp::55] [mywire] (10, 14)
 ```
 
 ## Int3
@@ -423,7 +427,7 @@ Log   ;; int3 output => (100, 100, 100)
 === "Output"
 
 ```
-[info] [2022-07-22 21:24:38.132] [T-25580] [logging.cpp::55] [mywire] (100, 100, 100)
+[info] [2023-07-22 21:24:38.132] [T-25580] [logging.cpp::55] [mywire] (100, 100, 100)
 ```
 
 ## Int4
@@ -448,7 +452,7 @@ Log   ;; int4 output => (9 9 9 9)
 === "Output"
 
 ```
-[info] [2022-07-22 21:27:58.115] [T-20884] [logging.cpp::55] [mywire] (9 9 9 9)
+[info] [2023-07-22 21:27:58.115] [T-20884] [logging.cpp::55] [mywire] (9 9 9 9)
 ```
 
 ## Int8
@@ -474,7 +478,8 @@ Type **None** indicates that no data type is expected. This implies that no valu
 For example, **None** as one of the valid data types for `Max:` parameter in shard [`RandomInt`](../General/RandomInt/) means that setting a value for this parameter is not mandatory.
 
 ```clojure linenums="1"
-RandomInt(Max:[None | Int | ContextVar([(Int)])])
+RandomInt(Max: none)
+Log ;; Will log a random int
 ```
 
 `RandomInt` generates a random integer and the `Max:` parameter is the upper limit (not inclusive) of the value that can be generated. So it makes sense to have **None** as one of the valid types for this `Max:` parameter for cases when you do not want an upper limit on the random integer (though in this case the system will inherently set the upper limit to the maximum value a 64-bit signed integer can hold: 9,223,372,036,854,775,807).
@@ -492,8 +497,8 @@ Log   ;; now upper limit subject to max capacity of a 64-bit signed integer
 === "Output"
 
 ```
-[info] [2022-07-22 13:45:03.282] [T-19992] [logging.cpp::55] [mywire] 4
-[info] [2022-07-22 13:45:03.293] [T-19992] [logging.cpp::55] [mywire] 311828859
+[info] [2023-07-22 13:45:03.282] [T-19992] [logging.cpp::55] [mywire] 4
+[info] [2023-07-22 13:45:03.293] [T-19992] [logging.cpp::55] [mywire] 311828859
 ```
 
 ## Object
@@ -547,7 +552,7 @@ Log   ;; print the 2nd element => 54
 === "Output"
 
 ```
-[info] [2022-07-26 22:24:48.918] [T-20928] [logging.cpp::55] [mywire] 54
+[info] [2023-07-26 22:24:48.918] [T-20928] [logging.cpp::55] [mywire] 54
 ```
 
 ## Shard
@@ -568,10 +573,23 @@ The shard [`ForEach`](../General/ForEach/) expects a value with the type **Shard
 When more that one shard is accepted it is indicated as a sequence of shards, any description can be turned into a sequence of shards by wrapping it with `{}`, for example:
 
 ```clojure linenums="1"
-GiveMeShard( ParameterName: {
-	(Shard1 ...)
-	(Shard2 ...)
-	(Shard3 ...)})
+[1 2 3 4 5]
+ForEach({ ;; ForEach will apply the following shards to each element of the sequence
+	Math.Add(1)
+	Math.Multiply(2)
+	Math.Subtract(3)
+	Log("Result")
+})
+```
+
+=== "Output"
+
+```
+[info] [2024-01-15 14:12:04.509] [T-25980] [logging.cpp::65] [main-wire] Result: 1
+[info] [2024-01-15 14:12:04.509] [T-25980] [logging.cpp::65] [main-wire] Result: 3
+[info] [2024-01-15 14:12:04.509] [T-25980] [logging.cpp::65] [main-wire] Result: 5
+[info] [2024-01-15 14:12:04.509] [T-25980] [logging.cpp::65] [main-wire] Result: 7
+[info] [2024-01-15 14:12:04.510] [T-25980] [logging.cpp::65] [main-wire] Result: 9
 ```
 
 ## String
@@ -598,7 +616,7 @@ Log   ;; upper case version => BYE UNIVERSE!
 === "Output"
 
 ```
-[info] [2022-07-26 19:38:14.813] [T-18168] [logging.cpp::55] [mywire] Bytes: 0x20440058720 size: 11
+[info] [2023-07-26 19:38:14.813] [T-18168] [logging.cpp::55] [mywire] Bytes: 0x20440058720 size: 11
 ```
 
 ## Table
@@ -610,16 +628,16 @@ Its also known as map, data dictionary, or associative array. An example of a **
 === "Code"
 
 ```clojure linenums="1"
-{k1: 123} >= tabvar    ;; tabvar is type `Table` now
-tabvar | ExpectTable
-Log                   ;; `ExpectTable` outputs `Table` type  =>   {k1: 123}
+{k1: 123} = tabvar ;;tabvar is now of type table
+tabvar | Take("k1")
+Log  ;; Logs: 123
 ```
 
 === "Output"
 
-    ```
-    [info] [2022-07-26 22:46:17.194] [T-26104] [logging.cpp::55] [mywire] {k1: 123}
-    ```
+```
+[info] [2024-01-15 14:09:18.386] [T-27756] [logging.cpp::71] [main-wire] 123
+```
 
 ## Wire
 
@@ -633,7 +651,7 @@ A **Wire** type thus consists of a sequence of shards (which make up the wire), 
 !!! note
     What's a [`wire`](../../../../learn/shards/primer/what-is-shards/#the-wire)?
 
-For example, the shard [`(Stop)`](../General/Stop/) accepts **Wire** type data in its `:Wire` parameter and stops that wire's execution if its currently running.
+For example, the shard [`Stop`](../General/Stop/) accepts **Wire** type data in its `:Wire` parameter and stops that wire's execution if its currently running.
 
 
 --8<-- "includes/license.md"
