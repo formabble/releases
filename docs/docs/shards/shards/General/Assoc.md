@@ -17,8 +17,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Updates a sequence (array) or a table (associative array/ dictionary) on the basis of an input sequence.
 
 --8<-- "includes/license.md"

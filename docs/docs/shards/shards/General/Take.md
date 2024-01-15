@@ -15,8 +15,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Extracts one or more elements/key-values from a sequence or a table by using the provided sequence index/indices or table key(s). Operation is non-destructive; doesn't modify target sequence/table.
 
 --8<-- "includes/license.md"

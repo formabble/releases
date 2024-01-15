@@ -14,8 +14,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Adds custom fonts to the UI system, the input should a seq of a pair (name, bytes).
 
 --8<-- "includes/license.md"

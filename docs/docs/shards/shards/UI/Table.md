@@ -19,8 +19,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Table layout.
 
 --8<-- "includes/license.md"

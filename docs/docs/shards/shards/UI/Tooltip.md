@@ -16,8 +16,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Display a tooltip when the Contents is hovered over.
 
 --8<-- "includes/license.md"

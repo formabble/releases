@@ -68,8 +68,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Apply style changes to the current UI scope.
 
 --8<-- "includes/license.md"

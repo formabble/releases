@@ -16,8 +16,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Swaps the values of the two variables passed to it via `:NameA` and `:NameB` parameters.
 
 --8<-- "includes/license.md"

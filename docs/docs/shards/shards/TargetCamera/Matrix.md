@@ -14,8 +14,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Turns the target camera state into a view matrix
 
 --8<-- "includes/license.md"

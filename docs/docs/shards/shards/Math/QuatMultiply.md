@@ -15,8 +15,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Rotate a quaternion by another quaternion
 
 --8<-- "includes/license.md"

@@ -18,8 +18,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Evaluates a predicate and executes an action.
 
 --8<-- "includes/license.md"

@@ -18,8 +18,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Scattered points on a plot.
 
 --8<-- "includes/license.md"

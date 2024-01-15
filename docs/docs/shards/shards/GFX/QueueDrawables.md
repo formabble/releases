@@ -14,8 +14,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Retrieves the individual drawables in a draw queue
 
 --8<-- "includes/license.md"

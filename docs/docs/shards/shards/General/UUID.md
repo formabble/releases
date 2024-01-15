@@ -14,8 +14,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Outputs a UUID (Universally Unique Identifier).
 
 --8<-- "includes/license.md"

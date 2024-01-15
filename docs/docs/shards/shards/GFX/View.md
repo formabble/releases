@@ -20,8 +20,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Defines a viewer (or camera) for a rendered frame based on a view transform matrix
 
 --8<-- "includes/license.md"

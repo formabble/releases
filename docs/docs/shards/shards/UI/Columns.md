@@ -15,8 +15,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Splits the contents into several columns.
 
 --8<-- "includes/license.md"

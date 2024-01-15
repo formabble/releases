@@ -15,8 +15,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Groups a collection of textures into a render target that can be rendered into
 
 --8<-- "includes/license.md"

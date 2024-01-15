@@ -15,8 +15,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Outputs the scaling factor for UI as determined by the operating system.
 
 --8<-- "includes/license.md"

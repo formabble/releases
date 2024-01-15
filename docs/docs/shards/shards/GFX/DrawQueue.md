@@ -17,8 +17,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Creates a new drawable queue to record Draw commands into
 
 --8<-- "includes/license.md"

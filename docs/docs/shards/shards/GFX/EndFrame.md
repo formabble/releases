@@ -14,8 +14,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Explicitly end frame rendering, this is done automatically inside MainWindow. This shards is only needed when you want to end a frame earlier inside MainWindow
 
 --8<-- "includes/license.md"

@@ -20,8 +20,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Versatile layout with many options for customizing the desired UI.
 
 --8<-- "includes/license.md"

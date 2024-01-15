@@ -17,8 +17,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Draws a point in 3d space
 
 --8<-- "includes/license.md"

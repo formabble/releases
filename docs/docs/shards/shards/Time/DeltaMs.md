@@ -14,8 +14,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Gives the time between the last activation of this shard and the current, capped to a limit
 
 --8<-- "includes/license.md"

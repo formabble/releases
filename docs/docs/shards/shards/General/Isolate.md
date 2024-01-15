@@ -17,8 +17,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Isolates the inner shards' environment by only allowing certain variables
 
 --8<-- "includes/license.md"

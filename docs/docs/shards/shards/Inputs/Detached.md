@@ -19,8 +19,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Runs the contents on the input thread, and it's continuation on the current thread with the last data from the input thread
 
 --8<-- "includes/license.md"

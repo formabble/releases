@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `<input>` ||The value is ignored. | | [`Any`](../../types/#any) |
 | `<output>` ||The output of this shard will be its input. | | [`Any`](../../types/#any) |
-| `Amount` |  | The amount of space to insert. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
+| `Amount` |  | The amount of space to insert. | `` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
 
 </div>
 

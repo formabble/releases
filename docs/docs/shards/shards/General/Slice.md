@@ -17,8 +17,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Extracts characters from a string or elements from a sequence based on the start and end positions/indices and an increment parameter. Operation is non-destructive; the target string/sequence is not modified.
 
 --8<-- "includes/license.md"

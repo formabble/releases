@@ -18,8 +18,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Updates sequences and tables by pushing elements and/or sequences into them.
 
 --8<-- "includes/license.md"

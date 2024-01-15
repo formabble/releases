@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `<input>` || | | [`Any`](../../types/#any) |
 | `<output>` || | | [`Any`](../../types/#any) |
-| `Handler` |  | The wire that will be spawned and handle a remote request. | `None` | [`Wire`](../../types/#wire)[`None`](../../types/#none) |
+| `Handler` |  | The wire that will be spawned and handle a remote request. | `` | [`Wire`](../../types/#wire)[`None`](../../types/#none) |
 | `Endpoint` |  | The URL from where your service can be accessed by a client. | `0.0.0.0` | [`String`](../../types/#string) |
 | `Port` |  | The port this service will use. | `7070` | [`Int`](../../types/#int) |
 

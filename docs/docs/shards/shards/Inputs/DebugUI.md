@@ -14,8 +14,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Shows the input system debug UI
 
 --8<-- "includes/license.md"

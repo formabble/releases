@@ -14,8 +14,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 A visual separator. A horizontal or vertical line (depending on the layout).
 
 --8<-- "includes/license.md"

@@ -14,8 +14,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Outputs an X and Y direction that are aligned with the current view
 
 --8<-- "includes/license.md"

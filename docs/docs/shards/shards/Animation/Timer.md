@@ -20,8 +20,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Keeps track of an animation timer, based on the given animation
 
 --8<-- "includes/license.md"

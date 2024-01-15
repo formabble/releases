@@ -18,8 +18,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 A radio button for selecting a value amongst multiple choices.
 
 --8<-- "includes/license.md"

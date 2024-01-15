@@ -15,8 +15,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Reads an epoch timestamps and formats it into a readable string.
 
 --8<-- "includes/license.md"

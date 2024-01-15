@@ -15,8 +15,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Creates a child UI which is indented to the right.
 
 --8<-- "includes/license.md"

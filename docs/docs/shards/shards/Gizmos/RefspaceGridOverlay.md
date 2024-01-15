@@ -20,8 +20,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Draws a grid
 
 --8<-- "includes/license.md"

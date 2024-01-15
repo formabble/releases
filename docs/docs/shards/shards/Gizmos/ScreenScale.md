@@ -15,8 +15,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Outputs a scaling factor to give an object a uniform size on the screen
 
 --8<-- "includes/license.md"

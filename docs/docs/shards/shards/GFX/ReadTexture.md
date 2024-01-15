@@ -15,8 +15,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Adds a render step that reads back the rendered textures into a images, the returned images 
 
 --8<-- "includes/license.md"

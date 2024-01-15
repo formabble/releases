@@ -14,8 +14,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Applies the demultiplication of alpha channels of an image to its RGB channels. Does nothing if the image has already been demultiplied or never been premultiplied in Shards. This mainly applies to PNG images.
 
 --8<-- "includes/license.md"

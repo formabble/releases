@@ -20,8 +20,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Draws a line in 3d space
 
 --8<-- "includes/license.md"

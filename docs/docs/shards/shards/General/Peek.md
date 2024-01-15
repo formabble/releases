@@ -15,8 +15,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Verifies if another wire has finished processing. Returns the wire's output if complete, or None if still in progress.
 
 --8<-- "includes/license.md"

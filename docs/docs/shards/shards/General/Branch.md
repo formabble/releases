@@ -18,8 +18,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 A branch is a child mesh that runs and is ticked when this shard is activated, wires on this mesh will inherit all of the available exposed variables in the activator wire.
 
 --8<-- "includes/license.md"

@@ -15,8 +15,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Combine two tables into one, with the input table taking priority over the operand table, which will be written and returned as output. This shard is useful in scenarios where you need to merge data from different sources while keeping the priority of certain values.
 
 --8<-- "includes/license.md"

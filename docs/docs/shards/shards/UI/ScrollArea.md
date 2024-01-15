@@ -18,8 +18,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Add vertical and/or horizontal scrolling to a contained UI.
 
 --8<-- "includes/license.md"
