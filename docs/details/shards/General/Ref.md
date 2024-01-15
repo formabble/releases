@@ -9,7 +9,7 @@ The `Global:` parameter controls whether the created variables can be referenced
 The input to this shard is used as the value for the new variable and is also passed through as this shard's output.
 
 !!! note
-    `Ref` has two aliases: `=` and `&>`. Both are aliases for `Ref(... Global: false)`. See the code examples at the end to understand how these aliases are used.
+    `Ref` has two aliases: `=`. Both are aliases for `Ref(... Global: false)`. See the code examples at the end to understand how these aliases are used.
 
 !!! note "See also"
     - [`Const`](../Const)

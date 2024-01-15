@@ -206,10 +206,10 @@
   shard-doc:help | If({IsNotNone} {ExpectString} {"ToDo"}) >> o
   "\r\n\r\n" >> o
 
-  When({shard-doc:name | @get-filename(@shards-details-path "" true) | FS.IsFile} {
+  When({shard-doc:name | @get-filename(@shards-details-path ".md" true) | FS.IsFile} {
     "## Details\r\n\r\n" >> o
     "--8<-- \"" >> o
-    shard-doc:name | @get-filename(@shards-details-path "" true) >> o
+    shard-doc:name | @get-filename(@shards-details-path ".md" true) >> o
     "\"\r\n" >> o
     "\r\n\r\n" >> o
   })
