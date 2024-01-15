@@ -1,0 +1,64 @@
+edit_uri: ''
+repo_url: https://github.com/Formabble-xyz/shards/
+site_name: Formabble documentation
+site_url: https://docs.Formabble.com
+copyright: Copyright © 2023 Formabble
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Formabble-xyz
+      name: Formabble is on GitHub
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/Formabble
+      name: Follow us on Twitter
+markdown_extensions:
+  - admonition
+  - attr_list
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - md_in_html
+  - toc:
+      permalink: true
+plugins:
+  - search:
+      separator: '[\s\-\.\`]'
+extra_css:
+  - style_overrides.css
+theme:
+  name: material
+  custom_dir: overrides
+  features:
+    - content.code.copy
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - search.suggest
+  font:
+    code: Fira Code
+    text: Hind
+  language: custom
+  logo: assets/images/logo.svg
+  favicon: assets/images/favicon.svg
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: Formabble-light
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+use_directory_urls: true

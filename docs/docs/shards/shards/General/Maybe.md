@@ -1,0 +1,23 @@
+---
+authors: Formabble & contributors
+license: CC-BY-SA-4.0
+---
+
+
+# Maybe
+
+<div class="sh-parameters" markdown="1">
+| Name | - {: #sh-flags-row} | Description | Default | Type |
+|------|---------------------|-------------|---------|------|
+| `<input>` ||Must match the input types of the first shard in the sequence. | | [`Any`](../../types/#any) |
+| `<output>` ||Will match the output types of the first shard of the sequence. | | [`Any`](../../types/#any) |
+| `Shards` |  | The shards to activate. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
+| `Else` |  | The shards to activate on failure. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
+| `Silent` |  | If logging should be disabled while running the shards (this will also disable (Log) and (Msg) shards) and no warning message should be printed on failure. | `false` | [`Bool`](../../types/#bool) |
+
+</div>
+
+Attempts to activate a shard or a sequence of shards. Upon failure, activate another shard or sequence of shards.
+
+--8<-- "includes/license.md"
+

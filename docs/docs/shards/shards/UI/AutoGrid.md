@@ -1,0 +1,28 @@
+---
+authors: Formabble & contributors
+license: CC-BY-SA-4.0
+---
+
+
+# UI.AutoGrid
+
+<div class="sh-parameters" markdown="1">
+| Name | - {: #sh-flags-row} | Description | Default | Type |
+|------|---------------------|-------------|---------|------|
+| `<input>` || | | [`[Any]`](../../types/#seq) |
+| `<output>` || | | [`[Any]`](../../types/#seq) |
+| `Contents` |  | The UI contents to be generated and inserted in each column for each element in the given sequence. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `Striped` |  | Whether to alternate a subtle background color to every other row. | `false` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
+| `MaxGridWidth` |  | Maximum grid width. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
+| `ItemWidth` |  | The width of each item. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
+| `ColumnSpacing` |  | Spacing between columns. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
+| `RowSpacing` |  | Spacing between rows. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
+
+</div>
+
+--8<-- "includes/experimental.md"
+
+Works like UI.Grid, but given a Sequence, it will, it each object in the Sequence, execute the Shard provided in its Contents and automatically wrap the generated contents when it exceeds the grid's width.
+
+--8<-- "includes/license.md"
+
