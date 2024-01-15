@@ -1,0 +1,18 @@
+[2.0 10.0]
+Math.Mean( Kind: Mean::Arithmetic)
+Log   ;; AM => 6
+
+[2.0 10.0]
+Math.Mean(Kind: Mean::Geometric)
+Log   ;; GM => 4.47214
+
+[2.0 10.0]
+Math.Mean(Kind: Mean::Harmonic)
+Log   ;; HM => 3.33333
+
+[2.0 10.0]
+Math.Mean(
+;; AM is default, anything else will throw error
+	;; Kind: 123
+	)
+Log   ;; AM => 6
