@@ -21,8 +21,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Creates a texture from an image. Or as a render target
 
 --8<-- "includes/license.md"

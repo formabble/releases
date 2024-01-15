@@ -15,8 +15,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Hashes the output of a shard or of a sequence of shards.
 
 --8<-- "includes/license.md"

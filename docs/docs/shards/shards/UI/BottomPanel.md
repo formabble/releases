@@ -19,8 +19,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Layout UI elements into the panel.
 
 --8<-- "includes/license.md"

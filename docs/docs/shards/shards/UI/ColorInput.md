@@ -15,8 +15,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 A widget where a color can be selected.
 
 --8<-- "includes/license.md"

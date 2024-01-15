@@ -14,6 +14,8 @@ license: CC-BY-SA-4.0
 
 </div>
 
+--8<-- "includes/experimental.md"
+
 Gets whether the type of the input is `None`.
 
 --8<-- "includes/license.md"

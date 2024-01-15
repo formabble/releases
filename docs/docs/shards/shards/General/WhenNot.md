@@ -17,8 +17,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Conditional shard that only executes the action if the predicate is false.
 
 --8<-- "includes/license.md"

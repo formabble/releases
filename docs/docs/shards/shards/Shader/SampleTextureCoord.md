@@ -15,8 +15,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Samples a named texture with the passed in texture coordinates
 
 --8<-- "includes/license.md"

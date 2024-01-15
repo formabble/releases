@@ -15,6 +15,8 @@ license: CC-BY-SA-4.0
 
 </div>
 
+--8<-- "includes/experimental.md"
+
 Activates a shard or a sequence of shards independently, without consuming the input. I.e. the input of the Sub flow will also be its output regardless of the shards activated in this Sub flow.
 
 --8<-- "includes/license.md"

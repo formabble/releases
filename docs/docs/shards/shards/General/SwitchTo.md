@@ -16,8 +16,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Switches to a given wire and suspends the current one. In other words, switches flow execution to another wire, useful to create state machines.
 
 --8<-- "includes/license.md"

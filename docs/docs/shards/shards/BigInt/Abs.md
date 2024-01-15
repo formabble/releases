@@ -14,8 +14,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Computes the absolute value of a big integer.
 
 --8<-- "includes/license.md"

@@ -15,8 +15,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 A spinner widget used to indicate loading.
 
 --8<-- "includes/license.md"

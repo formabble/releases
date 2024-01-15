@@ -17,8 +17,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Boolean on/off widget with text label.
 
 --8<-- "includes/license.md"

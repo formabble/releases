@@ -17,8 +17,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 A header which can be collapsed/expanded, revealing a contained UI region.
 
 --8<-- "includes/license.md"

@@ -15,8 +15,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Asserts that a value is static at run-time
 
 --8<-- "includes/license.md"

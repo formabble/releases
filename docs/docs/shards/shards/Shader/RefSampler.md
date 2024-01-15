@@ -15,8 +15,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Returns a reference to the default sampler object for a named texture.
 
 --8<-- "includes/license.md"

@@ -17,8 +17,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Pops (drops as well as passes as output) the last element of the sequence variable passed in the `:Name` parameter. Works only on sequences.
 
 --8<-- "includes/license.md"

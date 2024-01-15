@@ -15,8 +15,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Creates a scoped child UI.
 
 --8<-- "includes/license.md"

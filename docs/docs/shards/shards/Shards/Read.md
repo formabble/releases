@@ -16,8 +16,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Reads a Shards program and outputs a binary or json AST.
 
 --8<-- "includes/license.md"

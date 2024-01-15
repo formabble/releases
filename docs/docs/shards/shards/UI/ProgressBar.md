@@ -16,8 +16,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 A progress bar with an optional overlay text.
 
 --8<-- "includes/license.md"

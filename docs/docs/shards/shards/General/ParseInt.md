@@ -15,8 +15,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Converts the string representation of a number to a signed integer equivalent.
 
 --8<-- "includes/license.md"

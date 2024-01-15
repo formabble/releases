@@ -17,8 +17,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Executes a shard while an iteration value is within a range.
 
 --8<-- "includes/license.md"

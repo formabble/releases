@@ -17,8 +17,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 This assertion is used to check whether the input is almost equal to a given value.
 
 --8<-- "includes/license.md"

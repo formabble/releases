@@ -15,8 +15,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Retrieve a named attachment from a render target
 
 --8<-- "includes/license.md"

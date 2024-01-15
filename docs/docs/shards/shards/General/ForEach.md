@@ -15,8 +15,6 @@ license: CC-BY-SA-4.0
 
 </div>
 
---8<-- "includes/experimental.md"
-
 Processes every element or key-value pair of a sequence/table with a given shard or sequence of shards.
 
 --8<-- "includes/license.md"
