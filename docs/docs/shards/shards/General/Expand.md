@@ -14,7 +14,7 @@ license: CC-BY-SA-4.0
 | `Size` |  | The expansion size. | `10` | [`Int`](../../types/#int) |
 | `Wire` |  | The wire to spawn and try to run many times concurrently. | `None` | [`None`](../../types/#none)[`Wire`](../../types/#wire)[`[Shard]`](../../types/#seq) |
 | `Policy` |  | The execution policy in terms of wires success. | `WaitUntil.AllSuccess` | [`WaitUntil`](../../../enums/WaitUntil) |
-| `Threads` |  | The number of cpu threads to use. | `0` | [`Int`](../../types/#int) |
+| `Threads` |  | The number of cpu threads to use. | `1` | [`Int`](../../types/#int) |
 
 </div>
 

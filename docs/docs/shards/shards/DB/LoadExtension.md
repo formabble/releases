@@ -11,8 +11,8 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `<input>` || | | [`Any`](../../types/#any) |
 | `<output>` || | | [`Any`](../../types/#any) |
-| `Path` |  | The path to the extension to load. | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar) |
-| `Database` |  | The optional sqlite database filename. | `None` | [`None`](../../types/#none)[`String`](../../types/#string)[`&String`](../../types/#contextvar) |
+| `Path` |  | The path to the extension to load. | `my-extension` | [`String`](../../types/#string)[`&String`](../../types/#contextvar) |
+| `Database` |  | The optional sqlite database filename. | `shards.db` | [`None`](../../types/#none)[`String`](../../types/#string)[`&String`](../../types/#contextvar) |
 
 </div>
 

@@ -19,5 +19,10 @@ license: CC-BY-SA-4.0
 
 Drops the last element of the sequence variable passed in the `:Name` parameter. Works only on sequences.
 
+## Details
+
+--8<-- "details/shards/General/Drop.md"
+
+
 --8<-- "includes/license.md"
 

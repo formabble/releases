@@ -21,5 +21,10 @@ license: CC-BY-SA-4.0
 
 Creates an empty sequence (or table if a key is passed).
 
+## Details
+
+--8<-- "details/shards/General/Sequence.md"
+
+
 --8<-- "includes/license.md"
 

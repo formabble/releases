@@ -20,5 +20,10 @@ license: CC-BY-SA-4.0
 
 Deletes an index or indices from a sequence or a key or keys from a table.
 
+## Details
+
+--8<-- "details/shards/General/Erase.md"
+
+
 --8<-- "includes/license.md"
 

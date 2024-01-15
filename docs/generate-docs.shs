@@ -19,7 +19,7 @@
 
 @template(print-type-info [buffer] {
   ExpectTable
-  {Take("name") | ExpectString = p-type-name}
+  {Take("name") | ExpectString | Assert.IsNot("") = p-type-name}
   {Take("type") | ExpectInt = p-type-type}
 
   "[`" >> buffer

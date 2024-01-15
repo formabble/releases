@@ -11,10 +11,10 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `<input>` || | | [`Any`](../../types/#any) |
 | `<output>` || | | [`Any`](../../types/#any) |
-| `InputChannels` |  | The number of input channels. | `None` | [`Int`](../../types/#int) |
-| `OutputChannels` |  | The number of output channels. | `None` | [`Int`](../../types/#int) |
-| `SampleRate` |  | The sample rate of the device. | `None` | [`Int`](../../types/#int) |
-| `BufferSize` |  | The buffer size of the device. | `None` | [`Int`](../../types/#int) |
+| `InputChannels` |  | The number of input channels. | `2` | [`Int`](../../types/#int) |
+| `OutputChannels` |  | The number of output channels. | `2` | [`Int`](../../types/#int) |
+| `SampleRate` |  | The sample rate of the device. | `44100` | [`Int`](../../types/#int) |
+| `BufferSize` |  | The buffer size of the device. | `1024` | [`Int`](../../types/#int) |
 
 </div>
 

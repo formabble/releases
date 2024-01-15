@@ -11,8 +11,8 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `<input>` || | | [`String`](../../types/#string) |
 | `<output>` || | | [`String`](../../types/#string) |
-| `Database` |  | The optional sqlite database filename. | `None` | [`None`](../../types/#none)[`String`](../../types/#string)[`&String`](../../types/#contextvar) |
-| `ReadOnly` |  | If true, the database will be opened in read only mode. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar) |
+| `Database` |  | The optional sqlite database filename. | `shards.db` | [`None`](../../types/#none)[`String`](../../types/#string)[`&String`](../../types/#contextvar) |
+| `ReadOnly` |  | If true, the database will be opened in read only mode. | `false` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar) |
 
 </div>
 

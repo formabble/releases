@@ -18,5 +18,10 @@ license: CC-BY-SA-4.0
 
 Compares the input with the declared cases (in order of the declaration) and activates the shard of the first matched case.
 
+## Details
+
+--8<-- "details/shards/General/Match.md"
+
+
 --8<-- "includes/license.md"
 

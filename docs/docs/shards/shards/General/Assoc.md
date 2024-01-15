@@ -19,5 +19,10 @@ license: CC-BY-SA-4.0
 
 Updates a sequence (array) or a table (associative array/ dictionary) on the basis of an input sequence.
 
+## Details
+
+--8<-- "details/shards/General/Assoc.md"
+
+
 --8<-- "includes/license.md"
 

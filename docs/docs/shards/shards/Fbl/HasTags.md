@@ -12,7 +12,7 @@ license: CC-BY-SA-4.0
 | `<input>` || | | [`Int`](../../types/#int) |
 | `<output>` || | | [`Bool`](../../types/#bool) |
 | `Tags` |  | The tags to check. | `None` | [`[Any]`](../../types/#seq)[`&[Any]`](../../types/#contextvar) |
-| `All` |  | Check if all tags are present, if false check if any tag is present. | `None` | [`Bool`](../../types/#bool) |
+| `All` |  | Check if all tags are present, if false check if any tag is present. | `true` | [`Bool`](../../types/#bool) |
 
 </div>
 

@@ -12,7 +12,7 @@ license: CC-BY-SA-4.0
 | `<input>` || | | [`Any`](../../types/#any) |
 | `<output>` || | | [`Any`](../../types/#any) |
 | `Queries` |  | The Shards logic executing various DB queries. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
-| `Database` |  | The optional sqlite database filename. | `None` | [`None`](../../types/#none)[`String`](../../types/#string)[`&String`](../../types/#contextvar) |
+| `Database` |  | The optional sqlite database filename. | `shards.db` | [`None`](../../types/#none)[`String`](../../types/#string)[`&String`](../../types/#contextvar) |
 
 </div>
 

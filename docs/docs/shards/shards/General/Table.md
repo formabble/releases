@@ -20,5 +20,10 @@ license: CC-BY-SA-4.0
 
 Creates an empty table.
 
+## Details
+
+--8<-- "details/shards/General/Table.md"
+
+
 --8<-- "includes/license.md"
 

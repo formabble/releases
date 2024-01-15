@@ -17,5 +17,10 @@ license: CC-BY-SA-4.0
 
 Executes a shard or a sequence of shards asynchronously and awaits their completion.
 
+## Details
+
+--8<-- "details/shards/General/Await.md"
+
+
 --8<-- "includes/license.md"
 

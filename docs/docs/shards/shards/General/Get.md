@@ -20,5 +20,10 @@ license: CC-BY-SA-4.0
 
 Reads the value of the variable passed to it.
 
+## Details
+
+--8<-- "details/shards/General/Get.md"
+
+
 --8<-- "includes/license.md"
 

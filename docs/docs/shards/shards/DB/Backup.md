@@ -11,8 +11,8 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `<input>` || | | [`Any`](../../types/#any) |
 | `<output>` || | | [`Any`](../../types/#any) |
-| `Destination` |  | The destination database filename. | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar) |
-| `Database` |  | The optional sqlite database filename. | `None` | [`None`](../../types/#none)[`String`](../../types/#string)[`&String`](../../types/#contextvar) |
+| `Destination` |  | The destination database filename. | `backup.db` | [`String`](../../types/#string)[`&String`](../../types/#contextvar) |
+| `Database` |  | The optional sqlite database filename. | `shards.db` | [`None`](../../types/#none)[`String`](../../types/#string)[`&String`](../../types/#contextvar) |
 
 </div>
 

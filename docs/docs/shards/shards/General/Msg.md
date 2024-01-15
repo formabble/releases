@@ -18,5 +18,10 @@ license: CC-BY-SA-4.0
 
 Displays the passed message string or the passed variable's value to the user via standard output.
 
+## Details
+
+--8<-- "details/shards/General/Msg.md"
+
+
 --8<-- "includes/license.md"
 

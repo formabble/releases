@@ -19,5 +19,10 @@ license: CC-BY-SA-4.0
 
 Parses the value in passed to in the `:Name` parameter and returns the count of characters (if string passed), elements (if sequence passed), or key-value pairs (if table passed).
 
+## Details
+
+--8<-- "details/shards/General/Count.md"
+
+
 --8<-- "includes/license.md"
 

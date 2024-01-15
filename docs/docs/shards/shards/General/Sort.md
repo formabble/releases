@@ -20,5 +20,10 @@ license: CC-BY-SA-4.0
 
 Sorts the elements of a sequence. Can also move around the elements of a joined sequence in alignment with the sorted sequence.
 
+## Details
+
+--8<-- "details/shards/General/Sort.md"
+
+
 --8<-- "includes/license.md"
 

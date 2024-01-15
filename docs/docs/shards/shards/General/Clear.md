@@ -19,5 +19,10 @@ license: CC-BY-SA-4.0
 
 Removes all the elements of the sequence passed to it in the `:Name` parameter. Applicable only to sequences.
 
+## Details
+
+--8<-- "details/shards/General/Clear.md"
+
+
 --8<-- "includes/license.md"
 

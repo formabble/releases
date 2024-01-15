@@ -19,5 +19,10 @@ license: CC-BY-SA-4.0
 
 Modifies the value of an existing mutable variable.
 
+## Details
+
+--8<-- "details/shards/General/Update.md"
+
+
 --8<-- "includes/license.md"
 

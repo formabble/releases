@@ -17,5 +17,10 @@ license: CC-BY-SA-4.0
 
 Appends the input to the context variable passed to `:Collection`.
 
+## Details
+
+--8<-- "details/shards/General/AppendTo.md"
+
+
 --8<-- "includes/license.md"
 

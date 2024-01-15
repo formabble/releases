@@ -17,5 +17,10 @@ license: CC-BY-SA-4.0
 
 Hashes the output of a shard or of a sequence of shards.
 
+## Details
+
+--8<-- "details/shards/General/Hashed.md"
+
+
 --8<-- "includes/license.md"
 

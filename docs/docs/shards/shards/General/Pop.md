@@ -19,5 +19,10 @@ license: CC-BY-SA-4.0
 
 Pops (drops as well as passes as output) the last element of the sequence variable passed in the `:Name` parameter. Works only on sequences.
 
+## Details
+
+--8<-- "details/shards/General/Pop.md"
+
+
 --8<-- "includes/license.md"
 

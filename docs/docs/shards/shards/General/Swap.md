@@ -18,5 +18,10 @@ license: CC-BY-SA-4.0
 
 Swaps the values of the two variables passed to it via `:NameA` and `:NameB` parameters.
 
+## Details
+
+--8<-- "details/shards/General/Swap.md"
+
+
 --8<-- "includes/license.md"
 

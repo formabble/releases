@@ -20,5 +20,10 @@ license: CC-BY-SA-4.0
 
 Creates an immutable variable with a constant value. Once created this variable cannot be changed.
 
+## Details
+
+--8<-- "details/shards/General/Ref.md"
+
+
 --8<-- "includes/license.md"
 

@@ -20,5 +20,10 @@ license: CC-BY-SA-4.0
 
 Removes all elements from a sequence that match the given condition. Can also take these matched indices and remove corresponding elements from a joined sequence.
 
+## Details
+
+--8<-- "details/shards/General/Remove.md"
+
+
 --8<-- "includes/license.md"
 

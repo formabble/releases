@@ -12,7 +12,7 @@ license: CC-BY-SA-4.0
 | `<input>` || | | [`Any`](../../types/#any) |
 | `<output>` || | | [`Any`](../../types/#any) |
 | `Wire` |  | The wire to stop. | `None` | [`Wire`](../../types/#wire)[`String`](../../types/#string)[`None`](../../types/#none)[`&Wire`](../../types/#contextvar) |
-| `Passthrough` |  | The output of this shard will be its input. | `false` | [`Bool`](../../types/#bool) |
+| `Passthrough` |  | The output of this shard will be its input. | `true` | [`Bool`](../../types/#bool) |
 
 </div>
 

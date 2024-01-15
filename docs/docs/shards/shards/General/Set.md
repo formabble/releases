@@ -20,5 +20,10 @@ license: CC-BY-SA-4.0
 
 Creates a mutable variable and assigns a value to it.
 
+## Details
+
+--8<-- "details/shards/General/Set.md"
+
+
 --8<-- "includes/license.md"
 

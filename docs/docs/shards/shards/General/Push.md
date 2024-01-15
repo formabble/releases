@@ -20,5 +20,10 @@ license: CC-BY-SA-4.0
 
 Updates sequences and tables by pushing elements and/or sequences into them.
 
+## Details
+
+--8<-- "details/shards/General/Push.md"
+
+
 --8<-- "includes/license.md"
 
