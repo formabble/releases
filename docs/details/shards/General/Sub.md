@@ -11,6 +11,3 @@ While `Sub` may seem to not use any of its internal shards' inputs or outputs, e
 As a result, the aforementioned method gives a pseudo-pass-through capability to any shard (if you wrap a shard with a `Sub` shard) or to any sequence of shards (if you wrap a whole sequence of shards within a `Sub` shard).
 
 By nesting `Sub` shards you can simulate even more flexible and powerful shard execution paths.
-
-!!! note
-    `Sub` has an alias `|`.
