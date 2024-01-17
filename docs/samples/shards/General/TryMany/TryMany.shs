@@ -1,0 +1,21 @@
+@wire(print {
+  "Ok"
+  Log
+})
+@wire(main-wire {
+  
+  Const(["A" "B" "C"])
+  TryMany(
+    Wire: print
+    Policy:
+    WaitUntil::AllSuccess
+    Threads:
+    12
+  )
+  Log
+  Assert.Is(["Ok" "Ok" "Ok"] true)
+})
+
+@mesh(main)
+@schedule(main main-wire)
+@run(main)
