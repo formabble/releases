@@ -67,6 +67,10 @@ jobs:
     - name: Publish release
       uses: softprops/action-gh-release@v1
       with:
-        files: formabble/build/fbl.*
+        files: |
+          formabble/build/fbl.exe
+          formabble/build/fbl.pdb
+          formabble/build/crsqlite.dll
+          formabble/build/crsqlite.pdb
         token: ${{ secrets.GITHUB_TOKEN }}
       if: startsWith(github.ref, 'refs/tags/')
