@@ -21,11 +21,11 @@
   ExpectTable
   {Take("name") | ExpectString | Assert.IsNot("") = p-type-name}
   {Take("type") | ExpectInt = p-type-type}
-
+  
   "[`" >> buffer
   p-type-name >> buffer
   "`](" >> buffer
-
+  
   p-type-type
   Match([
     2 ; Enum
@@ -79,30 +79,56 @@
       (String.Starts(With: "Wasm."))
       (String.Starts(With: "Substrate."))
       (String.Starts(With: "Eth."))
-      (String.Starts(With: "ReadFile"))
-      (String.Starts(With: "WriteFile"))
-      (String.Starts(With: "WritePNG"))
-      (String.Starts(With: "Unsafe"))
-      (String.Starts(With: "SleepBlocking"))]
+      (String.Starts(With: "Desktop."))
+      (String.Starts(With: "Events."))
+      (String.Starts(With: "_Emscripten."))
+      (String.Starts(With: "Reflect."))
+      (String.Starts(With: "DB.")) ; File access
+      (Is("ReadFile"))
+      (Is("WriteFile"))
+      (Is("WritePNG"))
+      (Is("Unsafe"))
+      (Is("SleepBlocking"))
+      ; Channels
+      (Is("Produce"))
+      (Is("Broadcast"))
+      (Is("Consume"))
+      (Is("Listen"))
+      (Is("Complete"))
+      ; Audio
+      (Is("Audio.Device"))
+      ; GFX
+      (Is("GFX.MainWindow"))
+      (Is("GFX.Renderer"))
+      ; Input
+      (Is("Inputs.Detached"))
+      ; Unsafe stuff
+      (Is("UnsafeActivate!"))
+      (Is("SleepBlocking!"))
+      (Is("Exit"))
+      (Is("Browse"))
+      (Is("UI.SetClipboard"))
+      (Is("UI.GetClipboard"))
+      (Is("DShard"))]
     When(IsAny(true) {
       shard-name | Stop
     })
   }
-
+  
   Set(shard-doc "name")
   Shards.Help
   {Take("help") | Set(shard-doc "help")}
-
+  
   {Take("inputHelp") | Set(shard-doc "input-help")}
   {Take("outputHelp") | Set(shard-doc "output-help")}
-
+  
   {Take("inputTypes") | ExpectSeq | Set(shard-doc "input-types")}
   {Take("outputTypes") | ExpectSeq | Set(shard-doc "output-types")}
-
+  
   {Take("parameters") | ExpectSeq = parameters}
-
+  
   {Take("properties") = properties}
-
+  
   Sequence(parameters-seq Type: @type([{none: Type::String}]))
   0 >= idx
   parameters | ForEach({
@@ -127,41 +153,41 @@
     param-doc >> parameters-seq
     Math.Inc(idx)
   })
-
+  
   shard-doc:name | @get-filename(@shards-path ".md" true) = file
   [""] >= o
-
+  
   ; metadata (front matter)
   "---\r\n" >> o
   "authors: Formabble & contributors\r\n" >> o
   "license: CC-BY-SA-4.0\r\n" >> o
   "---\r\n" >> o
   "\r\n\r\n" >> o
-
+  
   ; title
   "# " >> o
   shard-doc:name >> o
   "\r\n\r\n" >> o
-
+  
   ; ; Combined table showing the input/outpus and parameters
   "<div class=\"sh-parameters\" markdown=\"1\">\r\n" >> o
   "| Name | - {: #sh-flags-row} | Description | Default | Type |\r\n" >> o
   "|------|---------------------|-------------|---------|------|\r\n" >> o
-
+  
   "| `<input>` ||" >> o
   shard-doc:input-help | If({IsNotNone} {ExpectString} {"ToDo"}) >> o
   " | " >> o
   "| " >> o
   shard-doc:input-types | ForEach(@print-type-info(o))
   " |\r\n" >> o
-
+  
   "| `<output>` ||" >> o
   shard-doc:output-help | If({IsNotNone} {ExpectString} {"ToDo"}) >> o
   " | " >> o
   "| " >> o
   shard-doc:output-types | ForEach(@print-type-info(o))
   " |\r\n" >> o
-
+  
   parameters-seq | ForEach({
     ExpectTable
     {Take("name") | ExpectString = p-name}
@@ -185,10 +211,10 @@
     p-types | ForEach(@print-type-info(o))
     " |\r\n" >> o
   })
-
+  
   "\r\n</div>\r\n" >> o
   "\r\n" >> o
-
+  
   properties | When(IsNotNone {
     ExpectTable
     {
@@ -202,11 +228,11 @@
       })
     }
   })
-
+  
   ; Help text
   shard-doc:help | If({IsNotNone} {ExpectString} {"ToDo"}) >> o
   "\r\n\r\n" >> o
-
+  
   When({shard-doc:name | @get-filename(@shards-details-path ".md" true) | FS.IsFile} {
     "## Details\r\n\r\n" >> o
     "--8<-- \"" >> o
@@ -214,7 +240,7 @@
     "\"\r\n" >> o
     "\r\n\r\n" >> o
   })
-
+  
   When({shard-doc:name | @get-filename(@shards-sample-path "" true) | FS.IsDirectory} {
     "## Examples\r\n\r\n" >> o
     shard-doc:name | @get-filename(@shards-sample-path "" true) | FS.Iterate | ForEach({
@@ -223,41 +249,51 @@
         [shard-doc:name "/" sample-filename ".shs"] | String.Join = sample-script-fname
         [shard-doc:name "/" sample-filename ".shs.log"] | String.Join = sample-log-fname
         [shard-doc:name "/" sample-filename ".out.md"] | String.Join = sample-out-md-fname
-
+        
         "=== \"Code\"\r\n\r\n" >> o
         "  ```x86asm linenums=\"1\"\r\n" >> o
         "  --8<-- \"" >> o
         sample-script-fname | @get-filename(@shards-sample-path "" true) >> o
         "\"\r\n" >> o
         "  ```\r\n\r\n" >> o
-
+        
         sample-out-md-fname | @get-filename(@shards-sample-path "" true) | FS.IsFile | When(IsTrue {
           "=== \"Output\"\r\n\r\n" >> o
           "  --8<-- \"" >> o
           sample-out-md-fname | @get-filename(@shards-sample-path "" true) >> o
           "\"\r\n\r\n" >> o
         })
-
+        
         "  ```\r\n" >> o
         "  --8<-- \"" >> o
         sample-log-fname | @get-filename(@shards-sample-path "" true) >> o
         "\"\r\n" >> o
         "  ```\r\n" >> o
-
+        
         "&nbsp;\r\n" >> o
       })
     })
   })
-
+  
   "--8<-- \"includes/license.md\"\r\n\r\n" >> o
-
+  
   o | String.Join = content
   file | FS.Write(content Overwrite: true)
   Log("Documented shard")
-
+  
   ""
 })
 
 ; process documentation in parallel
-Shards.Enumerate | TryMany(document-shard Threads: 4) = skipped-list
-Remove(skipped-list Predicate: Is("")) = final-skipped-list | Log
+; Empty results indicate success, returning the shard name adds it to the skipped list
+Shards.Enumerate | TryMany(document-shard Threads: 4) = tmp-list
+Remove(tmp-list Predicate: Is("")) = skipped-list
+"forbidden_shards.inl" | FS.Write((
+  ["constexpr std::array<std::string_view, " (Count(skipped-list)) "> ForbiddenShards = {\n"] | String.Format >> out
+  skipped-list | ForEach({
+    = shard-name
+    ["  \"" shard-name "\",\n"] | String.Format >> out
+  })
+  ["};\n\n"] | String.Format >> out
+  out | String.Join("")
+) Overwrite: true)
