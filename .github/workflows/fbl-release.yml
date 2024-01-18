@@ -15,7 +15,7 @@ jobs:
     - name: Checkout private repository
       uses: actions/checkout@v2
       with:
-        repository: https://github.com/fragcolor-xyz/formabble.git
+        repository: fragcolor-xyz/formabble
         token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
         path: formabble
         ref: ${{ github.event.inputs.tag }}  # Checkout the specified tag
@@ -23,7 +23,7 @@ jobs:
     - name: Checkout public repository
       uses: actions/checkout@v2
       with:
-        repository: https://github.com/fragcolor-xyz/shards.git
+        repository: fragcolor-xyz/shards
         path: shards
         ref: ${{ github.event.inputs.tag }}  # Checkout the specified tag
 
