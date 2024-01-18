@@ -1,0 +1,45 @@
+name: Manual Build and Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to checkout'
+        required: true
+
+jobs:
+  build-and-release:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout private repository
+      uses: actions/checkout@v2
+      with:
+        repository: https://github.com/fragcolor-xyz/formabble.git
+        token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+        path: formabble
+        ref: ${{ github.event.inputs.tag }}  # Checkout the specified tag
+
+    - name: Checkout public repository
+      uses: actions/checkout@v2
+      with:
+        repository: https://github.com/fragcolor-xyz/shards.git
+        path: shards
+        ref: ${{ github.event.inputs.tag }}  # Checkout the specified tag
+
+    # - name: Set up build environment
+    #   run: |
+    #     # Add commands to set up your build environment
+    #     # Ensure these commands are Windows compatible
+
+    # - name: Build the project
+    #   run: |
+    #     # Add commands to build your project
+    #     # Ensure these commands are Windows compatible
+
+    # - name: Publish release
+    #   uses: softprops/action-gh-release@v1
+    #   with:
+    #     files: path/to/your/binaries/*  # Replace with the path to your binaries
+    #     token: ${{ secrets.GITHUB_TOKEN }}
+    #   if: startsWith(github.ref, 'refs/tags/')
