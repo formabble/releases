@@ -27,19 +27,42 @@ jobs:
         path: shards
         ref: ${{ github.event.inputs.tag }}  # Checkout the specified tag
 
-    # - name: Set up build environment
-    #   run: |
-    #     # Add commands to set up your build environment
-    #     # Ensure these commands are Windows compatible
+    - name: Set up rust
+      shell: bash
+      env:
+        RUSTUP_USE_CURL: 1
+      run: |
+        RUSTUP_TOOLCHAIN=`cat shards/rust.version`-msvc
+        echo "RUSTUP_TOOLCHAIN=$RUSTUP_TOOLCHAIN" >> $GITHUB_ENV
+        rustup toolchain install $RUSTUP_TOOLCHAIN
 
-    # - name: Build the project
-    #   run: |
-    #     # Add commands to build your project
-    #     # Ensure these commands are Windows compatible
+    - name: Set up dev dependencies
+      shell: bash
+      run: |
+        choco install -y --force --version=16.0.6 llvm
+        choco install -y cmake ninja
 
-    # - name: Publish release
-    #   uses: softprops/action-gh-release@v1
-    #   with:
-    #     files: path/to/your/binaries/*  # Replace with the path to your binaries
-    #     token: ${{ secrets.GITHUB_TOKEN }}
-    #   if: startsWith(github.ref, 'refs/tags/')
+    - name: Build
+      env:
+        RUST_BACKTRACE: full
+      shell: bash
+      run: |
+        cd shards
+        ./bootstrap
+        cd ../formabble
+        mkdir build
+        cd build
+        cmake -G Ninja \
+          "-DCMAKE_C_COMPILER:FILEPATH=C:\Program Files\LLVM\bin\clang.exe" \
+          "-DCMAKE_CXX_COMPILER:FILEPATH=C:\Program Files\LLVM\bin\clang++.exe" \
+          "-DRUST_DEFAULT_TARGET_PATH=C:\shards-rust-target" \
+          -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
+        echo "Building shards"
+        ninja fbl
+
+    - name: Publish release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: formabble/build/fbl.*
+        token: ${{ secrets.GITHUB_TOKEN }}
+      if: startsWith(github.ref, 'refs/tags/')
