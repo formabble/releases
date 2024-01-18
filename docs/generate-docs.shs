@@ -71,6 +71,7 @@
   = shard-name
   {[
       (String.Starts(With: "_"))
+      (String.Starts(With: "Desktop."))
       (String.Starts(With: "FS."))
       (String.Starts(With: "Debug."))
       (String.Starts(With: "Process."))
