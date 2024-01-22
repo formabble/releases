@@ -1,0 +1,19 @@
+
+@wire(ui-wire {
+  UI.Window(
+    Position: @f2(0 0)
+    Anchor: Anchor::Center
+    Width: 200
+    Height: 200
+    Flags: [WindowFlags::NoResize]
+    Contents: {
+      UI.Checkbox(
+        Label: "Checked"
+        Style: {color: @color(255 0 255) italics: true}
+        Variable: checked
+      )
+    }
+  )
+} Looped: true)
+
+{ui-behavior: ui-wire}

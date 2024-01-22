@@ -1,0 +1,12 @@
+
+@wire(ui-wire {
+  UI.Window(
+    Title: "Greetings"
+    Flags: WindowFlags::NoCollapse
+    Contents: {
+      "Hello shards!" | UI.Label
+    }
+  )
+} Looped: true)
+
+{ui-behavior: ui-wire}

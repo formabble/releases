@@ -1,0 +1,27 @@
+
+@wire(ui-wire {
+  UI.Window(
+    Position: @f2(0 0)
+    Anchor: Anchor::Center
+    Width: 200
+    Height: 200
+    Flags: [WindowFlags::NoResize]
+    Contents: {
+      UI.DockArea(
+    Contents:{
+      UI.Tab(
+      Title: "Tab 1"
+      Contents:{
+        "Tab 1 contents" | UI.Label
+      })
+     UI.Tab(
+      Title: "Tab 2"
+      Contents: {
+        "Tab 2 contents" | UI.Label
+      })
+    })
+    }
+  )
+} Looped: true)
+
+{ui-behavior: ui-wire}
