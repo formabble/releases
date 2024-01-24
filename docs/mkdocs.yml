@@ -1,5 +1,5 @@
 edit_uri: ''
-repo_url: https://github.com/formabble-xyz/formabble-docs
+repo_url: https://github.com/fragcolor-xyz/formabble-docs
 site_name: Formabble Reference
 site_url: https://docs.formabble.com
 copyright: Copyright © 2024 Formabble Pte Ltd
@@ -7,7 +7,7 @@ extra:
   generator: false
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/formabble-docs
+      link: https://github.com/fragcolor-xyz/formabble-docs
       name: Formabble is on GitHub
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/formabble
