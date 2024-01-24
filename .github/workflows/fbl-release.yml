@@ -73,4 +73,3 @@ jobs:
           formabble/build/crsqlite.dll
           formabble/build/crsqlite.pdb
         token: ${{ secrets.GITHUB_TOKEN }}
-      if: startsWith(github.ref, 'refs/tags/')
