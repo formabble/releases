@@ -1,0 +1,38 @@
+name: Manual Build and Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  docs-website-build:
+    name: Build Website
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Install mkdocs
+        run: |
+          pip install mkdocs-material
+          pip install mkdocs-awesome-pages-plugin
+          pip install mkdocs-macros-plugin
+      - name: Build website
+        run: |
+          cd docs
+          mkdocs build
+      - name: Build & publish website
+        run: |
+          cd docs
+          git config --global user.name "Fragcolor bot"
+          git config --global user.email "bot@fragcolor.xyz"
+          mkdocs gh-deploy --force --message "Publish documentation from {sha}
+
+          Using MkDocs {version}."
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: docs-website
+          path: docs/site/
+          if-no-files-found: error
+          retention-days: 1
