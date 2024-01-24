@@ -1,4 +1,3 @@
-
 @wire(main-wire {
   "Hello" | String.ToLower | Log
   Assert.Is("hello" Break: true)

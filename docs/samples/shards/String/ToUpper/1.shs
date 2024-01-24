@@ -1,7 +1,7 @@
 
 @wire(main-wire {
   "Hello" | String.ToUpper | Log
-  Assert.Is("HELLO" Break: true)
+  Assert.Is("HELLO")
   
 } Looped: true)
 

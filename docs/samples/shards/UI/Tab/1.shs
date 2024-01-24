@@ -1,4 +1,3 @@
-
 @wire(ui-wire {
   UI.Window(
     Position: @f2(0 0)

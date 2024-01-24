@@ -8,26 +8,28 @@
 **Code**
 
 ```clj
-(defloop main-wire
-  (GFX.MainWindow
-   :Contents
-   (->
-    (Setup
-     (GFX.DrawQueue) >= .ui-draw-queue
-     (GFX.UIPass .ui-draw-queue) >> .render-steps)
-    (UI
-     (UI.TopPanel
-      :Contents
-      (->
-       "# Title
+@wire(ui-wire {
+  UI.Window(
+    Title: "UI Markdown Viewer"
+    Position: @f2(0 0)
+    Anchor: Anchor::Center
+    Width: 700
+    Height: 400
+    Contents: {
+      UI.TopPanel(
+        Contents: {
+          "# Title
 
-## Sub-title
-**list:**
-- item 1
-- item 2" (UI.MarkdownViewer))))
+  ## Sub-title
+  **list:**
+  - item 1
+  - item 2"
+          UI.MarkdownViewer
+        }
+      )
+    }
+  )
+} Looped: true)
 
-    (GFX.Render :Steps .render-steps))))
-(defmesh root)
-(schedule root main-wire)
-(run root 0.1 10)
+{ui-behavior: ui-wire}
 ```

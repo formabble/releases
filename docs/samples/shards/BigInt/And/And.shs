@@ -2,5 +2,5 @@
 3 | BigInt = operand
 
 6 | BigInt
-BigInt.And( Operand: operand)
+BigInt.And(Operand: operand)
 BigInt.Is(expected) | Assert.Is(true true)

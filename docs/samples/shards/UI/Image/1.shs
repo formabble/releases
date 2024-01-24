@@ -7,7 +7,7 @@
     Height: 400
     Contents: {
       Once({
-        asset/aekOJk0VA| GFX.Texture = uiImage1 ;; replace with whatever image you have as references
+        asset/r0| GFX.Texture = uiImage1 ;; replace with whatever image you have as references
 
       })
 

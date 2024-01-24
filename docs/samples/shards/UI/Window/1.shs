@@ -1,4 +1,3 @@
-
 @wire(ui-wire {
   UI.Window(
     Title: "Greetings"
