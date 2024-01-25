@@ -23,5 +23,47 @@ Compares the input with the declared cases (in order of the declaration) and act
 --8<-- "details/shards/General/Match.md"
 
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Match/4.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Match/4.shs.log"
+  ```
+&nbsp;
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Match/2.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Match/2.shs.log"
+  ```
+&nbsp;
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Match/3.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Match/3.shs.log"
+  ```
+&nbsp;
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Match/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Match/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

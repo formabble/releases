@@ -20,5 +20,17 @@ license: CC-BY-SA-4.0
 
 A branch is a child mesh that runs and is ticked when this shard is activated, wires on this mesh will inherit all of the available exposed variables in the activator wire.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Branch/Branch.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Branch/Branch.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

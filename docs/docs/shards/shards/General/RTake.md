@@ -17,5 +17,17 @@ license: CC-BY-SA-4.0
 
 Works exactly like `Take` except that the selection indices are counted backwards from the last element in the target sequence. Also, `RTake` works only on sequences, not on tables.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/RTake/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/RTake/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

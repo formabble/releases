@@ -25,5 +25,17 @@ Creates an immutable variable with a constant value. Once created this variable 
 --8<-- "details/shards/General/Ref.md"
 
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Ref/Ref.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Ref/Ref.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

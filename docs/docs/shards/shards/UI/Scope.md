@@ -17,5 +17,17 @@ license: CC-BY-SA-4.0
 
 Creates a scoped child UI.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/Scope/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/Scope/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

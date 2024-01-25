@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `<input>` || | | [`Bytes`](../../types/#bytes) |
 | `<output>` || | | [`Bytes`](../../types/#bytes) |
-| `Key` |  | The private key to be used to sign the hashed message input. | `None` | [`Bytes`](../../types/#bytes)[`&Bytes`](../../types/#contextvar)[`String`](../../types/#string)[`&String`](../../types/#contextvar) |
+| `Key` |  | The private key to be used to sign the hashed message input. | `` | [`Bytes`](../../types/#bytes)[`&Bytes`](../../types/#contextvar)[`String`](../../types/#string)[`&String`](../../types/#contextvar) |
 
 </div>
 

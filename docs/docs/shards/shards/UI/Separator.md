@@ -16,5 +16,17 @@ license: CC-BY-SA-4.0
 
 A visual separator. A horizontal or vertical line (depending on the layout).
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/Separator/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/Separator/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

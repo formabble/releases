@@ -19,5 +19,17 @@ license: CC-BY-SA-4.0
 
 Executes a shard while an iteration value is within a range.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/ForRange/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/ForRange/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

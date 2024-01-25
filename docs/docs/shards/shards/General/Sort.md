@@ -25,5 +25,17 @@ Sorts the elements of a sequence. Can also move around the elements of a joined 
 --8<-- "details/shards/General/Sort.md"
 
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Sort/Sort.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Sort/Sort.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

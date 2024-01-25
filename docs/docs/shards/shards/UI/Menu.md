@@ -20,5 +20,17 @@ Creates a menu button that when clicked will show the given menu.
 
 If called from within a menu this will instead create a button for a sub-menu.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/Menu/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/Menu/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

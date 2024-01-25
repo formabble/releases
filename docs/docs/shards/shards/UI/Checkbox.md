@@ -19,5 +19,27 @@ license: CC-BY-SA-4.0
 
 Boolean on/off widget with text label.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/Checkbox/2.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/Checkbox/2.shs.log"
+  ```
+&nbsp;
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/Checkbox/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/Checkbox/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

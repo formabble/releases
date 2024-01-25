@@ -16,5 +16,17 @@ license: CC-BY-SA-4.0
 
 Moves to the next row in a grid layout.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/NextRow/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/NextRow/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

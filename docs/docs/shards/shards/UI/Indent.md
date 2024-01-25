@@ -17,5 +17,17 @@ license: CC-BY-SA-4.0
 
 Creates a child UI which is indented to the right.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/Indent/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/Indent/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

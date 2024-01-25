@@ -19,5 +19,17 @@ license: CC-BY-SA-4.0
 
 Conditional shard that only executes the action if the predicate is false.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/WhenNot/WhenNot.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/WhenNot/WhenNot.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

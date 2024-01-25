@@ -22,5 +22,17 @@ Prepends the input to the context variable passed to `Collection`.
 --8<-- "details/shards/General/PrependTo.md"
 
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/PrependTo/PrependTo.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/PrependTo/PrependTo.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

@@ -22,5 +22,17 @@ Hashes the output of a shard or of a sequence of shards.
 --8<-- "details/shards/General/Hashed.md"
 
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Hashed/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Hashed/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

@@ -18,5 +18,17 @@ license: CC-BY-SA-4.0
 
 A TextField with support for highlighting.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/CodeEditor/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/CodeEditor/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

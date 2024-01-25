@@ -23,5 +23,17 @@ Swaps the values of the two variables passed to it via `:NameA` and `:NameB` par
 --8<-- "details/shards/General/Swap.md"
 
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Swap/Swap.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Swap/Swap.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

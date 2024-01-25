@@ -24,5 +24,37 @@ Updates a sequence (array) or a table (associative array/ dictionary) on the bas
 --8<-- "details/shards/General/Assoc.md"
 
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Assoc/2.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Assoc/2.shs.log"
+  ```
+&nbsp;
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Assoc/3.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Assoc/3.shs.log"
+  ```
+&nbsp;
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Assoc/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Assoc/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

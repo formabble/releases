@@ -17,5 +17,17 @@ license: CC-BY-SA-4.0
 
 A widget where a color can be selected.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/ColorInput/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/ColorInput/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

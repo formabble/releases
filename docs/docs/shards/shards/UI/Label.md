@@ -18,5 +18,37 @@ license: CC-BY-SA-4.0
 
 Static text.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/Label/2.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/Label/2.shs.log"
+  ```
+&nbsp;
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/Label/3.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/Label/3.shs.log"
+  ```
+&nbsp;
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/Label/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/Label/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

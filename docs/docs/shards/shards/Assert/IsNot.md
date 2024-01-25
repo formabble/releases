@@ -18,5 +18,22 @@ license: CC-BY-SA-4.0
 
 This assertion is used to check whether the input is different from a given value.
 
+## Details
+
+--8<-- "details/shards/Assert/IsNot.md"
+
+
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/Assert/IsNot/3.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/Assert/IsNot/3.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

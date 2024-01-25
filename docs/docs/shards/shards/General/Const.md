@@ -22,5 +22,17 @@ Declares an un-named constant value (of any data type).
 --8<-- "details/shards/General/Const.md"
 
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Const/Const.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Const/Const.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

@@ -19,5 +19,17 @@ license: CC-BY-SA-4.0
 
 Waits for another wire to complete before resuming execution of the current wire.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Wait/Wait.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Wait/Wait.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

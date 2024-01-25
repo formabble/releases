@@ -20,5 +20,17 @@ license: CC-BY-SA-4.0
 
 Scattered points on a plot.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/PlotPoints/3.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/PlotPoints/3.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

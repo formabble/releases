@@ -19,5 +19,42 @@ license: CC-BY-SA-4.0
 
 This assertion is used to check whether the input is almost equal to a given value.
 
+## Details
+
+--8<-- "details/shards/Assert/IsAlmost.md"
+
+
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/Assert/IsAlmost/4.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/Assert/IsAlmost/4.shs.log"
+  ```
+&nbsp;
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/Assert/IsAlmost/3.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/Assert/IsAlmost/3.shs.log"
+  ```
+&nbsp;
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/Assert/IsAlmost/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/Assert/IsAlmost/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

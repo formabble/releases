@@ -20,5 +20,17 @@ license: CC-BY-SA-4.0
 
 Points represented as vertical or horizontal bars on a plot.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/PlotBar/2.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/PlotBar/2.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

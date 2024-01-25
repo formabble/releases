@@ -18,5 +18,27 @@ license: CC-BY-SA-4.0
 
 Layout the contents vertically.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/Vertical/2.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/Vertical/2.shs.log"
+  ```
+&nbsp;
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/Vertical/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/Vertical/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

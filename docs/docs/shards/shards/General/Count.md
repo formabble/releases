@@ -24,5 +24,17 @@ Parses the value in passed to in the `:Name` parameter and returns the count of 
 --8<-- "details/shards/General/Count.md"
 
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Count/Count.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Count/Count.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

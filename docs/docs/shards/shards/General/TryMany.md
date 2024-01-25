@@ -19,5 +19,17 @@ license: CC-BY-SA-4.0
 
 
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/TryMany/TryMany.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/TryMany/TryMany.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

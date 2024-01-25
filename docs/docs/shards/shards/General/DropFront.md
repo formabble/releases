@@ -24,5 +24,17 @@ Drops the first element of the sequence variable passed in the `:Name` parameter
 --8<-- "details/shards/General/DropFront.md"
 
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/DropFront/DropFront.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/DropFront/DropFront.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

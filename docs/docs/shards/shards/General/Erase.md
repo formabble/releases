@@ -25,5 +25,17 @@ Deletes an index or indices from a sequence or a key or keys from a table.
 --8<-- "details/shards/General/Erase.md"
 
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Erase/Erase.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Erase/Erase.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

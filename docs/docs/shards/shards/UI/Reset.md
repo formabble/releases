@@ -16,5 +16,17 @@ license: CC-BY-SA-4.0
 
 Forgets UI scroll, position, size changes, etc.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/Reset/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/Reset/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

@@ -17,5 +17,17 @@ license: CC-BY-SA-4.0
 
 Converts time into a human readable string.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/Time/ToString/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/Time/ToString/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

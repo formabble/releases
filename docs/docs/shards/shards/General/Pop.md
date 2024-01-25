@@ -24,5 +24,17 @@ Pops (drops as well as passes as output) the last element of the sequence variab
 --8<-- "details/shards/General/Pop.md"
 
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Pop/Pop.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Pop/Pop.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

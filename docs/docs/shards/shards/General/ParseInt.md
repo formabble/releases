@@ -17,5 +17,17 @@ license: CC-BY-SA-4.0
 
 Converts the string representation of a number to a signed integer equivalent.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/ParseInt/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/ParseInt/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

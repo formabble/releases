@@ -17,5 +17,17 @@ license: CC-BY-SA-4.0
 
 Concatenates all the elements of a string sequence, using the specified separator between each element.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/String/Join/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/String/Join/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

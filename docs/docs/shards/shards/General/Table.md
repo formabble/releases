@@ -25,5 +25,17 @@ Creates an empty table.
 --8<-- "details/shards/General/Table.md"
 
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Table/Table.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Table/Table.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

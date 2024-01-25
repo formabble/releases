@@ -22,5 +22,37 @@ license: CC-BY-SA-4.0
 
 Works like UI.Grid, but given a Sequence, it will, it each object in the Sequence, execute the Shard provided in its Contents and automatically wrap the generated contents when it exceeds the grid's width.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/AutoGrid/2.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/AutoGrid/2.shs.log"
+  ```
+&nbsp;
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/AutoGrid/3.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/AutoGrid/3.shs.log"
+  ```
+&nbsp;
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/AutoGrid/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/AutoGrid/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

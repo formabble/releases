@@ -25,5 +25,17 @@ Reads the value of the variable passed to it.
 --8<-- "details/shards/General/Get.md"
 
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Get/Get.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Get/Get.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

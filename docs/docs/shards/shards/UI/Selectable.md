@@ -19,5 +19,17 @@ license: CC-BY-SA-4.0
 
 A wrapper that detects selection over the provided contents.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/Selectable/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/Selectable/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

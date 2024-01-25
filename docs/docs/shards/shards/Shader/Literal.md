@@ -21,5 +21,10 @@ license: CC-BY-SA-4.0
 
 
 
+## Details
+
+--8<-- "details/shards/Shader/Literal.md"
+
+
 --8<-- "includes/license.md"
 

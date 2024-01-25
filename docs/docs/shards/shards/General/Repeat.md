@@ -20,5 +20,27 @@ license: CC-BY-SA-4.0
 
 Repeat an action a given number of times or until a condition is no longer `true`.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Repeat/2.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Repeat/2.shs.log"
+  ```
+&nbsp;
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Repeat/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Repeat/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

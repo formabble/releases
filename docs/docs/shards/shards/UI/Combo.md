@@ -20,5 +20,27 @@ license: CC-BY-SA-4.0
 
 A drop-down selection menu with a label.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/Combo/2.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/Combo/2.shs.log"
+  ```
+&nbsp;
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/Combo/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/Combo/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

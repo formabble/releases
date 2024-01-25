@@ -16,5 +16,17 @@ license: CC-BY-SA-4.0
 
 Converts the value to a hexadecimal representation.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/BigInt/ToHex/ToHex.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/BigInt/ToHex/ToHex.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

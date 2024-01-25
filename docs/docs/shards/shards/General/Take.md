@@ -17,5 +17,17 @@ license: CC-BY-SA-4.0
 
 Extracts one or more elements/key-values from a sequence or a table by using the provided sequence index/indices or table key(s). Operation is non-destructive; doesn't modify target sequence/table.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Take/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Take/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

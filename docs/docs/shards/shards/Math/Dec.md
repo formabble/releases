@@ -17,5 +17,22 @@ license: CC-BY-SA-4.0
 
 Applies the unary operation on the input value and returns the result (or a sequence of results if the input and the operand are sequences).
 
+## Details
+
+--8<-- "details/shards/Math/Dec.md"
+
+
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/Math/Dec/Dec.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/Math/Dec/Dec.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

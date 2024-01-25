@@ -23,5 +23,17 @@ license: CC-BY-SA-4.0
 
 Visually groups the contents together.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/Frame/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/Frame/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

@@ -16,5 +16,17 @@ license: CC-BY-SA-4.0
 
 Computes the logical OR between the input of this shard and the output of the next shard.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Or/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Or/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

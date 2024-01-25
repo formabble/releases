@@ -18,5 +18,17 @@ license: CC-BY-SA-4.0
 
 Stops another wire. If no wire is given, stops the current wire.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Stop/Stop.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Stop/Stop.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

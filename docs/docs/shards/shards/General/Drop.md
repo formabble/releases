@@ -24,5 +24,17 @@ Drops the last element of the sequence variable passed in the `:Name` parameter.
 --8<-- "details/shards/General/Drop.md"
 
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Drop/Drop.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Drop/Drop.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

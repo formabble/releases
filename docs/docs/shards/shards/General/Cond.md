@@ -19,5 +19,17 @@ license: CC-BY-SA-4.0
 
 Takes a sequence of conditions and predicates. Evaluates each condition one by one and if one matches, executes the associated action.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Cond/Cond.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Cond/Cond.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

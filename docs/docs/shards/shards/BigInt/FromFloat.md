@@ -17,5 +17,17 @@ license: CC-BY-SA-4.0
 
 Converts a floating point number to a big integer.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/BigInt/FromFloat/FromFloat.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/BigInt/FromFloat/FromFloat.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

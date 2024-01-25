@@ -17,5 +17,17 @@ license: CC-BY-SA-4.0
 
 Calculates the mean of a sequence of floating point numbers.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/Math/Mean/Mean.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/Math/Mean/Mean.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

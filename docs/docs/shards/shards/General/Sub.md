@@ -22,5 +22,27 @@ Activates a shard or a sequence of shards independently, without consuming the i
 --8<-- "details/shards/General/Sub.md"
 
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Sub/2.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Sub/2.shs.log"
+  ```
+&nbsp;
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Sub/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Sub/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

@@ -22,5 +22,17 @@ Appends the input to the context variable passed to `:Collection`.
 --8<-- "details/shards/General/AppendTo.md"
 
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/AppendTo/AppendTo.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/AppendTo/AppendTo.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

@@ -21,5 +21,27 @@ license: CC-BY-SA-4.0
 
 Places UI element at a specific position.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/Area/2.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/Area/2.shs.log"
+  ```
+&nbsp;
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/Area/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/Area/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

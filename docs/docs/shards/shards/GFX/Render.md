@@ -18,5 +18,26 @@ license: CC-BY-SA-4.0
 
 
 
+## Details
+
+--8<-- "details/shards/GFX/Render.md"
+
+
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/GFX/Render/1.shs"
+  ```
+
+=== "Output"
+
+  --8<-- "samples/shards/GFX/Render/1.out.md"
+
+  ```
+  --8<-- "samples/shards/GFX/Render/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

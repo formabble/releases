@@ -25,5 +25,17 @@ Removes all elements from a sequence that match the given condition. Can also ta
 --8<-- "details/shards/General/Remove.md"
 
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Remove/Remove.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Remove/Remove.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

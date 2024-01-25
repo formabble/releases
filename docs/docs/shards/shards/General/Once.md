@@ -23,5 +23,27 @@ Executes the shard or sequence of shards with the desired frequency in a wire fl
 --8<-- "details/shards/General/Once.md"
 
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Once/2.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Once/2.shs.log"
+  ```
+&nbsp;
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Once/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Once/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

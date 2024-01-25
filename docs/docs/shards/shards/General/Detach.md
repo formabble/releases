@@ -18,5 +18,17 @@ license: CC-BY-SA-4.0
 
 
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Detach/Detach.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Detach/Detach.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

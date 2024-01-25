@@ -24,5 +24,17 @@ Pops (drops as well as passes as output) the first element of the sequence varia
 --8<-- "details/shards/General/PopFront.md"
 
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/PopFront/PopFront.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/PopFront/PopFront.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

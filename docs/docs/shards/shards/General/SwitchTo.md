@@ -13,6 +13,7 @@ license: CC-BY-SA-4.0
 | `<output>` || | | [`Any`](../../types/#any) |
 | `Wire` |  | The name of the wire to switch to, or none to switch to the previous state. | `None` | [`Wire`](../../types/#wire)[`String`](../../types/#string)[`None`](../../types/#none) |
 | `Restart` |  | If the wire should always (re)start from the beginning instead of resuming to whatever state was left. | `false` | [`Bool`](../../types/#bool) |
+| `StopOnCleanup` |  | If the wire should be stopped when the current wire is cleaned up. | `false` | [`Bool`](../../types/#bool) |
 
 </div>
 

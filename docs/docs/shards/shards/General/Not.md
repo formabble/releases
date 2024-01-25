@@ -16,5 +16,17 @@ license: CC-BY-SA-4.0
 
 Computes the logical negation of the input.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Not/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Not/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

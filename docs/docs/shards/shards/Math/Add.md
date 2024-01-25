@@ -17,5 +17,62 @@ license: CC-BY-SA-4.0
 
 Applies the binary operation on the input value and the operand and returns the result (or a sequence of results if the input and the operand are sequences).
 
+## Details
+
+--8<-- "details/shards/Math/Add.md"
+
+
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/Math/Add/4.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/Math/Add/4.shs.log"
+  ```
+&nbsp;
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/Math/Add/5.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/Math/Add/5.shs.log"
+  ```
+&nbsp;
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/Math/Add/2.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/Math/Add/2.shs.log"
+  ```
+&nbsp;
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/Math/Add/3.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/Math/Add/3.shs.log"
+  ```
+&nbsp;
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/Math/Add/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/Math/Add/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

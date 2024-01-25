@@ -16,5 +16,17 @@ license: CC-BY-SA-4.0
 
 Converts a big integer value to an integer.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/BigInt/ToInt/ToInt.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/BigInt/ToInt/ToInt.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

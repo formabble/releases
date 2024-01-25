@@ -24,5 +24,17 @@ Removes all the elements of the sequence passed to it in the `:Name` parameter. 
 --8<-- "details/shards/General/Clear.md"
 
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Clear/Clear.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Clear/Clear.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

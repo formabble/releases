@@ -17,5 +17,17 @@ license: CC-BY-SA-4.0
 
 Converts a big integer value to a floating point number.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/BigInt/ToFloat/ToFloat.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/BigInt/ToFloat/ToFloat.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

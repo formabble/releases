@@ -20,5 +20,17 @@ license: CC-BY-SA-4.0
 
 Evaluates a predicate and executes an action.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/If/If.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/If/If.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

@@ -21,5 +21,27 @@ license: CC-BY-SA-4.0
 
 Wraps a button with a popup that can act as a drop-down menu or suggestion menu.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/PopupWrapper/3.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/PopupWrapper/3.shs.log"
+  ```
+&nbsp;
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/PopupWrapper/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/PopupWrapper/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

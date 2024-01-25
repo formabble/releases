@@ -22,5 +22,17 @@ Applies the binary operation on the input value and the operand and returns the 
 --8<-- "details/shards/General/Min.md"
 
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Min/Min.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Min/Min.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

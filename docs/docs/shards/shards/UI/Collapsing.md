@@ -19,5 +19,27 @@ license: CC-BY-SA-4.0
 
 A header which can be collapsed/expanded, revealing a contained UI region.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/Collapsing/2.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/Collapsing/2.shs.log"
+  ```
+&nbsp;
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/Collapsing/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/Collapsing/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

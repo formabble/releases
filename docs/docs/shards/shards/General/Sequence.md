@@ -26,5 +26,17 @@ Creates an empty sequence (or table if a key is passed).
 --8<-- "details/shards/General/Sequence.md"
 
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Sequence/Sequence.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Sequence/Sequence.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

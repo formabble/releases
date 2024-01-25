@@ -20,5 +20,10 @@ license: CC-BY-SA-4.0
 
 Drawable help text
 
+## Details
+
+--8<-- "details/shards/GFX/Drawable.md"
+
+
 --8<-- "includes/license.md"
 

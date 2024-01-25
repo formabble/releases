@@ -23,5 +23,27 @@ Logs the output of a shard or the value of a variable to the console (along with
 --8<-- "details/shards/General/Log.md"
 
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Log/2.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Log/2.shs.log"
+  ```
+&nbsp;
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Log/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Log/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

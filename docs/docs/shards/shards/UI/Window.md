@@ -25,5 +25,17 @@ license: CC-BY-SA-4.0
 
 Creates a floating window which can be dragged, closed, collapsed, and resized.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/UI/Window/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/UI/Window/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

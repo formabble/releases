@@ -9,12 +9,12 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | - {: #sh-flags-row} | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`[Any]`](../../types/#seq) |
-| `<output>` || | | [`String`](../../types/#string) |
+| `<input>` ||A sequence of values that will be converted to string and joined together. | | [`[Any]`](../../types/#seq) |
+| `<output>` ||A string consisting of all the elements of the sequence. | | [`String`](../../types/#string) |
 
 </div>
 
-
+Concatenates all the elements of a sequence into a string
 
 --8<-- "includes/license.md"
 

@@ -25,5 +25,17 @@ Creates a mutable variable and assigns a value to it.
 --8<-- "details/shards/General/Set.md"
 
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Set/Set.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Set/Set.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 

@@ -19,5 +19,17 @@ license: CC-BY-SA-4.0
 
 Extracts characters from a string or elements from a sequence based on the start and end positions/indices and an increment parameter. Operation is non-destructive; the target string/sequence is not modified.
 
+## Examples
+
+=== "Code"
+
+  ```x86asm linenums="1"
+  --8<-- "samples/shards/General/Slice/1.shs"
+  ```
+
+  ```
+  --8<-- "samples/shards/General/Slice/1.shs.log"
+  ```
+&nbsp;
 --8<-- "includes/license.md"
 
