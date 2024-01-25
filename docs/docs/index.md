@@ -5,7 +5,7 @@ license: CC-BY-SA-4.0
 
 ![](assets/DocsHeader.png)
 
-Welcome to the Formabble reference docs - your go-to source for all things API-related to our game development tools, including Fomrabble itself and [Shards](https://www.notion.so/Shards-Coding-Simplicity-and-Power-49c65f89f5fb48059159aa6a1f724548?pvs=21), our custom high-level programming language, designed for game development.
+Welcome to the Formabble reference docs - your go-to source for all things API-related to our game development tools, including Formabble itself and [Shards](https://voidtarget.substack.com/p/shards-coding-simplicity-and-power), our custom high-level programming language, designed for game development.
 
 We are currently in closed alpha, and as things are constantly changing, some of the documentation may be slightly outdated or missing documentation for new features. We appreciate your understanding and invite everyone to provide feedback on the documentation and the platform itself.
 
