@@ -1,0 +1,21 @@
+@wire(ui-wire {
+  UI.Window(
+    Position: @f2(0 0)
+    Anchor: Anchor::Center
+    Width: 200
+    Height: 200
+    Flags: [WindowFlags::NoResize]
+    Contents: {
+      UI.Button("Say Hello" Msg("Hello!"))
+      CaptureLog(
+        Size: 24
+        MinLevel: "info"
+        Pattern: "%^[%l]%$ [%Y-%m-%d %T.%e] %v"
+      )
+      String.Join
+      UI.Console
+    }
+  )
+} Looped: true)
+
+{ui-behavior: ui-wire}

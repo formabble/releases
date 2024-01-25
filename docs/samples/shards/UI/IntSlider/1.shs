@@ -1,0 +1,21 @@
+
+@wire(ui-wire {
+  UI.Window(
+    Position: @f2(0 0)
+    Anchor: Anchor::Center
+    Width: 200
+    Height: 200
+    Flags: [WindowFlags::NoResize]
+    Contents: {
+      UI.IntSlider(
+        Label: "My Label"
+        Style: {color: @color(255 128 64) italics: true}
+        Variable: int
+        Min: 1 Max: 100
+      )
+      ExpectInt
+    }
+  )
+} Looped: true)
+
+{ui-behavior: ui-wire}

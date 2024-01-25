@@ -1,0 +1,51 @@
+@wire(ui-wire {
+  UI.Window(
+    Title: "UI PlotPopup Wrapper"
+    Position: @f2(0 0)
+    Anchor: Anchor::Center
+    Width: 700
+    Height: 400
+    Contents: {
+      UI.CentralPanel({
+        UI.PopupWrapper(
+          Widget: {
+            UI.Button(
+              Label: "Send message"
+              Action: {
+                "Message sent!" | Log
+              }
+            )
+          }
+          Contents: {
+            UI.Button(
+              Label: "Receive message"
+              Action: {
+                "Message received!" | Log
+              }
+            )
+          }
+        )
+        UI.PopupWrapper(
+          Widget: {
+            UI.Button(
+              Label: "Send message"
+              Action: {
+                "Message sent!" | Log
+              }
+            )
+          }
+          Contents: {
+            UI.Button(
+              Label: "Receive message"
+              Action: {
+                "Message received!" | Log
+              }
+            )
+          }
+        )
+      })
+    }
+  )
+} Looped: true)
+
+{ui-behavior: ui-wire}
