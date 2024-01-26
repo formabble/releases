@@ -9,14 +9,14 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | - {: #sh-flags-row} | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||Any input is ignored. | | [`Any`](../../types/#any) |
+| `<input>` ||Input is ignored. | | [`Any`](../../types/#any) |
 | `<output>` ||The input to this shard is passed through as its output. | | [`Any`](../../types/#any) |
-| `NameA` |  | The name of first variable. | `` | [`String`](../../types/#string)[`&Any`](../../types/#contextvar) |
-| `NameB` |  | The name of second variable. | `` | [`String`](../../types/#string)[`&Any`](../../types/#contextvar) |
+| `First` |  | The name of first variable. | `None` | [`&Any`](../../types/#contextvar) |
+| `Second` |  | The name of second variable. | `None` | [`&Any`](../../types/#contextvar) |
 
 </div>
 
-Swaps the values of the two variables passed to it via `:NameA` and `:NameB` parameters.
+Swaps the values of the two variables passed to it via `First` and `Second` parameters.
 
 ## Details
 

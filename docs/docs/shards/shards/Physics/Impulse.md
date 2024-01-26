@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `<input>` || | | [`Float3`](../../types/#float3) |
 | `<output>` || | | [`Float3`](../../types/#float3) |
-| `RigidBody` |  | The rigidbody to apply the impulse to. | `` | [`&Object`](../../types/#contextvar)[`None`](../../types/#none) |
+| `RigidBody` |  | The rigidbody to apply the impulse to. | `None` | [`&Object`](../../types/#contextvar)[`None`](../../types/#none) |
 
 </div>
 
