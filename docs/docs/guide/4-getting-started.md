@@ -18,11 +18,7 @@ In this chapter we will guide you through the UI in Formabble. From creating you
     From the file explorer window, you can either import an existing file or type a file name and click save to create a new domain with the specified name.
 
 ??? note "Importing Assets"
-    Assets are the lifeblood of any domain. To import assets, first click on the **Category drop down menu** in the **Domain Inventory** window and click on the type of asset that you want to import. Scripts for scripts, textures for any 2d assets like images, meshes for 3d assets and audio for audio.
-
-    ![Domain Inventory Category](images/domainInventory-category.png "Domain Inventory Category")
-
-    Once the appropriate category has been selected, either click on the **Import button** or drag the asset from your file explorer window into the **Domain Inventory** window.
+    Assets are the lifeblood of any domain. To import assets, either click on the **Import** button from your **Domain Inventory** window or simply drag the asset from your file explorer into the **Domain Inventory** window.
 
     ![Domain Inventory Import Button](images/DomainInventory-import.png "Domain Inventory Import Button")
 
@@ -32,14 +28,16 @@ In this chapter we will guide you through the UI in Formabble. From creating you
     | -------- | -------- |
     | Scripts | .shs |
     | Textures | .jpg .png |
-    | Meshes | .glb .gltf |
+    | Meshes | .gltf |
     | Audio | .ogg .mp3 |
 
-    Once an asset has been selected, or once an asset has been dragged in the **Import Asset** window will appear. Click on **Import button** to import the asset.
+    Once an asset has been selected, or has been dragged in the **Import Asset** window will appear. Click on **Import button** to import the asset.
 
     ![Import Asset Window Import Button](images/importAsset-Import.png "Import Asset Window Import Button")
 
-    Once the Asset has been imported, it will appear in your **Domain Inventory**.
+    Once imported, it will appear in the **Domain Inventory**. (Click on the **Category** dropdown to change the category of the assets currently being shown in the inventory. Change it accordingly if you don't see your asset.)
+
+    ![Domain Inventory Category](images/domainInventory-category.png "Domain Inventory Category")
 
     ![Domain Inventory with Asset Imported](images/ImportAsset-AssetImported.png "Domain Inventory with Asset Imported")
 
@@ -266,6 +264,10 @@ In this chapter we will guide you through the UI in Formabble. From creating you
     Remember to click on **Save** to save your changes
 
     ![Save Button](images/edit-asset-save.png "Save Button")
+
+    Should you wish, you can also edit your code using your preferred Code Editor. To do this, from the **Edit Asset** window, click on **Open Locally**. This will open your file explorer to the location of the selected file. From here you can open this file using your preferred code editor. Saving your changes on your code editor will automatically update the asset in Formabble for a seemless experience.
+
+    ![Open Locally Button](images\edit-asset-open-locally.png "Open Locally Button")
 
 
 ??? note "Deleting Assets"
