@@ -1,11 +1,11 @@
-# Formabble Guide
+# Why Formabble?
 
 > *"I wanted a game creation tool that would allow creators to create freely. Sad to say, I find that the current tools we have are too shackled by outdated technology to properly achieve this. It is my firm belief that by leveraging on modern technology and innovation to create a game-engine that is accessible, collaborative and unbounded, only then can we truly empower creators."
 ~ Giovanni Petrantoni*
 
 <br>
 
-Here at Formabble we aim to unshackle our creators by making game creation 
+Here at Formabble we aim to unshackle our creators by making game creation
 **Accessible**, **Collaborative** and **Unbounded**. In this section we will go through how we achieve this by using current technology and innovations such as AI and real-time multiplayer editing.
 
 ### Accessible
