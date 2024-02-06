@@ -28,7 +28,7 @@ In this chapter we will guide you through the UI in Formabble. From creating you
     | -------- | -------- |
     | Scripts | .shs |
     | Textures | .jpg .png |
-    | Meshes | .gltf |
+    | Meshes | .glb |
     | Audio | .ogg .mp3 |
 
     Once an asset has been selected, or has been dragged in the **Import Asset** window will appear. Click on **Import button** to import the asset.
