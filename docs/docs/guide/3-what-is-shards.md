@@ -16,7 +16,7 @@ Shards achieves zero-compromise on four goals: Reach, Accuracy, Performance, and
 ### Accessibility
 **Reach to People**
 
-Using visual development engines like Formabble, anyone can build complex 
+Using visual development engines like Formabble, anyone can build complex
 applications like games, without prior coding skills.
 
 **Reach of Platforms**
@@ -61,5 +61,6 @@ Shards is just shards flowing into shards, thus:
 
 !!! note " Shards Article"
 
-    For a more in-depth article on the capabilities of Shards, visit: 
-    [Shards: Coding Simplicity and Power](https://voidtarget.substack.com/p/shards-coding-simplicity-and-power)
+    For a more in-depth article on the capabilities of Shards, visit: [Shards: Coding Simplicity and Power](https://voidtarget.substack.com/p/shards-coding-simplicity-and-power)
+
+    Or check out the [github repository](https://github.com/fragcolor-xyz/shards)
