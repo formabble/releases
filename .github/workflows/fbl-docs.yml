@@ -26,8 +26,8 @@ jobs:
       - name: Build & publish website
         run: |
           cd docs
-          git config --global user.name "Fragcolor bot"
-          git config --global user.email "bot@fragcolor.xyz"
+          git config --global user.name "Formabble Bot"
+          git config --global user.email "bot@formabble.com"
           mkdocs gh-deploy --force --message "Publish documentation from {sha}
 
           Using MkDocs {version}."
