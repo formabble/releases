@@ -1,9 +1,5 @@
 name: Manual Docs
 
-permissions:
-  contents: read
-  pages: write          # <-- Add this line
-
 on:
   workflow_dispatch:
 
