@@ -12,6 +12,24 @@ jobs:
     runs-on: windows-latest
 
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0 # Fetch all history for all tags and branches
+
+    - name: Setup Git Config
+      run: |
+        git config user.name "github-actions"
+        git config user.email "github-actions@github.com"
+
+    - name: Check and Create Tag
+      run: |
+        TAG_EXISTS=$(git tag -l "${{ github.event.inputs.tag }}")
+        if [ -z "$TAG_EXISTS" ]; then
+          git tag ${{ github.event.inputs.tag }}
+          git push origin ${{ github.event.inputs.tag }}
+        fi
+
     - name: Checkout private repository
       uses: actions/checkout@v3
       with:
