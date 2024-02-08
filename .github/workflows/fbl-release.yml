@@ -1,11 +1,9 @@
-name: Manual Build and Release
+name: Build and Release
 
 on:
-  workflow_dispatch:
-    inputs:
-      tag:
-        description: 'Tag to checkout'
-        required: true
+  push:
+    tags:
+      - 'fbl-*'
 
 jobs:
   build-and-release:
@@ -17,27 +15,13 @@ jobs:
       with:
         fetch-depth: 0 # Fetch all history for all tags and branches
 
-    - name: Setup Git Config
-      run: |
-        git config user.name "github-actions"
-        git config user.email "github-actions@github.com"
-
-    - name: Check and Create Tag
-      shell: pwsh
-      run: |
-        $tagExists = git tag -l "${{ github.event.inputs.tag }}"
-        if ([String]::IsNullOrEmpty($tagExists)) {
-          git tag "${{ github.event.inputs.tag }}"
-          git push origin "${{ github.event.inputs.tag }}"
-        }
-
     - name: Checkout private repository
       uses: actions/checkout@v3
       with:
         repository: fragcolor-xyz/formabble
         token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
         path: formabble
-        ref: ${{ github.event.inputs.tag }}
+        ref: ${{ github.ref_name }}
         submodules: recursive
         fetch-depth: 1
 
@@ -46,7 +30,7 @@ jobs:
       with:
         repository: fragcolor-xyz/shards
         path: shards
-        ref: ${{ github.event.inputs.tag }}
+        ref: ${{ github.ref_name }}
         submodules: recursive
         fetch-depth: 1
 
