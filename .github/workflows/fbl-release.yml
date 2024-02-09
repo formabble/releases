@@ -67,12 +67,15 @@ jobs:
         echo "Building shards"
         ninja fbl
 
+    - name: Zip Artifacts
+      shell: powershell
+      run: |
+        $tagName = "${{ github.ref_name }}".Replace('+', '-')
+        $zipPath = "formabble/build/${tagName}.zip"
+        Compress-Archive -Path formabble/build/* -DestinationPath $zipPath
+
     - name: Publish release
       uses: softprops/action-gh-release@v1
       with:
-        files: |
-          formabble/build/fbl.exe
-          formabble/build/fbl.pdb
-          formabble/build/crsqlite.dll
-          formabble/build/crsqlite.pdb
+        files: formabble/build/${{ github.ref_name }}.zip
         token: ${{ secrets.GITHUB_TOKEN }}
