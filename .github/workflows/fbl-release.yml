@@ -64,8 +64,8 @@ jobs:
           "-DCMAKE_CXX_COMPILER:FILEPATH=C:\Program Files\LLVM\bin\clang++.exe" \
           "-DRUST_DEFAULT_TARGET_PATH=C:\shards-rust-target" \
           "-DSHARDS_MIN_DEBUG_INFO=ON" \
-          "-DSHARDS_DEFAULT_STDOUT_LOG_LEVEL=info" \
-          "-DSHARDS_DEFAULT_FILE_LOG_LEVEL=debug" \
+          "-DSHARDS_DEFAULT_STDOUT_LOG_LEVEL=SPDLOG_LEVEL_INFO" \
+          "-DSHARDS_DEFAULT_FILE_LOG_LEVEL=SPDLOG_LEVEL_DEBUG" \
           -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
         echo "Building shards"
         ninja fbl
