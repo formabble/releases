@@ -78,11 +78,12 @@ jobs:
         $zipPath = "formabble/build/$zipFilename"
         Get-ChildItem "formabble/build" -Include *.exe, *.dll, *.pdb | Compress-Archive -DestinationPath $zipPath
         echo "Created zip at: $zipPath"
-        echo "ZIP_FILENAME=$zipFilename" >> $GITHUB_ENV
+        echo "ZIP_PATH=$zipPath" >> $GITHUB_ENV
 
     - name: Publish release
       uses: softprops/action-gh-release@v1
       with:
-        files: ${{ env.ZIP_PATH }}
+        files: |
+          ${{ env.ZIP_PATH }}
         token: ${{ secrets.GITHUB_TOKEN }}
 
