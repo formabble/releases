@@ -74,10 +74,11 @@ jobs:
       shell: powershell
       run: |
         $normalizedTagName = "${{ github.ref_name }}".Replace('+', '-')
-        $zipPath = "formabble/build/" + $normalizedTagName + "-artifacts.zip"
-        Compress-Archive -Path formabble/build/* -DestinationPath $zipPath
+        $zipFilename = "fbl-$normalizedTagName.zip"
+        $zipPath = "formabble/build/$zipFilename"
+        Get-ChildItem "formabble/build" -Include *.exe, *.dll, *.pdb | Compress-Archive -DestinationPath $zipPath
         echo "Created zip at: $zipPath"
-        echo "ZIP_PATH=$zipPath" >> $GITHUB_ENV
+        echo "ZIP_FILENAME=$zipFilename" >> $GITHUB_ENV
 
     - name: Publish release
       uses: softprops/action-gh-release@v1
