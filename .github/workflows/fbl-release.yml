@@ -75,12 +75,18 @@ jobs:
       run: |
         $files = 'fbl.exe', 'fbl.pdb', 'crsqlite.dll', 'crsqlite.pdb'
         $path = 'formabble/build'
-        $files | ForEach-Object {
-          $filePath = Join-Path -Path $path -ChildPath $_
-          If (Test-Path $filePath) {
-            $_
+        $existingFiles = @()
+        foreach ($file in $files) {
+          $fullPath = Join-Path -Path $path -ChildPath $file
+          if (Test-Path $fullPath) {
+            $existingFiles += $fullPath
           }
-        } | Compress-Archive -DestinationPath formabble.zip -Force
+        }
+        if ($existingFiles.Count -gt 0) {
+          Compress-Archive -Path $existingFiles -DestinationPath formabble.zip -Force
+        } else {
+          Write-Host "No files found to zip."
+        }
 
     - name: Publish release
       uses: softprops/action-gh-release@v1
