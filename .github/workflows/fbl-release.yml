@@ -71,9 +71,9 @@ jobs:
         ninja fbl
 
     - name: Zip Artifacts
-      shell: bash
+      shell: powershell
       run: |
-        zip -r formabble.zip formabble/build -i *.exe *.dll *.pdb
+        Get-ChildItem -Path formabble/build -Recurse -Include *.exe, *.dll, *.pdb | Compress-Archive -DestinationPath formabble.zip -Force
 
     - name: Publish release
       uses: softprops/action-gh-release@v1
