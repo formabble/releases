@@ -73,7 +73,14 @@ jobs:
     - name: Zip Artifacts
       shell: powershell
       run: |
-        Get-ChildItem -Path formabble/build -Recurse -Include *.exe, *.dll, *.pdb | Compress-Archive -DestinationPath formabble.zip -Force
+        $files = 'fbl.exe', 'fbl.pdb', 'crsqlite.dll', 'crsqlite.pdb'
+        $path = 'formabble/build'
+        $files | ForEach-Object {
+          $filePath = Join-Path -Path $path -ChildPath $_
+          If (Test-Path $filePath) {
+            $_
+          }
+        } | Compress-Archive -DestinationPath formabble.zip -Force
 
     - name: Publish release
       uses: softprops/action-gh-release@v1
