@@ -71,19 +71,14 @@ jobs:
         ninja fbl
 
     - name: Zip Artifacts
-      shell: powershell
+      shell: bash
       run: |
-        $normalizedTagName = "${{ github.ref_name }}".Replace('+', '-')
-        $zipFilename = "fbl-$normalizedTagName.zip"
-        $zipPath = "formabble/build/$zipFilename"
-        Get-ChildItem "formabble/build" -Include *.exe, *.dll, *.pdb | Compress-Archive -DestinationPath $zipPath
-        echo "Created zip at: $zipPath"
-        echo "ZIP_PATH=$zipPath" >> $GITHUB_ENV
+        zip -r formabble.zip formabble/build -i *.exe *.dll *.pdb
 
     - name: Publish release
       uses: softprops/action-gh-release@v1
       with:
         files: |
-          ${{ env.ZIP_PATH }}
+          formabble.zip
         token: ${{ secrets.GITHUB_TOKEN }}
 
