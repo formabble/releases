@@ -5,11 +5,11 @@ In this chapter we will guide you through the UI in Formabble. From creating you
 ??? note "Creating a Domain"
     After Logging in, you will be greeted with the Main Menu window. To create a domain you can either click on the **New Domain button** or the **Import Domain button**.
 
-    The first method,  upon clicking New Domain, a fresh empty domain will be immediately created. Your domain will be given a randomly generated name and be automatically saved.
+    The first method, change the domains category drop down to **My Domains**. Then upon clicking **New Domain**, a fresh empty domain will be immediately created. Your domain will be given a randomly generated name and be automatically saved.
 
     ![Fbl New Domain Button](images/FblNewDomain.png "Fbl New Domain Button")
 
-    The second method, upon clicking the Import Domain, your file explorer window will pop-up, for you to import an .fdb file.
+    The second method, change the domains category drop down to **My Domains**. Then, upon clicking the **Import Domain**, your file explorer window will pop-up, for you to import an .fdb file.
 
     ![Fbl Import Domain Button](images/FblImportDomain.png "Fbl Import Domain Button")
 
