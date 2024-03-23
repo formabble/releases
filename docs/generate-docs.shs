@@ -111,9 +111,6 @@
       (Is("UnsafeActivate!"))
       (Is("SleepBlocking!"))
       (Is("Exit"))
-      (Is("Browse"))
-      (Is("UI.SetClipboard"))
-      (Is("UI.GetClipboard"))
       (Is("DShard"))]
     When(IsAny(true) {
       shard-name | Stop
