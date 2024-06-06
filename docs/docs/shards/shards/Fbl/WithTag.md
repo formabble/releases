@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | - {: #sh-flags-row} | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `<input>` || | | [`Any`](../../types/#any) |
-| `<output>` || | | [`[Int]`](../../types/#seq) |
+| `<output>` || | | [`[Int16]`](../../types/#seq) |
 
 </div>
 

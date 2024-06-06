@@ -14,7 +14,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-
+Decompose a matrix(4x4) into a TRS description
 
 --8<-- "includes/license.md"
 

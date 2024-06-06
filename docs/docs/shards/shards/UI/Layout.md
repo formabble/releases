@@ -9,8 +9,8 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | - {: #sh-flags-row} | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||The value that will be passed to the Contents shards of the layout. | | [`Any`](../../types/#any) |
-| `<output>` ||The output of this shard will be its input. | | [`Any`](../../types/#any) |
+| `<input>` || | | [`Any`](../../types/#any) |
+| `<output>` || | | [`Any`](../../types/#any) |
 | `Contents` |  | The UI contents. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
 | `Class` |  | The Layout class describing all of the options relating to the layout of this UI. | `None` | [`&Object`](../../types/#contextvar) |
 | `MinSize` |  | The minimum size of the space to be reserved by this UI. This allows the UI to take up more space than required for its widget contents. Can be overidden by FillWidth and FillHeight. | `None` | [`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar) |

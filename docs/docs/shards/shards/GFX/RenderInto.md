@@ -16,7 +16,7 @@ license: CC-BY-SA-4.0
 | `Size` |  | The reference size. This will control the size of the render targets. | `None` | [`None`](../../types/#none)[`Int2`](../../types/#int2)[`&Int2`](../../types/#contextvar) |
 | `MatchOutputSize` |  | When true, the texture rendered into is automatically resized to match the output size. | `None` | [`None`](../../types/#none)[`Bool`](../../types/#bool) |
 | `Viewport` |  | The viewport. | `None` | [`None`](../../types/#none)[`Int4`](../../types/#int4)[`&Int4`](../../types/#contextvar) |
-| `WindowRegion` |  | Sets the window region for input handling. | `None` | [`None`](../../types/#none)[`Float4`](../../types/#float4)[`&Float4`](../../types/#contextvar) |
+| `WindowRegion` |  | Sets the window region for input handling. | `None` | [`None`](../../types/#none)[`Int4`](../../types/#int4)[`&Int4`](../../types/#contextvar) |
 
 </div>
 

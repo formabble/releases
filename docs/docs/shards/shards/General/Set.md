@@ -14,7 +14,7 @@ license: CC-BY-SA-4.0
 | `Name` |  | The name of the variable. | `` | [`String`](../../types/#string)[`&Any`](../../types/#contextvar) |
 | `Key` |  | The key of the value to write in the table (parameter applicable only if the target variable is a table). | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar)[`None`](../../types/#none) |
 | `Global` |  | If the variable is available to all of the wires in the same mesh. | `false` | [`Bool`](../../types/#bool) |
-| `Exposed` |  | If the variable should be marked as exposed. | `false` | [`Bool`](../../types/#bool) |
+| `Tracked` |  | If the variable should be marked as tracked. | `false` | [`Bool`](../../types/#bool) |
 
 </div>
 

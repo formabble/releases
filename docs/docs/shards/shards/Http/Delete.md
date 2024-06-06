@@ -17,6 +17,7 @@ license: CC-BY-SA-4.0
 | `Bytes` |  | If instead of a string the shard should output bytes. | `false` | [`Bool`](../../types/#bool) |
 | `FullResponse` |  | If the output should be a table with the full response, including headers and status. | `false` | [`Bool`](../../types/#bool) |
 | `AcceptInvalidCerts` |  | If we should ignore invalid certificates. This is useful for testing but should not be used in production. | `false` | [`Bool`](../../types/#bool) |
+| `Retry` |  | How many times to retry the request if it fails. | `0` | [`Int`](../../types/#int) |
 
 </div>
 

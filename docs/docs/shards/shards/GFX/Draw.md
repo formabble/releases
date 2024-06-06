@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | - {: #sh-flags-row} | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `<input>` || | | [`GFX.Drawable`](../../types/#gfx.drawable)[`[GFX.Drawable]`](../../types/#seq) |
-| `<output>` || | | [`None`](../../types/#none) |
+| `<output>` || | | [`GFX.Drawable`](../../types/#gfx.drawable)[`[GFX.Drawable]`](../../types/#seq) |
 | `Queue` |  | The queue to add the draw command to (Optional). Uses the default queue if not specified | `None` | [`&GFX.DrawQueue`](../../types/#contextvar) |
 
 </div>

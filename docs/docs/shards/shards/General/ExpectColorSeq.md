@@ -11,6 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `<input>` || | | [`Any`](../../types/#any) |
 | `<output>` || | | [`[Color]`](../../types/#seq) |
+| `Unsafe` |  | If we should skip performing deep type hashing and comparison. (generally fast but this might improve performance) | `false` | [`Bool`](../../types/#bool) |
 
 </div>
 

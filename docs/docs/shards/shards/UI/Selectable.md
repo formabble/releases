@@ -14,6 +14,9 @@ license: CC-BY-SA-4.0
 | `Contents` |  | The UI contents to wrap, contain, and detect for selection. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
 | `IsSelected` |  | Callback function for checking if the contents are currently selected. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
 | `Clicked` |  | Callback function for the contents of this shard is clicked. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `DoubleClicked` |  | Callback function for the contents of this shard is clicked. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `ContextMenu` |  | Callback function for the right-click context menu. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `ID` |  | An optional ID value in case of ID conflicts. | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar)[`None`](../../types/#none) |
 
 </div>
 

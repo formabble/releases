@@ -15,6 +15,7 @@ license: CC-BY-SA-4.0
 | `Right` |  | The action to perform when the right mouse button is pressed down. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
 | `Middle` |  | The action to perform when the middle mouse button is pressed down. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
 | `Consume` |  | Consume events. | `None` | [`None`](../../types/#none)[`Bool`](../../types/#bool) |
+| `IgnoreConsumed` |  | Ignore consumed events. | `None` | [`None`](../../types/#none)[`Bool`](../../types/#bool) |
 
 </div>
 

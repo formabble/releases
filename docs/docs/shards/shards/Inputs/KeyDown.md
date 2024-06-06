@@ -15,6 +15,8 @@ license: CC-BY-SA-4.0
 | `Action` |  | The Shards to run if a key event happened. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
 | `Repeat` |  | If the key event should be repeated. | `false` | [`None`](../../types/#none)[`Bool`](../../types/#bool) |
 | `Modifiers` |  | Modifier keys to check. | `None` | [`None`](../../types/#none)[`[ModifierKey]`](../../types/#seq) |
+| `Consume` |  | Consume events. | `None` | [`None`](../../types/#none)[`Bool`](../../types/#bool) |
+| `IgnoreConsumed` |  | Ignore consumed events. | `None` | [`None`](../../types/#none)[`Bool`](../../types/#bool) |
 
 </div>
 

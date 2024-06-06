@@ -10,8 +10,9 @@ license: CC-BY-SA-4.0
 | Name | - {: #sh-flags-row} | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `<input>` || | | [`None`](../../types/#none) |
-| `<output>` || | | [`[[Any]]`](../../types/#seq) |
+| `<output>` || | | [`[{Any}]`](../../types/#seq)[`[[Any]]`](../../types/#seq) |
 | `Sequences` |  | The sequences to zip together. | `None` | [`[[Any] &[Any]]`](../../types/#seq) |
+| `Keys` |  | The element keys to user. | `None` | [`None`](../../types/#none)[`[String]`](../../types/#seq) |
 
 </div>
 

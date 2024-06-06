@@ -1,2 +1,4 @@
 .DS_Store
 *.log
+docs/forbidden_shards.inl
+docs/shards_docs_merged.txt

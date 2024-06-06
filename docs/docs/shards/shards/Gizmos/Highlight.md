@@ -11,6 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `<input>` || | | [`GFX.Drawable`](../../types/#gfx.drawable)[`[GFX.Drawable]`](../../types/#seq) |
 | `<output>` || | | [`None`](../../types/#none) |
+| `Color` |  | Color to render wireframe at | `(1 0 0 1)` | [`Float4`](../../types/#float4) |
 
 </div>
 

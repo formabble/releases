@@ -15,6 +15,7 @@ license: CC-BY-SA-4.0
 | `Insensitive` |  | Search case insensitive. | `None` | [`None`](../../types/#none)[`Bool`](../../types/#bool) |
 | `Origin` |  | Origin to search from. | `None` | [`None`](../../types/#none)[`Float3`](../../types/#float3)[`&Float3`](../../types/#contextvar) |
 | `Multiple` |  | Return multiple forms. | `None` | [`None`](../../types/#none)[`Bool`](../../types/#bool) |
+| `Traits` |  | Filter based on traits. | `None` | [`None`](../../types/#none)[`{[Trait]}`](../../types/#table) |
 
 </div>
 

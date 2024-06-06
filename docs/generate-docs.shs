@@ -279,8 +279,13 @@
 
   "--8<-- \"includes/license.md\"\r\n\r\n" >> o
 
-  o | String.Join = content
+  o | String.Join >= content
   file | FS.Write(content Overwrite: true)
+  {
+    ; for AI purposes
+    "\n\n----------------\n\n" | AppendTo(content)
+   "shards_docs_merged.txt" | FS.Write(content Append: true)
+  }
   Log("Documented shard")
 
   ""
@@ -299,3 +304,7 @@ Remove(tmp-list Predicate: Is("")) = skipped-list
   ["};\n\n"] | String.Format >> out
   out | String.Join("")
 ) Overwrite: true)
+
+Pause(2.0)
+
+_Fbl.Shutdown

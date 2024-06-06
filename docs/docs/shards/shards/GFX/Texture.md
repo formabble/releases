@@ -18,6 +18,7 @@ license: CC-BY-SA-4.0
 | `Dimension` |  | The type of texture to create. (Render target only) | `None` | [`TextureDimension`](../../../enums/TextureDimension) |
 | `Addressing` |  | For sampling, sets the address modes. | `None` | [`TextureAddressing`](../../../enums/TextureAddressing)[`[TextureAddressing]`](../../types/#seq) |
 | `Filtering` |  | For sampling, sets the filter mode. | `None` | [`TextureFiltering`](../../../enums/TextureFiltering) |
+| `Label` |  | Debug label for this object. | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar)[`None`](../../types/#none) |
 
 </div>
 

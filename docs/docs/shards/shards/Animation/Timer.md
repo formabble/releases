@@ -17,6 +17,7 @@ license: CC-BY-SA-4.0
 | `Rate` |  | The playback rate | `1` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
 | `Offset` |  | Timer offset | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
 | `Action` |  | The action to evaluate after the given Duration | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
+| `Variable` |  | The variable to store the result in | `None` | [`None`](../../types/#none)[`&Float`](../../types/#contextvar) |
 
 </div>
 
