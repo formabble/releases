@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # Merge
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`{Any}`](../../types/#table) |
-| `<output>` || | | [`{Any}`](../../types/#table) |
-| `Target` |  | The table to merge into. | `None` | [`&{Any}`](../../types/#contextvar) |
+| `⬅️ Input` ||The input of the shard, if any | | [`{Any}`](../../types/#table) |
+| `Output ➡️` ||The resulting output of the shard | | [`{Any}`](../../types/#table) |
+| `Target` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The table to merge into. | `None` | [`&{Any}`](../../types/#contextvar) |
 
 </div>
 

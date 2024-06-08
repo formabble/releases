@@ -7,12 +7,12 @@ license: CC-BY-SA-4.0
 # GFX.UIPass
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`None`](../../types/#none) |
-| `<output>` || | | [`GFX.PipelineStep`](../../types/#gfx.pipelinestep) |
-| `Queue` |  | The queue to draw from (Optional). Uses the default queue if not specified | `None` | [`None`](../../types/#none)[`&GFX.DrawQueue`](../../types/#contextvar) |
-| `Name` |  | A name for this step, to aid in debugging | `None` | [`None`](../../types/#none)[`String`](../../types/#string) |
+| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
+| `Output ➡️` ||The resulting output of the shard | | [`GFX.PipelineStep`](../../types/#gfx.pipelinestep) |
+| `Queue` | :fontawesome-solid-circle-plus:{title="No"}  | The queue to draw from (Optional). Uses the default queue if not specified | `None` | [`None`](../../types/#none)[`&GFX.DrawQueue`](../../types/#contextvar) |
+| `Name` | :fontawesome-solid-circle-plus:{title="No"}  | A name for this step, to aid in debugging | `None` | [`None`](../../types/#none)[`String`](../../types/#string) |
 
 </div>
 

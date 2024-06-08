@@ -7,10 +7,10 @@ license: CC-BY-SA-4.0
 # GFX.ClearQueue
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`GFX.DrawQueue`](../../types/#gfx.drawqueue) |
-| `<output>` || | | [`None`](../../types/#none) |
+| `⬅️ Input` ||The input of the shard, if any | | [`GFX.DrawQueue`](../../types/#gfx.drawqueue) |
+| `Output ➡️` ||The resulting output of the shard | | [`None`](../../types/#none) |
 
 </div>
 

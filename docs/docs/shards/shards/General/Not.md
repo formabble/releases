@@ -7,10 +7,10 @@ license: CC-BY-SA-4.0
 # Not
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||The value to be negated. | | [`Bool`](../../types/#bool) |
-| `<output>` ||The negation of the input. | | [`Bool`](../../types/#bool) |
+| `⬅️ Input` ||The value to be negated. | | [`Bool`](../../types/#bool) |
+| `Output ➡️` ||The negation of the input. | | [`Bool`](../../types/#bool) |
 
 </div>
 

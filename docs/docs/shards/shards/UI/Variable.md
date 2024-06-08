@@ -7,12 +7,12 @@ license: CC-BY-SA-4.0
 # UI.Variable
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`Any`](../../types/#any) |
-| `<output>` || | | [`Any`](../../types/#any) |
-| `Variable` |  | The variable that holds the value. | `None` | [`&Any`](../../types/#contextvar) |
-| `Labeled` |  | If the name of the variable should be visible as a label. | `false` | [`Bool`](../../types/#bool) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
+| `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
+| `Variable` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The variable that holds the value. | `None` | [`&Any`](../../types/#contextvar) |
+| `Labeled` | :fontawesome-solid-circle-plus:{title="No"}  | If the name of the variable should be visible as a label. | `false` | [`Bool`](../../types/#bool) |
 
 </div>
 

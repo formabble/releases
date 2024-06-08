@@ -7,10 +7,10 @@ license: CC-BY-SA-4.0
 # ImageToBytes
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`Image`](../../types/#image) |
-| `<output>` || | | [`Bytes`](../../types/#bytes) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Image`](../../types/#image) |
+| `Output ➡️` ||The resulting output of the shard | | [`Bytes`](../../types/#bytes) |
 
 </div>
 

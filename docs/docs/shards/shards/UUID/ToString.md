@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # UUID.ToString
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`Int16`](../../types/#int16) |
-| `<output>` || | | [`String`](../../types/#string) |
-| `Hyphenated` |  | Whether to use hyphens in the output. | `false` | [`Bool`](../../types/#bool) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Int16`](../../types/#int16) |
+| `Output ➡️` ||The resulting output of the shard | | [`String`](../../types/#string) |
+| `Hyphenated` | :fontawesome-solid-circle-plus:{title="No"}  | Whether to use hyphens in the output. | `false` | [`Bool`](../../types/#bool) |
 
 </div>
 

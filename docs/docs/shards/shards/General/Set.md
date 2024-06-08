@@ -7,14 +7,14 @@ license: CC-BY-SA-4.0
 # Set
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||Input becomes the value of the variable being created. | | [`Any`](../../types/#any) |
-| `<output>` ||The input to this shard is passed through as its output. | | [`Any`](../../types/#any) |
-| `Name` |  | The name of the variable. | `` | [`String`](../../types/#string)[`&Any`](../../types/#contextvar) |
-| `Key` |  | The key of the value to write in the table (parameter applicable only if the target variable is a table). | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar)[`None`](../../types/#none) |
-| `Global` |  | If the variable is available to all of the wires in the same mesh. | `false` | [`Bool`](../../types/#bool) |
-| `Tracked` |  | If the variable should be marked as tracked. | `false` | [`Bool`](../../types/#bool) |
+| `⬅️ Input` ||Input becomes the value of the variable being created. | | [`Any`](../../types/#any) |
+| `Output ➡️` ||The input to this shard is passed through as its output. | | [`Any`](../../types/#any) |
+| `Name` | :fontawesome-solid-circle-plus:{title="No"}  | The name of the variable. | `` | [`String`](../../types/#string)[`&Any`](../../types/#contextvar) |
+| `Key` | :fontawesome-solid-circle-plus:{title="No"}  | The key of the value to write in the table (parameter applicable only if the target variable is a table). | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar)[`None`](../../types/#none) |
+| `Global` | :fontawesome-solid-circle-plus:{title="No"}  | If the variable is available to all of the wires in the same mesh. | `false` | [`Bool`](../../types/#bool) |
+| `Tracked` | :fontawesome-solid-circle-plus:{title="No"}  | If the variable should be marked as tracked. | `false` | [`Bool`](../../types/#bool) |
 
 </div>
 

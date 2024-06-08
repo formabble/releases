@@ -7,10 +7,10 @@ license: CC-BY-SA-4.0
 # Fbl.Deform
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`None`](../../types/#none)[`Int16`](../../types/#int16)[`Fbl.TypedFormId`](../../types/#fbl.typedformid) |
-| `<output>` || | | [`Any`](../../types/#any) |
+| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none)[`Int16`](../../types/#int16)[`Fbl.TypedFormId`](../../types/#fbl.typedformid) |
+| `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
 
 </div>
 

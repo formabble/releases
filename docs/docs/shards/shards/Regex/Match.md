@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # Regex.Match
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`String`](../../types/#string) |
-| `<output>` || | | [`[String]`](../../types/#seq) |
-| `Regex` |  | The regular expression. | `` | [`String`](../../types/#string) |
+| `⬅️ Input` ||The input of the shard, if any | | [`String`](../../types/#string) |
+| `Output ➡️` ||The resulting output of the shard | | [`[String]`](../../types/#seq) |
+| `Regex` | :fontawesome-solid-circle-plus:{title="No"}  | The regular expression. | `` | [`String`](../../types/#string) |
 
 </div>
 

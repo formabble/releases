@@ -7,14 +7,14 @@ license: CC-BY-SA-4.0
 # Gizmos.Line
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`Any`](../../types/#any) |
-| `<output>` || | | [`None`](../../types/#none) |
-| `A` |  | Starting position of the line | `None` | [`Float3`](../../types/#float3)[`&Float3`](../../types/#contextvar) |
-| `B` |  | Ending position of the line | `None` | [`Float3`](../../types/#float3)[`&Float3`](../../types/#contextvar) |
-| `Color` |  | Linear color of the line | `None` | [`None`](../../types/#none)[`Float4`](../../types/#float4)[`&Float4`](../../types/#contextvar) |
-| `Thickness` |  | Width of the line in screen space | `None` | [`None`](../../types/#none)[`Int`](../../types/#int)[`Float`](../../types/#float) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
+| `Output ➡️` ||The resulting output of the shard | | [`None`](../../types/#none) |
+| `A` | :fontawesome-solid-circle-xmark:{title="Yes"}  | Starting position of the line | `None` | [`Float3`](../../types/#float3)[`&Float3`](../../types/#contextvar) |
+| `B` | :fontawesome-solid-circle-xmark:{title="Yes"}  | Ending position of the line | `None` | [`Float3`](../../types/#float3)[`&Float3`](../../types/#contextvar) |
+| `Color` | :fontawesome-solid-circle-plus:{title="No"}  | Linear color of the line | `None` | [`None`](../../types/#none)[`Float4`](../../types/#float4)[`&Float4`](../../types/#contextvar) |
+| `Thickness` | :fontawesome-solid-circle-plus:{title="No"}  | Width of the line in screen space | `None` | [`None`](../../types/#none)[`Int`](../../types/#int)[`Float`](../../types/#float) |
 
 </div>
 

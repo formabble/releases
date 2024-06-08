@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # TypeOf
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`None`](../../types/#none) |
-| `<output>` || | | [`Type`](../../types/#type) |
-| `OutputOf` |  | Evaluates the output type of the given expression. That type will be checked against this shard's input. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
+| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
+| `Output ➡️` ||The resulting output of the shard | | [`Type`](../../types/#type) |
+| `OutputOf` | :fontawesome-solid-circle-plus:{title="No"}  | Evaluates the output type of the given expression. That type will be checked against this shard's input. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
 
 </div>
 

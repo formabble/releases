@@ -7,10 +7,10 @@ license: CC-BY-SA-4.0
 # IntsToBytes
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`[Int]`](../../types/#seq) |
-| `<output>` || | | [`Bytes`](../../types/#bytes) |
+| `⬅️ Input` ||The input of the shard, if any | | [`[Int]`](../../types/#seq) |
+| `Output ➡️` ||The resulting output of the shard | | [`Bytes`](../../types/#bytes) |
 
 </div>
 

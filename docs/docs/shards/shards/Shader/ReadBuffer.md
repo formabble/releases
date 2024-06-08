@@ -7,12 +7,12 @@ license: CC-BY-SA-4.0
 # Shader.ReadBuffer
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`None`](../../types/#none) |
-| `<output>` || | |  |
-| `Name` |  | The name of the field to read/write | `` | [`String`](../../types/#string) |
-| `BufferName` |  | The name of the buffer to read from (object/view) (default: object) | `` | [`String`](../../types/#string) |
+| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
+| `Output ➡️` ||The resulting output of the shard | |  |
+| `Name` | :fontawesome-solid-circle-plus:{title="No"}  | The name of the field to read/write | `` | [`String`](../../types/#string) |
+| `BufferName` | :fontawesome-solid-circle-plus:{title="No"}  | The name of the buffer to read from (object/view) (default: object) | `` | [`String`](../../types/#string) |
 
 </div>
 

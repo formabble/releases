@@ -7,14 +7,14 @@ license: CC-BY-SA-4.0
 # Fbl.Formalize
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`{Any}`](../../types/#table)[`None`](../../types/#none) |
-| `<output>` || | | [`None`](../../types/#none)[`Int16`](../../types/#int16)[`Fbl.TypedFormId`](../../types/#fbl.typedformid) |
-| `Id` |  | The id of the form asset. | `` | [`String`](../../types/#string)[`&String`](../../types/#contextvar) |
-| `Wait` |  | If we should wait the full formalization of the form before continuing. | `false` | [`Bool`](../../types/#bool) |
-| `Tags` |  | The tags to add to the form. | `None` | [`[Any]`](../../types/#seq)[`None`](../../types/#none) |
-| `Traits` |  | Create a form and check if it has the given traits, implies wait = true. | `None` | [`None`](../../types/#none)[`{[Trait]}`](../../types/#table) |
+| `⬅️ Input` ||The input of the shard, if any | | [`{Any}`](../../types/#table)[`None`](../../types/#none) |
+| `Output ➡️` ||The resulting output of the shard | | [`None`](../../types/#none)[`Int16`](../../types/#int16)[`Fbl.TypedFormId`](../../types/#fbl.typedformid) |
+| `Id` | :fontawesome-solid-circle-plus:{title="No"}  | The id of the form asset. | `` | [`String`](../../types/#string)[`&String`](../../types/#contextvar) |
+| `Wait` | :fontawesome-solid-circle-plus:{title="No"}  | If we should wait the full formalization of the form before continuing. | `false` | [`Bool`](../../types/#bool) |
+| `Tags` | :fontawesome-solid-circle-plus:{title="No"}  | The tags to add to the form. | `None` | [`[Any]`](../../types/#seq)[`None`](../../types/#none) |
+| `Traits` | :fontawesome-solid-circle-plus:{title="No"}  | Create a form and check if it has the given traits, implies wait = true. | `None` | [`None`](../../types/#none)[`{[Trait]}`](../../types/#table) |
 
 </div>
 

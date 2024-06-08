@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # ExpectInt8Seq
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`Any`](../../types/#any) |
-| `<output>` || | | [`[Int8]`](../../types/#seq) |
-| `Unsafe` |  | If we should skip performing deep type hashing and comparison. (generally fast but this might improve performance) | `false` | [`Bool`](../../types/#bool) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
+| `Output ➡️` ||The resulting output of the shard | | [`[Int8]`](../../types/#seq) |
+| `Unsafe` | :fontawesome-solid-circle-plus:{title="No"}  | If we should skip performing deep type hashing and comparison. (generally fast but this might improve performance) | `false` | [`Bool`](../../types/#bool) |
 
 </div>
 

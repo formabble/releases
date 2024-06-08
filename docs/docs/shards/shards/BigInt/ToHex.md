@@ -7,10 +7,10 @@ license: CC-BY-SA-4.0
 # BigInt.ToHex
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`Int`](../../types/#int)[`Bytes`](../../types/#bytes)[`String`](../../types/#string) |
-| `<output>` ||Hexadecimal representation of the integer value. | | [`String`](../../types/#string) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Int`](../../types/#int)[`Bytes`](../../types/#bytes)[`String`](../../types/#string) |
+| `Output ➡️` ||Hexadecimal representation of the integer value. | | [`String`](../../types/#string) |
 
 </div>
 

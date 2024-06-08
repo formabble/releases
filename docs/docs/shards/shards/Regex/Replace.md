@@ -7,12 +7,12 @@ license: CC-BY-SA-4.0
 # Regex.Replace
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`String`](../../types/#string) |
-| `<output>` || | | [`String`](../../types/#string) |
-| `Regex` |  | The regular expression. | `` | [`String`](../../types/#string) |
-| `Replacement` |  | The replacement expression. | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar) |
+| `⬅️ Input` ||The input of the shard, if any | | [`String`](../../types/#string) |
+| `Output ➡️` ||The resulting output of the shard | | [`String`](../../types/#string) |
+| `Regex` | :fontawesome-solid-circle-plus:{title="No"}  | The regular expression. | `` | [`String`](../../types/#string) |
+| `Replacement` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The replacement expression. | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar) |
 
 </div>
 

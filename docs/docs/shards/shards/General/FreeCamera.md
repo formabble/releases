@@ -7,14 +7,14 @@ license: CC-BY-SA-4.0
 # FreeCamera
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`[Float4]`](../../types/#seq) |
-| `<output>` || | | [`[Float4]`](../../types/#seq) |
-| `FlySpeed` |  | Controls fly speed with the keyboard | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
-| `ScrollSpeed` |  | Controls middle mouse movement speed | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
-| `PanSpeed` |  | Controls middle mouse pan speed | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
-| `LookSpeed` |  | Controls right mouse look speed | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
+| `⬅️ Input` ||The input of the shard, if any | | [`[Float4]`](../../types/#seq) |
+| `Output ➡️` ||The resulting output of the shard | | [`[Float4]`](../../types/#seq) |
+| `FlySpeed` | :fontawesome-solid-circle-plus:{title="No"}  | Controls fly speed with the keyboard | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
+| `ScrollSpeed` | :fontawesome-solid-circle-plus:{title="No"}  | Controls middle mouse movement speed | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
+| `PanSpeed` | :fontawesome-solid-circle-plus:{title="No"}  | Controls middle mouse pan speed | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
+| `LookSpeed` | :fontawesome-solid-circle-plus:{title="No"}  | Controls right mouse look speed | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
 
 </div>
 

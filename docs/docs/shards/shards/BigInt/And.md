@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # BigInt.And
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||Any valid big integer(s) represented as bytes supported by this operation. | | [`Bytes`](../../types/#bytes)[`[Bytes]`](../../types/#seq) |
-| `<output>` ||The result of the operation, usually in the same type as the input value. | | [`Bytes`](../../types/#bytes)[`[Bytes]`](../../types/#seq) |
-| `Operand` |  | The bytes variable representing the operand | `0` | [`&Bytes`](../../types/#contextvar)[`&[Bytes]`](../../types/#contextvar) |
+| `⬅️ Input` ||Any valid big integer(s) represented as bytes supported by this operation. | | [`Bytes`](../../types/#bytes)[`[Bytes]`](../../types/#seq) |
+| `Output ➡️` ||The result of the operation, usually in the same type as the input value. | | [`Bytes`](../../types/#bytes)[`[Bytes]`](../../types/#seq) |
+| `Operand` | :fontawesome-solid-circle-plus:{title="No"}  | The bytes variable representing the operand | `0` | [`&Bytes`](../../types/#contextvar)[`&[Bytes]`](../../types/#contextvar) |
 
 </div>
 

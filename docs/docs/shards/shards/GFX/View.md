@@ -7,16 +7,16 @@ license: CC-BY-SA-4.0
 # GFX.View
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`None`](../../types/#none) |
-| `<output>` || | | [`GFX.View`](../../types/#gfx.view) |
-| `View` |  | The view matrix. | `None` | [`None`](../../types/#none)[`&[Float4]`](../../types/#contextvar) |
-| `Fov` |  | The vertical field of view. (In radians. Implies perspective projection) | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
-| `OrthographicSizeType` |  | The type of orthographic size. (Implies orthographic projection) | `None` | [`None`](../../types/#none)[`OrthographicSizeType`](../../../enums/OrthographicSizeType) |
-| `OrthographicSize` |  | The orthographic size. (Implies orthographic projection) | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
-| `Near` |  | Near clipping distance | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
-| `Far` |  | Far clipping distance | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
+| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
+| `Output ➡️` ||The resulting output of the shard | | [`GFX.View`](../../types/#gfx.view) |
+| `View` | :fontawesome-solid-circle-plus:{title="No"}  | The view matrix. | `None` | [`None`](../../types/#none)[`&[Float4]`](../../types/#contextvar) |
+| `Fov` | :fontawesome-solid-circle-plus:{title="No"}  | The vertical field of view. (In radians. Implies perspective projection) | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
+| `OrthographicSizeType` | :fontawesome-solid-circle-plus:{title="No"}  | The type of orthographic size. (Implies orthographic projection) | `None` | [`None`](../../types/#none)[`OrthographicSizeType`](../../../enums/OrthographicSizeType) |
+| `OrthographicSize` | :fontawesome-solid-circle-plus:{title="No"}  | The orthographic size. (Implies orthographic projection) | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
+| `Near` | :fontawesome-solid-circle-plus:{title="No"}  | Near clipping distance | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
+| `Far` | :fontawesome-solid-circle-plus:{title="No"}  | Far clipping distance | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
 
 </div>
 

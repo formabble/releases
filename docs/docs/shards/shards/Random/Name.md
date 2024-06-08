@@ -7,12 +7,12 @@ license: CC-BY-SA-4.0
 # Random.Name
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`None`](../../types/#none) |
-| `<output>` || | | [`String`](../../types/#string) |
-| `Words` |  | How many words to generate and concatenate | `2` | [`Int`](../../types/#int) |
-| `Separator` |  | A separator character to use between generated words | `-` | [`String`](../../types/#string) |
+| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
+| `Output ➡️` ||The resulting output of the shard | | [`String`](../../types/#string) |
+| `Words` | :fontawesome-solid-circle-plus:{title="No"}  | How many words to generate and concatenate | `2` | [`Int`](../../types/#int) |
+| `Separator` | :fontawesome-solid-circle-plus:{title="No"}  | A separator character to use between generated words | `-` | [`String`](../../types/#string) |
 
 </div>
 

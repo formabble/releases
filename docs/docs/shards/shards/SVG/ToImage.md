@@ -7,13 +7,13 @@ license: CC-BY-SA-4.0
 # SVG.ToImage
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`String`](../../types/#string)[`Bytes`](../../types/#bytes) |
-| `<output>` || | | [`Image`](../../types/#image) |
-| `Size` |  | The desired output size, if (0, 0) will default to the size defined in the svg data. | `None` | [`Int2`](../../types/#int2)[`&Int2`](../../types/#contextvar)[`None`](../../types/#none) |
-| `Offset` |  | A positive x and y value offsets towards the right and the bottom of the screen respectively. (0.0, 0.0) by default. | `None` | [`None`](../../types/#none)[`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar) |
-| `Padding` |  | Pixels of padding to add | `None` | [`Int2`](../../types/#int2) |
+| `⬅️ Input` ||The input of the shard, if any | | [`String`](../../types/#string)[`Bytes`](../../types/#bytes) |
+| `Output ➡️` ||The resulting output of the shard | | [`Image`](../../types/#image) |
+| `Size` | :fontawesome-solid-circle-plus:{title="No"}  | The desired output size, if (0, 0) will default to the size defined in the svg data. | `None` | [`Int2`](../../types/#int2)[`&Int2`](../../types/#contextvar)[`None`](../../types/#none) |
+| `Offset` | :fontawesome-solid-circle-plus:{title="No"}  | A positive x and y value offsets towards the right and the bottom of the screen respectively. (0.0, 0.0) by default. | `None` | [`None`](../../types/#none)[`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar) |
+| `Padding` | :fontawesome-solid-circle-xmark:{title="Yes"}  | Pixels of padding to add | `None` | [`Int2`](../../types/#int2) |
 
 </div>
 

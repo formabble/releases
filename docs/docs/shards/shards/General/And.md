@@ -7,10 +7,10 @@ license: CC-BY-SA-4.0
 # And
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||The first operand to be evaluated. | | [`Bool`](../../types/#bool) |
-| `<output>` ||The output of this shard will be its input. | | [`Bool`](../../types/#bool) |
+| `⬅️ Input` ||The first operand to be evaluated. | | [`Bool`](../../types/#bool) |
+| `Output ➡️` ||The output of this shard will be its input. | | [`Bool`](../../types/#bool) |
 
 </div>
 

@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # UI.RenderTarget
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||The image to display. | | [`GFX.Texture2D`](../../types/#gfx.texture2d) |
-| `<output>` ||The output of this shard will be its input. | | [`GFX.Texture2D`](../../types/#gfx.texture2d) |
-| `Scale` |  | Scaling to apply to the source texture. | `(1 1)` | [`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar) |
+| `⬅️ Input` ||The image to display. | | [`GFX.Texture2D`](../../types/#gfx.texture2d) |
+| `Output ➡️` ||The output of this shard will be its input. | | [`GFX.Texture2D`](../../types/#gfx.texture2d) |
+| `Scale` | :fontawesome-solid-circle-plus:{title="No"}  | Scaling to apply to the source texture. | `(1 1)` | [`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar) |
 
 </div>
 

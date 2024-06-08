@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # CRDT.Apply
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`Bytes`](../../types/#bytes) |
-| `<output>` || | | [`Bytes`](../../types/#bytes) |
-| `CRDT` |  | The CRDT instance to apply the operation to. | `None` | [`&Object`](../../types/#contextvar) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Bytes`](../../types/#bytes) |
+| `Output ➡️` ||The resulting output of the shard | | [`Bytes`](../../types/#bytes) |
+| `CRDT` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The CRDT instance to apply the operation to. | `None` | [`&Object`](../../types/#contextvar) |
 
 </div>
 

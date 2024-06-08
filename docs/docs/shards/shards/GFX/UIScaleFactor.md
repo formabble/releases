@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # GFX.UIScaleFactor
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`None`](../../types/#none) |
-| `<output>` || | | [`Float`](../../types/#float) |
-| `Window` |  | The window to get the scaling factor of. | `None` | [`None`](../../types/#none)[`&Object`](../../types/#contextvar) |
+| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
+| `Output ➡️` ||The resulting output of the shard | | [`Float`](../../types/#float) |
+| `Window` | :fontawesome-solid-circle-plus:{title="No"}  | The window to get the scaling factor of. | `None` | [`None`](../../types/#none)[`&Object`](../../types/#contextvar) |
 
 </div>
 

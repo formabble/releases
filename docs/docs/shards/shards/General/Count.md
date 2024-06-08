@@ -7,13 +7,13 @@ license: CC-BY-SA-4.0
 # Count
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||Any input is ignored. | | [`None`](../../types/#none) |
-| `<output>` ||Count of characters, elements, or key-value pairs contained in the `:Name` parameter variable. | | [`Int`](../../types/#int) |
-| `Name` |  | The name of the variable. | `` | [`String`](../../types/#string)[`&Any`](../../types/#contextvar) |
-| `Key` |  | The key of the value to read from the table (parameter applicable only if the target variable is a table). | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar)[`None`](../../types/#none) |
-| `Global` |  | If the variable is available to all of the wires in the same mesh. | `false` | [`Bool`](../../types/#bool) |
+| `⬅️ Input` ||Any input is ignored. | | [`None`](../../types/#none) |
+| `Output ➡️` ||Count of characters, elements, or key-value pairs contained in the `:Name` parameter variable. | | [`Int`](../../types/#int) |
+| `Name` | :fontawesome-solid-circle-plus:{title="No"}  | The name of the variable. | `` | [`String`](../../types/#string)[`&Any`](../../types/#contextvar) |
+| `Key` | :fontawesome-solid-circle-plus:{title="No"}  | The key of the value to read from the table (parameter applicable only if the target variable is a table). | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar)[`None`](../../types/#none) |
+| `Global` | :fontawesome-solid-circle-plus:{title="No"}  | If the variable is available to all of the wires in the same mesh. | `false` | [`Bool`](../../types/#bool) |
 
 </div>
 

@@ -7,10 +7,10 @@ license: CC-BY-SA-4.0
 # ExpectNone
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`Any`](../../types/#any) |
-| `<output>` || | | [`None`](../../types/#none) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
+| `Output ➡️` ||The resulting output of the shard | | [`None`](../../types/#none) |
 
 </div>
 

@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # Flush
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`Any`](../../types/#any) |
-| `<output>` || | | [`Any`](../../types/#any) |
-| `Name` |  | The name of the channel. | `` | [`String`](../../types/#string) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
+| `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
+| `Name` | :fontawesome-solid-circle-plus:{title="No"}  | The name of the channel. | `` | [`String`](../../types/#string) |
 
 </div>
 

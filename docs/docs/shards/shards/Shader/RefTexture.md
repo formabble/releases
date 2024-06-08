@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # Shader.RefTexture
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`Any`](../../types/#any) |
-| `<output>` || | | [`GFX.Texture2D`](../../types/#gfx.texture2d)[`GFX.TextureCube`](../../types/#gfx.texturecube) |
-| `Name` |  | Name of the texture | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
+| `Output ➡️` ||The resulting output of the shard | | [`GFX.Texture2D`](../../types/#gfx.texture2d)[`GFX.TextureCube`](../../types/#gfx.texturecube) |
+| `Name` | :fontawesome-solid-circle-xmark:{title="Yes"}  | Name of the texture | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar) |
 
 </div>
 

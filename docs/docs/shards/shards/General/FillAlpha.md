@@ -7,10 +7,10 @@ license: CC-BY-SA-4.0
 # FillAlpha
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`Image`](../../types/#image) |
-| `<output>` || | | [`Image`](../../types/#image) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Image`](../../types/#image) |
+| `Output ➡️` ||The resulting output of the shard | | [`Image`](../../types/#image) |
 
 </div>
 

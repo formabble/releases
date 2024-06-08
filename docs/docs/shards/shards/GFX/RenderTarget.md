@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # GFX.RenderTarget
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`Any`](../../types/#any) |
-| `<output>` || | | [`GFX.RenderTarget`](../../types/#gfx.rendertarget) |
-| `Attachments` |  | The list of attachements to create. | `None` | [`{{String}}`](../../types/#table) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
+| `Output ➡️` ||The resulting output of the shard | | [`GFX.RenderTarget`](../../types/#gfx.rendertarget) |
+| `Attachments` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The list of attachements to create. | `None` | [`{{String}}`](../../types/#table) |
 
 </div>
 

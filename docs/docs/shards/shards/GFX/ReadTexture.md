@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # GFX.ReadTexture
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`GFX.Texture2D`](../../types/#gfx.texture2d)[`GFX.TextureCube`](../../types/#gfx.texturecube) |
-| `<output>` || | | [`Image`](../../types/#image) |
-| `Wait` |  | Wait for read to complete | `false` | [`Bool`](../../types/#bool) |
+| `⬅️ Input` ||The input of the shard, if any | | [`GFX.Texture2D`](../../types/#gfx.texture2d)[`GFX.TextureCube`](../../types/#gfx.texturecube) |
+| `Output ➡️` ||The resulting output of the shard | | [`Image`](../../types/#image) |
+| `Wait` | :fontawesome-solid-circle-plus:{title="No"}  | Wait for read to complete | `false` | [`Bool`](../../types/#bool) |
 
 </div>
 

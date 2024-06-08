@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # RandomBytes
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`None`](../../types/#none) |
-| `<output>` || | | [`Bytes`](../../types/#bytes) |
-| `Size` |  | The amount of bytes to output. | `32` | [`Int`](../../types/#int) |
+| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
+| `Output ➡️` ||The resulting output of the shard | | [`Bytes`](../../types/#bytes) |
+| `Size` | :fontawesome-solid-circle-plus:{title="No"}  | The amount of bytes to output. | `32` | [`Int`](../../types/#int) |
 
 </div>
 

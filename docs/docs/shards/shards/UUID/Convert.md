@@ -7,10 +7,10 @@ license: CC-BY-SA-4.0
 # UUID.Convert
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`Bytes`](../../types/#bytes)[`String`](../../types/#string) |
-| `<output>` || | | [`Int16`](../../types/#int16) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Bytes`](../../types/#bytes)[`String`](../../types/#string) |
+| `Output ➡️` ||The resulting output of the shard | | [`Int16`](../../types/#int16) |
 
 </div>
 

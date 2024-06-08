@@ -7,14 +7,14 @@ license: CC-BY-SA-4.0
 # Erase
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||Any input is ignored. | | [`Any`](../../types/#any) |
-| `<output>` ||The input to this shard is passed through as its output. | | [`Any`](../../types/#any) |
-| `Indices` |  | One or multiple indices to filter from a sequence. | `None` | [`Any`](../../types/#any)[`&Any`](../../types/#contextvar) |
-| `Name` |  | The name of the variable. | `` | [`String`](../../types/#string)[`&Any`](../../types/#contextvar) |
-| `Key` |  | The key of the value to erase from the table (this variable will become a table). | `None` | [`Any`](../../types/#any) |
-| `Global` |  | If the variable is or should be available to all of the wires in the same mesh. | `false` | [`Bool`](../../types/#bool) |
+| `⬅️ Input` ||Any input is ignored. | | [`Any`](../../types/#any) |
+| `Output ➡️` ||The input to this shard is passed through as its output. | | [`Any`](../../types/#any) |
+| `Indices` | :fontawesome-solid-circle-xmark:{title="Yes"}  | One or multiple indices to filter from a sequence. | `None` | [`Any`](../../types/#any)[`&Any`](../../types/#contextvar) |
+| `Name` | :fontawesome-solid-circle-plus:{title="No"}  | The name of the variable. | `` | [`String`](../../types/#string)[`&Any`](../../types/#contextvar) |
+| `Key` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The key of the value to erase from the table (this variable will become a table). | `None` | [`Any`](../../types/#any) |
+| `Global` | :fontawesome-solid-circle-plus:{title="No"}  | If the variable is or should be available to all of the wires in the same mesh. | `false` | [`Bool`](../../types/#bool) |
 
 </div>
 

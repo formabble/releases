@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # CRDT.Save
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`None`](../../types/#none) |
-| `<output>` || | | [`Bytes`](../../types/#bytes) |
-| `CRDT` |  | The CRDT instance to save. | `None` | [`&Object`](../../types/#contextvar) |
+| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
+| `Output ➡️` ||The resulting output of the shard | | [`Bytes`](../../types/#bytes) |
+| `CRDT` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The CRDT instance to save. | `None` | [`&Object`](../../types/#contextvar) |
 
 </div>
 

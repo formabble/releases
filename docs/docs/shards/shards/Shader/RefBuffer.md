@@ -7,12 +7,12 @@ license: CC-BY-SA-4.0
 # Shader.RefBuffer
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`Any`](../../types/#any) |
-| `<output>` || | | [`GFX.Buffer`](../../types/#gfx.buffer) |
-| `Name` |  | The name of the buffer | `None` | [`String`](../../types/#string) |
-| `Pointer` |  | Reference as pointer | `None` | [`None`](../../types/#none)[`Bool`](../../types/#bool) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
+| `Output ➡️` ||The resulting output of the shard | | [`GFX.Buffer`](../../types/#gfx.buffer) |
+| `Name` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The name of the buffer | `None` | [`String`](../../types/#string) |
+| `Pointer` | :fontawesome-solid-circle-plus:{title="No"}  | Reference as pointer | `None` | [`None`](../../types/#none)[`Bool`](../../types/#bool) |
 
 </div>
 

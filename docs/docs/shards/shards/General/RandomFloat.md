@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # RandomFloat
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`None`](../../types/#none) |
-| `<output>` || | | [`Float`](../../types/#float) |
-| `Max` |  | The maximum (if integer, not including) value to output. | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
+| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
+| `Output ➡️` ||The resulting output of the shard | | [`Float`](../../types/#float) |
+| `Max` | :fontawesome-solid-circle-plus:{title="No"}  | The maximum (if integer, not including) value to output. | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
 
 </div>
 

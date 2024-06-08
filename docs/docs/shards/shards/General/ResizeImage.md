@@ -7,12 +7,12 @@ license: CC-BY-SA-4.0
 # ResizeImage
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`Image`](../../types/#image) |
-| `<output>` || | | [`Image`](../../types/#image) |
-| `Width` |  | The target width. | `32` | [`Int`](../../types/#int)[`&Int`](../../types/#contextvar) |
-| `Height` |  | The target height. | `32` | [`Int`](../../types/#int)[`&Int`](../../types/#contextvar) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Image`](../../types/#image) |
+| `Output ➡️` ||The resulting output of the shard | | [`Image`](../../types/#image) |
+| `Width` | :fontawesome-solid-circle-plus:{title="No"}  | The target width. | `32` | [`Int`](../../types/#int)[`&Int`](../../types/#contextvar) |
+| `Height` | :fontawesome-solid-circle-plus:{title="No"}  | The target height. | `32` | [`Int`](../../types/#int)[`&Int`](../../types/#contextvar) |
 
 </div>
 

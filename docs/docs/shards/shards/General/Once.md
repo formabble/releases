@@ -7,12 +7,12 @@ license: CC-BY-SA-4.0
 # Once
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`Any`](../../types/#any) |
-| `<output>` || | | [`Any`](../../types/#any) |
-| `Action` |  | The shard or sequence of shards to execute. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
-| `Every` |  | The number of seconds to wait until repeating the action, if 0 the action will happen only once per wire flow execution. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
+| `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
+| `Action` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The shard or sequence of shards to execute. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `Every` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The number of seconds to wait until repeating the action, if 0 the action will happen only once per wire flow execution. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
 
 </div>
 

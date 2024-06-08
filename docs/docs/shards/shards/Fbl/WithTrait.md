@@ -7,12 +7,12 @@ license: CC-BY-SA-4.0
 # Fbl.WithTrait
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`None`](../../types/#none)[`Int16`](../../types/#int16)[`Fbl.TypedFormId`](../../types/#fbl.typedformid) |
-| `<output>` || | | [`Fbl.TypedFormId`](../../types/#fbl.typedformid) |
-| `Behavior` |  | The behavior to check | `None` | [`WirePoolType`](../../../enums/WirePoolType) |
-| `Trait` |  | The trait to check for | `None` | [`Trait`](../../types/#trait) |
+| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none)[`Int16`](../../types/#int16)[`Fbl.TypedFormId`](../../types/#fbl.typedformid) |
+| `Output ➡️` ||The resulting output of the shard | | [`Fbl.TypedFormId`](../../types/#fbl.typedformid) |
+| `Behavior` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The behavior to check | `None` | [`WirePoolType`](../../../enums/WirePoolType) |
+| `Trait` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The trait to check for | `None` | [`Trait`](../../types/#trait) |
 
 </div>
 

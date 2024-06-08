@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # Const
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||Any input is ignored. | | [`None`](../../types/#none) |
-| `<output>` ||The declared constant value. | | [`Any`](../../types/#any) |
-| `Value` |  | The constant value to insert in the wire. | `None` | [`Any`](../../types/#any) |
+| `⬅️ Input` ||Any input is ignored. | | [`None`](../../types/#none) |
+| `Output ➡️` ||The declared constant value. | | [`Any`](../../types/#any) |
+| `Value` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The constant value to insert in the wire. | `None` | [`Any`](../../types/#any) |
 
 </div>
 

@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # ParseInt
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||A string representing a number. | | [`String`](../../types/#string) |
-| `<output>` ||A signed integer equivalent to the number contained in the string input. | | [`Int`](../../types/#int) |
-| `Base` |  | Numerical base (radix) that determines the valid characters and their interpretation. | `10` | [`Int`](../../types/#int) |
+| `⬅️ Input` ||A string representing a number. | | [`String`](../../types/#string) |
+| `Output ➡️` ||A signed integer equivalent to the number contained in the string input. | | [`Int`](../../types/#int) |
+| `Base` | :fontawesome-solid-circle-plus:{title="No"}  | Numerical base (radix) that determines the valid characters and their interpretation. | `10` | [`Int`](../../types/#int) |
 
 </div>
 

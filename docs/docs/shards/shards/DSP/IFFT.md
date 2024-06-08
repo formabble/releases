@@ -7,12 +7,12 @@ license: CC-BY-SA-4.0
 # DSP.IFFT
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`[Float2]`](../../types/#seq) |
-| `<output>` || | | [`[Float]`](../../types/#seq)[`[Float2]`](../../types/#seq)[`Audio`](../../types/#audio) |
-| `Audio` |  | If the output should be an Audio chunk. | `false` | [`Bool`](../../types/#bool) |
-| `Complex` |  | If the output should be complex numbers (only if not Audio). | `false` | [`Bool`](../../types/#bool) |
+| `⬅️ Input` ||The input of the shard, if any | | [`[Float2]`](../../types/#seq) |
+| `Output ➡️` ||The resulting output of the shard | | [`[Float]`](../../types/#seq)[`[Float2]`](../../types/#seq)[`Audio`](../../types/#audio) |
+| `Audio` | :fontawesome-solid-circle-plus:{title="No"}  | If the output should be an Audio chunk. | `false` | [`Bool`](../../types/#bool) |
+| `Complex` | :fontawesome-solid-circle-plus:{title="No"}  | If the output should be complex numbers (only if not Audio). | `false` | [`Bool`](../../types/#bool) |
 
 </div>
 

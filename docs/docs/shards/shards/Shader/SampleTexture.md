@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # Shader.SampleTexture
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`None`](../../types/#none) |
-| `<output>` || | | [`Float4`](../../types/#float4) |
-| `Name` |  | Name of the texture | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar) |
+| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
+| `Output ➡️` ||The resulting output of the shard | | [`Float4`](../../types/#float4) |
+| `Name` | :fontawesome-solid-circle-xmark:{title="Yes"}  | Name of the texture | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar) |
 
 </div>
 

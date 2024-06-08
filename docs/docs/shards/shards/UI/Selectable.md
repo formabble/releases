@@ -7,16 +7,16 @@ license: CC-BY-SA-4.0
 # UI.Selectable
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`Any`](../../types/#any) |
-| `<output>` || | | [`Bool`](../../types/#bool) |
-| `Contents` |  | The UI contents to wrap, contain, and detect for selection. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
-| `IsSelected` |  | Callback function for checking if the contents are currently selected. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
-| `Clicked` |  | Callback function for the contents of this shard is clicked. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
-| `DoubleClicked` |  | Callback function for the contents of this shard is clicked. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
-| `ContextMenu` |  | Callback function for the right-click context menu. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
-| `ID` |  | An optional ID value in case of ID conflicts. | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar)[`None`](../../types/#none) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
+| `Output ➡️` ||The resulting output of the shard | | [`Bool`](../../types/#bool) |
+| `Contents` | :fontawesome-solid-circle-plus:{title="No"}  | The UI contents to wrap, contain, and detect for selection. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `IsSelected` | :fontawesome-solid-circle-plus:{title="No"}  | Callback function for checking if the contents are currently selected. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `Clicked` | :fontawesome-solid-circle-plus:{title="No"}  | Callback function for the contents of this shard is clicked. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `DoubleClicked` | :fontawesome-solid-circle-plus:{title="No"}  | Callback function for the contents of this shard is clicked. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `ContextMenu` | :fontawesome-solid-circle-plus:{title="No"}  | Callback function for the right-click context menu. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `ID` | :fontawesome-solid-circle-plus:{title="No"}  | An optional ID value in case of ID conflicts. | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar)[`None`](../../types/#none) |
 
 </div>
 

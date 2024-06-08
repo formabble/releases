@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # GFX.RenderTargetTexture
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`GFX.RenderTarget`](../../types/#gfx.rendertarget) |
-| `<output>` || | | [`GFX.Texture2D`](../../types/#gfx.texture2d) |
-| `Name` |  | Name of the attachment to retrieve | `None` | [`String`](../../types/#string)[`None`](../../types/#none) |
+| `⬅️ Input` ||The input of the shard, if any | | [`GFX.RenderTarget`](../../types/#gfx.rendertarget) |
+| `Output ➡️` ||The resulting output of the shard | | [`GFX.Texture2D`](../../types/#gfx.texture2d) |
+| `Name` | :fontawesome-solid-circle-plus:{title="No"}  | Name of the attachment to retrieve | `None` | [`String`](../../types/#string)[`None`](../../types/#none) |
 
 </div>
 

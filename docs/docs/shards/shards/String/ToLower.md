@@ -7,10 +7,10 @@ license: CC-BY-SA-4.0
 # String.ToLower
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||A string. | | [`String`](../../types/#string) |
-| `<output>` ||A string in lowercase. | | [`String`](../../types/#string) |
+| `⬅️ Input` ||A string. | | [`String`](../../types/#string) |
+| `Output ➡️` ||A string in lowercase. | | [`String`](../../types/#string) |
 
 </div>
 

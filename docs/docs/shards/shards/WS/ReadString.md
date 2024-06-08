@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # WS.ReadString
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`None`](../../types/#none) |
-| `<output>` || | | [`String`](../../types/#string) |
-| `Client` |  | The WebSocket client instance. | `None` | [`&Object`](../../types/#contextvar) |
+| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
+| `Output ➡️` ||The resulting output of the shard | | [`String`](../../types/#string) |
+| `Client` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The WebSocket client instance. | `None` | [`&Object`](../../types/#contextvar) |
 
 </div>
 

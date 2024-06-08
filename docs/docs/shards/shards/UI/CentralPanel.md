@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # UI.CentralPanel
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||The value that will be passed to the Contents shards of the panel. | | [`Any`](../../types/#any) |
-| `<output>` ||The output of this shard will be its input. | | [`Any`](../../types/#any) |
-| `Contents` |  | The UI contents. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `⬅️ Input` ||The value that will be passed to the Contents shards of the panel. | | [`Any`](../../types/#any) |
+| `Output ➡️` ||The output of this shard will be its input. | | [`Any`](../../types/#any) |
+| `Contents` | :fontawesome-solid-circle-plus:{title="No"}  | The UI contents. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
 
 </div>
 

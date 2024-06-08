@@ -7,12 +7,12 @@ license: CC-BY-SA-4.0
 # UI.Tab
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||The value that will be passed to the Contents shards of the tab. | | [`Any`](../../types/#any) |
-| `<output>` ||The output of this shard will be its input. | | [`Any`](../../types/#any) |
-| `Title` |  | The title of the tab. | `None` | [`String`](../../types/#string) |
-| `Contents` |  | The UI contents. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `⬅️ Input` ||The value that will be passed to the Contents shards of the tab. | | [`Any`](../../types/#any) |
+| `Output ➡️` ||The output of this shard will be its input. | | [`Any`](../../types/#any) |
+| `Title` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The title of the tab. | `None` | [`String`](../../types/#string) |
+| `Contents` | :fontawesome-solid-circle-plus:{title="No"}  | The UI contents. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
 
 </div>
 

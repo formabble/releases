@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # UI.Space
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||The value is ignored. | | [`Any`](../../types/#any) |
-| `<output>` ||The output of this shard will be its input. | | [`Any`](../../types/#any) |
-| `Amount` |  | The amount of space to insert. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
+| `⬅️ Input` ||The value is ignored. | | [`Any`](../../types/#any) |
+| `Output ➡️` ||The output of this shard will be its input. | | [`Any`](../../types/#any) |
+| `Amount` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The amount of space to insert. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
 
 </div>
 

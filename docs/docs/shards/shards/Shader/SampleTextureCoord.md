@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # Shader.SampleTextureCoord
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`Float4`](../../types/#float4)[`Float3`](../../types/#float3)[`Float2`](../../types/#float2)[`Float`](../../types/#float) |
-| `<output>` || | | [`Float4`](../../types/#float4) |
-| `Name` |  | Name of the texture | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Float4`](../../types/#float4)[`Float3`](../../types/#float3)[`Float2`](../../types/#float2)[`Float`](../../types/#float) |
+| `Output ➡️` ||The resulting output of the shard | | [`Float4`](../../types/#float4) |
+| `Name` | :fontawesome-solid-circle-xmark:{title="Yes"}  | Name of the texture | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar) |
 
 </div>
 

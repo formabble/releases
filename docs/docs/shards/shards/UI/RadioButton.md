@@ -7,14 +7,14 @@ license: CC-BY-SA-4.0
 # UI.RadioButton
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||The value is ignored. | | [`None`](../../types/#none) |
-| `<output>` ||Indicates whether the radio button was clicked during this frame. | | [`Bool`](../../types/#bool) |
-| `Label` |  | The text label of this radio button. | `None` | [`String`](../../types/#string)[`None`](../../types/#none) |
-| `Variable` |  | The variable that holds the input value. | `None` | [`Any`](../../types/#any)[`&Any`](../../types/#contextvar) |
-| `Value` |  | The value to compare with. | `None` | [`Any`](../../types/#any) |
-| `Style` |  | The text style. | `None` | [`{Any}`](../../types/#table)[`&{Any}`](../../types/#contextvar) |
+| `⬅️ Input` ||The value is ignored. | | [`None`](../../types/#none) |
+| `Output ➡️` ||Indicates whether the radio button was clicked during this frame. | | [`Bool`](../../types/#bool) |
+| `Label` | :fontawesome-solid-circle-plus:{title="No"}  | The text label of this radio button. | `None` | [`String`](../../types/#string)[`None`](../../types/#none) |
+| `Variable` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The variable that holds the input value. | `None` | [`Any`](../../types/#any)[`&Any`](../../types/#contextvar) |
+| `Value` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The value to compare with. | `None` | [`Any`](../../types/#any) |
+| `Style` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The text style. | `None` | [`{Any}`](../../types/#table)[`&{Any}`](../../types/#contextvar) |
 
 </div>
 

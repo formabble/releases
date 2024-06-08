@@ -7,12 +7,12 @@ license: CC-BY-SA-4.0
 # Swap
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||Input is ignored. | | [`Any`](../../types/#any) |
-| `<output>` ||The input to this shard is passed through as its output. | | [`Any`](../../types/#any) |
-| `First` |  | The name of first variable. | `None` | [`&Any`](../../types/#contextvar) |
-| `Second` |  | The name of second variable. | `None` | [`&Any`](../../types/#contextvar) |
+| `⬅️ Input` ||Input is ignored. | | [`Any`](../../types/#any) |
+| `Output ➡️` ||The input to this shard is passed through as its output. | | [`Any`](../../types/#any) |
+| `First` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The name of first variable. | `None` | [`&Any`](../../types/#contextvar) |
+| `Second` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The name of second variable. | `None` | [`&Any`](../../types/#contextvar) |
 
 </div>
 

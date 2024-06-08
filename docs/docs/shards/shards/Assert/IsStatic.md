@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # Assert.IsStatic
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`None`](../../types/#none) |
-| `<output>` || | | [`Any`](../../types/#any) |
-| `Value` |  | Any value to check for being static (non-var) | `None` | [`Any`](../../types/#any) |
+| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
+| `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
+| `Value` | :fontawesome-solid-circle-xmark:{title="Yes"}  | Any value to check for being static (non-var) | `None` | [`Any`](../../types/#any) |
 
 </div>
 

@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # Physics.Torque
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`Float3`](../../types/#float3) |
-| `<output>` || | | [`Float3`](../../types/#float3) |
-| `RigidBody` |  | The rigidbody to apply the torque to. | `None` | [`&Object`](../../types/#contextvar)[`None`](../../types/#none) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Float3`](../../types/#float3) |
+| `Output ➡️` ||The resulting output of the shard | | [`Float3`](../../types/#float3) |
+| `RigidBody` | :fontawesome-solid-circle-plus:{title="No"}  | The rigidbody to apply the torque to. | `None` | [`&Object`](../../types/#contextvar)[`None`](../../types/#none) |
 
 </div>
 

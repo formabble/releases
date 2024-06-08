@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # UI.ColorInput
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||The value is ignored. | | [`None`](../../types/#none) |
-| `<output>` ||The selected color. | | [`Color`](../../types/#color) |
-| `Variable` |  | The variable that holds the input value. | `None` | [`Color`](../../types/#color)[`&Color`](../../types/#contextvar)[`None`](../../types/#none) |
+| `⬅️ Input` ||The value is ignored. | | [`None`](../../types/#none) |
+| `Output ➡️` ||The selected color. | | [`Color`](../../types/#color) |
+| `Variable` | :fontawesome-solid-circle-plus:{title="No"}  | The variable that holds the input value. | `None` | [`Color`](../../types/#color)[`&Color`](../../types/#contextvar)[`None`](../../types/#none) |
 
 </div>
 

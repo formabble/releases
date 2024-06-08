@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # RTake
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||The sequence from which elements have to be extracted. | | [`Bytes`](../../types/#bytes)[`String`](../../types/#string)[`[Any]`](../../types/#seq) |
-| `<output>` ||The extracted elements. | | [`Any`](../../types/#any) |
-| `Indices` |  | One or more indices (counted backwards from the last element) to extract from a sequence. | `None` | [`Int`](../../types/#int)[`[Int]`](../../types/#seq)[`&Int`](../../types/#contextvar)[`&[Int]`](../../types/#contextvar) |
+| `⬅️ Input` ||The sequence from which elements have to be extracted. | | [`Bytes`](../../types/#bytes)[`String`](../../types/#string)[`[Any]`](../../types/#seq) |
+| `Output ➡️` ||The extracted elements. | | [`Any`](../../types/#any) |
+| `Indices` | :fontawesome-solid-circle-xmark:{title="Yes"}  | One or more indices (counted backwards from the last element) to extract from a sequence. | `None` | [`Int`](../../types/#int)[`[Int]`](../../types/#seq)[`&Int`](../../types/#contextvar)[`&[Int]`](../../types/#contextvar) |
 
 </div>
 

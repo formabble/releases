@@ -7,16 +7,16 @@ license: CC-BY-SA-4.0
 # Gizmos.RefspaceGridOverlay
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`Any`](../../types/#any) |
-| `<output>` || | | [`None`](../../types/#none) |
-| `Center` |  | Center of the disc | `None` | [`Float3`](../../types/#float3)[`&Float3`](../../types/#contextvar) |
-| `XBase` |  | X direction of the plane the disc is on | `None` | [`Float3`](../../types/#float3)[`&Float3`](../../types/#contextvar) |
-| `YBase` |  | Y direction of the plane the disc is on | `None` | [`Float3`](../../types/#float3)[`&Float3`](../../types/#contextvar) |
-| `Thickness` |  | Width of the line in screen space | `None` | [`None`](../../types/#none)[`Int`](../../types/#int)[`Float`](../../types/#float) |
-| `StepSize` |  | Step size of the grid lines | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
-| `Color` |  | Linear color of the grid lines | `None` | [`None`](../../types/#none)[`Float4`](../../types/#float4)[`&Float4`](../../types/#contextvar) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
+| `Output ➡️` ||The resulting output of the shard | | [`None`](../../types/#none) |
+| `Center` | :fontawesome-solid-circle-xmark:{title="Yes"}  | Center of the disc | `None` | [`Float3`](../../types/#float3)[`&Float3`](../../types/#contextvar) |
+| `XBase` | :fontawesome-solid-circle-xmark:{title="Yes"}  | X direction of the plane the disc is on | `None` | [`Float3`](../../types/#float3)[`&Float3`](../../types/#contextvar) |
+| `YBase` | :fontawesome-solid-circle-xmark:{title="Yes"}  | Y direction of the plane the disc is on | `None` | [`Float3`](../../types/#float3)[`&Float3`](../../types/#contextvar) |
+| `Thickness` | :fontawesome-solid-circle-plus:{title="No"}  | Width of the line in screen space | `None` | [`None`](../../types/#none)[`Int`](../../types/#int)[`Float`](../../types/#float) |
+| `StepSize` | :fontawesome-solid-circle-plus:{title="No"}  | Step size of the grid lines | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
+| `Color` | :fontawesome-solid-circle-plus:{title="No"}  | Linear color of the grid lines | `None` | [`None`](../../types/#none)[`Float4`](../../types/#float4)[`&Float4`](../../types/#contextvar) |
 
 </div>
 

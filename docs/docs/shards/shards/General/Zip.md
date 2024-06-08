@@ -7,12 +7,12 @@ license: CC-BY-SA-4.0
 # Zip
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`None`](../../types/#none) |
-| `<output>` || | | [`[{Any}]`](../../types/#seq)[`[[Any]]`](../../types/#seq) |
-| `Sequences` |  | The sequences to zip together. | `None` | [`[[Any] &[Any]]`](../../types/#seq) |
-| `Keys` |  | The element keys to user. | `None` | [`None`](../../types/#none)[`[String]`](../../types/#seq) |
+| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
+| `Output ➡️` ||The resulting output of the shard | | [`[{Any}]`](../../types/#seq)[`[[Any]]`](../../types/#seq) |
+| `Sequences` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The sequences to zip together. | `None` | [`[[Any] &[Any]]`](../../types/#seq) |
+| `Keys` | :fontawesome-solid-circle-plus:{title="No"}  | The element keys to user. | `None` | [`None`](../../types/#none)[`[String]`](../../types/#seq) |
 
 </div>
 

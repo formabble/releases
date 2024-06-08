@@ -7,10 +7,10 @@ license: CC-BY-SA-4.0
 # TargetCamera.Matrix
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`{pivot: Float3 distance: Float rotation: Float2}`](../../types/#table) |
-| `<output>` || | | [`[Float4]`](../../types/#seq) |
+| `⬅️ Input` ||The input of the shard, if any | | [`{pivot: Float3 distance: Float rotation: Float2}`](../../types/#table) |
+| `Output ➡️` ||The resulting output of the shard | | [`[Float4]`](../../types/#seq) |
 
 </div>
 

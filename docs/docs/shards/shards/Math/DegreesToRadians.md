@@ -7,10 +7,10 @@ license: CC-BY-SA-4.0
 # Math.DegreesToRadians
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`Float`](../../types/#float) |
-| `<output>` || | | [`Float`](../../types/#float) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Float`](../../types/#float) |
+| `Output ➡️` ||The resulting output of the shard | | [`Float`](../../types/#float) |
 
 </div>
 

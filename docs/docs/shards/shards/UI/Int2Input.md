@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # UI.Int2Input
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||The value is ignored. | | [`None`](../../types/#none) |
-| `<output>` ||The value produced. | | [`Int2`](../../types/#int2) |
-| `Variable` |  | The variable that holds the input value. | `None` | [`Int2`](../../types/#int2)[`&Int2`](../../types/#contextvar) |
+| `⬅️ Input` ||The value is ignored. | | [`None`](../../types/#none) |
+| `Output ➡️` ||The value produced. | | [`Int2`](../../types/#int2) |
+| `Variable` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The variable that holds the input value. | `None` | [`Int2`](../../types/#int2)[`&Int2`](../../types/#contextvar) |
 
 </div>
 

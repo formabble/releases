@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # Time.Pop
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`None`](../../types/#none) |
-| `<output>` || | | [`Any`](../../types/#any) |
-| `Sequence` |  | A variables sequence of pairs [value pop-epoch-time-ms] with types [Any SHType::Int] | `None` | [`&(Any Int)`](../../types/#contextvar)[`None`](../../types/#none) |
+| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
+| `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
+| `Sequence` | :fontawesome-solid-circle-plus:{title="No"}  | A variables sequence of pairs [value pop-epoch-time-ms] with types [Any SHType::Int] | `None` | [`&(Any Int)`](../../types/#contextvar)[`None`](../../types/#none) |
 
 </div>
 

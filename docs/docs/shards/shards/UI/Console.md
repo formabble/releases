@@ -7,12 +7,12 @@ license: CC-BY-SA-4.0
 # UI.Console
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||The raw logs. | | [`String`](../../types/#string) |
-| `<output>` ||The output of this shard will be its input. | | [`String`](../../types/#string) |
-| `ShowFilters` |  | Whether to display filter controls. | `false` | [`Bool`](../../types/#bool) |
-| `Style` |  | The console style. | `None` | [`{Any}`](../../types/#table)[`&{Any}`](../../types/#contextvar) |
+| `⬅️ Input` ||The raw logs. | | [`String`](../../types/#string) |
+| `Output ➡️` ||The output of this shard will be its input. | | [`String`](../../types/#string) |
+| `ShowFilters` | :fontawesome-solid-circle-plus:{title="No"}  | Whether to display filter controls. | `false` | [`Bool`](../../types/#bool) |
+| `Style` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The console style. | `None` | [`{Any}`](../../types/#table)[`&{Any}`](../../types/#contextvar) |
 
 </div>
 

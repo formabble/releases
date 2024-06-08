@@ -7,13 +7,13 @@ license: CC-BY-SA-4.0
 # MakeFloat3
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`None`](../../types/#none) |
-| `<output>` || | | [`Any`](../../types/#any) |
-| `0` |  | Vector component | `None` | [`&Float`](../../types/#contextvar)[`Float`](../../types/#float) |
-| `1` |  | Vector component | `None` | [`&Float`](../../types/#contextvar)[`Float`](../../types/#float) |
-| `2` |  | Vector component | `None` | [`&Float`](../../types/#contextvar)[`Float`](../../types/#float) |
+| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
+| `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
+| `0` | :fontawesome-solid-circle-xmark:{title="Yes"}  | Vector component | `None` | [`&Float`](../../types/#contextvar)[`Float`](../../types/#float) |
+| `1` | :fontawesome-solid-circle-xmark:{title="Yes"}  | Vector component | `None` | [`&Float`](../../types/#contextvar)[`Float`](../../types/#float) |
+| `2` | :fontawesome-solid-circle-xmark:{title="Yes"}  | Vector component | `None` | [`&Float`](../../types/#contextvar)[`Float`](../../types/#float) |
 
 </div>
 

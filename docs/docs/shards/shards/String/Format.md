@@ -7,10 +7,10 @@ license: CC-BY-SA-4.0
 # String.Format
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||A sequence of values that will be converted to string and joined together. | | [`[Any]`](../../types/#seq) |
-| `<output>` ||A string consisting of all the elements of the sequence. | | [`String`](../../types/#string) |
+| `⬅️ Input` ||A sequence of values that will be converted to string and joined together. | | [`[Any]`](../../types/#seq) |
+| `Output ➡️` ||A string consisting of all the elements of the sequence. | | [`String`](../../types/#string) |
 
 </div>
 

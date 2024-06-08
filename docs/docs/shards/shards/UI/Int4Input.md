@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # UI.Int4Input
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||The value is ignored. | | [`None`](../../types/#none) |
-| `<output>` ||The value produced. | | [`Int4`](../../types/#int4) |
-| `Variable` |  | The variable that holds the input value. | `None` | [`Int4`](../../types/#int4)[`&Int4`](../../types/#contextvar) |
+| `⬅️ Input` ||The value is ignored. | | [`None`](../../types/#none) |
+| `Output ➡️` ||The value produced. | | [`Int4`](../../types/#int4) |
+| `Variable` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The variable that holds the input value. | `None` | [`Int4`](../../types/#int4)[`&Int4`](../../types/#contextvar) |
 
 </div>
 

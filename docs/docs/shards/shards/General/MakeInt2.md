@@ -7,12 +7,12 @@ license: CC-BY-SA-4.0
 # MakeInt2
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`None`](../../types/#none) |
-| `<output>` || | | [`Any`](../../types/#any) |
-| `0` |  | Vector component | `None` | [`&Int`](../../types/#contextvar)[`Int`](../../types/#int) |
-| `1` |  | Vector component | `None` | [`&Int`](../../types/#contextvar)[`Int`](../../types/#int) |
+| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
+| `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
+| `0` | :fontawesome-solid-circle-xmark:{title="Yes"}  | Vector component | `None` | [`&Int`](../../types/#contextvar)[`Int`](../../types/#int) |
+| `1` | :fontawesome-solid-circle-xmark:{title="Yes"}  | Vector component | `None` | [`&Int`](../../types/#contextvar)[`Int`](../../types/#int) |
 
 </div>
 

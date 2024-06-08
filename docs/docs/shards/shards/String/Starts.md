@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # String.Starts
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`String`](../../types/#string) |
-| `<output>` || | | [`Bool`](../../types/#bool) |
-| `With` |  | The string that needs to start at the beginning of the input string to output true. | `` | [`String`](../../types/#string)[`&String`](../../types/#contextvar) |
+| `⬅️ Input` ||The input of the shard, if any | | [`String`](../../types/#string) |
+| `Output ➡️` ||The resulting output of the shard | | [`Bool`](../../types/#bool) |
+| `With` | :fontawesome-solid-circle-plus:{title="No"}  | The string that needs to start at the beginning of the input string to output true. | `` | [`String`](../../types/#string)[`&String`](../../types/#contextvar) |
 
 </div>
 

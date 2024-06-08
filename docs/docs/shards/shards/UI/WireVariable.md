@@ -7,10 +7,10 @@ license: CC-BY-SA-4.0
 # UI.WireVariable
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`{Wire: Wire Name: String}`](../../types/#table) |
-| `<output>` || | | [`Any`](../../types/#any) |
+| `⬅️ Input` ||The input of the shard, if any | | [`{Wire: Wire Name: String}`](../../types/#table) |
+| `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
 
 </div>
 

@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # FromJson
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`String`](../../types/#string) |
-| `<output>` || | | [`Any`](../../types/#any) |
-| `Pure` |  | If the input string is generic pure json rather then shards flavored json. | `true` | [`Bool`](../../types/#bool) |
+| `⬅️ Input` ||The input of the shard, if any | | [`String`](../../types/#string) |
+| `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
+| `Pure` | :fontawesome-solid-circle-plus:{title="No"}  | If the input string is generic pure json rather then shards flavored json. | `true` | [`Bool`](../../types/#bool) |
 
 </div>
 

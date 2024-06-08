@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # Http.SendFile
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`String`](../../types/#string) |
-| `<output>` || | | [`String`](../../types/#string) |
-| `Headers` |  | The headers to attach to this response. | `None` | [`{String}`](../../types/#table)[`&{String}`](../../types/#contextvar)[`None`](../../types/#none) |
+| `⬅️ Input` ||The input of the shard, if any | | [`String`](../../types/#string) |
+| `Output ➡️` ||The resulting output of the shard | | [`String`](../../types/#string) |
+| `Headers` | :fontawesome-solid-circle-plus:{title="No"}  | The headers to attach to this response. | `None` | [`{String}`](../../types/#table)[`&{String}`](../../types/#contextvar)[`None`](../../types/#none) |
 
 </div>
 

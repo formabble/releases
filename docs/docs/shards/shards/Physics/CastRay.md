@@ -7,10 +7,10 @@ license: CC-BY-SA-4.0
 # Physics.CastRay
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`[Float3]`](../../types/#seq) |
-| `<output>` || | | [`[Object]`](../../types/#seq) |
+| `⬅️ Input` ||The input of the shard, if any | | [`[Float3]`](../../types/#seq) |
+| `Output ➡️` ||The resulting output of the shard | | [`[Object]`](../../types/#seq) |
 
 </div>
 

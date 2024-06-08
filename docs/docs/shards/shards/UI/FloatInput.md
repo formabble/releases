@@ -7,12 +7,12 @@ license: CC-BY-SA-4.0
 # UI.FloatInput
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||The value is ignored. | | [`None`](../../types/#none) |
-| `<output>` ||The value produced. | | [`Float`](../../types/#float) |
-| `Variable` |  | The variable that holds the input value. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
-| `Prefix` |  | Display a prefix before the number. | `None` | [`String`](../../types/#string)[`None`](../../types/#none) |
+| `⬅️ Input` ||The value is ignored. | | [`None`](../../types/#none) |
+| `Output ➡️` ||The value produced. | | [`Float`](../../types/#float) |
+| `Variable` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The variable that holds the input value. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
+| `Prefix` | :fontawesome-solid-circle-plus:{title="No"}  | Display a prefix before the number. | `None` | [`String`](../../types/#string)[`None`](../../types/#none) |
 
 </div>
 

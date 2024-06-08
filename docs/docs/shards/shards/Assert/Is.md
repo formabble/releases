@@ -7,12 +7,12 @@ license: CC-BY-SA-4.0
 # Assert.Is
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||The input can be of any type. | | [`Any`](../../types/#any) |
-| `<output>` ||The output will be the input (passthrough). | | [`Any`](../../types/#any) |
-| `Value` |  | The value to test against for equality. | `None` | [`Any`](../../types/#any) |
-| `Break` |  | If we should trigger a debug breakpoint on failure. | `false` | [`Bool`](../../types/#bool) |
+| `⬅️ Input` ||The input can be of any type. | | [`Any`](../../types/#any) |
+| `Output ➡️` ||The output will be the input (passthrough). | | [`Any`](../../types/#any) |
+| `Value` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The value to test against for equality. | `None` | [`Any`](../../types/#any) |
+| `Break` | :fontawesome-solid-circle-plus:{title="No"}  | If we should trigger a debug breakpoint on failure. | `false` | [`Bool`](../../types/#bool) |
 
 </div>
 

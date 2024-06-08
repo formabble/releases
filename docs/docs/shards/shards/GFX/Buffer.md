@@ -7,12 +7,12 @@ license: CC-BY-SA-4.0
 # GFX.Buffer
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`Any`](../../types/#any) |
-| `<output>` || | | [`GFX.Buffer`](../../types/#gfx.buffer) |
-| `Type` |  | The type descriptor of the buffer | `None` | [`{Any}`](../../types/#table) |
-| `AddressSpace` |  | The address space to use the buffer with | `None` | [`None`](../../types/#none)[`BufferAddressSpace`](../../../enums/BufferAddressSpace) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
+| `Output ➡️` ||The resulting output of the shard | | [`GFX.Buffer`](../../types/#gfx.buffer) |
+| `Type` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The type descriptor of the buffer | `None` | [`{Any}`](../../types/#table) |
+| `AddressSpace` | :fontawesome-solid-circle-plus:{title="No"}  | The address space to use the buffer with | `None` | [`None`](../../types/#none)[`BufferAddressSpace`](../../../enums/BufferAddressSpace) |
 
 </div>
 

@@ -7,12 +7,12 @@ license: CC-BY-SA-4.0
 # Math.Slerp
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`Float`](../../types/#float) |
-| `<output>` || | | [`Float4`](../../types/#float4) |
-| `First` |  | The first value | `None` | [`Float4`](../../types/#float4)[`&Float4`](../../types/#contextvar) |
-| `Second` |  | The second value | `None` | [`Float4`](../../types/#float4)[`&Float4`](../../types/#contextvar) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Float`](../../types/#float) |
+| `Output ➡️` ||The resulting output of the shard | | [`Float4`](../../types/#float4) |
+| `First` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The first value | `None` | [`Float4`](../../types/#float4)[`&Float4`](../../types/#contextvar) |
+| `Second` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The second value | `None` | [`Float4`](../../types/#float4)[`&Float4`](../../types/#contextvar) |
 
 </div>
 

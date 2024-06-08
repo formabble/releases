@@ -7,17 +7,17 @@ license: CC-BY-SA-4.0
 # Audio.ReadFile
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`None`](../../types/#none) |
-| `<output>` || | | [`Audio`](../../types/#audio) |
-| `File` |  | The audio file to read from (wav,ogg,mp3,flac). | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar) |
-| `Channels` |  | The number of desired output audio channels. | `2` | [`Int`](../../types/#int) |
-| `SampleRate` |  | The desired output sampling rate. Ignored if inside an Audio.Channel. | `44100` | [`Int`](../../types/#int) |
-| `Samples` |  | The desired number of samples in the output. Ignored if inside an Audio.Channel. | `1024` | [`Int`](../../types/#int) |
-| `Looped` |  | If the file should be played in loop or should stop the wire when it ends. | `false` | [`Bool`](../../types/#bool) |
-| `From` |  | The starting time in seconds. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar)[`None`](../../types/#none) |
-| `To` |  | The end time in seconds. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar)[`None`](../../types/#none) |
+| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
+| `Output ➡️` ||The resulting output of the shard | | [`Audio`](../../types/#audio) |
+| `File` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The audio file to read from (wav,ogg,mp3,flac). | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar) |
+| `Channels` | :fontawesome-solid-circle-plus:{title="No"}  | The number of desired output audio channels. | `2` | [`Int`](../../types/#int) |
+| `SampleRate` | :fontawesome-solid-circle-plus:{title="No"}  | The desired output sampling rate. Ignored if inside an Audio.Channel. | `44100` | [`Int`](../../types/#int) |
+| `Samples` | :fontawesome-solid-circle-plus:{title="No"}  | The desired number of samples in the output. Ignored if inside an Audio.Channel. | `1024` | [`Int`](../../types/#int) |
+| `Looped` | :fontawesome-solid-circle-plus:{title="No"}  | If the file should be played in loop or should stop the wire when it ends. | `false` | [`Bool`](../../types/#bool) |
+| `From` | :fontawesome-solid-circle-plus:{title="No"}  | The starting time in seconds. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar)[`None`](../../types/#none) |
+| `To` | :fontawesome-solid-circle-plus:{title="No"}  | The end time in seconds. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar)[`None`](../../types/#none) |
 
 </div>
 

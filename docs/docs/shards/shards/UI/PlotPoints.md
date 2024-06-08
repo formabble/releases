@@ -7,14 +7,14 @@ license: CC-BY-SA-4.0
 # UI.PlotPoints
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||A sequence of point coordinates. | | [`[Float2]`](../../types/#seq) |
-| `<output>` ||The output of this shard will be its input. | | [`[Float2]`](../../types/#seq) |
-| `Name` |  | Name of this chart, displayed in the plot legend. | `None` | [`String`](../../types/#string)[`None`](../../types/#none) |
-| `Color` |  | Stroke color. | `None` | [`Color`](../../types/#color)[`&Color`](../../types/#contextvar)[`None`](../../types/#none) |
-| `Shape` |  | Shape of the marker. | `None` | [`MarkerShape`](../../../enums/MarkerShape) |
-| `Radius` |  | Radius of the marker. | `None` | [`Float`](../../types/#float) |
+| `⬅️ Input` ||A sequence of point coordinates. | | [`[Float2]`](../../types/#seq) |
+| `Output ➡️` ||The output of this shard will be its input. | | [`[Float2]`](../../types/#seq) |
+| `Name` | :fontawesome-solid-circle-plus:{title="No"}  | Name of this chart, displayed in the plot legend. | `None` | [`String`](../../types/#string)[`None`](../../types/#none) |
+| `Color` | :fontawesome-solid-circle-plus:{title="No"}  | Stroke color. | `None` | [`Color`](../../types/#color)[`&Color`](../../types/#contextvar)[`None`](../../types/#none) |
+| `Shape` | :fontawesome-solid-circle-xmark:{title="Yes"}  | Shape of the marker. | `None` | [`MarkerShape`](../../../enums/MarkerShape) |
+| `Radius` | :fontawesome-solid-circle-xmark:{title="Yes"}  | Radius of the marker. | `None` | [`Float`](../../types/#float) |
 
 </div>
 

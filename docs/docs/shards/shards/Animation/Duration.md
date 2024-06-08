@@ -7,10 +7,10 @@ license: CC-BY-SA-4.0
 # Animation.Duration
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`[{Path: [String] Frames: [{Time: Float Value: Any None: Any}]}]`](../../types/#seq) |
-| `<output>` || | | [`Float`](../../types/#float) |
+| `⬅️ Input` ||The input of the shard, if any | | [`[{Path: [String] Frames: [{Time: Float Value: Any None: Any}]}]`](../../types/#seq) |
+| `Output ➡️` ||The resulting output of the shard | | [`Float`](../../types/#float) |
 
 </div>
 

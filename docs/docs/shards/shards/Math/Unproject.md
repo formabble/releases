@@ -7,14 +7,14 @@ license: CC-BY-SA-4.0
 # Math.Unproject
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`Float3`](../../types/#float3) |
-| `<output>` || | | [`Float3`](../../types/#float3) |
-| `Matrix` |  | The combined view-projection matrix to use | `None` | [`[Float4]`](../../types/#seq)[`&[Float4]`](../../types/#contextvar) |
-| `ScreenSize` |  | The combined view-projection matrix to use | `None` | [`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar) |
-| `DepthRange` |  | The combined view-projection matrix to use | `None` | [`None`](../../types/#none)[`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar) |
-| `FlipY` |  | Flip Y coordinate (on by default) | `None` | [`None`](../../types/#none)[`Bool`](../../types/#bool)[`&&Bool`](../../types/#contextvar) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Float3`](../../types/#float3) |
+| `Output ➡️` ||The resulting output of the shard | | [`Float3`](../../types/#float3) |
+| `Matrix` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The combined view-projection matrix to use | `None` | [`[Float4]`](../../types/#seq)[`&[Float4]`](../../types/#contextvar) |
+| `ScreenSize` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The combined view-projection matrix to use | `None` | [`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar) |
+| `DepthRange` | :fontawesome-solid-circle-plus:{title="No"}  | The combined view-projection matrix to use | `None` | [`None`](../../types/#none)[`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar) |
+| `FlipY` | :fontawesome-solid-circle-plus:{title="No"}  | Flip Y coordinate (on by default) | `None` | [`None`](../../types/#none)[`Bool`](../../types/#bool)[`&&Bool`](../../types/#contextvar) |
 
 </div>
 

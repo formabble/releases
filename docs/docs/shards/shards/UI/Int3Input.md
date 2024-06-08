@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # UI.Int3Input
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||The value is ignored. | | [`None`](../../types/#none) |
-| `<output>` ||The value produced. | | [`Int3`](../../types/#int3) |
-| `Variable` |  | The variable that holds the input value. | `None` | [`Int3`](../../types/#int3)[`&Int3`](../../types/#contextvar) |
+| `⬅️ Input` ||The value is ignored. | | [`None`](../../types/#none) |
+| `Output ➡️` ||The value produced. | | [`Int3`](../../types/#int3) |
+| `Variable` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The variable that holds the input value. | `None` | [`Int3`](../../types/#int3)[`&Int3`](../../types/#contextvar) |
 
 </div>
 

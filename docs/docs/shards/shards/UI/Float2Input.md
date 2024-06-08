@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # UI.Float2Input
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||The value is ignored. | | [`None`](../../types/#none) |
-| `<output>` ||The value produced. | | [`Float2`](../../types/#float2) |
-| `Variable` |  | The variable that holds the input value. | `None` | [`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar) |
+| `⬅️ Input` ||The value is ignored. | | [`None`](../../types/#none) |
+| `Output ➡️` ||The value produced. | | [`Float2`](../../types/#float2) |
+| `Variable` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The variable that holds the input value. | `None` | [`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar) |
 
 </div>
 

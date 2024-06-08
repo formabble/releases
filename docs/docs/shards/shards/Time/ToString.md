@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # Time.ToString
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||The time to convert. | | [`Int`](../../types/#int)[`Float`](../../types/#float) |
-| `<output>` ||A string representation of the time. | | [`String`](../../types/#string) |
-| `Millis` |  | True if the input is given in milliseconds, False if given in seconds. | `false` | [`Bool`](../../types/#bool) |
+| `⬅️ Input` ||The time to convert. | | [`Int`](../../types/#int)[`Float`](../../types/#float) |
+| `Output ➡️` ||A string representation of the time. | | [`String`](../../types/#string) |
+| `Millis` | :fontawesome-solid-circle-plus:{title="No"}  | True if the input is given in milliseconds, False if given in seconds. | `false` | [`Bool`](../../types/#bool) |
 
 </div>
 

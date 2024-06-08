@@ -7,10 +7,10 @@ license: CC-BY-SA-4.0
 # BitSwap32
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`Int`](../../types/#int) |
-| `<output>` || | | [`Int`](../../types/#int) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Int`](../../types/#int) |
+| `Output ➡️` ||The resulting output of the shard | | [`Int`](../../types/#int) |
 
 </div>
 

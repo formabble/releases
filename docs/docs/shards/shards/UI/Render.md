@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # UI.Render
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`[Object]`](../../types/#seq)[`Object`](../../types/#object) |
-| `<output>` || | | [`[Object]`](../../types/#seq)[`Object`](../../types/#object) |
-| `Queue` |  | The draw queue. | `None` | [`&GFX.DrawQueue`](../../types/#contextvar) |
+| `⬅️ Input` ||The input of the shard, if any | | [`[Object]`](../../types/#seq)[`Object`](../../types/#object) |
+| `Output ➡️` ||The resulting output of the shard | | [`[Object]`](../../types/#seq)[`Object`](../../types/#object) |
+| `Queue` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The draw queue. | `None` | [`&GFX.DrawQueue`](../../types/#contextvar) |
 
 </div>
 

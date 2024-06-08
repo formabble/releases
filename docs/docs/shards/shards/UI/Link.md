@@ -7,13 +7,13 @@ license: CC-BY-SA-4.0
 # UI.Link
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||The value that will be passed to the Action shards of the link. | | [`Any`](../../types/#any) |
-| `<output>` ||Indicates whether the link was clicked during this frame. | | [`Bool`](../../types/#bool) |
-| `Label` |  | Optional label for the link. | `None` | [`String`](../../types/#string)[`None`](../../types/#none) |
-| `Action` |  | The shards to execute when the link is clicked. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
-| `Style` |  | The text style. | `None` | [`{Any}`](../../types/#table)[`&{Any}`](../../types/#contextvar) |
+| `⬅️ Input` ||The value that will be passed to the Action shards of the link. | | [`Any`](../../types/#any) |
+| `Output ➡️` ||Indicates whether the link was clicked during this frame. | | [`Bool`](../../types/#bool) |
+| `Label` | :fontawesome-solid-circle-plus:{title="No"}  | Optional label for the link. | `None` | [`String`](../../types/#string)[`None`](../../types/#none) |
+| `Action` | :fontawesome-solid-circle-plus:{title="No"}  | The shards to execute when the link is clicked. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `Style` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The text style. | `None` | [`{Any}`](../../types/#table)[`&{Any}`](../../types/#contextvar) |
 
 </div>
 

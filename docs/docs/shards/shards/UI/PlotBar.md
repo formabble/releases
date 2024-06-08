@@ -7,14 +7,14 @@ license: CC-BY-SA-4.0
 # UI.PlotBar
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||A sequence of point coordinates. | | [`[Float2]`](../../types/#seq) |
-| `<output>` ||The output of this shard will be its input. | | [`[Float2]`](../../types/#seq) |
-| `Color` |  | Stroke color. | `None` | [`Color`](../../types/#color)[`&Color`](../../types/#contextvar)[`None`](../../types/#none) |
-| `Width` |  | Width of a bar. | `None` | [`Float`](../../types/#float) |
-| `Horizontal` |  | Display the bars horizontally. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
-| `Name` |  | Name of this chart, displayed in the plot legend. | `None` | [`String`](../../types/#string)[`None`](../../types/#none) |
+| `⬅️ Input` ||A sequence of point coordinates. | | [`[Float2]`](../../types/#seq) |
+| `Output ➡️` ||The output of this shard will be its input. | | [`[Float2]`](../../types/#seq) |
+| `Color` | :fontawesome-solid-circle-plus:{title="No"}  | Stroke color. | `None` | [`Color`](../../types/#color)[`&Color`](../../types/#contextvar)[`None`](../../types/#none) |
+| `Width` | :fontawesome-solid-circle-xmark:{title="Yes"}  | Width of a bar. | `None` | [`Float`](../../types/#float) |
+| `Horizontal` | :fontawesome-solid-circle-plus:{title="No"}  | Display the bars horizontally. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
+| `Name` | :fontawesome-solid-circle-plus:{title="No"}  | Name of this chart, displayed in the plot legend. | `None` | [`String`](../../types/#string)[`None`](../../types/#none) |
 
 </div>
 

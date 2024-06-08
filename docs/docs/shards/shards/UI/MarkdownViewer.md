@@ -7,10 +7,10 @@ license: CC-BY-SA-4.0
 # UI.MarkdownViewer
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||The markdown text to render. | | [`String`](../../types/#string) |
-| `<output>` ||The output of this shard will be its input. | | [`String`](../../types/#string) |
+| `⬅️ Input` ||The markdown text to render. | | [`String`](../../types/#string) |
+| `Output ➡️` ||The output of this shard will be its input. | | [`String`](../../types/#string) |
 
 </div>
 

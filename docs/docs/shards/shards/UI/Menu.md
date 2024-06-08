@@ -7,12 +7,12 @@ license: CC-BY-SA-4.0
 # UI.Menu
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||The value that will be passed to the Contents shards of the menu. | | [`Any`](../../types/#any) |
-| `<output>` ||A boolean value indicating whether the menu is active. | | [`Bool`](../../types/#bool) |
-| `Title` |  | The title of the menu. | `None` | [`String`](../../types/#string) |
-| `Contents` |  | The UI contents. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `⬅️ Input` ||The value that will be passed to the Contents shards of the menu. | | [`Any`](../../types/#any) |
+| `Output ➡️` ||A boolean value indicating whether the menu is active. | | [`Bool`](../../types/#bool) |
+| `Title` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The title of the menu. | `None` | [`String`](../../types/#string) |
+| `Contents` | :fontawesome-solid-circle-plus:{title="No"}  | The UI contents. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
 
 </div>
 

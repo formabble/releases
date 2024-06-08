@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # Map
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`[Any]`](../../types/#seq) |
-| `<output>` || | | [`[Any]`](../../types/#seq) |
-| `Apply` |  | The function to apply to each item of the sequence. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `⬅️ Input` ||The input of the shard, if any | | [`[Any]`](../../types/#seq) |
+| `Output ➡️` ||The resulting output of the shard | | [`[Any]`](../../types/#seq) |
+| `Apply` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The function to apply to each item of the sequence. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
 
 </div>
 

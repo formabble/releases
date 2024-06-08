@@ -7,12 +7,12 @@ license: CC-BY-SA-4.0
 # UI.IntInput
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||The value is ignored. | | [`None`](../../types/#none) |
-| `<output>` ||The value produced. | | [`Int`](../../types/#int) |
-| `Variable` |  | The variable that holds the input value. | `None` | [`Int`](../../types/#int)[`&Int`](../../types/#contextvar) |
-| `Prefix` |  | Display a prefix before the number. | `None` | [`String`](../../types/#string)[`None`](../../types/#none) |
+| `⬅️ Input` ||The value is ignored. | | [`None`](../../types/#none) |
+| `Output ➡️` ||The value produced. | | [`Int`](../../types/#int) |
+| `Variable` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The variable that holds the input value. | `None` | [`Int`](../../types/#int)[`&Int`](../../types/#contextvar) |
+| `Prefix` | :fontawesome-solid-circle-plus:{title="No"}  | Display a prefix before the number. | `None` | [`String`](../../types/#string)[`None`](../../types/#none) |
 
 </div>
 

@@ -7,10 +7,10 @@ license: CC-BY-SA-4.0
 # NaNTo0
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`Float`](../../types/#float)[`[Float]`](../../types/#seq) |
-| `<output>` || | | [`Float`](../../types/#float)[`[Float]`](../../types/#seq) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Float`](../../types/#float)[`[Float]`](../../types/#seq) |
+| `Output ➡️` ||The resulting output of the shard | | [`Float`](../../types/#float)[`[Float]`](../../types/#seq) |
 
 </div>
 

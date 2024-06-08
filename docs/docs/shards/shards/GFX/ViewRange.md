@@ -7,10 +7,10 @@ license: CC-BY-SA-4.0
 # GFX.ViewRange
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`GFX.View`](../../types/#gfx.view) |
-| `<output>` || | | [`Float2`](../../types/#float2) |
+| `⬅️ Input` ||The input of the shard, if any | | [`GFX.View`](../../types/#gfx.view) |
+| `Output ➡️` ||The resulting output of the shard | | [`Float2`](../../types/#float2) |
 
 </div>
 

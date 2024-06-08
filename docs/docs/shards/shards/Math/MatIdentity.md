@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # Math.MatIdentity
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`None`](../../types/#none) |
-| `<output>` || | | [`[Float4]`](../../types/#seq) |
-| `Type` |  | The matrix row type of the corresponding matrix | `Type.Float4` | [`Type`](../../../enums/Type) |
+| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
+| `Output ➡️` ||The resulting output of the shard | | [`[Float4]`](../../types/#seq) |
+| `Type` | :fontawesome-solid-circle-plus:{title="No"}  | The matrix row type of the corresponding matrix | `Type.Float4` | [`Type`](../../../enums/Type) |
 
 </div>
 

@@ -7,12 +7,12 @@ license: CC-BY-SA-4.0
 # Snowflake
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`None`](../../types/#none) |
-| `<output>` || | | [`Int`](../../types/#int) |
-| `MachineId` |  | The machine ID, must be less than 32 | `0` | [`Int`](../../types/#int) |
-| `NodeId` |  | The node ID, must be less than 32 | `0` | [`Int`](../../types/#int) |
+| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
+| `Output ➡️` ||The resulting output of the shard | | [`Int`](../../types/#int) |
+| `MachineId` | :fontawesome-solid-circle-plus:{title="No"}  | The machine ID, must be less than 32 | `0` | [`Int`](../../types/#int) |
+| `NodeId` | :fontawesome-solid-circle-plus:{title="No"}  | The node ID, must be less than 32 | `0` | [`Int`](../../types/#int) |
 
 </div>
 

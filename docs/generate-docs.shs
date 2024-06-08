@@ -15,6 +15,9 @@
 @define(url "https://api.notion.com/v1/pages")
 @define(url-blocks "https://api.notion.com/v1/blocks/")
 
+@define(input-help-shards {If({IsNotNone} {ExpectString} {""}) | If(Is("") {"The input of the shard, if any"} Pass)})
+@define(output-help-shards {If({IsNotNone} {ExpectString} {""}) | If(Is("") {"The resulting output of the shard"} Pass)})
+
 @template(get-filename [path extension fallback-general] {
   = f
   Regex.Match("""(\w+)\.(.*)""") = match
@@ -147,21 +150,26 @@
   0 >= idx
   parameters | ForEach({
     ExpectTable
-    {Take("default") | ToString | Set(param-doc "default")}
+    {Take("default") | ToString = default-value | Set(param-doc "default")}
     {Take("help") | Set(param-doc "help")}
     {Take("name") | Set(param-doc "name")}
     {Take("types") = types}
-    false | Set(param-doc "optional")
+    true | Set(param-doc "optional")
+    false >= has-none
     Sequence(param-types Type: @type([{none: Type::String}]))
     types | When(IsNotNone {ExpectSeq | ForEach({
         ExpectTable
-        {Take("name") | Set(param-type "name")}
-        {Take("type") | Set(param-type "type") | When(Is("None") {
-            true | Update(param-doc "optional")
+        {
+          Take("name") | Set(param-type "name") | When(Is("None") {
+            true > has-none
           })
         }
+        {Take("type") | Set(param-type "type")}
         param-type >> param-types
       })
+    })
+    default-value | When({Is("None") | And | has-none | Not} {
+      false | Set(param-doc "optional")
     })
     param-types | Set(param-doc "types")
     param-doc >> parameters-seq
@@ -185,18 +193,18 @@
 
   ; ; Combined table showing the input/outpus and parameters
   "<div class=\"sh-parameters\" markdown=\"1\">\r\n" >> o
-  "| Name | - {: #sh-flags-row} | Description | Default | Type |\r\n" >> o
+  "| Name | Mandatory | Description | Default | Type |\r\n" >> o
   "|------|---------------------|-------------|---------|------|\r\n" >> o
 
-  "| `⬅️ - input` ||" >> o
-  shard-doc:input-help | If({IsNotNone} {ExpectString} {"ToDo"}) >> o
+  "| `⬅️ Input` ||" >> o
+  shard-doc:input-help | @input-help-shards >> o
   " | " >> o
   "| " >> o
   shard-doc:input-types | ForEach(@print-type-info(o))
   " |\r\n" >> o
 
-  "| `output - ➡️` ||" >> o
-  shard-doc:output-help | If({IsNotNone} {ExpectString} {"ToDo"}) >> o
+  "| `Output ➡️` ||" >> o
+  shard-doc:output-help | @output-help-shards >> o
   " | " >> o
   "| " >> o
   shard-doc:output-types | ForEach(@print-type-info(o))
@@ -212,9 +220,9 @@
     "| `" >> o
     p-name >> o
     p-optional | If(IsTrue {
-        "` | :fontawesome-solid-circle-plus:{title=\"Optional\"} " >> o
+        "` | :fontawesome-solid-circle-plus:{title=\"No\"} " >> o
       } {
-        "` | " >> o
+        "` | :fontawesome-solid-circle-xmark:{title=\"Yes\"} " >> o
       }
     )
     " | " >> o
@@ -316,6 +324,10 @@
               }}]
             [{"type": "text"
               "text": {
+                  "content": "Mandatory"
+              }}]
+            [{"type": "text"
+              "text": {
                   "content": "Description"
               }}]
             [{"type": "text"
@@ -334,15 +346,19 @@
           "cells": [
             [{"type": "text"
               "text": {
-                  "content": "⬅️ - input"
+                  "content": "⬅️ Input"
               }}]
             [{"type": "text"
               "text": {
-                  "content": (shard-doc:input-help | If({IsNotNone} {ExpectString} {""}) | If(Is("") {"The input of the shard, if any"} Pass))
+                  "content": "N/A"
               }}]
             [{"type": "text"
               "text": {
-                  "content": "no default"
+                  "content": (shard-doc:input-help | @input-help-shards)
+              }}]
+            [{"type": "text"
+              "text": {
+                  "content": "N/A"
               }}]
             [{"type": "text"
               "text": {
@@ -356,15 +372,19 @@
           "cells": [
             [{"type": "text"
               "text": {
-                  "content": "output - ➡️"
+                  "content": "Output ➡️"
               }}]
             [{"type": "text"
               "text": {
-                  "content": (shard-doc:output-help | If({IsNotNone} {ExpectString} {""}) | If(Is("") {"The resulting output of the shard"} Pass))
+                  "content": "N/A"
               }}]
             [{"type": "text"
               "text": {
-                  "content": "no default"
+                  "content": (shard-doc:output-help | @output-help-shards)
+              }}]
+            [{"type": "text"
+              "text": {
+                  "content": "N/A"
               }}]
             [{"type": "text"
               "text": {
@@ -378,6 +398,7 @@
         {Take("types") | ExpectSeq = p-types}
         {Take("help") | ExpectString = p-help}
         {Take("default") | ExpectString = p-default}
+        {Take("optional") | ExpectBool = p-optional}
         false >= has-none
         {
           "type": "table_row"
@@ -386,6 +407,10 @@
               [{"type": "text"
                 "text": {
                     "content": p-name
+                }}]
+              [{"type": "text"
+                "text": {
+                    "content": (p-optional | If(IsTrue {"No"} {"Yes"}))
                 }}]
               [{"type": "text"
                 "text": {
@@ -443,7 +468,7 @@
             "object": "block"
             "type": "table"
             "table": {
-              "table_width": 4
+              "table_width": 5
               "has_column_header": true
               "children": notion-params
             }

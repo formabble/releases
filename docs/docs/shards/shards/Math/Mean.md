@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # Math.Mean
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||A sequence of floating point numbers. | | [`[Float]`](../../types/#seq) |
-| `<output>` ||The calculated mean. | | [`Float`](../../types/#float) |
-| `Kind` |  | The kind of Pythagorean means. | `Mean.Arithmetic` | [`Mean`](../../../enums/Mean) |
+| `⬅️ Input` ||A sequence of floating point numbers. | | [`[Float]`](../../types/#seq) |
+| `Output ➡️` ||The calculated mean. | | [`Float`](../../types/#float) |
+| `Kind` | :fontawesome-solid-circle-plus:{title="No"}  | The kind of Pythagorean means. | `Mean.Arithmetic` | [`Mean`](../../../enums/Mean) |
 
 </div>
 

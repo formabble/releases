@@ -7,12 +7,12 @@ license: CC-BY-SA-4.0
 # CRDT.Delete
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`Any`](../../types/#any) |
-| `<output>` || | | [`Bytes`](../../types/#bytes) |
-| `CRDT` |  | The CRDT instance to delete from. | `None` | [`&Object`](../../types/#contextvar) |
-| `Key` |  | The key to delete from the CRDT instance. | `None` | [`Any`](../../types/#any) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
+| `Output ➡️` ||The resulting output of the shard | | [`Bytes`](../../types/#bytes) |
+| `CRDT` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The CRDT instance to delete from. | `None` | [`&Object`](../../types/#contextvar) |
+| `Key` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The key to delete from the CRDT instance. | `None` | [`Any`](../../types/#any) |
 
 </div>
 

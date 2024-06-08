@@ -7,11 +7,11 @@ license: CC-BY-SA-4.0
 # BigInt.ToBytes
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||Big integer represented as bytes. | | [`Bytes`](../../types/#bytes) |
-| `<output>` || | | [`Bytes`](../../types/#bytes) |
-| `Bits` |  | The desired amount of bits for the output or 0 for automatic packing. | `0` | [`Int`](../../types/#int) |
+| `⬅️ Input` ||Big integer represented as bytes. | | [`Bytes`](../../types/#bytes) |
+| `Output ➡️` ||The resulting output of the shard | | [`Bytes`](../../types/#bytes) |
+| `Bits` | :fontawesome-solid-circle-plus:{title="No"}  | The desired amount of bits for the output or 0 for automatic packing. | `0` | [`Int`](../../types/#int) |
 
 </div>
 

@@ -7,12 +7,12 @@ license: CC-BY-SA-4.0
 # Msg
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`Any`](../../types/#any) |
-| `<output>` || | | [`Any`](../../types/#any) |
-| `Message` |  | The message to display on the user's screen or console. | `` | [`String`](../../types/#string) |
-| `Level` |  | The level of logging. | `LogLevel.Info` | [`LogLevel`](../../../enums/LogLevel) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
+| `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
+| `Message` | :fontawesome-solid-circle-plus:{title="No"}  | The message to display on the user's screen or console. | `` | [`String`](../../types/#string) |
+| `Level` | :fontawesome-solid-circle-plus:{title="No"}  | The level of logging. | `LogLevel.Info` | [`LogLevel`](../../../enums/LogLevel) |
 
 </div>
 

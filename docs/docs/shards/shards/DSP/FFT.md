@@ -7,10 +7,10 @@ license: CC-BY-SA-4.0
 # DSP.FFT
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` || | | [`[Float]`](../../types/#seq)[`[Float2]`](../../types/#seq)[`Audio`](../../types/#audio) |
-| `<output>` || | | [`[Float2]`](../../types/#seq) |
+| `⬅️ Input` ||The input of the shard, if any | | [`[Float]`](../../types/#seq)[`[Float2]`](../../types/#seq)[`Audio`](../../types/#audio) |
+| `Output ➡️` ||The resulting output of the shard | | [`[Float2]`](../../types/#seq) |
 
 </div>
 

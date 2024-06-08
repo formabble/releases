@@ -7,10 +7,10 @@ license: CC-BY-SA-4.0
 # BigInt.ToInt
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||Big integer represented as bytes. | | [`Bytes`](../../types/#bytes) |
-| `<output>` ||Integer representation of the big integer value. | | [`Int`](../../types/#int) |
+| `⬅️ Input` ||Big integer represented as bytes. | | [`Bytes`](../../types/#bytes) |
+| `Output ➡️` ||Integer representation of the big integer value. | | [`Int`](../../types/#int) |
 
 </div>
 

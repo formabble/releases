@@ -7,13 +7,13 @@ license: CC-BY-SA-4.0
 # Maybe
 
 <div class="sh-parameters" markdown="1">
-| Name | - {: #sh-flags-row} | Description | Default | Type |
+| Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `<input>` ||Must match the input types of the first shard in the sequence. | | [`Any`](../../types/#any) |
-| `<output>` ||Will match the output types of the first shard of the sequence. | | [`Any`](../../types/#any) |
-| `Shards` |  | The shards to activate. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
-| `Else` |  | The shards to activate on failure. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
-| `Silent` |  | If logging should be disabled while running the shards (this will also disable (Log) and (Msg) shards) and no warning message should be printed on failure. | `false` | [`Bool`](../../types/#bool) |
+| `⬅️ Input` ||Must match the input types of the first shard in the sequence. | | [`Any`](../../types/#any) |
+| `Output ➡️` ||Will match the output types of the first shard of the sequence. | | [`Any`](../../types/#any) |
+| `Shards` | :fontawesome-solid-circle-plus:{title="No"}  | The shards to activate. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
+| `Else` | :fontawesome-solid-circle-plus:{title="No"}  | The shards to activate on failure. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
+| `Silent` | :fontawesome-solid-circle-plus:{title="No"}  | If logging should be disabled while running the shards (this will also disable (Log) and (Msg) shards) and no warning message should be printed on failure. | `false` | [`Bool`](../../types/#bool) |
 
 </div>
 
