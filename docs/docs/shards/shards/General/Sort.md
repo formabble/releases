@@ -11,10 +11,10 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Any input is ignored. | | [`None`](../../types/#none) |
 | `Output ➡️` ||Output is the sorted sequence. | | [`[Any]`](../../types/#seq) |
-| `From` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The name of the sequence variable to edit in place. | `None` | [`&[Any]`](../../types/#contextvar) |
-| `Join` | :fontawesome-solid-circle-xmark:{title="Yes"}  | Other columns to join sort/filter using the input (they must be of the same length). | `None` | [`&[Any]`](../../types/#contextvar)[`[&[Any]]`](../../types/#seq) |
-| `Desc` | :fontawesome-solid-circle-plus:{title="No"}  | If sorting should be in descending order, defaults ascending. | `false` | [`Bool`](../../types/#bool) |
-| `Key` | :fontawesome-solid-circle-plus:{title="No"}  | The shards to use to transform the collection's items before they are compared. Can be None. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
+| `From` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The name of the sequence variable to edit in place. | `None` | [`&[Any]`](../../types/#contextvar) |
+| `Join` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Other columns to join sort/filter using the input (they must be of the same length). | `None` | [`&[Any]`](../../types/#contextvar)[`[&[Any]]`](../../types/#seq) |
+| `Desc` | :fontawesome-solid-circle-plus:{title="No"} No  | If sorting should be in descending order, defaults ascending. | `false` | [`Bool`](../../types/#bool) |
+| `Key` | :fontawesome-solid-circle-plus:{title="No"} No  | The shards to use to transform the collection's items before they are compared. Can be None. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
 
 </div>
 

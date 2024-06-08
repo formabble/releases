@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
 | `Output ➡️` ||The resulting output of the shard | | [`None`](../../types/#none) |
-| `Items` | :fontawesome-solid-circle-xmark:{title="Yes"}  | A list of UI's to overlay on top of each other in order | `None` | [`[[None Shard [Shard]]]`](../../types/#seq) |
+| `Items` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | A list of UI's to overlay on top of each other in order | `None` | [`[[None Shard [Shard]]]`](../../types/#seq) |
 
 </div>
 

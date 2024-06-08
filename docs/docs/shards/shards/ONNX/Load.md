@@ -11,8 +11,8 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
 | `Output ➡️` ||The resulting output of the shard | | [`Object`](../../types/#object) |
-| `Path` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The path to the onnx model to load. | `None` | [`String`](../../types/#string) |
-| `Input Shape` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The shape of the input tensor. | `None` | [`[Int]`](../../types/#seq) |
+| `Path` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The path to the onnx model to load. | `None` | [`String`](../../types/#string) |
+| `Input Shape` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The shape of the input tensor. | `None` | [`[Int]`](../../types/#seq) |
 
 </div>
 

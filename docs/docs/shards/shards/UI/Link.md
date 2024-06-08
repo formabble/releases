@@ -11,9 +11,9 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The value that will be passed to the Action shards of the link. | | [`Any`](../../types/#any) |
 | `Output ➡️` ||Indicates whether the link was clicked during this frame. | | [`Bool`](../../types/#bool) |
-| `Label` | :fontawesome-solid-circle-plus:{title="No"}  | Optional label for the link. | `None` | [`String`](../../types/#string)[`None`](../../types/#none) |
-| `Action` | :fontawesome-solid-circle-plus:{title="No"}  | The shards to execute when the link is clicked. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
-| `Style` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The text style. | `None` | [`{Any}`](../../types/#table)[`&{Any}`](../../types/#contextvar) |
+| `Label` | :fontawesome-solid-circle-plus:{title="No"} No  | Optional label for the link. | `None` | [`String`](../../types/#string)[`None`](../../types/#none) |
+| `Action` | :fontawesome-solid-circle-plus:{title="No"} No  | The shards to execute when the link is clicked. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `Style` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The text style. | `None` | [`{Any}`](../../types/#table)[`&{Any}`](../../types/#contextvar) |
 
 </div>
 

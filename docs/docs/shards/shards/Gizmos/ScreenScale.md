@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Float`](../../types/#float) |
 | `Output ➡️` ||The resulting output of the shard | | [`Float`](../../types/#float) |
-| `Position` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The point in space at which the object is rendered | `None` | [`Float3`](../../types/#float3)[`&Float3`](../../types/#contextvar) |
+| `Position` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The point in space at which the object is rendered | `None` | [`Float3`](../../types/#float3)[`&Float3`](../../types/#contextvar) |
 
 </div>
 

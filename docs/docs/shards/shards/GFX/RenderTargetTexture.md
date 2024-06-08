@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`GFX.RenderTarget`](../../types/#gfx.rendertarget) |
 | `Output ➡️` ||The resulting output of the shard | | [`GFX.Texture2D`](../../types/#gfx.texture2d) |
-| `Name` | :fontawesome-solid-circle-plus:{title="No"}  | Name of the attachment to retrieve | `None` | [`String`](../../types/#string)[`None`](../../types/#none) |
+| `Name` | :fontawesome-solid-circle-plus:{title="No"} No  | Name of the attachment to retrieve | `None` | [`String`](../../types/#string)[`None`](../../types/#none) |
 
 </div>
 

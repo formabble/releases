@@ -11,13 +11,13 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The resulting output of the shard | | [`None`](../../types/#none) |
-| `Center` | :fontawesome-solid-circle-xmark:{title="Yes"}  | Center of the disc | `None` | [`Float3`](../../types/#float3)[`&Float3`](../../types/#contextvar) |
-| `XBase` | :fontawesome-solid-circle-xmark:{title="Yes"}  | X direction of the grid | `None` | [`Float3`](../../types/#float3)[`&Float3`](../../types/#contextvar) |
-| `YBase` | :fontawesome-solid-circle-xmark:{title="Yes"}  | Y direction of the grid | `None` | [`Float3`](../../types/#float3)[`&Float3`](../../types/#contextvar) |
-| `Thickness` | :fontawesome-solid-circle-plus:{title="No"}  | Width of the line in screen space | `None` | [`None`](../../types/#none)[`Int`](../../types/#int)[`Float`](../../types/#float) |
-| `StepSize` | :fontawesome-solid-circle-plus:{title="No"}  | Step size of the grid lines | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
-| `Size` | :fontawesome-solid-circle-plus:{title="No"}  | Number of grid lines | `None` | [`None`](../../types/#none)[`Int`](../../types/#int)[`&Int`](../../types/#contextvar) |
-| `Color` | :fontawesome-solid-circle-plus:{title="No"}  | Linear color of the grid lines | `None` | [`None`](../../types/#none)[`Float4`](../../types/#float4)[`&Float4`](../../types/#contextvar) |
+| `Center` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Center of the disc | `None` | [`Float3`](../../types/#float3)[`&Float3`](../../types/#contextvar) |
+| `XBase` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | X direction of the grid | `None` | [`Float3`](../../types/#float3)[`&Float3`](../../types/#contextvar) |
+| `YBase` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Y direction of the grid | `None` | [`Float3`](../../types/#float3)[`&Float3`](../../types/#contextvar) |
+| `Thickness` | :fontawesome-solid-circle-plus:{title="No"} No  | Width of the line in screen space | `None` | [`None`](../../types/#none)[`Int`](../../types/#int)[`Float`](../../types/#float) |
+| `StepSize` | :fontawesome-solid-circle-plus:{title="No"} No  | Step size of the grid lines | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
+| `Size` | :fontawesome-solid-circle-plus:{title="No"} No  | Number of grid lines | `None` | [`None`](../../types/#none)[`Int`](../../types/#int)[`&Int`](../../types/#contextvar) |
+| `Color` | :fontawesome-solid-circle-plus:{title="No"} No  | Linear color of the grid lines | `None` | [`None`](../../types/#none)[`Float4`](../../types/#float4)[`&Float4`](../../types/#contextvar) |
 
 </div>
 

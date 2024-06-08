@@ -11,9 +11,9 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
 | `Output ➡️` ||The resulting output of the shard | | [`None`](../../types/#none) |
-| `Contents` | :fontawesome-solid-circle-plus:{title="No"}  |  | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
-| `Rect` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The target UI position (X/Y/W/H) | `None` | [`Float4`](../../types/#float4)[`&Float4`](../../types/#contextvar) |
-| `Order` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The order this UI is drawn in | `None` | [`Order`](../../../enums/Order) |
+| `Contents` | :fontawesome-solid-circle-plus:{title="No"} No  |  | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `Rect` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The target UI position (X/Y/W/H) | `None` | [`Float4`](../../types/#float4)[`&Float4`](../../types/#contextvar) |
+| `Order` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The order this UI is drawn in | `None` | [`Order`](../../../enums/Order) |
 
 </div>
 

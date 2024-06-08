@@ -11,9 +11,9 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Must match the input types of the first shard in the sequence. | | [`Any`](../../types/#any) |
 | `Output ➡️` ||Will match the output types of the first shard of the sequence. | | [`Any`](../../types/#any) |
-| `Shards` | :fontawesome-solid-circle-plus:{title="No"}  | The shards to activate. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
-| `Else` | :fontawesome-solid-circle-plus:{title="No"}  | The shards to activate on failure. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
-| `Silent` | :fontawesome-solid-circle-plus:{title="No"}  | If logging should be disabled while running the shards (this will also disable (Log) and (Msg) shards) and no warning message should be printed on failure. | `false` | [`Bool`](../../types/#bool) |
+| `Shards` | :fontawesome-solid-circle-plus:{title="No"} No  | The shards to activate. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
+| `Else` | :fontawesome-solid-circle-plus:{title="No"} No  | The shards to activate on failure. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
+| `Silent` | :fontawesome-solid-circle-plus:{title="No"} No  | If logging should be disabled while running the shards (this will also disable (Log) and (Msg) shards) and no warning message should be printed on failure. | `false` | [`Bool`](../../types/#bool) |
 
 </div>
 

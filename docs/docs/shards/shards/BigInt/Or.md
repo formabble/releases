@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Any valid big integer(s) represented as bytes supported by this operation. | | [`Bytes`](../../types/#bytes)[`[Bytes]`](../../types/#seq) |
 | `Output ➡️` ||The result of the operation, usually in the same type as the input value. | | [`Bytes`](../../types/#bytes)[`[Bytes]`](../../types/#seq) |
-| `Operand` | :fontawesome-solid-circle-plus:{title="No"}  | The bytes variable representing the operand | `0` | [`&Bytes`](../../types/#contextvar)[`&[Bytes]`](../../types/#contextvar) |
+| `Operand` | :fontawesome-solid-circle-plus:{title="No"} No  | The bytes variable representing the operand | `0` | [`&Bytes`](../../types/#contextvar)[`&[Bytes]`](../../types/#contextvar) |
 
 </div>
 

@@ -11,8 +11,8 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Image`](../../types/#image) |
 | `Output ➡️` ||The resulting output of the shard | | [`Image`](../../types/#image) |
-| `Width` | :fontawesome-solid-circle-plus:{title="No"}  | The target width. | `32` | [`Int`](../../types/#int)[`&Int`](../../types/#contextvar) |
-| `Height` | :fontawesome-solid-circle-plus:{title="No"}  | The target height. | `32` | [`Int`](../../types/#int)[`&Int`](../../types/#contextvar) |
+| `Width` | :fontawesome-solid-circle-plus:{title="No"} No  | The target width. | `32` | [`Int`](../../types/#int)[`&Int`](../../types/#contextvar) |
+| `Height` | :fontawesome-solid-circle-plus:{title="No"} No  | The target height. | `32` | [`Int`](../../types/#int)[`&Int`](../../types/#contextvar) |
 
 </div>
 

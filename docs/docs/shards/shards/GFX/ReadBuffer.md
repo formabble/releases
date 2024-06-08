@@ -11,9 +11,9 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The resulting output of the shard | | [`Bool`](../../types/#bool) |
-| `Buffer` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The buffer to read | `None` | [`&GFX.Buffer`](../../types/#contextvar) |
-| `Var` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The variable to read the data into | `None` | [`&{Any}`](../../types/#contextvar) |
-| `Wait` | :fontawesome-solid-circle-plus:{title="No"}  | Wait for read to complete | `false` | [`Bool`](../../types/#bool) |
+| `Buffer` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The buffer to read | `None` | [`&GFX.Buffer`](../../types/#contextvar) |
+| `Var` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The variable to read the data into | `None` | [`&{Any}`](../../types/#contextvar) |
+| `Wait` | :fontawesome-solid-circle-plus:{title="No"} No  | Wait for read to complete | `false` | [`Bool`](../../types/#bool) |
 
 </div>
 

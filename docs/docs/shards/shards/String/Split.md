@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`String`](../../types/#string) |
 | `Output ➡️` ||The resulting output of the shard | | [`[String]`](../../types/#seq) |
-| `Separator` | :fontawesome-solid-circle-plus:{title="No"}  | The separator character to split the string on. | `` | [`String`](../../types/#string)[`&String`](../../types/#contextvar) |
+| `Separator` | :fontawesome-solid-circle-plus:{title="No"} No  | The separator character to split the string on. | `` | [`String`](../../types/#string)[`&String`](../../types/#contextvar) |
 
 </div>
 

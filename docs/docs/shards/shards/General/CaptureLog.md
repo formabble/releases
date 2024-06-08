@@ -11,10 +11,10 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
 | `Output ➡️` ||The resulting output of the shard | | [`[String]`](../../types/#seq) |
-| `Size` | :fontawesome-solid-circle-plus:{title="No"}  | The maximum number of logs to retain. | `8` | [`Int`](../../types/#int) |
-| `MinLevel` | :fontawesome-solid-circle-plus:{title="No"}  | The minimum level of logs to capture. | `debug` | [`String`](../../types/#string) |
-| `Pattern` | :fontawesome-solid-circle-plus:{title="No"}  | The pattern used to format the logs. | `%^[%l]%$ [%Y-%m-%d %T.%e] [T-%t] [%s::%#] %v` | [`String`](../../types/#string) |
-| `Suspend` | :fontawesome-solid-circle-plus:{title="No"}  | TODO. | `false` | [`Bool`](../../types/#bool) |
+| `Size` | :fontawesome-solid-circle-plus:{title="No"} No  | The maximum number of logs to retain. | `8` | [`Int`](../../types/#int) |
+| `MinLevel` | :fontawesome-solid-circle-plus:{title="No"} No  | The minimum level of logs to capture. | `debug` | [`String`](../../types/#string) |
+| `Pattern` | :fontawesome-solid-circle-plus:{title="No"} No  | The pattern used to format the logs. | `%^[%l]%$ [%Y-%m-%d %T.%e] [T-%t] [%s::%#] %v` | [`String`](../../types/#string) |
+| `Suspend` | :fontawesome-solid-circle-plus:{title="No"} No  | TODO. | `false` | [`Bool`](../../types/#bool) |
 
 </div>
 

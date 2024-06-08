@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The resulting output of the shard | | [`None`](../../types/#none) |
-| `Name` | :fontawesome-solid-circle-plus:{title="No"}  | The name of the field to read/write | `` | [`String`](../../types/#string) |
+| `Name` | :fontawesome-solid-circle-plus:{title="No"} No  | The name of the field to read/write | `` | [`String`](../../types/#string) |
 
 </div>
 

@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`String`](../../types/#string) |
 | `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
-| `Pure` | :fontawesome-solid-circle-plus:{title="No"}  | If the input string is generic pure json rather then shards flavored json. | `true` | [`Bool`](../../types/#bool) |
+| `Pure` | :fontawesome-solid-circle-plus:{title="No"} No  | If the input string is generic pure json rather then shards flavored json. | `true` | [`Bool`](../../types/#bool) |
 
 </div>
 

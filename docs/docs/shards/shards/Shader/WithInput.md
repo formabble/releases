@@ -11,9 +11,9 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
 | `Output ➡️` ||The resulting output of the shard | | [`None`](../../types/#none) |
-| `Name` | :fontawesome-solid-circle-plus:{title="No"}  | The name of the input | `` | [`String`](../../types/#string) |
-| `Then` | :fontawesome-solid-circle-plus:{title="No"}  | The shards to execute if the input exists | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
-| `Else` | :fontawesome-solid-circle-plus:{title="No"}  | The shards to execute if the input does not exist | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
+| `Name` | :fontawesome-solid-circle-plus:{title="No"} No  | The name of the input | `` | [`String`](../../types/#string) |
+| `Then` | :fontawesome-solid-circle-plus:{title="No"} No  | The shards to execute if the input exists | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
+| `Else` | :fontawesome-solid-circle-plus:{title="No"} No  | The shards to execute if the input does not exist | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
 
 </div>
 

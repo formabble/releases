@@ -11,8 +11,8 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
 | `Output ➡️` ||The resulting output of the shard | |  |
-| `Name` | :fontawesome-solid-circle-plus:{title="No"}  | The name of the field to read/write | `` | [`String`](../../types/#string) |
-| `BufferName` | :fontawesome-solid-circle-plus:{title="No"}  | The name of the buffer to read from (object/view) (default: object) | `` | [`String`](../../types/#string) |
+| `Name` | :fontawesome-solid-circle-plus:{title="No"} No  | The name of the field to read/write | `` | [`String`](../../types/#string) |
+| `BufferName` | :fontawesome-solid-circle-plus:{title="No"} No  | The name of the buffer to read from (object/view) (default: object) | `` | [`String`](../../types/#string) |
 
 </div>
 

@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
 | `Output ➡️` ||The resulting output of the shard | | [`Bytes`](../../types/#bytes) |
-| `CRDT` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The CRDT instance to save. | `None` | [`&Object`](../../types/#contextvar) |
+| `CRDT` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The CRDT instance to save. | `None` | [`&Object`](../../types/#contextvar) |
 
 </div>
 

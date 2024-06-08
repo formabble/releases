@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
-| `Gravity` | :fontawesome-solid-circle-plus:{title="No"}  | The gravity force vector. | `(0 -9.81 0)` | [`Float`](../../types/#float) |
+| `Gravity` | :fontawesome-solid-circle-plus:{title="No"} No  | The gravity force vector. | `(0 -9.81 0)` | [`Float`](../../types/#float) |
 
 </div>
 

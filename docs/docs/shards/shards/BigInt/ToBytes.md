@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Big integer represented as bytes. | | [`Bytes`](../../types/#bytes) |
 | `Output ➡️` ||The resulting output of the shard | | [`Bytes`](../../types/#bytes) |
-| `Bits` | :fontawesome-solid-circle-plus:{title="No"}  | The desired amount of bits for the output or 0 for automatic packing. | `0` | [`Int`](../../types/#int) |
+| `Bits` | :fontawesome-solid-circle-plus:{title="No"} No  | The desired amount of bits for the output or 0 for automatic packing. | `0` | [`Int`](../../types/#int) |
 
 </div>
 

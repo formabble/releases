@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The value that will be passed to the Contents shards (each column). | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The output of this shard will be its input. | | [`Any`](../../types/#any) |
-| `Contents` | :fontawesome-solid-circle-plus:{title="No"}  | A sequence of UI contents. | `[]` | [`[None Shard [Shard]]`](../../types/#seq) |
+| `Contents` | :fontawesome-solid-circle-plus:{title="No"} No  | A sequence of UI contents. | `[]` | [`[None Shard [Shard]]`](../../types/#seq) |
 
 </div>
 

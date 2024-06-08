@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`GFX.Texture2D`](../../types/#gfx.texture2d)[`GFX.TextureCube`](../../types/#gfx.texturecube) |
 | `Output ➡️` ||The resulting output of the shard | | [`Image`](../../types/#image) |
-| `Wait` | :fontawesome-solid-circle-plus:{title="No"}  | Wait for read to complete | `false` | [`Bool`](../../types/#bool) |
+| `Wait` | :fontawesome-solid-circle-plus:{title="No"} No  | Wait for read to complete | `false` | [`Bool`](../../types/#bool) |
 
 </div>
 

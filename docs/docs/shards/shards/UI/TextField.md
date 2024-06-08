@@ -11,11 +11,11 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The value is ignored. | | [`None`](../../types/#none) |
 | `Output ➡️` ||The value produced when changed. | | [`[Any]`](../../types/#seq) |
-| `Variable` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The variable that holds the input value. | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar) |
-| `JustifyWidth` | :fontawesome-solid-circle-plus:{title="No"}  | Whether to take up all available space for its desired width. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
-| `Multiline` | :fontawesome-solid-circle-plus:{title="No"}  | Support multiple lines. | `false` | [`Bool`](../../types/#bool) |
-| `Password` | :fontawesome-solid-circle-plus:{title="No"}  | Support multiple lines. | `false` | [`Bool`](../../types/#bool) |
-| `Hint` | :fontawesome-solid-circle-plus:{title="No"}  | Hint to show in the text field. | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar)[`None`](../../types/#none) |
+| `Variable` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The variable that holds the input value. | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar) |
+| `JustifyWidth` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether to take up all available space for its desired width. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
+| `Multiline` | :fontawesome-solid-circle-plus:{title="No"} No  | Support multiple lines. | `false` | [`Bool`](../../types/#bool) |
+| `Password` | :fontawesome-solid-circle-plus:{title="No"} No  | Support multiple lines. | `false` | [`Bool`](../../types/#bool) |
+| `Hint` | :fontawesome-solid-circle-plus:{title="No"} No  | Hint to show in the text field. | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar)[`None`](../../types/#none) |
 
 </div>
 

@@ -11,8 +11,8 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
-| `Into` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The CRDT instance to merge into. | `None` | [`&Object`](../../types/#contextvar) |
-| `Other` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The other CRDT instance to merge. | `None` | [`&Object`](../../types/#contextvar) |
+| `Into` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The CRDT instance to merge into. | `None` | [`&Object`](../../types/#contextvar) |
+| `Other` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The other CRDT instance to merge. | `None` | [`&Object`](../../types/#contextvar) |
 
 </div>
 

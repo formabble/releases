@@ -11,11 +11,11 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The value is ignored. | | [`None`](../../types/#none) |
 | `Output ➡️` ||The value produced. | | [`Float`](../../types/#float) |
-| `Label` | :fontawesome-solid-circle-plus:{title="No"}  | The text label for this widget. | `None` | [`String`](../../types/#string)[`None`](../../types/#none) |
-| `Style` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The text style. | `None` | [`{Any}`](../../types/#table)[`&{Any}`](../../types/#contextvar) |
-| `Variable` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The variable that holds the input value. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
-| `Min` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The minimum value. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
-| `Max` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The maximum value. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
+| `Label` | :fontawesome-solid-circle-plus:{title="No"} No  | The text label for this widget. | `None` | [`String`](../../types/#string)[`None`](../../types/#none) |
+| `Style` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The text style. | `None` | [`{Any}`](../../types/#table)[`&{Any}`](../../types/#contextvar) |
+| `Variable` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The variable that holds the input value. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
+| `Min` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The minimum value. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
+| `Max` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The maximum value. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
 
 </div>
 

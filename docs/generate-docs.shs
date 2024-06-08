@@ -220,9 +220,9 @@
     "| `" >> o
     p-name >> o
     p-optional | If(IsTrue {
-        "` | :fontawesome-solid-circle-plus:{title=\"No\"} " >> o
+        "` | :fontawesome-solid-circle-plus:{title=\"No\"} No " >> o
       } {
-        "` | :fontawesome-solid-circle-xmark:{title=\"Yes\"} " >> o
+        "` | :fontawesome-solid-circle-xmark:{title=\"Yes\"} Yes " >> o
       }
     )
     " | " >> o

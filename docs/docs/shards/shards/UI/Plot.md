@@ -11,10 +11,10 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The value that will be passed to the Contents shards of the plot. | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The output of this shard will be its input. | | [`Any`](../../types/#any) |
-| `Contents` | :fontawesome-solid-circle-plus:{title="No"}  | The UI contents. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
-| `ViewAspect` | :fontawesome-solid-circle-plus:{title="No"}  | Width / height ratio of the plot region. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar)[`None`](../../types/#none) |
-| `DataAspect` | :fontawesome-solid-circle-plus:{title="No"}  | Width / height ratio of the data. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar)[`None`](../../types/#none) |
-| `Legend` | :fontawesome-solid-circle-plus:{title="No"}  | Whether to display the legend. | `None` | [`Bool`](../../types/#bool)[`None`](../../types/#none) |
+| `Contents` | :fontawesome-solid-circle-plus:{title="No"} No  | The UI contents. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `ViewAspect` | :fontawesome-solid-circle-plus:{title="No"} No  | Width / height ratio of the plot region. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar)[`None`](../../types/#none) |
+| `DataAspect` | :fontawesome-solid-circle-plus:{title="No"} No  | Width / height ratio of the data. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar)[`None`](../../types/#none) |
+| `Legend` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether to display the legend. | `None` | [`Bool`](../../types/#bool)[`None`](../../types/#none) |
 
 </div>
 

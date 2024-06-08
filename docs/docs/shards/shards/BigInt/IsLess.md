@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Big integer represented as bytes. | | [`Bytes`](../../types/#bytes) |
 | `Output ➡️` ||A boolean value repesenting the result of the logic operation. | | [`Bool`](../../types/#bool) |
-| `Operand` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The bytes variable representing the operand | `None` | [`&Bytes`](../../types/#contextvar) |
+| `Operand` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The bytes variable representing the operand | `None` | [`&Bytes`](../../types/#contextvar) |
 
 </div>
 

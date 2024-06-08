@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
 | `Output ➡️` ||The resulting output of the shard | | [`Bool`](../../types/#bool) |
-| `Modifiers` | :fontawesome-solid-circle-plus:{title="No"}  | Modifier keys to check. | `None` | [`None`](../../types/#none)[`[ModifierKey]`](../../types/#seq) |
+| `Modifiers` | :fontawesome-solid-circle-plus:{title="No"} No  | Modifier keys to check. | `None` | [`None`](../../types/#none)[`[ModifierKey]`](../../types/#seq) |
 
 </div>
 

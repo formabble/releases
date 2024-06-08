@@ -11,9 +11,9 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The image to display. | | [`Image`](../../types/#image)[`GFX.Texture2D`](../../types/#gfx.texture2d) |
 | `Output ➡️` ||The output of this shard will be its input. | | [`Image`](../../types/#image)[`GFX.Texture2D`](../../types/#gfx.texture2d) |
-| `Scale` | :fontawesome-solid-circle-plus:{title="No"}  | Scaling to apply to the source image. | `(1 1)` | [`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar) |
-| `Size` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The size to render the image at. | `None` | [`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar) |
-| `ScalingAware` | :fontawesome-solid-circle-plus:{title="No"}  | When set to true, this image's pixels will be rendered 1:1 regardless of UI context point size. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
+| `Scale` | :fontawesome-solid-circle-plus:{title="No"} No  | Scaling to apply to the source image. | `(1 1)` | [`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar) |
+| `Size` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The size to render the image at. | `None` | [`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar) |
+| `ScalingAware` | :fontawesome-solid-circle-plus:{title="No"} No  | When set to true, this image's pixels will be rendered 1:1 regardless of UI context point size. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
 
 </div>
 

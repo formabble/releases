@@ -11,9 +11,9 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
-| `Contents` | :fontawesome-solid-circle-xmark:{title="Yes"}  |  | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
-| `Include` | :fontawesome-solid-circle-plus:{title="No"}  | Includes only the listed variables | `None` | [`None`](../../types/#none)[`[String]`](../../types/#seq) |
-| `Exclude` | :fontawesome-solid-circle-plus:{title="No"}  | Ignores all the listed variables | `None` | [`None`](../../types/#none)[`[String]`](../../types/#seq) |
+| `Contents` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  |  | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `Include` | :fontawesome-solid-circle-plus:{title="No"} No  | Includes only the listed variables | `None` | [`None`](../../types/#none)[`[String]`](../../types/#seq) |
+| `Exclude` | :fontawesome-solid-circle-plus:{title="No"} No  | Ignores all the listed variables | `None` | [`None`](../../types/#none)[`[String]`](../../types/#seq) |
 
 </div>
 

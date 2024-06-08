@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Big integer represented as bytes. | | [`Bytes`](../../types/#bytes) |
 | `Output ➡️` ||Big integer represented as bytes. | | [`Bytes`](../../types/#bytes) |
-| `Operand` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The integer operand, can be a variable | `None` | [`Int`](../../types/#int)[`&Int`](../../types/#contextvar) |
+| `Operand` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The integer operand, can be a variable | `None` | [`Int`](../../types/#int)[`&Int`](../../types/#contextvar) |
 
 </div>
 

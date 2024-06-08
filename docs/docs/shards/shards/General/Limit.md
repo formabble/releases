@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`[Any]`](../../types/#seq) |
 | `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
-| `Max` | :fontawesome-solid-circle-plus:{title="No"}  | How many maximum elements to take from the input sequence. | `0` | [`Int`](../../types/#int) |
+| `Max` | :fontawesome-solid-circle-plus:{title="No"} No  | How many maximum elements to take from the input sequence. | `0` | [`Int`](../../types/#int) |
 
 </div>
 

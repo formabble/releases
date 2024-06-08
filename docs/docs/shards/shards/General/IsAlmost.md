@@ -11,8 +11,8 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input can be of any number type or a sequence of such types. | | [`Float`](../../types/#float)[`Float2`](../../types/#float2)[`Float3`](../../types/#float3)[`Float4`](../../types/#float4)[`Int`](../../types/#int)[`Int2`](../../types/#int2)[`Int3`](../../types/#int3)[`Int4`](../../types/#int4)[`Int8`](../../types/#int8)[`Int16`](../../types/#int16)[`[Any]`](../../types/#seq) |
 | `Output ➡️` ||true if the input is almost equal to the given value; otherwise, false. | | [`Bool`](../../types/#bool) |
-| `Value` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The value to test against for almost equality. | `None` | [`Float`](../../types/#float)[`Float2`](../../types/#float2)[`Float3`](../../types/#float3)[`Float4`](../../types/#float4)[`Int`](../../types/#int)[`Int2`](../../types/#int2)[`Int3`](../../types/#int3)[`Int4`](../../types/#int4)[`Int8`](../../types/#int8)[`Int16`](../../types/#int16)[`[Any]`](../../types/#seq) |
-| `Threshold` | :fontawesome-solid-circle-plus:{title="No"}  | The smallest difference to be considered equal. Should be greater than zero. | `1.19209e-07` | [`Float`](../../types/#float)[`Int`](../../types/#int) |
+| `Value` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The value to test against for almost equality. | `None` | [`Float`](../../types/#float)[`Float2`](../../types/#float2)[`Float3`](../../types/#float3)[`Float4`](../../types/#float4)[`Int`](../../types/#int)[`Int2`](../../types/#int2)[`Int3`](../../types/#int3)[`Int4`](../../types/#int4)[`Int8`](../../types/#int8)[`Int16`](../../types/#int16)[`[Any]`](../../types/#seq) |
+| `Threshold` | :fontawesome-solid-circle-plus:{title="No"} No  | The smallest difference to be considered equal. Should be greater than zero. | `1.19209e-07` | [`Float`](../../types/#float)[`Int`](../../types/#int) |
 
 </div>
 

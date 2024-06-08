@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
 | `Output ➡️` ||The resulting output of the shard | | [`Float`](../../types/#float) |
-| `Window` | :fontawesome-solid-circle-plus:{title="No"}  | The window to get the scaling factor of. | `None` | [`None`](../../types/#none)[`&Object`](../../types/#contextvar) |
+| `Window` | :fontawesome-solid-circle-plus:{title="No"} No  | The window to get the scaling factor of. | `None` | [`None`](../../types/#none)[`&Object`](../../types/#contextvar) |
 
 </div>
 

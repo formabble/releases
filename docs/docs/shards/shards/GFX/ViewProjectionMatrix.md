@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`GFX.View`](../../types/#gfx.view) |
 | `Output ➡️` ||The resulting output of the shard | | [`[Float4]`](../../types/#seq) |
-| `ViewSize` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The size of the screen this view is being used with | `None` | [`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar) |
+| `ViewSize` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The size of the screen this view is being used with | `None` | [`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar) |
 
 </div>
 

@@ -11,8 +11,8 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Bytes`](../../types/#bytes) |
 | `Output ➡️` ||The resulting output of the shard | | [`Bytes`](../../types/#bytes) |
-| `Signature` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The signature generated signing the input message with the private key. | `None` | [`Bytes`](../../types/#bytes)[`&Bytes`](../../types/#contextvar) |
-| `Compressed` | :fontawesome-solid-circle-plus:{title="No"}  | If the output PublicKey should use the compressed format. | `false` | [`Bool`](../../types/#bool) |
+| `Signature` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The signature generated signing the input message with the private key. | `None` | [`Bytes`](../../types/#bytes)[`&Bytes`](../../types/#contextvar) |
+| `Compressed` | :fontawesome-solid-circle-plus:{title="No"} No  | If the output PublicKey should use the compressed format. | `false` | [`Bool`](../../types/#bool) |
 
 </div>
 

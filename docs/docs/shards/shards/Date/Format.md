@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||An epoch timestamp (seconds after epoch). | | [`Int`](../../types/#int) |
 | `Output ➡️` ||A formatted readable string. | | [`String`](../../types/#string) |
-| `Format` | :fontawesome-solid-circle-plus:{title="No"}  | The actual formatting string, see full docs: https://docs.rs/chrono/0.4.19/chrono/format/strftime/index.html#specifiers | `%a %b %e %T %Y` | [`String`](../../types/#string) |
+| `Format` | :fontawesome-solid-circle-plus:{title="No"} No  | The actual formatting string, see full docs: https://docs.rs/chrono/0.4.19/chrono/format/strftime/index.html#specifiers | `%a %b %e %T %Y` | [`String`](../../types/#string) |
 
 </div>
 

@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The value to append to the collection. | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The input to this shard is passed through as its output. | | [`Any`](../../types/#any) |
-| `Collection` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The collection to add the input to. | `None` | [`&[Any]`](../../types/#contextvar)[`&String`](../../types/#contextvar)[`&Bytes`](../../types/#contextvar) |
+| `Collection` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The collection to add the input to. | `None` | [`&[Any]`](../../types/#contextvar)[`&String`](../../types/#contextvar)[`&Bytes`](../../types/#contextvar) |
 
 </div>
 

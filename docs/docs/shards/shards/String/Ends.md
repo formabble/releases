@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`String`](../../types/#string) |
 | `Output ➡️` ||The resulting output of the shard | | [`Bool`](../../types/#bool) |
-| `With` | :fontawesome-solid-circle-plus:{title="No"}  | The string that needs to match the ending of the input string to output true. | `` | [`String`](../../types/#string)[`&String`](../../types/#contextvar) |
+| `With` | :fontawesome-solid-circle-plus:{title="No"} No  | The string that needs to match the ending of the input string to output true. | `` | [`String`](../../types/#string)[`&String`](../../types/#contextvar) |
 
 </div>
 

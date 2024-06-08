@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`[Object]`](../../types/#seq)[`Object`](../../types/#object) |
 | `Output ➡️` ||The resulting output of the shard | | [`[Object]`](../../types/#seq)[`Object`](../../types/#object) |
-| `Queue` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The draw queue. | `None` | [`&GFX.DrawQueue`](../../types/#contextvar) |
+| `Queue` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The draw queue. | `None` | [`&GFX.DrawQueue`](../../types/#contextvar) |
 
 </div>
 

@@ -11,10 +11,10 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`[Float4]`](../../types/#seq) |
 | `Output ➡️` ||The resulting output of the shard | | [`[Float4]`](../../types/#seq) |
-| `FlySpeed` | :fontawesome-solid-circle-plus:{title="No"}  | Controls fly speed with the keyboard | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
-| `ScrollSpeed` | :fontawesome-solid-circle-plus:{title="No"}  | Controls middle mouse movement speed | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
-| `PanSpeed` | :fontawesome-solid-circle-plus:{title="No"}  | Controls middle mouse pan speed | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
-| `LookSpeed` | :fontawesome-solid-circle-plus:{title="No"}  | Controls right mouse look speed | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
+| `FlySpeed` | :fontawesome-solid-circle-plus:{title="No"} No  | Controls fly speed with the keyboard | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
+| `ScrollSpeed` | :fontawesome-solid-circle-plus:{title="No"} No  | Controls middle mouse movement speed | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
+| `PanSpeed` | :fontawesome-solid-circle-plus:{title="No"} No  | Controls middle mouse pan speed | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
+| `LookSpeed` | :fontawesome-solid-circle-plus:{title="No"} No  | Controls right mouse look speed | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
 
 </div>
 

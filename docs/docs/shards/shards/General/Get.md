@@ -11,10 +11,10 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Any input is ignored. | | [`None`](../../types/#none) |
 | `Output ➡️` ||The output is the value read from the variable. | | [`Any`](../../types/#any) |
-| `Name` | :fontawesome-solid-circle-plus:{title="No"}  | The name of the variable. | `` | [`String`](../../types/#string)[`&Any`](../../types/#contextvar) |
-| `Key` | :fontawesome-solid-circle-plus:{title="No"}  | The key of the value to read from the table (parameter applicable only if the target variable is a table). | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar)[`None`](../../types/#none) |
-| `Global` | :fontawesome-solid-circle-plus:{title="No"}  | If the variable is available to all of the wires in the same mesh. | `false` | [`Bool`](../../types/#bool) |
-| `Default` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The default value to use to infer types and output if the variable is not set, key is not there and/or type mismatches. | `None` | [`Any`](../../types/#any) |
+| `Name` | :fontawesome-solid-circle-plus:{title="No"} No  | The name of the variable. | `` | [`String`](../../types/#string)[`&Any`](../../types/#contextvar) |
+| `Key` | :fontawesome-solid-circle-plus:{title="No"} No  | The key of the value to read from the table (parameter applicable only if the target variable is a table). | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar)[`None`](../../types/#none) |
+| `Global` | :fontawesome-solid-circle-plus:{title="No"} No  | If the variable is available to all of the wires in the same mesh. | `false` | [`Bool`](../../types/#bool) |
+| `Default` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The default value to use to infer types and output if the variable is not set, key is not there and/or type mismatches. | `None` | [`Any`](../../types/#any) |
 
 </div>
 

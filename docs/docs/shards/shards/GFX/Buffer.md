@@ -11,8 +11,8 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The resulting output of the shard | | [`GFX.Buffer`](../../types/#gfx.buffer) |
-| `Type` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The type descriptor of the buffer | `None` | [`{Any}`](../../types/#table) |
-| `AddressSpace` | :fontawesome-solid-circle-plus:{title="No"}  | The address space to use the buffer with | `None` | [`None`](../../types/#none)[`BufferAddressSpace`](../../../enums/BufferAddressSpace) |
+| `Type` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The type descriptor of the buffer | `None` | [`{Any}`](../../types/#table) |
+| `AddressSpace` | :fontawesome-solid-circle-plus:{title="No"} No  | The address space to use the buffer with | `None` | [`None`](../../types/#none)[`BufferAddressSpace`](../../../enums/BufferAddressSpace) |
 
 </div>
 

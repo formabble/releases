@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
 | `Output ➡️` ||The resulting output of the shard | | [`Float4`](../../types/#float4)[`Float2`](../../types/#float2)[`Float`](../../types/#float)[`Bool`](../../types/#bool) |
-| `Property` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The property to retrieve from the UI context | `None` | [`UIProperty`](../../../enums/UIProperty) |
+| `Property` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The property to retrieve from the UI context | `None` | [`UIProperty`](../../../enums/UIProperty) |
 
 </div>
 

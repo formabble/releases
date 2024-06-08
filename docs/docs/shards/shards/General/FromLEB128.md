@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Bytes`](../../types/#bytes) |
 | `Output ➡️` ||The resulting output of the shard | | [`Int`](../../types/#int) |
-| `Signed` | :fontawesome-solid-circle-plus:{title="No"}  | If the integer to encode/decode is signed and can be negative. | `false` | [`Bool`](../../types/#bool) |
+| `Signed` | :fontawesome-solid-circle-plus:{title="No"} No  | If the integer to encode/decode is signed and can be negative. | `false` | [`Bool`](../../types/#bool) |
 
 </div>
 

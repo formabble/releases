@@ -11,11 +11,11 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
-| `Contents` | :fontawesome-solid-circle-plus:{title="No"}  | The UI contents. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
-| `Position` | :fontawesome-solid-circle-xmark:{title="Yes"}  | Absolute UI position; or when anchor is set, relative offset. (X/Y) | `None` | [`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar) |
-| `Pivot` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The pivot for the inner UI | `None` | [`Anchor`](../../../enums/Anchor)[`&Anchor`](../../types/#contextvar) |
-| `Anchor` | :fontawesome-solid-circle-xmark:{title="Yes"}  | Side of the screen to anchor the UI to. | `None` | [`Anchor`](../../../enums/Anchor)[`&Anchor`](../../types/#contextvar) |
-| `Order` | :fontawesome-solid-circle-xmark:{title="Yes"}  | Paint layer to be used for this UI. Default is background | `None` | [`Order`](../../../enums/Order) |
+| `Contents` | :fontawesome-solid-circle-plus:{title="No"} No  | The UI contents. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `Position` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Absolute UI position; or when anchor is set, relative offset. (X/Y) | `None` | [`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar) |
+| `Pivot` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The pivot for the inner UI | `None` | [`Anchor`](../../../enums/Anchor)[`&Anchor`](../../types/#contextvar) |
+| `Anchor` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Side of the screen to anchor the UI to. | `None` | [`Anchor`](../../../enums/Anchor)[`&Anchor`](../../types/#contextvar) |
+| `Order` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Paint layer to be used for this UI. Default is background | `None` | [`Order`](../../../enums/Order) |
 
 </div>
 

@@ -11,9 +11,9 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The value that will be passed to the Contents shards of the collapsing header. | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The output of this shard will be its input. | | [`Any`](../../types/#any) |
-| `Heading` | :fontawesome-solid-circle-plus:{title="No"}  | The heading text or widgets for this collapsing header. | `None` | [`String`](../../types/#string)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
-| `Contents` | :fontawesome-solid-circle-plus:{title="No"}  | The UI contents. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
-| `DefaultOpen` | :fontawesome-solid-circle-plus:{title="No"}  | Whether the collapsing header is opened by default. | `false` | [`Bool`](../../types/#bool) |
+| `Heading` | :fontawesome-solid-circle-plus:{title="No"} No  | The heading text or widgets for this collapsing header. | `None` | [`String`](../../types/#string)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
+| `Contents` | :fontawesome-solid-circle-plus:{title="No"} No  | The UI contents. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `DefaultOpen` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether the collapsing header is opened by default. | `false` | [`Bool`](../../types/#bool) |
 
 </div>
 

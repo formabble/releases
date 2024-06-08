@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||A sequence of floating point numbers. | | [`[Float]`](../../types/#seq) |
 | `Output ➡️` ||The calculated mean. | | [`Float`](../../types/#float) |
-| `Kind` | :fontawesome-solid-circle-plus:{title="No"}  | The kind of Pythagorean means. | `Mean.Arithmetic` | [`Mean`](../../../enums/Mean) |
+| `Kind` | :fontawesome-solid-circle-plus:{title="No"} No  | The kind of Pythagorean means. | `Mean.Arithmetic` | [`Mean`](../../../enums/Mean) |
 
 </div>
 

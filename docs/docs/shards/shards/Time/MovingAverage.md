@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Float`](../../types/#float) |
 | `Output ➡️` ||The resulting output of the shard | | [`Float`](../../types/#float) |
-| `Window` | :fontawesome-solid-circle-plus:{title="No"}  | The moving average window length (in frames) | `16` | [`Int`](../../types/#int) |
+| `Window` | :fontawesome-solid-circle-plus:{title="No"} No  | The moving average window length (in frames) | `16` | [`Int`](../../types/#int) |
 
 </div>
 

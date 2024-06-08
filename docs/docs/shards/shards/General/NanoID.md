@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
 | `Output ➡️` ||The resulting output of the shard | | [`String`](../../types/#string) |
-| `Hyphenated` | :fontawesome-solid-circle-plus:{title="No"}  | Whether to use hyphens in the output. | `21` | [`Bool`](../../types/#bool) |
+| `Hyphenated` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether to use hyphens in the output. | `21` | [`Bool`](../../types/#bool) |
 
 </div>
 

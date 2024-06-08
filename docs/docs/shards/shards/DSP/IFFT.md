@@ -11,8 +11,8 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`[Float2]`](../../types/#seq) |
 | `Output ➡️` ||The resulting output of the shard | | [`[Float]`](../../types/#seq)[`[Float2]`](../../types/#seq)[`Audio`](../../types/#audio) |
-| `Audio` | :fontawesome-solid-circle-plus:{title="No"}  | If the output should be an Audio chunk. | `false` | [`Bool`](../../types/#bool) |
-| `Complex` | :fontawesome-solid-circle-plus:{title="No"}  | If the output should be complex numbers (only if not Audio). | `false` | [`Bool`](../../types/#bool) |
+| `Audio` | :fontawesome-solid-circle-plus:{title="No"} No  | If the output should be an Audio chunk. | `false` | [`Bool`](../../types/#bool) |
+| `Complex` | :fontawesome-solid-circle-plus:{title="No"} No  | If the output should be complex numbers (only if not Audio). | `false` | [`Bool`](../../types/#bool) |
 
 </div>
 

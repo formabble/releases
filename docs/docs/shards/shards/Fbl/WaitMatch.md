@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
-| `Players` | :fontawesome-solid-circle-plus:{title="No"}  | The number of players to wait for | `2` | [`Int`](../../types/#int)[`&Int`](../../types/#contextvar) |
+| `Players` | :fontawesome-solid-circle-plus:{title="No"} No  | The number of players to wait for | `2` | [`Int`](../../types/#int)[`&Int`](../../types/#contextvar) |
 
 </div>
 

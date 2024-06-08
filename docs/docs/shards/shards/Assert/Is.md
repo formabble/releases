@@ -11,8 +11,8 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input can be of any type. | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The output will be the input (passthrough). | | [`Any`](../../types/#any) |
-| `Value` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The value to test against for equality. | `None` | [`Any`](../../types/#any) |
-| `Break` | :fontawesome-solid-circle-plus:{title="No"}  | If we should trigger a debug breakpoint on failure. | `false` | [`Bool`](../../types/#bool) |
+| `Value` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The value to test against for equality. | `None` | [`Any`](../../types/#any) |
+| `Break` | :fontawesome-solid-circle-plus:{title="No"} No  | If we should trigger a debug breakpoint on failure. | `false` | [`Bool`](../../types/#bool) |
 
 </div>
 

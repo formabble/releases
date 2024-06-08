@@ -11,8 +11,8 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
 | `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
-| `0` | :fontawesome-solid-circle-xmark:{title="Yes"}  | Vector component | `None` | [`&Int`](../../types/#contextvar)[`Int`](../../types/#int) |
-| `1` | :fontawesome-solid-circle-xmark:{title="Yes"}  | Vector component | `None` | [`&Int`](../../types/#contextvar)[`Int`](../../types/#int) |
+| `0` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Vector component | `None` | [`&Int`](../../types/#contextvar)[`Int`](../../types/#int) |
+| `1` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Vector component | `None` | [`&Int`](../../types/#contextvar)[`Int`](../../types/#int) |
 
 </div>
 

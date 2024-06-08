@@ -11,12 +11,12 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
-| `Contents` | :fontawesome-solid-circle-plus:{title="No"}  | The UI contents. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
-| `Class` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The Layout class describing all of the options relating to the layout of this UI. | `None` | [`&Object`](../../types/#contextvar) |
-| `MinSize` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The minimum size of the space to be reserved by this UI. This allows the UI to take up more space than required for its widget contents. Can be overidden by FillWidth and FillHeight. | `None` | [`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar) |
-| `MaxSize` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The maximum size of the space to be reserved by this UI. Prevents UI from taking as much space as possible. Can be overidden by FillWidth and FillHeight. | `None` | [`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar) |
-| `FillWidth` | :fontawesome-solid-circle-xmark:{title="Yes"}  | Whether the Layout should take up the full width of the available space. | `None` | [`Bool`](../../types/#bool) |
-| `FillHeight` | :fontawesome-solid-circle-xmark:{title="Yes"}  | Whether the Layout should take up the full height of the available space. | `None` | [`Bool`](../../types/#bool) |
+| `Contents` | :fontawesome-solid-circle-plus:{title="No"} No  | The UI contents. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `Class` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The Layout class describing all of the options relating to the layout of this UI. | `None` | [`&Object`](../../types/#contextvar) |
+| `MinSize` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The minimum size of the space to be reserved by this UI. This allows the UI to take up more space than required for its widget contents. Can be overidden by FillWidth and FillHeight. | `None` | [`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar) |
+| `MaxSize` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The maximum size of the space to be reserved by this UI. Prevents UI from taking as much space as possible. Can be overidden by FillWidth and FillHeight. | `None` | [`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar) |
+| `FillWidth` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Whether the Layout should take up the full width of the available space. | `None` | [`Bool`](../../types/#bool) |
+| `FillHeight` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Whether the Layout should take up the full height of the available space. | `None` | [`Bool`](../../types/#bool) |
 
 </div>
 

@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
-| `Text` | :fontawesome-solid-circle-plus:{title="No"}  | The comment's text. | `` | [`String`](../../types/#string) |
+| `Text` | :fontawesome-solid-circle-plus:{title="No"} No  | The comment's text. | `` | [`String`](../../types/#string) |
 
 </div>
 

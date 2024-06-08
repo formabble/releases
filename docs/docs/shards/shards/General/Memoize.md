@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
-| `Evaluate` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The shards to evaluate the cached value based on input | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `Evaluate` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The shards to evaluate the cached value based on input | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
 
 </div>
 

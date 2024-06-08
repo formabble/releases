@@ -11,8 +11,8 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
 | `Output ➡️` ||The resulting output of the shard | | [`Int`](../../types/#int) |
-| `MachineId` | :fontawesome-solid-circle-plus:{title="No"}  | The machine ID, must be less than 32 | `0` | [`Int`](../../types/#int) |
-| `NodeId` | :fontawesome-solid-circle-plus:{title="No"}  | The node ID, must be less than 32 | `0` | [`Int`](../../types/#int) |
+| `MachineId` | :fontawesome-solid-circle-plus:{title="No"} No  | The machine ID, must be less than 32 | `0` | [`Int`](../../types/#int) |
+| `NodeId` | :fontawesome-solid-circle-plus:{title="No"} No  | The node ID, must be less than 32 | `0` | [`Int`](../../types/#int) |
 
 </div>
 

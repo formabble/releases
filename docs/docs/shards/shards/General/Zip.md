@@ -11,8 +11,8 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
 | `Output ➡️` ||The resulting output of the shard | | [`[{Any}]`](../../types/#seq)[`[[Any]]`](../../types/#seq) |
-| `Sequences` | :fontawesome-solid-circle-xmark:{title="Yes"}  | The sequences to zip together. | `None` | [`[[Any] &[Any]]`](../../types/#seq) |
-| `Keys` | :fontawesome-solid-circle-plus:{title="No"}  | The element keys to user. | `None` | [`None`](../../types/#none)[`[String]`](../../types/#seq) |
+| `Sequences` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The sequences to zip together. | `None` | [`[[Any] &[Any]]`](../../types/#seq) |
+| `Keys` | :fontawesome-solid-circle-plus:{title="No"} No  | The element keys to user. | `None` | [`None`](../../types/#none)[`[String]`](../../types/#seq) |
 
 </div>
 

@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`String`](../../types/#string) |
 | `Output ➡️` ||The resulting output of the shard | | [`[String]`](../../types/#seq) |
-| `Regex` | :fontawesome-solid-circle-plus:{title="No"}  | The regular expression. | `` | [`String`](../../types/#string) |
+| `Regex` | :fontawesome-solid-circle-plus:{title="No"} No  | The regular expression. | `` | [`String`](../../types/#string) |
 
 </div>
 
