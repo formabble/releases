@@ -338,11 +338,11 @@
               }}]
             [{"type": "text"
               "text": {
-                  "content": (shard-doc:input-help | If({IsNotNone} {ExpectString} {"ToDo"}))
+                  "content": (shard-doc:input-help | If({IsNotNone} {ExpectString} {""}) | If(Is("") {"The input of the shard, if any"} Pass))
               }}]
             [{"type": "text"
               "text": {
-                  "content": "⚫"
+                  "content": "no default"
               }}]
             [{"type": "text"
               "text": {
@@ -360,11 +360,11 @@
               }}]
             [{"type": "text"
               "text": {
-                  "content": (shard-doc:output-help | If({IsNotNone} {ExpectString} {"ToDo"}))
+                  "content": (shard-doc:output-help | If({IsNotNone} {ExpectString} {""}) | If(Is("") {"The resulting output of the shard"} Pass))
               }}]
             [{"type": "text"
               "text": {
-                  "content": "⚫"
+                  "content": "no default"
               }}]
             [{"type": "text"
               "text": {
