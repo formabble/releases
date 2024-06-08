@@ -17,6 +17,7 @@
 
 @define(input-help-shards {If({IsNotNone} {ExpectString} {""}) | If(Is("") {"The input of the shard, if any"} Pass)})
 @define(output-help-shards {If({IsNotNone} {ExpectString} {""}) | If(Is("") {"The resulting output of the shard"} Pass)})
+@define(params-types-shards {Map({ExpectTable | Take("name")}) | ToString | Slice(1 -1)})
 
 @template(get-filename [path extension fallback-general] {
   = f
@@ -299,13 +300,33 @@
 
   "--8<-- \"includes/license.md\"\r\n\r\n" >> o
 
-  o | String.Join >= content
+  o | String.Join = content
   file | FS.Write(content Overwrite: true)
 
   {
     ; for AI purposes
-    "\n\n----------------\n\n" | AppendTo(content)
-    "shards_docs_merged.txt" | FS.Write(content Append: true)
+    shard-doc:input-help | @input-help-shards | Set(shard-doc "input-help")
+    shard-doc:output-help | @output-help-shards | Set(shard-doc "output-help")
+
+    shard-doc:input-types | @params-types-shards | Set(shard-doc "input-types")
+    shard-doc:output-types | @params-types-shards | Set(shard-doc "output-types")
+
+    shard-doc:help | When(Is("") {"Help text is missing!" | Set(shard-doc "help")})
+
+    parameters-seq | Map({
+      ExpectTable = param-table
+      param-table:types | ExpectSeq
+      Map({ExpectTable | Take("name")}) | ToString | Slice(1 -1) | Set(param-table "types")
+      param-table
+    }) = parameters-seq-edited
+
+    shard-doc | ToString >= shard-doc-string
+
+    "\nParams: " | AppendTo(shard-doc-string)
+    parameters-seq-edited | ToString | AppendTo(shard-doc-string)
+
+    "\n----\n" | AppendTo(shard-doc-string)
+    "shards_docs_merged.txt" | FS.Write(shard-doc-string Append: true)
   }
 
   {
@@ -354,7 +375,7 @@
               }}]
             [{"type": "text"
               "text": {
-                  "content": (shard-doc:input-help | @input-help-shards)
+                  "content": shard-doc:input-help
               }}]
             [{"type": "text"
               "text": {
@@ -362,7 +383,7 @@
               }}]
             [{"type": "text"
               "text": {
-                  "content": (shard-doc:input-types | Map({ExpectTable | Take("name")}) | ToString | Slice(1 -1))
+                  "content": shard-doc:input-types
               }}]]
         }
       } >> notion-params
@@ -380,7 +401,7 @@
               }}]
             [{"type": "text"
               "text": {
-                  "content": (shard-doc:output-help | @output-help-shards)
+                  "content": shard-doc:output-help
               }}]
             [{"type": "text"
               "text": {
@@ -388,7 +409,7 @@
               }}]
             [{"type": "text"
               "text": {
-                  "content": (shard-doc:output-types | Map({ExpectTable | Take("name")}) | ToString | Slice(1 -1))
+                  "content": shard-doc:output-types
               }}]]
         }
       } >> notion-params
@@ -499,6 +520,8 @@
 @notion-api-key | When(IsNot("") {
   @notion-db-id | Log("Populating notion database")
 })
+
+"shards_docs_merged.txt" | FS.Remove
 
 ; process documentation in parallel
 ; Empty results indicate success, returning the shard name adds it to the skipped list
