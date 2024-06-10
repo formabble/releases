@@ -1,98 +1,308 @@
-name: Build and Release
+name: Manual Release
 
 on:
+  workflow_dispatch:
   push:
     tags:
       - 'fbl-*'
   workflow_dispatch:
 
 jobs:
-  build-and-release:
-    runs-on: windows-latest
-
+  prebuild-sho:
+    runs-on: macos-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-      with:
-        fetch-depth: 0 # Fetch all history for all tags and branches
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Fetch all history for all tags and branches
 
-    - name: Checkout private repository
-      uses: actions/checkout@v3
-      with:
-        repository: fragcolor-xyz/formabble
-        token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
-        path: formabble
-        ref: ${{ github.ref_name }}
-        submodules: recursive
-        fetch-depth: 1
+      - name: Check repository
+        shell: bash
+        run: |
+          if [[ -f build_sho/start.sho ]]; then
+            echo "Using prebuilt scripts from repository"
+            echo "PREBUILD_SHO_EARLY_OUT=1" >> $GITHUB_ENV
+          fi
 
-    - name: Checkout public repository
-      uses: actions/checkout@v3
-      with:
-        repository: fragcolor-xyz/shards
-        path: shards
-        ref: ${{ github.ref_name }}
-        submodules: recursive
-        fetch-depth: 1
+      - uses: "./.github/actions/checkout"
+        if: ${{ env.PREBUILD_SHO_EARLY_OUT != '1' }}
+        with:
+          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+          no-prebuilt-sho: true
 
-    - name: Set up rust
-      shell: bash
-      env:
-        RUSTUP_USE_CURL: 1
-      run: |
-        RUSTUP_TOOLCHAIN=`cat shards/rust.version`-msvc
-        echo "RUSTUP_TOOLCHAIN=$RUSTUP_TOOLCHAIN" >> $GITHUB_ENV
-        rustup toolchain install $RUSTUP_TOOLCHAIN
+      - name: Build formabble scripts
+        if: ${{ env.PREBUILD_SHO_EARLY_OUT != '1' }}
+        shell: bash
+        run: |
+          if [[ -f build_sho/start.sho ]]; then
+            echo "Using prebuilt scripts from repository"
+            exit 0
+          fi
 
-    - name: Set up dev dependencies
-      shell: bash
-      run: |
-        choco install -y --force --version=16.0.6 llvm
-        choco install -y cmake ninja
+          pushd shards
+          ./bootstrap
+          cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release -DSKIP_HEAVY_INLINE=1
+          cmake --build build --target shards
+          shards=`pwd`/build/shards
+          popd
 
-    - name: Build
-      env:
-        RUST_BACKTRACE: full
-      shell: bash
-      run: |
-        cd shards
-        ./bootstrap
-        cd ../formabble
-        mkdir build
-        cd build
-        cmake -G Ninja \
-          "-DCMAKE_C_COMPILER:FILEPATH=C:\Program Files\LLVM\bin\clang.exe" \
-          "-DCMAKE_CXX_COMPILER:FILEPATH=C:\Program Files\LLVM\bin\clang++.exe" \
-          "-DRUST_DEFAULT_TARGET_PATH=C:\shards-rust-target" \
-          "-DSHARDS_MIN_DEBUG_INFO=ON" \
-          "-DSHARDS_DEFAULT_STDOUT_LOG_LEVEL=SPDLOG_LEVEL_INFO" \
-          "-DSHARDS_DEFAULT_FILE_LOG_LEVEL=SPDLOG_LEVEL_DEBUG" \
-          -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
-        echo "Building shards"
-        ninja fbl
+          mkdir -p build_sho
+          $shards build formabble/app/scripts/start.shs -o build_sho/start.sho
+          $shards build formabble/app/scripts/domain.shs -o build_sho/domain.sho
+          $shards build formabble/app/scripts/shared.shs -o build_sho/shared.sho
 
-    - name: Zip Artifacts
-      shell: powershell
-      run: |
-        $files = 'fbl.exe', 'fbl.pdb', 'crsqlite.dll', 'crsqlite.pdb'
-        $path = 'formabble/build'
-        $existingFiles = @()
-        foreach ($file in $files) {
-          $fullPath = Join-Path -Path $path -ChildPath $file
-          if (Test-Path $fullPath) {
-            $existingFiles += $fullPath
-          }
-        }
-        if ($existingFiles.Count -gt 0) {
-          Compress-Archive -Path $existingFiles -DestinationPath formabble.zip -Force
-        } else {
-          Write-Host "No files found to zip."
-        }
+      - name: Upload prebuilt scripts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build_sho
+          path: build_sho
+          if-no-files-found: error
 
-    - name: Publish release
-      uses: softprops/action-gh-release@v1
-      with:
-        files: |
-          formabble.zip
-        token: ${{ secrets.GITHUB_TOKEN }}
+  win64-release:
+    runs-on: windows-latest
+    needs: prebuild-sho
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Fetch all history for all tags and branches
+      - uses: "./.github/actions/checkout"
+        with:
+          rust-toolchain-suffix: "-msvc"
+          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
 
+      - name: Build
+        env:
+          RUST_BACKTRACE: full
+        shell: bash
+        run: |
+          pushd shards
+          ./bootstrap
+          popd
+          pushd formabble
+          cmake -Bbuild -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+            -DFBL_PREBUILT_SCRIPTS=ON "-DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho" \
+            "-DCMAKE_C_COMPILER:FILEPATH=C:\Program Files\LLVM\bin\clang.exe" \
+            "-DCMAKE_CXX_COMPILER:FILEPATH=C:\Program Files\LLVM\bin\clang++.exe" \
+            "-DRUST_DEFAULT_TARGET_PATH=C:\shards-rust-target" \
+            -DSHARDS_MIN_DEBUG_INFO=ON \
+            -DSHARDS_DEFAULT_STDOUT_LOG_LEVEL=SPDLOG_LEVEL_INFO \
+            -DSHARDS_DEFAULT_FILE_LOG_LEVEL=SPDLOG_LEVEL_DEBUG
+
+          echo "Building shards"
+          cmake --build build --target fbl
+
+      - id: release
+        uses: "./.github/actions/make-release-zip"
+        with:
+          in-files: "'fbl.exe', 'fbl.pdb', 'crsqlite.dll', 'crsqlite.pdb'"
+          out-name: formabble-win64
+          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+
+  macosx-arm64-release:
+    runs-on: macos-latest # should be M1/ARM64
+    needs: prebuild-sho
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Fetch all history for all tags and branches
+      - uses: "./.github/actions/checkout"
+        with:
+          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+
+      - name: Build
+        shell: bash
+        run: |
+          sudo xcode-select --switch /Applications/Xcode_15.4.app
+          pushd shards
+          ./bootstrap
+          popd
+          pushd formabble
+          cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release \
+            -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho
+          cmake --build build --target fbl
+
+      - id: release
+        uses: "./.github/actions/make-release-zip"
+        with:
+          in-files: "'fbl', 'fbl.dSYM'"
+          out-name: formabble-macosx-arm64
+          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+
+  macosx-x86-release:
+    runs-on: macos-latest
+    needs: prebuild-sho
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Fetch all history for all tags and branches
+      - uses: "./.github/actions/checkout"
+        with:
+          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+
+      - name: Set up dependencies
+        shell: bash
+        run: |
+          rustup +$RUSTUP_TOOLCHAIN target add x86_64-apple-darwin
+
+      - name: Build
+        shell: bash
+        run: |
+          sudo xcode-select --switch /Applications/Xcode_15.4.app
+          pushd shards
+          ./bootstrap
+          popd
+          pushd formabble
+          cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release \
+            -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho \
+            -DCMAKE_OSX_ARCHITECTURES=x86_64 \
+            -DBOOST_CONTEXT_ABI=sysv -DBOOST_CONTEXT_ARCHITECTURE=x86_64 \
+            -DRUST_CARGO_TARGET=x86_64-apple-darwin
+          cmake --build build --target fbl
+
+      - id: release
+        uses: "./.github/actions/make-release-zip"
+        with:
+          in-files: "'fbl', 'fbl.dSYM'"
+          out-name: formabble-macosx-x86_64
+          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+
+  ios-release:
+    runs-on: macos-latest
+    needs: prebuild-sho
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Fetch all history for all tags and branches
+      - uses: "./.github/actions/checkout"
+        with:
+          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+
+      - name: Set up dependencies
+        shell: bash
+        run: |
+          rustup +$RUSTUP_TOOLCHAIN target add aarch64-apple-ios
+          rustup +$RUSTUP_TOOLCHAIN component add rust-src
+
+      - name: Build
+        shell: bash
+        run: |
+          sudo xcode-select --switch /Applications/Xcode_15.4.app
+          pushd shards
+          ./bootstrap
+          popd
+          pushd formabble
+          cmake -Bbuild -GXcode -DCMAKE_BUILD_TYPE=Release \
+            -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho \
+            -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_SYSTEM_PROCESSOR=arm64 \
+            -DXCODE_SDK=iphoneos \
+            -DCMAKE_OSX_DEPLOYMENT_TARGET=16.3 \
+            -DCMAKE_XCODE_ATTRIBUTE_DEVELOPMENT_TEAM=97G32G3972
+          xcodebuild -project build/fbl.xcodeproj -sdk iphoneos -arch arm64 -scheme fbl -configuration Release archive -archivePath fbl.xcarchive
+
+      - id: release
+        uses: "./.github/actions/make-release-zip"
+        with:
+          in-files: "'fbl.xcarchive'"
+          out-name: formabble-ios-arm64
+          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+
+
+  wasm-release:
+    runs-on: ubuntu-latest
+    needs: prebuild-sho
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Fetch all history for all tags and branches
+      - uses: "./.github/actions/checkout"
+        with:
+          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+
+      - name: Checkout emsdk
+        uses: actions/checkout@v3
+        with:
+          repository: emscripten-core/emsdk
+          path: emsdk
+          fetch-depth: 1
+
+      - name: Set up dependencies
+        shell: bash
+        run: |
+          rustup +$RUSTUP_TOOLCHAIN target add wasm32-unknown-emscripten
+          rustup +$RUSTUP_TOOLCHAIN component add rust-src
+          pushd emsdk
+          ./emsdk install 3.1.59
+          ./emsdk activate 3.1.59
+
+      - name: Build
+        shell: bash
+        run: |
+          source emsdk/emsdk_env.sh
+          pushd shards
+          ./bootstrap
+          popd
+          pushd formabble
+          cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release \
+            -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho \
+            -DSKIP_HEAVY_INLINE=1 -DUSE_LTO=0 \
+            -DEMSCRIPTEN_PTHREADS=ON \
+            -DCMAKE_TOOLCHAIN_FILE=$EMSDK/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake
+          cmake --build build --target fbl
+
+      - id: release
+        uses: "./.github/actions/make-release-zip"
+        with:
+          in-files: "'fbl.js', 'fbl.wasm'"
+          out-name: formabble-wasm
+          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+
+  android-release:
+    runs-on: ubuntu-latest
+    needs: prebuild-sho
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Fetch all history for all tags and branches
+      - uses: "./.github/actions/checkout"
+        with:
+          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+
+      - name: Set up dependencies
+        shell: bash
+        run: |
+          rustup +$RUSTUP_TOOLCHAIN target add aarch64-linux-android
+          rustup +$RUSTUP_TOOLCHAIN component add rust-src
+
+          $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --install "build-tools;33.0.2"
+          $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --install "platforms;android-33"
+
+      - name: Build
+        shell: bash
+        run: |
+          pushd shards
+          ./bootstrap
+          popd
+          pushd formabble
+          ANDROID_TOOLCHAIN=/usr/local/lib/android/sdk/ndk/25.2.9519653
+          cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release \
+            -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho \
+            -DANDROID_ABI=arm64-v8a \
+            -DANDROID_PLATFORM=android-33 \
+            -DANDROID_SDK_ROOT=$ANDROID_SDK_ROOT \
+            -DANDROID_TOOLS_VERSION=34.0.0 \
+            -DJAVA_HOME=$JAVA_HOME_11_X64 \
+            -DCMAKE_TOOLCHAIN_FILE=$ANDROID_TOOLCHAIN/build/cmake/android.toolchain.cmake
+          cmake --build build --target fbl
+
+      - id: release
+        uses: "./.github/actions/make-release-zip"
+        with:
+          in-files: "'fbl.apk'"
+          out-name: formabble-wasm
+          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
