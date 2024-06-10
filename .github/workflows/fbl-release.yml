@@ -1,20 +1,21 @@
-name: Build and Release
+name: Manual Release
 
 on:
-  push:
-    tags:
-      - 'fbl-*'
   workflow_dispatch:
 
 jobs:
-  build-and-release:
+  windows-release:
     runs-on: windows-latest
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
       with:
         fetch-depth: 0 # Fetch all history for all tags and branches
+
+    - name: Import settings
+      shell: bash
+      run: |
+        cat .config >> $GITHUB_ENV
 
     - name: Checkout private repository
       uses: actions/checkout@v3
@@ -22,7 +23,7 @@ jobs:
         repository: fragcolor-xyz/formabble
         token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
         path: formabble
-        ref: ${{ github.ref_name }}
+        ref: ${{ env.FBL_REF }}
         submodules: recursive
         fetch-depth: 1
 
@@ -30,8 +31,9 @@ jobs:
       uses: actions/checkout@v3
       with:
         repository: fragcolor-xyz/shards
+        token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
         path: shards
-        ref: ${{ github.ref_name }}
+        ref: ${{ env.SHARDS_REF }}
         submodules: recursive
         fetch-depth: 1
 
@@ -47,7 +49,7 @@ jobs:
     - name: Set up dev dependencies
       shell: bash
       run: |
-        choco install -y --force --version=16.0.6 llvm
+        choco install -y --force --version=18.1.6 llvm
         choco install -y cmake ninja
 
     - name: Build
@@ -55,21 +57,20 @@ jobs:
         RUST_BACKTRACE: full
       shell: bash
       run: |
-        cd shards
+        pushd shards
         ./bootstrap
-        cd ../formabble
-        mkdir build
-        cd build
-        cmake -G Ninja \
+        popd
+        pushd formabble
+        cmake -Bbuild -G Ninja \
           "-DCMAKE_C_COMPILER:FILEPATH=C:\Program Files\LLVM\bin\clang.exe" \
           "-DCMAKE_CXX_COMPILER:FILEPATH=C:\Program Files\LLVM\bin\clang++.exe" \
           "-DRUST_DEFAULT_TARGET_PATH=C:\shards-rust-target" \
           "-DSHARDS_MIN_DEBUG_INFO=ON" \
           "-DSHARDS_DEFAULT_STDOUT_LOG_LEVEL=SPDLOG_LEVEL_INFO" \
           "-DSHARDS_DEFAULT_FILE_LOG_LEVEL=SPDLOG_LEVEL_DEBUG" \
-          -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
+          -DCMAKE_BUILD_TYPE=RelWithDebInfo
         echo "Building shards"
-        ninja fbl
+        cmake --build build --target fbl
 
     - name: Zip Artifacts
       shell: powershell
@@ -94,5 +95,99 @@ jobs:
       with:
         files: |
           formabble.zip
+        token: ${{ secrets.GITHUB_TOKEN }}
+      
+  web-release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0 # Fetch all history for all tags and branches
+
+    - name: Import settings
+      shell: bash
+      run: |
+        cat .config >> $GITHUB_ENV
+
+    - name: Checkout private repository
+      uses: actions/checkout@v3
+      with:
+        repository: fragcolor-xyz/formabble
+        token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+        path: formabble
+        ref: ${{ env.FBL_REF }}
+        submodules: recursive
+        fetch-depth: 1
+
+    - name: Checkout public repository
+      uses: actions/checkout@v3
+      with:
+        repository: fragcolor-xyz/shards
+        token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+        path: shards
+        ref: ${{ env.SHARDS_REF }}
+        submodules: recursive
+        fetch-depth: 1
+
+    - name: Checkout emsdk
+      uses: actions/checkout@v3
+      with:
+        repository: emscripten-core/emsdk
+        path: emsdk
+        fetch-depth: 1
+
+    - name: Set up dependencies
+      shell: bash
+      run: |
+        sudo apt-get -y update
+        sudo apt-get -y install build-essential git cmake wget ninja-build
+        RUSTUP_TOOLCHAIN=`cat rust.version`
+        echo "RUSTUP_TOOLCHAIN=$RUSTUP_TOOLCHAIN" >> $GITHUB_ENV
+        rustup toolchain install $RUSTUP_TOOLCHAIN
+        rustup +$RUSTUP_TOOLCHAIN target add wasm32-unknown-emscripten
+        pushd emsdk
+        ./emsdk install 3.1.59
+        ./emsdk activate 3.1.59
+
+    - name: Set up rust (mt)
+      run: |
+        rustup +nightly component add rust-src
+
+    - name: Build
+      shell: bash
+      run: |
+        source emsdk/emsdk_env.sh
+        pushd shards
+        ./bootstrap
+        popd
+        pushd formabble
+        cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release -DSKIP_HEAVY_INLINE=1 -DUSE_LTO=0 -DEMSCRIPTEN_PTHREADS=ON -DCMAKE_TOOLCHAIN_FILE=$EMSDK/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake
+        cmake --build build --target fbl
+
+    - name: Zip Artifacts
+      shell: pwsh
+      run: |
+        $files = 'fbl.js', 'fbl.wasm'
+        $path = 'formabble/build'
+        $existingFiles = @()
+        foreach ($file in $files) {
+          $fullPath = Join-Path -Path $path -ChildPath $file
+          if (Test-Path $fullPath) {
+            $existingFiles += $fullPath
+          }
+        }
+        if ($existingFiles.Count -gt 0) {
+          Compress-Archive -Path $existingFiles -DestinationPath formabble.zip -Force
+        } else {
+          Write-Host "No files found to zip."
+        }
+
+    - name: Publish release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          formabble-web.zip
         token: ${{ secrets.GITHUB_TOKEN }}
 
