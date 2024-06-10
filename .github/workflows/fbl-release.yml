@@ -143,7 +143,7 @@ jobs:
       run: |
         sudo apt-get -y update
         sudo apt-get -y install build-essential git cmake wget ninja-build
-        RUSTUP_TOOLCHAIN=`cat rust.version`
+        RUSTUP_TOOLCHAIN=`cat shards/rust.version`
         echo "RUSTUP_TOOLCHAIN=$RUSTUP_TOOLCHAIN" >> $GITHUB_ENV
         rustup toolchain install $RUSTUP_TOOLCHAIN
         rustup +$RUSTUP_TOOLCHAIN target add wasm32-unknown-emscripten
