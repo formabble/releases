@@ -19,13 +19,13 @@ runs:
       uses: actions/github-script@v6
       with:
         script: |
-        var envVar = context.job.toUpperCase().replace("-", "_");
-        console.log(`Checking if ${envVar} is enabled`);
-        if(process.env[envVar] === 1) {
-          console.log("Job enabled");
-        } else {
-          core.setFailed("Release platform is disabled");
-        }
+          var envVar = context.job.toUpperCase().replace("-", "_");
+          console.log("Checking if " + envVar + " is enabled");
+          if(process.env[envVar] === 1) {
+            console.log("Job enabled");
+          } else {
+            core.setFailed("Release platform is disabled");
+          }
 
     - name: Checkout private repository
       uses: actions/checkout@v3
