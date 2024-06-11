@@ -164,3 +164,55 @@ jobs:
           in-files: "'fbl.js', 'fbl.wasm'"
           out-name: formabble-wasm
           github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+
+  android-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Fetch all history for all tags and branches
+      - uses: "./.github/actions/checkout"
+        with:
+          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+
+      - name: Set up dependencies
+        shell: bash
+        run: |
+          rustup +$RUSTUP_TOOLCHAIN target add aarch64-linux-android
+          rustup +$RUSTUP_TOOLCHAIN component add rust-src
+
+          $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --install "build-tools;33.0.2"
+          $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --install "platforms;android-33"
+
+
+      - name: Build host tools
+        shell: bash
+        run: |
+          pushd shards
+          ./bootstrap
+          cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release -DSKIP_HEAVY_INLINE=1
+          cmake --build build --target shards
+          echo "SHARDS_COMMAND=`pwd`/build/shards" >> $GITHUB_ENV
+
+      - name: Build
+        shell: bash
+        run: |
+          source emsdk/emsdk_env.sh
+          pushd formabble
+          ANDROID_TOOLCHAIN=/usr/local/lib/android/sdk/ndk/25.2.9519653
+          cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release \
+            -DANDROID_ABI=arm64-v8a \
+            -DANDROID_PLATFORM=android-33 \
+            -DANDROID_SDK_ROOT=$ANDROID_SDK_ROOT \
+            -DANDROID_TOOLS_VERSION=34.0.0 \
+            -DJAVA_HOME=$JAVA_HOME_11_X64 \
+            -DCMAKE_TOOLCHAIN_FILE=$ANDROID_TOOLCHAIN/build/cmake/android.toolchain.cmake
+          cmake --build build --target fbl
+
+      - id: release
+        uses: "./.github/actions/make-release-zip"
+        with:
+          in-files: "'fbl.apk'"
+          out-name: formabble-wasm
+          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
