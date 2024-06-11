@@ -2,4 +2,3 @@ name: Manual Release (test)
 
 on:
   workflow_dispatch:
-g
