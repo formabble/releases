@@ -58,20 +58,20 @@ runs:
 
     - name: Set up MacOS
       shell: bash
-      if: ${{ runner.os == "macOS" }}
+      if: runner.os == 'macOS'
       run: |
         brew install cmake ninja clang-format
 
     - name: Set up Windows
       shell: bash
-      if: ${{ runner.os == "Windows" }}
+      if: runner.os == 'Windows'
       run: |
         choco install -y --force --version=18.1.6 llvm
         choco install -y cmake ninja
 
     - name: Set up Linux
       shell: bash
-      if: ${{ runner.os == "Linux" }}
+      if: runner.os == 'Linux'
       run: |
         sudo apt-get -y update
         sudo apt-get -y install build-essential git cmake wget ninja-build
