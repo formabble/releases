@@ -14,6 +14,7 @@ jobs:
       - uses: "./.github/actions/checkout"
         with:
           rust-toolchain-suffix: "-msvc"
+          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
 
       - name: Set up dev dependencies
         shell: bash
@@ -46,6 +47,7 @@ jobs:
         with:
           in-files: "'fbl.exe', 'fbl.pdb', 'crsqlite.dll', 'crsqlite.pdb'"
           out-name: formabble-win64
+          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
 
   macosx-arm64-release:
     runs-on: macos-latest # should be M1/ARM64
@@ -55,6 +57,8 @@ jobs:
         with:
           fetch-depth: 0 # Fetch all history for all tags and branches
       - uses: "./.github/actions/checkout"
+        with:
+          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
 
       - name: Build
         shell: bash
@@ -71,6 +75,7 @@ jobs:
         with:
           in-files: "'fbl', 'fbl.dSYM'"
           out-name: formabble-macosx-arm64
+          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
 
   macosx-x86-release:
     runs-on: macos-latest
@@ -80,6 +85,8 @@ jobs:
         with:
           fetch-depth: 0 # Fetch all history for all tags and branches
       - uses: "./.github/actions/checkout"
+        with:
+          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
 
       - name: Build host tools
         shell: bash
@@ -102,6 +109,8 @@ jobs:
         with:
           in-files: "'fbl', 'fbl.dSYM'"
           out-name: formabble-macosx-x86_64
+          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+          
 
   web-release:
     runs-on: ubuntu-latest
@@ -111,6 +120,8 @@ jobs:
         with:
           fetch-depth: 0 # Fetch all history for all tags and branches
       - uses: "./.github/actions/checkout"
+        with:
+          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
 
       - name: Checkout emsdk
         uses: actions/checkout@v3
@@ -152,3 +163,4 @@ jobs:
         with:
           in-files: "'fbl.js', 'fbl.wasm'"
           out-name: formabble-wasm
+          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}

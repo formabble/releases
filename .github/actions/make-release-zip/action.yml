@@ -8,6 +8,8 @@ inputs:
   out-name: 
     description: Name of the output zip file
     required: true
+  github-token:
+    required: true
 runs:
   using: "composite"
   steps:
@@ -44,4 +46,4 @@ runs:
       with:
         files: |
           ${{ inputs.out-name }}.zip
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ inputs.github-token }}

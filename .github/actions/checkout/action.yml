@@ -4,6 +4,8 @@ inputs:
   rust-toolchain-suffix:  # id of input
     required: false
     default: ''
+  github-token:
+    required: true
 runs:
   using: "composite"
   steps:
@@ -16,7 +18,7 @@ runs:
       uses: actions/checkout@v3
       with:
         repository: fragcolor-xyz/formabble
-        token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+        token: ${{ inputs.github-token }}
         path: formabble
         ref: ${{ env.FBL_REF }}
         submodules: recursive
@@ -26,7 +28,7 @@ runs:
       uses: actions/checkout@v3
       with:
         repository: fragcolor-xyz/shards
-        token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+        token: ${{ inputs.github-token }}
         path: shards
         ref: ${{ env.SHARDS_REF }}
         submodules: recursive
