@@ -42,7 +42,7 @@ jobs:
       - id: release
         uses: "./.github/actions/make-release-zip"
         with:
-          in-files: 'fbl.exe', 'fbl.pdb', 'crsqlite.dll', 'crsqlite.pdb'
+          in-files: "'fbl.exe', 'fbl.pdb', 'crsqlite.dll', 'crsqlite.pdb'"
           out-name: formabble-win64
 
   macosx-release:
@@ -64,7 +64,7 @@ jobs:
       - id: release
         uses: "./.github/actions/make-release-zip"
         with:
-          in-files: 'fbl', 'fbl.dSYM'
+          in-files: "'fbl', 'fbl.dSYM'"
           out-name: formabble-macosx-arm64
 
   web-release:
@@ -111,5 +111,5 @@ jobs:
       - id: release
         uses: "./.github/actions/make-release-zip"
         with:
-          in-files: 'fbl.js', 'fbl.wasm'
+          in-files: "'fbl.js', 'fbl.wasm'"
           out-name: formabble-wasm
