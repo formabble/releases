@@ -7,44 +7,10 @@ jobs:
   windows-release:
     runs-on: windows-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      # This value should be quoted and a path to the composite action
+    - uses: "./.github/shared/setup"
       with:
-        fetch-depth: 0 # Fetch all history for all tags and branches
-
-    - name: Import settings
-      shell: bash
-      run: |
-        cat .config >> $GITHUB_ENV
-
-    - name: Checkout private repository
-      uses: actions/checkout@v3
-      with:
-        repository: fragcolor-xyz/formabble
-        token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
-        path: formabble
-        ref: ${{ env.FBL_REF }}
-        submodules: recursive
-        fetch-depth: 1
-
-    - name: Checkout public repository
-      uses: actions/checkout@v3
-      with:
-        repository: fragcolor-xyz/shards
-        token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
-        path: shards
-        ref: ${{ env.SHARDS_REF }}
-        submodules: recursive
-        fetch-depth: 1
-
-    - name: Set up rust
-      shell: bash
-      env:
-        RUSTUP_USE_CURL: 1
-      run: |
-        RUSTUP_TOOLCHAIN=`cat shards/rust.version`-msvc
-        echo "RUSTUP_TOOLCHAIN=$RUSTUP_TOOLCHAIN" >> $GITHUB_ENV
-        rustup toolchain install $RUSTUP_TOOLCHAIN
+        rust-toolchain-suffix: "-msvc"
 
     - name: Set up dev dependencies
       shell: bash
@@ -72,64 +38,36 @@ jobs:
         echo "Building shards"
         cmake --build build --target fbl
 
-    - name: Zip Artifacts
-      shell: powershell
-      run: |
-        $files = 'fbl.exe', 'fbl.pdb', 'crsqlite.dll', 'crsqlite.pdb'
-        $path = 'formabble/build'
-        $existingFiles = @()
-        foreach ($file in $files) {
-          $fullPath = Join-Path -Path $path -ChildPath $file
-          if (Test-Path $fullPath) {
-            $existingFiles += $fullPath
-          }
-        }
-        if ($existingFiles.Count -gt 0) {
-          Compress-Archive -Path $existingFiles -DestinationPath formabble.zip -Force
-        } else {
-          Write-Host "No files found to zip."
-        }
-
-    - name: Publish release
-      uses: softprops/action-gh-release@v1
+    - uses: "./.github/make-release-zip"
       with:
-        files: |
-          formabble.zip
-        token: ${{ secrets.GITHUB_TOKEN }}
-      
+        in-files: 'fbl.exe', 'fbl.pdb', 'crsqlite.dll', 'crsqlite.pdb'
+        out-name: formabble-win64
+
+  macosx-release:
+    runs-on: macos-latest # should be M1/ARM64
+    steps:
+    - uses: "./.github/shared/setup"
+
+    - name: Build
+      shell: bash
+      run: |
+        pushd shards
+        ./bootstrap
+        popd
+        pushd formabble
+        cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release
+        cmake --build build --target fbl
+
+    - uses: "./.github/make-release-zip"
+      with:
+        in-files: 'fbl', 'fbl.dSYM'
+        out-name: formabble-macosx-arm64
+
   web-release:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-      with:
-        fetch-depth: 0 # Fetch all history for all tags and branches
-
-    - name: Import settings
-      shell: bash
-      run: |
-        cat .config >> $GITHUB_ENV
-
-    - name: Checkout private repository
-      uses: actions/checkout@v3
-      with:
-        repository: fragcolor-xyz/formabble
-        token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
-        path: formabble
-        ref: ${{ env.FBL_REF }}
-        submodules: recursive
-        fetch-depth: 1
-
-    - name: Checkout public repository
-      uses: actions/checkout@v3
-      with:
-        repository: fragcolor-xyz/shards
-        token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
-        path: shards
-        ref: ${{ env.SHARDS_REF }}
-        submodules: recursive
-        fetch-depth: 1
+    - uses: "./.github/shared/setup"
 
     - name: Checkout emsdk
       uses: actions/checkout@v3
@@ -143,17 +81,11 @@ jobs:
       run: |
         sudo apt-get -y update
         sudo apt-get -y install build-essential git cmake wget ninja-build
-        RUSTUP_TOOLCHAIN=`cat shards/rust.version`
-        echo "RUSTUP_TOOLCHAIN=$RUSTUP_TOOLCHAIN" >> $GITHUB_ENV
-        rustup toolchain install $RUSTUP_TOOLCHAIN
         rustup +$RUSTUP_TOOLCHAIN target add wasm32-unknown-emscripten
+        rustup +$RUSTUP_TOOLCHAIN component add rust-src
         pushd emsdk
         ./emsdk install 3.1.59
         ./emsdk activate 3.1.59
-
-    - name: Set up rust (mt)
-      run: |
-        rustup +nightly component add rust-src
 
     - name: Build host tools
       shell: bash
@@ -172,28 +104,7 @@ jobs:
         cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release -DSKIP_HEAVY_INLINE=1 -DUSE_LTO=0 -DEMSCRIPTEN_PTHREADS=ON -DCMAKE_TOOLCHAIN_FILE=$EMSDK/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake
         cmake --build build --target fbl
 
-    - name: Zip Artifacts
-      shell: pwsh
-      run: |
-        $files = 'fbl.js', 'fbl.wasm'
-        $path = 'formabble/build'
-        $existingFiles = @()
-        foreach ($file in $files) {
-          $fullPath = Join-Path -Path $path -ChildPath $file
-          if (Test-Path $fullPath) {
-            $existingFiles += $fullPath
-          }
-        }
-        if ($existingFiles.Count -gt 0) {
-          Compress-Archive -Path $existingFiles -DestinationPath formabble.zip -Force
-        } else {
-          Write-Host "No files found to zip."
-        }
-
-    - name: Publish release
-      uses: softprops/action-gh-release@v1
+    - uses: "./.github/make-release-zip"
       with:
-        files: |
-          formabble-web.zip
-        token: ${{ secrets.GITHUB_TOKEN }}
-
+        in-files: 'fbl.js', 'fbl.wasm'
+        out-name: formabble-wasm

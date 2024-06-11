@@ -1,0 +1,47 @@
+name: "Make release zip"
+description: "Create a zip file for a release"
+inputs:
+  in-files:  # id of input
+    description: |
+      Files to include in the zip, Example input: 'fbl.exe', 'fbl.pdb', 'crsqlite.dll', 'crsqlite.pdb'
+    required: true
+  out-name: 
+    description: Name of the output zip file
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Zip Artifacts
+      shell: pwsh
+      run: |
+        $files = ${{ inputs.in-files }}
+        $path = 'formabble/build'
+        $existingFiles = @()
+        foreach ($file in $files) {
+          $fullPath = Join-Path -Path $path -ChildPath $file
+          if (Test-Path $fullPath) {
+            $existingFiles += $fullPath
+          }
+        }
+        if ($existingFiles.Count -gt 0) {
+          Compress-Archive -Path $existingFiles -DestinationPath ${{ inputs.out-name }}.zip -Force
+        } else {
+          Write-Host "No files found to zip."
+        }
+        
+    - name: Upload artifacts Release
+      if: "!startsWith(github.ref, 'refs/tags/')"
+      uses: actions/upload-artifact@v3
+      with:
+        name: ${{ inputs.out-name }}
+        path: |
+          ${{ inputs.out-name }}.zip
+        if-no-files-found: error
+
+    - name: Publish release
+      if: startsWith(github.ref, 'refs/tags/')
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          ${{ inputs.out-name }}.zip
+        token: ${{ secrets.GITHUB_TOKEN }}
