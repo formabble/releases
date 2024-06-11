@@ -16,12 +16,6 @@ jobs:
           rust-toolchain-suffix: "-msvc"
           github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
 
-      - name: Set up dev dependencies
-        shell: bash
-        run: |
-          choco install -y --force --version=18.1.6 llvm
-          choco install -y cmake ninja
-
       - name: Build
         env:
           RUST_BACKTRACE: full
@@ -133,8 +127,6 @@ jobs:
       - name: Set up dependencies
         shell: bash
         run: |
-          sudo apt-get -y update
-          sudo apt-get -y install build-essential git cmake wget ninja-build
           rustup +$RUSTUP_TOOLCHAIN target add wasm32-unknown-emscripten
           rustup +$RUSTUP_TOOLCHAIN component add rust-src
           pushd emsdk
