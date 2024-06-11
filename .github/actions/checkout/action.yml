@@ -18,10 +18,10 @@ runs:
       uses: actions/github-script@v6
       with:
         script: |
-          console.log("ctx" context);
-          console.log("Job" context.job);
+          console.log("ctx",context);
+          console.log("Job",context.job);
           // process.env.USER_ID
-          # //core.setFailed("CI is disabled for this PR");
+          //core.setFailed("CI is disabled for this PR");
     - name: Checkout private repository
       uses: actions/checkout@v3
       with:
