@@ -19,7 +19,7 @@ runs:
       uses: actions/github-script@v6
       with:
         script: |
-          var envVar = context.job.toUpperCase().replace("-", "_");
+          var envVar = "ENABLE_" + context.job.toUpperCase().replaceAll("-", "_");
           console.log("Checking if " + envVar + " is enabled");
           if(process.env[envVar] === 1) {
             console.log("Job enabled");
