@@ -47,7 +47,7 @@ jobs:
           in-files: "'fbl.exe', 'fbl.pdb', 'crsqlite.dll', 'crsqlite.pdb'"
           out-name: formabble-win64
 
-  macosx-release:
+  macosx-arm64-release:
     runs-on: macos-latest # should be M1/ARM64
     steps:
       - name: Checkout code
@@ -71,6 +71,37 @@ jobs:
         with:
           in-files: "'fbl', 'fbl.dSYM'"
           out-name: formabble-macosx-arm64
+
+  macosx-x86-release:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Fetch all history for all tags and branches
+      - uses: "./.github/actions/checkout"
+
+      - name: Build host tools
+        shell: bash
+        run: |
+          pushd shards
+          ./bootstrap
+          cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release -DSKIP_HEAVY_INLINE=1
+          cmake --build build --target shards
+          echo "SHARDS_COMMAND=`pwd`/build/shards" >> $GITHUB_ENV
+
+      - name: Build
+        shell: bash
+        run: |
+          pushd formabble
+          cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release -DCMAKE_OSX_ARCHITECTURES="x86_64"
+          cmake --build build --target fbl
+
+      - id: release
+        uses: "./.github/actions/make-release-zip"
+        with:
+          in-files: "'fbl', 'fbl.dSYM'"
+          out-name: formabble-macosx-x86_64
 
   web-release:
     runs-on: ubuntu-latest
