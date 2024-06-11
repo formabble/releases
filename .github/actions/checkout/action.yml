@@ -18,10 +18,13 @@ runs:
       uses: actions/github-script@v6
       with:
         script: |
-          console.log("ctx",context);
-          console.log("Job",context.job);
-          // process.env.USER_ID
-          //core.setFailed("CI is disabled for this PR");
+        var envVar = context.job.toUpperCase().replace("-", "_");
+        console.log(`Checking if ${envVar} is enabled`);
+        if(process.env[envVar] === 1) {
+          console.log("Job enabled");
+        } else {
+          core.setFailed("Release platform is disabled");
+        }
     - name: Checkout private repository
       uses: actions/checkout@v3
       with:
