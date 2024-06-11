@@ -7,9 +7,11 @@ jobs:
   windows-release:
     runs-on: windows-latest
     steps:
-        # This value should be quoted and a path to the composite action
-      - id: checkout
-        uses: "./.github/actions/checkout"
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Fetch all history for all tags and branches
+      - uses: "./.github/actions/checkout"
         with:
           rust-toolchain-suffix: "-msvc"
 
@@ -48,8 +50,11 @@ jobs:
   macosx-release:
     runs-on: macos-latest # should be M1/ARM64
     steps:
-      - id: checkout
-        uses: "./.github/actions/checkout"
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Fetch all history for all tags and branches
+      - uses: "./.github/actions/checkout"
 
       - name: Build
         shell: bash
@@ -70,8 +75,11 @@ jobs:
   web-release:
     runs-on: ubuntu-latest
     steps:
-      - id: checkout
-        uses: "./.github/actions/checkout"
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Fetch all history for all tags and branches
+      - uses: "./.github/actions/checkout"
 
       - name: Checkout emsdk
         uses: actions/checkout@v3
