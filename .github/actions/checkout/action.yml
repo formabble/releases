@@ -21,7 +21,7 @@ runs:
         script: |
           var envVar = "ENABLE_" + context.job.toUpperCase().replaceAll("-", "_");
           console.log("Checking if " + envVar + " is enabled");
-          if(process.env[envVar] === 1) {
+          if(process.env[envVar] == "1") {
             console.log("Job enabled");
           } else {
             core.setFailed("Release platform is disabled");
