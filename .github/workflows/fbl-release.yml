@@ -190,7 +190,6 @@ jobs:
       - name: Build
         shell: bash
         run: |
-          source emsdk/emsdk_env.sh
           pushd formabble
           ANDROID_TOOLCHAIN=/usr/local/lib/android/sdk/ndk/25.2.9519653
           cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release \
