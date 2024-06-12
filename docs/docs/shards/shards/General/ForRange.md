@@ -9,7 +9,7 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input value is not used and will pass through. | | [`Any`](../../types/#any) |
+| `⬅️ Input` ||The input value is not used and will pass through unchanged. | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The output of this shard will be its input. | | [`Any`](../../types/#any) |
 | `From` | :fontawesome-solid-circle-plus:{title="No"} No  | The initial iteration value (inclusive). | `0` | [`Int`](../../types/#int)[`&Int`](../../types/#contextvar) |
 | `To` | :fontawesome-solid-circle-plus:{title="No"} No  | The final iteration value (inclusive). | `1` | [`Int`](../../types/#int)[`&Int`](../../types/#contextvar) |
@@ -17,7 +17,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-Executes a shard while an iteration value is within a range.
+Executes a series of shards while an iteration value is within a specified range.
 
 ## Examples
 

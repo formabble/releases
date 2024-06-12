@@ -19,7 +19,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-Creates an empty sequence (or table if a key is passed).
+Creates an empty sequence (or sequence in a table if a key is passed). Useful to declare and specify types.
 
 ## Details
 

@@ -9,8 +9,8 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||Input becomes the value of the variable being created. | | [`Any`](../../types/#any) |
-| `Output ➡️` ||The input to this shard is passed through as its output. | | [`Any`](../../types/#any) |
+| `⬅️ Input` ||The value to be set to the variable. | | [`Any`](../../types/#any) |
+| `Output ➡️` ||The input value is passed through as the output. | | [`Any`](../../types/#any) |
 | `Name` | :fontawesome-solid-circle-plus:{title="No"} No  | The name of the variable. | `` | [`String`](../../types/#string)[`&Any`](../../types/#contextvar) |
 | `Key` | :fontawesome-solid-circle-plus:{title="No"} No  | The key of the value to read from the table (parameter applicable only if the target variable is a table). | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar)[`None`](../../types/#none) |
 | `Global` | :fontawesome-solid-circle-plus:{title="No"} No  | If the variable is available to all of the wires in the same mesh. | `false` | [`Bool`](../../types/#bool) |
@@ -18,7 +18,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-Creates an immutable variable with a constant value. Once created this variable cannot be changed.
+Creates an immutable reference variable. Once created this variable cannot be changed.
 
 ## Details
 

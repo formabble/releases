@@ -10,14 +10,14 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Any input is ignored. | | [`None`](../../types/#none) |
-| `Output ➡️` ||Count of characters, elements, or key-value pairs contained in the `:Name` parameter variable. | | [`Int`](../../types/#int) |
+| `Output ➡️` ||Outputs the count of characters, elements, or key-value pairs in the specified variable. If the input type does not match, it outputs 0. | | [`Int`](../../types/#int) |
 | `Name` | :fontawesome-solid-circle-plus:{title="No"} No  | The name of the variable. | `` | [`String`](../../types/#string)[`&Any`](../../types/#contextvar) |
 | `Key` | :fontawesome-solid-circle-plus:{title="No"} No  | The key of the value to read from the table (parameter applicable only if the target variable is a table). | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar)[`None`](../../types/#none) |
 | `Global` | :fontawesome-solid-circle-plus:{title="No"} No  | If the variable is available to all of the wires in the same mesh. | `false` | [`Bool`](../../types/#bool) |
 
 </div>
 
-Parses the value in passed to in the `:Name` parameter and returns the count of characters (if string passed), elements (if sequence passed), or key-value pairs (if table passed).
+Outputs the count of characters (if the input is a string), elements (if the input is a sequence), or key-value pairs (if the input is a table). If the input type does not match any of these, it outputs 0.
 
 ## Details
 

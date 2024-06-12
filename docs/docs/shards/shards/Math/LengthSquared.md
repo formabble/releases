@@ -9,12 +9,12 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||Any valid integer(s), floating point number(s), or a sequence of such entities supported by this operation. | | [`Float2`](../../types/#float2)[`[Float2]`](../../types/#seq)[`Float3`](../../types/#float3)[`[Float3]`](../../types/#seq)[`Float4`](../../types/#float4)[`[Float4]`](../../types/#seq) |
-| `Output ➡️` ||The result of the operation, usually in the same type as the input value. | | [`Float`](../../types/#float) |
+| `⬅️ Input` ||Any valid integer(s), floating point number(s), or a sequence of these types supported by this operation. | | [`Float2`](../../types/#float2)[`[Float2]`](../../types/#seq)[`Float3`](../../types/#float3)[`[Float3]`](../../types/#seq)[`Float4`](../../types/#float4)[`[Float4]`](../../types/#seq) |
+| `Output ➡️` ||The result of the operation, usually in the same type as the input value. If the input is a sequence, the output will be a sequence of results, with possible broadcasting according to the input and operand. | | [`Float`](../../types/#float) |
 
 </div>
 
-Applies the unary operation on the input value and returns the result (or a sequence of results if the input and the operand are sequences).
+Applies the unary operation on the input value and returns the result. If the input is a sequence, the operation is applied to each element of the sequence.
 
 --8<-- "includes/license.md"
 

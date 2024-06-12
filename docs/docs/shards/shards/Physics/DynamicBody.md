@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
 | `Output ➡️` ||The resulting output of the shard | | [`[Float4]`](../../types/#seq)[`[[Float4]]`](../../types/#seq) |
-| `Shapes` | :fontawesome-solid-circle-plus:{title="No"} No  | The shape or shapes of this rigid body. | `None` | [`&Object`](../../types/#contextvar)[`&Object`](../../types/#contextvar)[`None`](../../types/#none) |
+| `Shapes` | :fontawesome-solid-circle-plus:{title="No"} No  | The shape or shapes of this rigid body. | `` | [`&Object`](../../types/#contextvar)[`&Object`](../../types/#contextvar)[`None`](../../types/#none) |
 | `Position` | :fontawesome-solid-circle-plus:{title="No"} No  | The initial position of this rigid body. Can be updated in the case of a kinematic rigid body. | `(0 0 0)` | [`Float3`](../../types/#float3)[`&Float3`](../../types/#contextvar)[`[Float3]`](../../types/#seq)[`&[Float3]`](../../types/#contextvar) |
 | `Rotation` | :fontawesome-solid-circle-plus:{title="No"} No  | The initial rotation of this rigid body. Either axis angles in radians Float3 or a quaternion Float4. Can be updated in the case of a kinematic rigid body. | `(0 0 0 1)` | [`Float4`](../../types/#float4)[`&Float4`](../../types/#contextvar)[`[Float4]`](../../types/#seq)[`&[Float4]`](../../types/#contextvar) |
 | `Collision` | :fontawesome-solid-circle-plus:{title="No"} No  | Handle collisions with this object. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |

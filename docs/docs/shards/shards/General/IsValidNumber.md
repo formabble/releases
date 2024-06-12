@@ -9,8 +9,8 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`Float`](../../types/#float) |
-| `Output ➡️` ||The resulting output of the shard | | [`Bool`](../../types/#bool) |
+| `⬅️ Input` ||The floating-point number to be checked. | | [`Float`](../../types/#float) |
+| `Output ➡️` ||Returns true if the input is a valid normal floating-point number, otherwise returns false. | | [`Bool`](../../types/#bool) |
 
 </div>
 

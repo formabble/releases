@@ -18,7 +18,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-Creates an empty table.
+Creates an empty table. Useful to declare and specify types.
 
 ## Details
 

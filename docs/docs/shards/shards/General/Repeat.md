@@ -9,7 +9,7 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input will be passed to both the action and the `:Until` condition if used. | | [`Any`](../../types/#any) |
+| `⬅️ Input` ||The input will be passed to both the action and the `Until` condition if used. | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The output of this shard will be its input. | | [`Any`](../../types/#any) |
 | `Action` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The shards to repeat. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
 | `Times` | :fontawesome-solid-circle-plus:{title="No"} No  | How many times we should repeat the action. | `None` | [`Int`](../../types/#int)[`&Int`](../../types/#contextvar)[`None`](../../types/#none) |

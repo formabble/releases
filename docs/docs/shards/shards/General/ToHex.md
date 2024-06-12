@@ -9,12 +9,12 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`Int`](../../types/#int)[`Bytes`](../../types/#bytes)[`String`](../../types/#string) |
-| `Output ➡️` ||The resulting output of the shard | | [`String`](../../types/#string) |
+| `⬅️ Input` ||The value to be converted to a hexadecimal string. Supported types: integer, bytes, and string. | | [`Int`](../../types/#int)[`Bytes`](../../types/#bytes)[`String`](../../types/#string) |
+| `Output ➡️` ||The hexadecimal string representation of the input value. | | [`String`](../../types/#string) |
 
 </div>
 
-
+Converts the input value to its hexadecimal string representation.
 
 --8<-- "includes/license.md"
 

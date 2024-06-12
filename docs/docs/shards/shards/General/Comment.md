@@ -9,13 +9,13 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
-| `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
+| `⬅️ Input` ||Input is ignored. | | [`Any`](../../types/#any) |
+| `Output ➡️` ||Passes the input value through. | | [`Any`](../../types/#any) |
 | `Text` | :fontawesome-solid-circle-plus:{title="No"} No  | The comment's text. | `` | [`String`](../../types/#string) |
 
 </div>
 
-
+A comment shard that does nothing.
 
 --8<-- "includes/license.md"
 

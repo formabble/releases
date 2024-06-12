@@ -9,13 +9,13 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The sequence or table from which elements/key-values have to be extracted. | | [`Int2`](../../types/#int2)[`Int3`](../../types/#int3)[`Int4`](../../types/#int4)[`Int8`](../../types/#int8)[`Int16`](../../types/#int16)[`Float2`](../../types/#float2)[`Float3`](../../types/#float3)[`Float4`](../../types/#float4)[`Bytes`](../../types/#bytes)[`Color`](../../types/#color)[`String`](../../types/#string)[`[Any]`](../../types/#seq)[`{Any}`](../../types/#table) |
-| `Output ➡️` ||The extracted elements/key-values. | | [`Any`](../../types/#any) |
-| `Indices/Keys` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | One or more indices/keys to extract from a sequence/table. | `None` | [`Any`](../../types/#any)[`&Any`](../../types/#contextvar) |
+| `⬅️ Input` ||The sequence or table from which elements or values will be extracted. | | [`Int2`](../../types/#int2)[`Int3`](../../types/#int3)[`Int4`](../../types/#int4)[`Int8`](../../types/#int8)[`Int16`](../../types/#int16)[`Float2`](../../types/#float2)[`Float3`](../../types/#float3)[`Float4`](../../types/#float4)[`Bytes`](../../types/#bytes)[`Color`](../../types/#color)[`String`](../../types/#string)[`[Any]`](../../types/#seq)[`{Any}`](../../types/#table) |
+| `Output ➡️` ||The extracted elements from a sequence or values from a table. If the key cannot be established to exist at compose time, the output will be of type Any. | | [`Any`](../../types/#any) |
+| `Indices/Keys` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | One or more indices or keys to extract from a sequence or table. | `None` | [`Any`](../../types/#any)[`&Any`](../../types/#contextvar) |
 
 </div>
 
-Extracts one or more elements/key-values from a sequence or a table by using the provided sequence index/indices or table key(s). Operation is non-destructive; doesn't modify target sequence/table.
+Extracts one or more elements from a sequence or values from a table using the provided indices or keys. This operation is non-destructive and does not modify the target sequence or table. If the key cannot be established to exist at compose time, the output will be of type Any.
 
 ## Examples
 

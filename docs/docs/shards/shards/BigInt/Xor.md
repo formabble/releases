@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Any valid big integer(s) represented as bytes supported by this operation. | | [`Bytes`](../../types/#bytes)[`[Bytes]`](../../types/#seq) |
-| `Output ➡️` ||The result of the operation, usually in the same type as the input value. | | [`Bytes`](../../types/#bytes)[`[Bytes]`](../../types/#seq) |
+| `Output ➡️` ||The result of the operation, usually in the same type as the input value. If the input is a sequence, the output will be a sequence of results, with possible broadcasting according to the input and operand. | | [`Bytes`](../../types/#bytes)[`[Bytes]`](../../types/#seq) |
 | `Operand` | :fontawesome-solid-circle-plus:{title="No"} No  | The bytes variable representing the operand | `0` | [`&Bytes`](../../types/#contextvar)[`&[Bytes]`](../../types/#contextvar) |
 
 </div>

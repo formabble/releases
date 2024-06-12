@@ -9,12 +9,12 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The first operand to be evaluated. | | [`Bool`](../../types/#bool) |
-| `Output ➡️` ||The output of this shard will be its input. | | [`Bool`](../../types/#bool) |
+| `⬅️ Input` ||If true, the flow continues; otherwise, it stops. | | [`Bool`](../../types/#bool) |
+| `Output ➡️` ||The output of this shard will be the input of the current conditional flow or wire. | | [`Bool`](../../types/#bool) |
 
 </div>
 
-Computes the logical AND between the input of this shard and the output of the next shard.
+If the input of the preceding shard is true, the flow continues; otherwise, the flow stops. This shard is typically used within conditional flows (e.g., If, When) to chain conditions. Note: Outside a conditional flow, it might restart the current wire, which can be used as a trick in certain scenarios.
 
 ## Examples
 

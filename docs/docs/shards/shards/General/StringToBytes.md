@@ -9,12 +9,12 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`String`](../../types/#string) |
-| `Output ➡️` ||The resulting output of the shard | | [`Bytes`](../../types/#bytes) |
+| `⬅️ Input` ||A string to be converted to bytes. | | [`String`](../../types/#string) |
+| `Output ➡️` ||The byte representation of the input string. | | [`Bytes`](../../types/#bytes) |
 
 </div>
 
-
+Converts a string to its byte representation.
 
 --8<-- "includes/license.md"
 

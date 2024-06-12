@@ -9,18 +9,18 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
-| `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
+| `⬅️ Input` ||Not used. | | [`Any`](../../types/#any) |
+| `Output ➡️` ||Passthrough the input. | | [`Any`](../../types/#any) |
 | `Contents` | :fontawesome-solid-circle-plus:{title="No"} No  | The UI contents. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
-| `Class` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The Layout class describing all of the options relating to the layout of this UI. | `None` | [`&Object`](../../types/#contextvar) |
-| `MinSize` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The minimum size of the space to be reserved by this UI. This allows the UI to take up more space than required for its widget contents. Can be overidden by FillWidth and FillHeight. | `None` | [`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar) |
-| `MaxSize` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The maximum size of the space to be reserved by this UI. Prevents UI from taking as much space as possible. Can be overidden by FillWidth and FillHeight. | `None` | [`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar) |
-| `FillWidth` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Whether the Layout should take up the full width of the available space. | `None` | [`Bool`](../../types/#bool) |
-| `FillHeight` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Whether the Layout should take up the full height of the available space. | `None` | [`Bool`](../../types/#bool) |
+| `Class` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The Layout class defining all layout options. | `None` | [`&Object`](../../types/#contextvar) |
+| `MinSize` | :fontawesome-solid-circle-plus:{title="No"} No  | Minimum reserved space for the UI. Overridden by FillWidth and FillHeight. | `None` | [`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar)[`None`](../../types/#none) |
+| `MaxSize` | :fontawesome-solid-circle-plus:{title="No"} No  | Maximum reserved space for the UI. Overridden by FillWidth and FillHeight. | `None` | [`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar)[`None`](../../types/#none) |
+| `FillWidth` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether the layout should occupy the full width. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
+| `FillHeight` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether the layout should occupy the full height. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
 
 </div>
 
-Versatile layout with many options for customizing the desired UI.
+Versatile layout with numerous customization options.
 
 ## Examples
 

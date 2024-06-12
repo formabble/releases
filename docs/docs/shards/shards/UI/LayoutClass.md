@@ -9,35 +9,35 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
-| `Output ➡️` ||The resulting output of the shard | | [`Object`](../../types/#object) |
-| `Parent` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The parent Layout class to inherit parameters from. | `None` | [`&Object`](../../types/#contextvar) |
-| `MainDirection` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The main direction of the UI element layout. | `None` | [`LayoutDirection`](../../../enums/LayoutDirection) |
-| `MainWrap` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether the UI elements in the layout should wrap around when reaching the end of the direction of the cursor. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
-| `MainAlign` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | How the UI elements in the layout should be aligned on the main axis. | `None` | [`LayoutAlign`](../../../enums/LayoutAlign) |
-| `MainJustify` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether the UI elements in the layout should be justified along the main axis. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
-| `CrossAlign` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | How the UI elements in the layout should be aligned on the cross axis. | `None` | [`LayoutAlign`](../../../enums/LayoutAlign) |
-| `CrossJustify` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether the UI elements in the layout should be justified along the across axis. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
-| `MinSize` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The minimum size of the space to be reserved by this UI for its contents. This allows the UI to take up more space than required for its widget contents. Can be overidden by FillWidth and FillHeight. | `None` | [`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar) |
-| `MaxSize` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The maximum size of the space to be reserved by this UI for its contents. Prevents UI from taking as much space as possible. Can be overidden by FillWidth and FillHeight. | `None` | [`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar) |
-| `FillWidth` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Whether the Layout should take up the full width of the available space. | `None` | [`Bool`](../../types/#bool) |
-| `FillHeight` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Whether the Layout should take up the full height of the available space. | `None` | [`Bool`](../../types/#bool) |
-| `Disabled` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether the drawn layout should be disabled or not. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
-| `Frame` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The frame to be drawn around the layout. | `None` | [`LayoutFrame`](../../../enums/LayoutFrame) |
-| `EnableHorizontalScrollBar` | :fontawesome-solid-circle-plus:{title="No"} No  | Enable the horizontal scroll bar. If either this or EnableVerticalScrollBar is true, a ScrollArea will be created within the layout. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
-| `EnableVerticalScrollBar` | :fontawesome-solid-circle-plus:{title="No"} No  | Enable the vertical scroll bar. If either this or EnableHorizontalScrollBar is true, a ScrollArea will be created within the layout. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
-| `ScrollBarVisibility` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Whether the scroll bars of the scroll area should be AlwaysVisible, VisibleWhenNeeded, or Always Hidden. Default: AlwaysVisible | `None` | [`ScrollVisibility`](../../../enums/ScrollVisibility) |
-| `ScrollAreaMinWidth` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The minimum width of the scroll area to be drawn. Note: This is not the minimum width of the contents of the scroll area. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
-| `ScrollAreaMinHeight` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The minimum height of the scroll area to be drawn. Note: This is not the minimum height of the contents of the scroll area. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
-| `ScrollAreaMaxWidth` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The maximum width of the scroll area to be drawn. Note: This is not the maximum width of the contents of the scroll area. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
-| `ScrollAreaMaxHeight` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The maximum height of the scroll area to be drawn. Note: This is not the maximum height of the contents of the scroll area. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
-| `ScrollAreaAutoShrinkWidth` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether the scroll area's width should automatically shrink to fit the size of its contents. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
-| `ScrollAreaAutoShrinkHeight` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether the scroll area's height should automatically shrink to fit the size of its contents. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
-| `ScrollAreaEnableScrolling` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether the scroll area's scrolling should be enabled. This is akin to the disable setting for UI elements. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
+| `⬅️ Input` ||Not used. | | [`Any`](../../types/#any) |
+| `Output ➡️` ||A Layout class that can be used in other UI shards. | | [`Object`](../../types/#object) |
+| `Parent` | :fontawesome-solid-circle-plus:{title="No"} No  | The parent Layout class to inherit parameters from. | `None` | [`&Object`](../../types/#contextvar)[`None`](../../types/#none) |
+| `MainDirection` | :fontawesome-solid-circle-plus:{title="No"} No  | The primary direction of the UI element layout. | `None` | [`LayoutDirection`](../../../enums/LayoutDirection)[`None`](../../types/#none) |
+| `MainWrap` | :fontawesome-solid-circle-plus:{title="No"} No  | Should UI elements wrap when reaching the end of the main direction. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
+| `MainAlign` | :fontawesome-solid-circle-plus:{title="No"} No  | Alignment of UI elements along the main axis. | `None` | [`LayoutAlign`](../../../enums/LayoutAlign)[`None`](../../types/#none) |
+| `MainJustify` | :fontawesome-solid-circle-plus:{title="No"} No  | Justification of UI elements along the main axis. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
+| `CrossAlign` | :fontawesome-solid-circle-plus:{title="No"} No  | Alignment of UI elements along the cross axis. | `None` | [`LayoutAlign`](../../../enums/LayoutAlign)[`None`](../../types/#none) |
+| `CrossJustify` | :fontawesome-solid-circle-plus:{title="No"} No  | Justification of UI elements along the cross axis. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
+| `MinSize` | :fontawesome-solid-circle-plus:{title="No"} No  | Minimum space reserved for UI contents. Overridden by FillWidth and FillHeight. | `None` | [`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar)[`None`](../../types/#none) |
+| `MaxSize` | :fontawesome-solid-circle-plus:{title="No"} No  | Maximum space reserved for UI contents. Overridden by FillWidth and FillHeight. | `None` | [`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar)[`None`](../../types/#none) |
+| `FillWidth` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether the layout should occupy the full width. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
+| `FillHeight` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether the layout should occupy the full height. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
+| `Disabled` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether the layout should be disabled. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
+| `Frame` | :fontawesome-solid-circle-plus:{title="No"} No  | Frame to be drawn around the layout. | `None` | [`LayoutFrame`](../../../enums/LayoutFrame)[`None`](../../types/#none) |
+| `EnableHorizontalScrollBar` | :fontawesome-solid-circle-plus:{title="No"} No  | Enable the horizontal scroll bar. Creates a ScrollArea if true. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
+| `EnableVerticalScrollBar` | :fontawesome-solid-circle-plus:{title="No"} No  | Enable the vertical scroll bar. Creates a ScrollArea if true. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
+| `ScrollBarVisibility` | :fontawesome-solid-circle-plus:{title="No"} No  | Visibility of the scroll bars: AlwaysVisible, VisibleWhenNeeded, or AlwaysHidden. Default: AlwaysVisible. | `None` | [`ScrollVisibility`](../../../enums/ScrollVisibility)[`None`](../../types/#none) |
+| `ScrollAreaMinWidth` | :fontawesome-solid-circle-plus:{title="No"} No  | Minimum width of the scroll area. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar)[`None`](../../types/#none) |
+| `ScrollAreaMinHeight` | :fontawesome-solid-circle-plus:{title="No"} No  | Minimum height of the scroll area. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar)[`None`](../../types/#none) |
+| `ScrollAreaMaxWidth` | :fontawesome-solid-circle-plus:{title="No"} No  | Maximum width of the scroll area. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar)[`None`](../../types/#none) |
+| `ScrollAreaMaxHeight` | :fontawesome-solid-circle-plus:{title="No"} No  | Maximum height of the scroll area. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar)[`None`](../../types/#none) |
+| `ScrollAreaAutoShrinkWidth` | :fontawesome-solid-circle-plus:{title="No"} No  | Auto-shrink scroll area width to fit contents. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
+| `ScrollAreaAutoShrinkHeight` | :fontawesome-solid-circle-plus:{title="No"} No  | Auto-shrink scroll area height to fit contents. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
+| `ScrollAreaEnableScrolling` | :fontawesome-solid-circle-plus:{title="No"} No  | Enable scrolling in the scroll area. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
 
 </div>
 
-
+This shard creates a Layout class that can be used in other UI shards.
 
 --8<-- "includes/license.md"
 

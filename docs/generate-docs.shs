@@ -178,6 +178,7 @@
   })
 
   shard-doc:name | @get-filename(@shards-path ".md" true) = file
+  {String.Contains("General/") = is-general-shard}
   [""] >= o
 
   ; metadata (front matter)
@@ -311,7 +312,11 @@
     shard-doc:input-types | @params-types-shards | Set(shard-doc "input-types")
     shard-doc:output-types | @params-types-shards | Set(shard-doc "output-types")
 
-    shard-doc:help | When(Is("") {"Help text is missing!" | Set(shard-doc "help")})
+    false >= missing-help
+    shard-doc:help | When(Is("") {
+      "Help text is missing!" | Set(shard-doc "help")
+      true > missing-help
+    })
 
     parameters-seq | Map({
       ExpectTable = param-table
@@ -332,8 +337,6 @@
   {
     @notion-api-key | When(IsNot("") {
       false >= invalid-defaults
-      false >= missing-help
-      shard-doc:help | If({IsNotNone} {ExpectString} {""}) {When(Is("") {true > missing-help})} = full-help-text
       ; prep params
       {
         "type": "table_row"
@@ -416,7 +419,7 @@
       parameters-seq | ForEach({
         ExpectTable
         {Take("name") | ExpectString = p-name}
-        {Take("types") | ExpectSeq = p-types}
+        {Take("types") | ExpectString = p-types}
         {Take("help") | ExpectString = p-help}
         {Take("default") | ExpectString = p-default}
         {Take("optional") | ExpectBool = p-optional}
@@ -443,7 +446,7 @@
                 }}]
               [{"type": "text"
                 "text": {
-                    "content": (p-types | Map({ExpectTable | Take("name") {When(Is("None") {true > has-none})}}) | ToString | Slice(1 -1))
+                    "content": p-types
                 }}]]
           }
         } >> notion-params
@@ -470,6 +473,8 @@
             "checkbox": invalid-defaults}
           "No Help": {; checkbox
             "checkbox": missing-help}
+          "General": {; checkbox
+            "checkbox": is-general-shard}
         }
         "children": [
           {
@@ -502,7 +507,7 @@
                 {
                   "type": "text"
                   "text": {
-                    "content": full-help-text
+                    "content": shard-doc:help
                   }
                 }]
             }

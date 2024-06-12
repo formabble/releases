@@ -9,12 +9,12 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
-| `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
+| `⬅️ Input` ||No input is required. | | [`None`](../../types/#none) |
+| `Output ➡️` ||The input value of the wire. | | [`Any`](../../types/#any) |
 
 </div>
 
-
+The input value of the wire.
 
 --8<-- "includes/license.md"
 

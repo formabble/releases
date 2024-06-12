@@ -9,16 +9,16 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||Input is the update value to be pushed into the variables. | | [`Any`](../../types/#any) |
+| `⬅️ Input` ||The value to push into the sequence. | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The input to this shard is passed through as its output. | | [`Any`](../../types/#any) |
 | `Name` | :fontawesome-solid-circle-plus:{title="No"} No  | The name of the variable. | `` | [`String`](../../types/#string)[`&Any`](../../types/#contextvar) |
 | `Key` | :fontawesome-solid-circle-plus:{title="No"} No  | The key of the value to write in the table (parameter applicable only if the target variable is a table). | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar)[`None`](../../types/#none) |
 | `Global` | :fontawesome-solid-circle-plus:{title="No"} No  | If the variable is available to all of the wires in the same mesh. | `false` | [`Bool`](../../types/#bool) |
-| `Clear` | :fontawesome-solid-circle-plus:{title="No"} No  | If we should clear this sequence at every wire iteration; works only if this is the first push; default: true. | `true` | [`Bool`](../../types/#bool) |
+| `Clear` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether to clear this sequence at every wire iteration. This only works if it's the first push. The default is true. | `true` | [`Bool`](../../types/#bool) |
 
 </div>
 
-Updates sequences and tables by pushing elements and/or sequences into them.
+Pushes a new value into a sequence variable. If the variable does not exist, it will be created.
 
 ## Details
 

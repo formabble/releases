@@ -11,12 +11,12 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`String`](../../types/#string) |
 | `Output ➡️` ||The resulting output of the shard | | [`String`](../../types/#string)[`Bytes`](../../types/#bytes) |
-| `Json` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | If the output should be a json AST string instead of binary. | `None` | [`Bool`](../../types/#bool) |
-| `BasePath` | :fontawesome-solid-circle-plus:{title="No"} No  | The base path to use when interpreting file references. | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar)[`None`](../../types/#none) |
+| `Json` | :fontawesome-solid-circle-plus:{title="No"} No  | Determines if the output should be a JSON AST string instead of binary. | `false` | [`Bool`](../../types/#bool) |
+| `BasePath` | :fontawesome-solid-circle-plus:{title="No"} No  | The base path used when interpreting file references. | `.` | [`String`](../../types/#string)[`&String`](../../types/#contextvar)[`None`](../../types/#none) |
 
 </div>
 
-Reads a Shards program and outputs a binary or json AST.
+Reads the textual representation of a Shards program and outputs the binary or json AST representation.
 
 --8<-- "includes/license.md"
 
