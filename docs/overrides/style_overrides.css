@@ -4,10 +4,12 @@
 
 .sh-parameters th {
     padding: 0.3em 0.4em !important;
+    white-space: nowrap;
 }
 
 .sh-parameters td {
     padding: 0.1em 0.4em !important;
+    white-space: nowrap;
 }
 
 .sh-parameters code {
