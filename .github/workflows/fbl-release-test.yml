@@ -23,7 +23,7 @@ jobs:
           ./bootstrap
           cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release -DSKIP_HEAVY_INLINE=1
           cmake --build build --target shards
-          shards=`pwd`/build/shards"
+          shards=`pwd`/build/shards
           popd
 
           mkdir -p build_sho
@@ -39,6 +39,7 @@ jobs:
           if-no-files-found: error
 
   # cmake -Bbuild_x86 -GNinja -DCMAKE_BUILD_TYPE=Release -DSKIP_HEAVY_INLINE=1 -DFBL_PREBUILT_SCRIPTS=ON -DCMAKE_OSX_ARCHITECTURES="x86_64" -DBOOST_CONTEXT_ABI=sysv -DBOOST_CONTEXT_ARCHITECTURE=x86_64 -DRUST_CARGO_TARGET=x86_64-apple-darwin -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/build_sho
+  # cmake -Bbuild_ios -GXcode -DSHARDS_SUBPROJECTS=../rare -DCMAKE_BUILD_TYPE=Debug -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_SYSTEM_PROCESSOR=arm64 -DXCODE_SDK=iphoneos -DUSE_UBSAN=OFF -DCMAKE_XCODE_ATTRIBUTE_DEVELOPMENT_TEAM=97G32G3972 -DCMAKE_OSX_DEPLOYMENT_TARGET=16.3
   macosx-x86-release:
     runs-on: macos-latest
     needs: prebuild-sho
@@ -59,8 +60,44 @@ jobs:
           ARGS+=('-DCMAKE_OSX_ARCHITECTURES=x86_64')
           ARGS+=('-DBOOST_CONTEXT_ABI=sysv', '-DBOOST_CONTEXT_ARCHITECTURE=x86_64')
           ARGS+=('-DRUST_CARGO_TARGET=x86_64-apple-darwin')
-          cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/build_sho ${ARGS[@]}
+          cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho ${ARGS[@]}
           cmake --build build --target fbl
+
+      - id: release
+        uses: "./.github/actions/make-release-zip"
+        with:
+          in-files: "'fbl', 'fbl.dSYM'"
+          out-name: formabble-macosx-x86_64
+          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+  ios-release:
+    runs-on: macos-latest
+    needs: prebuild-sho
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Fetch all history for all tags and branches
+      - uses: "./.github/actions/checkout"
+        with:
+          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+
+      - name: Set up dependencies
+        shell: bash
+        run: |
+          rustup +$RUSTUP_TOOLCHAIN target add aarch64-apple-ios
+          rustup +$RUSTUP_TOOLCHAIN component add rust-src
+
+      - name: Build
+        shell: bash
+        run: |
+          pushd formabble
+          ARGS=()
+          ARGS+=('-DCMAKE_SYSTEM_NAME=iOS', '-DCMAKE_SYSTEM_PROCESSOR=arm64')
+          ARGS+=('-DXCODE_SDK=iphoneos')
+          ARGS+=('-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3')
+          ARGS+=('-DCMAKE_XCODE_ATTRIBUTE_DEVELOPMENT_TEAM=97G32G3972')
+          cmake -Bbuild -GXcode -DCMAKE_BUILD_TYPE=Release -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho ${ARGS[@]}
+          cmake --build build --target fbl  -- -arch arm64 -sdk iphoneos CODE_SIGN_IDENTITY="-" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
 
       - id: release
         uses: "./.github/actions/make-release-zip"
