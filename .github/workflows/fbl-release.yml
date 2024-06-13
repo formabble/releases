@@ -11,14 +11,30 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0 # Fetch all history for all tags and branches
+
+      - name: Check repository
+        shell: bash
+        run: |
+          if [[ -f build_sho/start.sho ]]; then
+            echo "Using prebuilt scripts from repository"
+            echo "PREBUILD_SHO_EARLY_OUT=1" >> $GITHUB_ENV
+          fi
+
       - uses: "./.github/actions/checkout"
+        if: ${{ env.PREBUILD_SHO_EARLY_OUT != '1' }}
         with:
           github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
           no-prebuilt-sho: true
 
-      - name: Build tools
+      - name: Build formabble scripts
+        if: ${{ env.PREBUILD_SHO_EARLY_OUT != '1' }}
         shell: bash
         run: |
+          if [[ -f build_sho/start.sho ]]; then
+            echo "Using prebuilt scripts from repository"
+            exit 0
+          fi
+
           pushd shards
           ./bootstrap
           cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release -DSKIP_HEAVY_INLINE=1
