@@ -140,6 +140,9 @@ jobs:
       - name: Build
         shell: bash
         run: |
+          pushd shards
+          ./bootstrap
+          popd
           pushd formabble
           cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release \
             -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho \
@@ -176,6 +179,9 @@ jobs:
       - name: Build
         shell: bash
         run: |
+          pushd shards
+          ./bootstrap
+          popd
           pushd formabble
           cmake -Bbuild -GXcode -DCMAKE_BUILD_TYPE=Release \
             -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho \
@@ -221,21 +227,19 @@ jobs:
           ./emsdk install 3.1.59
           ./emsdk activate 3.1.59
 
-      - name: Build host tools
-        shell: bash
-        run: |
-          pushd shards
-          ./bootstrap
-          cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release -DSKIP_HEAVY_INLINE=1
-          cmake --build build --target shards
-          echo "SHARDS_COMMAND=`pwd`/build/shards" >> $GITHUB_ENV
-
       - name: Build
         shell: bash
         run: |
           source emsdk/emsdk_env.sh
+          pushd shards
+          ./bootstrap
+          popd
           pushd formabble
-          cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release -DSKIP_HEAVY_INLINE=1 -DUSE_LTO=0 -DEMSCRIPTEN_PTHREADS=ON -DCMAKE_TOOLCHAIN_FILE=$EMSDK/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake
+          cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release \
+            -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho \
+            -DSKIP_HEAVY_INLINE=1 -DUSE_LTO=0 \
+            -DEMSCRIPTEN_PTHREADS=ON \
+            -DCMAKE_TOOLCHAIN_FILE=$EMSDK/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake
           cmake --build build --target fbl
 
       - id: release
