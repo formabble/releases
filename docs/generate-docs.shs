@@ -100,6 +100,7 @@
       (String.Starts(With: "_Emscripten."))
       (String.Starts(With: "Reflect."))
       (String.Starts(With: "DB.")) ; File access
+      (String.Starts(With: "Shards.")) ; Sandbox escape and internal
       (Is("ReadFile"))
       (Is("WriteFile"))
       (Is("WritePNG"))
@@ -526,6 +527,105 @@
   @notion-db-id | Log("Populating notion database")
 })
 
+; previous synthax code
+; (defn document-enum [name]
+;   (Wire
+;    (str "document-enum" name)
+;    (Setup
+;     (enum-info name) = .record
+;     name (getFilename (str basePath enumsPath) ".md" false) = .filename
+;     (Get .record "values") = .values
+;     [""] >= .o)
+
+;    ; metadata (front matter)
+;    "---\r\n" >> .o
+;    "authors: Fragcolor & contributors\r\n" >> .o
+;    "license: CC-BY-SA-4.0\r\n" >> .o
+;    "---\r\n" >> .o
+;    "\r\n\r\n" >> .o
+
+;    ; title
+;    "# " >> .o name >> .o "\r\n\r\n" >> .o
+
+;    ;; Table showing the valid enum values
+;    "<div class=\"sh-parameters\" markdown=\"1\">\r\n" >> .o
+;    "| Value  | Description |\r\n" >> .o
+;    "|------|---------------------|\r\n" >> .o
+
+;    (When
+;     (-> (Count .values) (IsMore 0))
+;     (->
+;      .values
+;      (ForEach
+;       (-> (ExpectTable)
+;           (| (Take "label") >= .label)
+;           (| (Take "description") >= .description)
+;           "| `" >> .o .label >> .o
+;           "` | " >> .o .description >> .o
+;           " |\r\n" >> .o))))
+
+;    "\r\n</div>\r\n" >> .o
+;    "\r\n" >> .o
+
+;    "--8<-- \"includes/license.md\"\r\n" >> .o
+
+;    .o (String.Join) = .content
+;    .filename (FS.Write .content :Overwrite true)
+;    (Msg "done.")))
+
+@wire(document-enum {
+  = enum-id
+  enum-id | Shards.EnumTypeHelp = enum-help
+
+  enum-help | Take("labels") | ExpectSeq = labels
+  enum-help | Take("descriptions") | ExpectSeq = descriptions
+  Count(labels) = count
+
+  "" >> o
+  "---\r\n" >> o
+  "authors: Formabble & contributors\r\n" >> o
+  "license: CC-BY-SA-4.0\r\n" >> o
+  "---\r\n" >> o
+  "\r\n\r\n" >> o
+
+  "# " >> o
+  enum-help:name | ExpectString = name
+  name >> o
+  "\r\n\r\n" >> o
+
+  "<div class=\"sh-parameters\" markdown=\"1\">\r\n" >> o
+  "| Value  | Description |\r\n" >> o
+  "|------|---------------------|\r\n" >> o
+
+  0 >= idx
+  Repeat({
+    labels | Take(idx) | ExpectString = label
+    descriptions | Take(idx) | ExpectString = description
+    "| `" >> o
+    label >> o
+    "` | " >> o
+    description >> o
+    " |\r\n" >> o
+    Inc(idx)
+  } Times: count)
+
+  "\r\n</div>\r\n" >> o
+  "\r\n" >> o
+
+  "--8<-- \"includes/license.md\"\r\n" >> o
+
+  o | String.Join = content
+  name | @get-filename(@enums-path ".md" true) = file
+  file | FS.Write(content Overwrite: true)
+
+  none
+})
+
+; @wire(document-object {
+;   = object-id
+;   object-id | Shards.ObjectTypeHelp = object-help | Log
+; })
+
 "shards_docs_merged.txt" | FS.Remove
 
 ; process documentation in parallel
@@ -540,6 +640,10 @@ skipped-list | ForEach({
 ["};\n\n"] | String.Format >> out
 out | String.Join("") = file-content
 "forbidden_shards.inl" | FS.Write(file-content Overwrite: true)
+
+Shards.EnumTypes | TryMany(document-enum Threads: 4)
+
+; Shards.ObjectTypes | TryMany(document-object Threads: 4)
 
 Pause(2.0)
 
