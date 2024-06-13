@@ -4,8 +4,44 @@ on:
   workflow_dispatch:
 
 jobs:
-  macosx-arm64-release:
-    runs-on: macos-latest # should be M1/ARM64
+  prebuild-sho:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Fetch all history for all tags and branches
+      - uses: "./.github/actions/checkout"
+        with:
+          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+          no-prebuilt-sho: true
+          
+      - name: Build tools
+        shell: bash
+        run: |
+          pushd shards
+          ./bootstrap
+          cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release -DSKIP_HEAVY_INLINE=1
+          cmake --build build --target shards
+          shards=`pwd`/build/shards"
+          popd
+
+          mkdir -p build_sho
+          $shards build formabble/app/scripts/start.shs build_sho/start.sho
+          $shards build formabble/app/scripts/domain.shs build_sho/domain.sho
+          $shards build formabble/app/scripts/shared.shs build_sho/shared.sho
+
+      - name: Upload prebuilt scripts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build_sho
+          path: build_sho
+          if-no-files-found: error
+
+  # cmake -Bbuild_x86 -GNinja -DCMAKE_BUILD_TYPE=Release -DSKIP_HEAVY_INLINE=1 -DFBL_PREBUILT_SCRIPTS=ON -DCMAKE_OSX_ARCHITECTURES="x86_64" -DBOOST_CONTEXT_ABI=sysv -DBOOST_CONTEXT_ARCHITECTURE=x86_64 -DRUST_CARGO_TARGET=x86_64-apple-darwin -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/build_sho
+  macosx-x86-release:
+    runs-on: macos-latest
+    needs: prebuild-sho
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -18,89 +54,18 @@ jobs:
       - name: Build
         shell: bash
         run: |
-          which ninja
-          ninja --version
-
-          pushd shards
-          ./bootstrap
-          popd
           pushd formabble
-          cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release
+          ARGS=()
+          ARGS+=('-DCMAKE_OSX_ARCHITECTURES=x86_64')
+          ARGS+=('-DBOOST_CONTEXT_ABI=sysv', '-DBOOST_CONTEXT_ARCHITECTURE=x86_64')
+          ARGS+=('-DRUST_CARGO_TARGET=x86_64-apple-darwin')
+          cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/build_sho ${ARGS[@]}
           cmake --build build --target fbl
 
       - id: release
         uses: "./.github/actions/make-release-zip"
         with:
           in-files: "'fbl', 'fbl.dSYM'"
-          out-name: formabble-macosx-arm64
+          out-name: formabble-macosx-x86_64
           github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
-
-  # macosx-x86-release:
-  #   runs-on: macos-latest
-  #   steps:
-  #     - name: Checkout code
-  #       uses: actions/checkout@v3
-  #       with:
-  #         fetch-depth: 0 # Fetch all history for all tags and branches
-  #     - uses: "./.github/actions/checkout"
-  #       with:
-  #         github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
-
-  #     - name: Build host tools
-  #       shell: bash
-  #       run: |
-  #         pushd shards
-  #         ./bootstrap
-  #         cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release -DSKIP_HEAVY_INLINE=1
-  #         cmake --build build --target shards
-  #         echo "SHARDS_COMMAND=`pwd`/build/shards" >> $GITHUB_ENV
-
-  #     - name: Build
-  #       shell: bash
-  #       run: |
-  #         pushd formabble
-  #         cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release -DCMAKE_OSX_ARCHITECTURES="x86_64"
-  #         cmake --build build --target fbl
-
-  #     - id: release
-  #       uses: "./.github/actions/make-release-zip"
-  #       with:
-  #         in-files: "'fbl', 'fbl.dSYM'"
-  #         out-name: formabble-macosx-x86_64
-  #         github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
-          
-          
-  # ios-release:
-  #   runs-on: macos-latest
-  #   steps:
-  #     - name: Checkout code
-  #       uses: actions/checkout@v3
-  #       with:
-  #         fetch-depth: 0 # Fetch all history for all tags and branches
-  #     - uses: "./.github/actions/checkout"
-  #       with:
-  #         github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
-
-  #     - name: Build host tools
-  #       shell: bash
-  #       run: |
-  #         pushd shards
-  #         ./bootstrap
-  #         cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release -DSKIP_HEAVY_INLINE=1
-  #         cmake --build build --target shards
-  #         echo "SHARDS_COMMAND=`pwd`/build/shards" >> $GITHUB_ENV
-
-  #     - name: Build
-  #       shell: bash
-  #       run: |
-  #         pushd formabble
-  #         cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release -DCMAKE_OSX_ARCHITECTURES="x86_64"
-  #         cmake --build build --target fbl
-
-  #     - id: release
-  #       uses: "./.github/actions/make-release-zip"
-  #       with:
-  #         in-files: "'fbl', 'fbl.dSYM'"
-  #         out-name: formabble-macosx-x86_64
-  #         github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
           
