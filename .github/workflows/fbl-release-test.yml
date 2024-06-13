@@ -15,7 +15,7 @@ jobs:
         with:
           github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
           no-prebuilt-sho: true
-          
+
       - name: Build tools
         shell: bash
         run: |
@@ -91,13 +91,13 @@ jobs:
         shell: bash
         run: |
           pushd formabble
-          ARGS=()
-          ARGS+=('-DCMAKE_SYSTEM_NAME=iOS', '-DCMAKE_SYSTEM_PROCESSOR=arm64')
-          ARGS+=('-DXCODE_SDK=iphoneos')
-          ARGS+=('-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3')
-          ARGS+=('-DCMAKE_XCODE_ATTRIBUTE_DEVELOPMENT_TEAM=97G32G3972')
-          cmake -Bbuild -GXcode -DCMAKE_BUILD_TYPE=Release -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho ${ARGS[@]}
-          # cmake --build build --target fbl  -- -arch arm64 -sdk iphoneos CODE_SIGN_IDENTITY="-" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+          cmake -Bbuild -GXcode -DCMAKE_BUILD_TYPE=Release
+            -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho \
+            -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_SYSTEM_PROCESSOR=arm64 \
+            -DXCODE_SDK=iphoneos \
+            -DCMAKE_OSX_DEPLOYMENT_TARGET=16.3 \
+            -DCMAKE_XCODE_ATTRIBUTE_DEVELOPMENT_TEAM=97G32G3972 \
+            # cmake --build build --target fbl  -- -arch arm64 -sdk iphoneos CODE_SIGN_IDENTITY="-" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
           xcodebuild -project build/fbl.xcodeproj -sdk iphoneos -arch arm64 -scheme fbl -configuration Release archive -archivePath fbl.xcarchive
 
       - id: release
@@ -106,4 +106,4 @@ jobs:
           in-files: "'fbl.xcarchive'"
           out-name: formabble-ios-arm64
           github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
-          
+
