@@ -615,7 +615,7 @@
   "--8<-- \"includes/license.md\"\r\n" >> o
 
   o | String.Join = content
-  name | @get-filename(@enums-path ".md" true) = file
+  name | @get-filename(@enums-path ".md" false) = file
   file | FS.Write(content Overwrite: true)
 
   none
