@@ -27,9 +27,9 @@ jobs:
           popd
 
           mkdir -p build_sho
-          $shards build formabble/app/scripts/start.shs build_sho/start.sho
-          $shards build formabble/app/scripts/domain.shs build_sho/domain.sho
-          $shards build formabble/app/scripts/shared.shs build_sho/shared.sho
+          $shards build formabble/app/scripts/start.shs -o build_sho/start.sho
+          $shards build formabble/app/scripts/domain.shs -o build_sho/domain.sho
+          $shards build formabble/app/scripts/shared.shs -o build_sho/shared.sho
 
       - name: Upload prebuilt scripts
         uses: actions/upload-artifact@v3
@@ -97,12 +97,13 @@ jobs:
           ARGS+=('-DCMAKE_OSX_DEPLOYMENT_TARGET=16.3')
           ARGS+=('-DCMAKE_XCODE_ATTRIBUTE_DEVELOPMENT_TEAM=97G32G3972')
           cmake -Bbuild -GXcode -DCMAKE_BUILD_TYPE=Release -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho ${ARGS[@]}
-          cmake --build build --target fbl  -- -arch arm64 -sdk iphoneos CODE_SIGN_IDENTITY="-" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+          # cmake --build build --target fbl  -- -arch arm64 -sdk iphoneos CODE_SIGN_IDENTITY="-" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+          xcodebuild -project build/fbl.xcodeproj -sdk iphoneos -arch arm64 -scheme fbl -configuration Release archive -archivePath fbl.xcarchive
 
       - id: release
         uses: "./.github/actions/make-release-zip"
         with:
-          in-files: "'fbl', 'fbl.dSYM'"
-          out-name: formabble-macosx-x86_64
+          in-files: "'fbl.xcarchive'"
+          out-name: formabble-ios-arm64
           github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
           
