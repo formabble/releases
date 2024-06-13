@@ -15,6 +15,7 @@
 .sh-parameters code {
     font-size: 1em !important;
     background-color: inherit !important;
+    word-break: break-word;
 }
 
 .md-typeset__table {
