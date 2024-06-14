@@ -5,7 +5,7 @@ inputs:
     description: |
       Files to include in the zip, Example input: 'fbl.exe', 'fbl.pdb', 'crsqlite.dll', 'crsqlite.pdb'
     required: true
-  out-name: 
+  out-name:
     description: Name of the output zip file
     required: true
   github-token:
@@ -30,9 +30,8 @@ runs:
         } else {
           Write-Host "No files found to zip."
         }
-        
+
     - name: Upload artifacts Release
-      if: "!startsWith(github.ref, 'refs/tags/')"
       uses: actions/upload-artifact@v3
       with:
         name: ${{ inputs.out-name }}
