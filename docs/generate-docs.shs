@@ -527,52 +527,6 @@
   @notion-db-id | Log("Populating notion database")
 })
 
-; previous synthax code
-; (defn document-enum [name]
-;   (Wire
-;    (str "document-enum" name)
-;    (Setup
-;     (enum-info name) = .record
-;     name (getFilename (str basePath enumsPath) ".md" false) = .filename
-;     (Get .record "values") = .values
-;     [""] >= .o)
-
-;    ; metadata (front matter)
-;    "---\r\n" >> .o
-;    "authors: Fragcolor & contributors\r\n" >> .o
-;    "license: CC-BY-SA-4.0\r\n" >> .o
-;    "---\r\n" >> .o
-;    "\r\n\r\n" >> .o
-
-;    ; title
-;    "# " >> .o name >> .o "\r\n\r\n" >> .o
-
-;    ;; Table showing the valid enum values
-;    "<div class=\"sh-parameters\" markdown=\"1\">\r\n" >> .o
-;    "| Value  | Description |\r\n" >> .o
-;    "|------|---------------------|\r\n" >> .o
-
-;    (When
-;     (-> (Count .values) (IsMore 0))
-;     (->
-;      .values
-;      (ForEach
-;       (-> (ExpectTable)
-;           (| (Take "label") >= .label)
-;           (| (Take "description") >= .description)
-;           "| `" >> .o .label >> .o
-;           "` | " >> .o .description >> .o
-;           " |\r\n" >> .o))))
-
-;    "\r\n</div>\r\n" >> .o
-;    "\r\n" >> .o
-
-;    "--8<-- \"includes/license.md\"\r\n" >> .o
-
-;    .o (String.Join) = .content
-;    .filename (FS.Write .content :Overwrite true)
-;    (Msg "done.")))
-
 @wire(document-enum {
   = enum-id
   enum-id | Shards.EnumTypeHelp = enum-help
