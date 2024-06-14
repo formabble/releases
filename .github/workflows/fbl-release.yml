@@ -110,6 +110,7 @@ jobs:
       - name: Build
         shell: bash
         run: |
+          sudo xcode-select --switch /Applications/Xcode_15.4.app
           pushd shards
           ./bootstrap
           popd
@@ -137,9 +138,15 @@ jobs:
         with:
           github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
 
+      - name: Set up dependencies
+        shell: bash
+        run: |
+          rustup +$RUSTUP_TOOLCHAIN target add x86_64-apple-darwin
+
       - name: Build
         shell: bash
         run: |
+          sudo xcode-select --switch /Applications/Xcode_15.4.app
           pushd shards
           ./bootstrap
           popd
@@ -179,6 +186,7 @@ jobs:
       - name: Build
         shell: bash
         run: |
+          sudo xcode-select --switch /Applications/Xcode_15.4.app
           pushd shards
           ./bootstrap
           popd
