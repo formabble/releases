@@ -26,15 +26,5 @@ Modifies the value of an existing mutable variable.
 
 ## Examples
 
-=== "Code"
-
-  ```x86asm linenums="1"
-  --8<-- "samples/shards/General/Update/Update.shs"
-  ```
-
-  ```
-  --8<-- "samples/shards/General/Update/Update.shs.log"
-  ```
-&nbsp;
 --8<-- "includes/license.md"
 
