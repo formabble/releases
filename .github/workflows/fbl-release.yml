@@ -98,7 +98,7 @@ jobs:
         with:
           in-files: "'fbl.exe', 'fbl.pdb', 'crsqlite.dll', 'crsqlite.pdb'"
           out-name: formabble-win64
-          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+          github-token:  ${{ secrets.GITHUB_TOKEN }}
 
   macosx-arm64-release:
     runs-on: macos-latest # should be M1/ARM64
@@ -131,7 +131,7 @@ jobs:
         with:
           in-files: "'fbl', 'fbl.dSYM'"
           out-name: formabble-macosx-arm64
-          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+          github-token:  ${{ secrets.GITHUB_TOKEN }}
 
   macosx-x86-release:
     runs-on: macos-latest
@@ -172,7 +172,7 @@ jobs:
         with:
           in-files: "'fbl', 'fbl.dSYM'"
           out-name: formabble-macosx-x86_64
-          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+          github-token:  ${{ secrets.GITHUB_TOKEN }}
 
   ios-release:
     runs-on: macos-latest
@@ -215,7 +215,7 @@ jobs:
         with:
           in-files: "'fbl.xcarchive'"
           out-name: formabble-ios-arm64
-          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+          github-token:  ${{ secrets.GITHUB_TOKEN }}
 
 
   wasm-release:
@@ -268,7 +268,7 @@ jobs:
         with:
           in-files: "'fbl.js', 'fbl.wasm'"
           out-name: formabble-wasm
-          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+          github-token:  ${{ secrets.GITHUB_TOKEN }}
 
   android-release:
     runs-on: ubuntu-latest
@@ -316,4 +316,4 @@ jobs:
         with:
           in-files: "'fbl.apk'"
           out-name: formabble-wasm
-          github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+          github-token:  ${{ secrets.GITHUB_TOKEN }}

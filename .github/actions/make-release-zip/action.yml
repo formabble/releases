@@ -10,6 +10,10 @@ inputs:
     required: true
   github-token:
     required: true
+  pre-release:
+    description: "Is this a pre-release?"
+    required: false
+    default: false
 runs:
   using: "composite"
   steps:
@@ -46,3 +50,4 @@ runs:
         files: |
           ${{ inputs.out-name }}.zip
         token: ${{ inputs.github-token }}
+        prerelease: ${{ env.IS_PRE_RELEASE }}
