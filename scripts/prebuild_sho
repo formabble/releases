@@ -1,0 +1,7 @@
+#!/bin/bash
+SHARDS=${SHARDS:-../shards/build/clang-x86_64-pc-windows-msvc/reldebinfo/shards}
+FBL_PATH=${FBL_PATH:-../fbl}
+mkdir -p build_sho
+$SHARDS build ${FBL_PATH}/app/scripts/start.shs -o build_sho/start.sho
+$SHARDS build ${FBL_PATH}/app/scripts/domain.shs -o build_sho/domain.sho
+$SHARDS build ${FBL_PATH}/app/scripts/shared.shs -o build_sho/shared.sho
