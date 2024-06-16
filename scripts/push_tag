@@ -1,0 +1,13 @@
+#!/bin/bash
+ROOT=$( cd "$(dirname "$0")" ; pwd -P )/..
+
+git add -u && git commit
+
+read -p "Pushing to $1, are you sure? " -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    pushd $ROOT
+    git tag -f $1
+    git push --force origin $1
+    popd
+fi
