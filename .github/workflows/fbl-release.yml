@@ -113,6 +113,7 @@ jobs:
       - uses: "./.github/actions/checkout"
         with:
           github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+          apple-signing-cert: ${{ secrets.APPLE_SIGNING_CERT }}
 
       - name: Build
         shell: bash
@@ -152,6 +153,7 @@ jobs:
       - uses: "./.github/actions/checkout"
         with:
           github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+          apple-signing-cert: ${{ secrets.APPLE_SIGNING_CERT }}
 
       - name: Set up dependencies
         shell: bash
@@ -196,6 +198,7 @@ jobs:
       - uses: "./.github/actions/checkout"
         with:
           github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+          apple-signing-cert: ${{ secrets.APPLE_SIGNING_CERT }}
 
       - name: Set up dependencies
         shell: bash
