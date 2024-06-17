@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
 | `Output ➡️` ||The resulting output of the shard | | [`[Float4]`](../../types/#seq) |
-| `Type` | :fontawesome-solid-circle-plus:{title="No"} No  | The matrix row type of the corresponding matrix | `Type.Float4` | [`Type`](../../../enums/Type) |
+| `Type` | :fontawesome-solid-circle-plus:{title="No"} No  | The matrix row type of the corresponding matrix | `Type::Float4` | [`Type`](../../../enums/Type) |
 
 </div>
 

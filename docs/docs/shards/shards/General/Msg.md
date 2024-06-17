@@ -9,14 +9,14 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
-| `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
+| `⬅️ Input` ||The input is ignored. This shard displays a static message. | | [`Any`](../../types/#any) |
+| `Output ➡️` ||The same variable that was inputted, unmodified. | | [`Any`](../../types/#any) |
 | `Message` | :fontawesome-solid-circle-plus:{title="No"} No  | The message to display on the user's screen or console. | `` | [`String`](../../types/#string) |
-| `Level` | :fontawesome-solid-circle-plus:{title="No"} No  | The level of logging. | `LogLevel.Info` | [`LogLevel`](../../../enums/LogLevel) |
+| `Level` | :fontawesome-solid-circle-plus:{title="No"} No  | The level of logging. | `LogLevel::Info` | [`LogLevel`](../../../enums/LogLevel) |
 
 </div>
 
-Displays the passed message string or the passed variable's value to the user via standard output.
+Displays the passed message string to the user via standard output. The input variable is ignored, and only the static message is displayed.
 
 ## Details
 

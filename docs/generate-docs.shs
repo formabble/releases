@@ -326,10 +326,10 @@
       param-table
     }) = parameters-seq-edited
 
-    shard-doc | ToString >= shard-doc-string
+    shard-doc | ToJson >= shard-doc-string
 
     "\nParams: " | AppendTo(shard-doc-string)
-    parameters-seq-edited | ToString | AppendTo(shard-doc-string)
+    parameters-seq-edited | ToJson | AppendTo(shard-doc-string)
 
     "\n----\n" | AppendTo(shard-doc-string)
     "shards_docs_merged.txt" | FS.Write(shard-doc-string Append: true)

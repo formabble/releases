@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
 | `Output ➡️` ||The resulting output of the shard | | [`GFX.Mesh`](../../types/#gfx.mesh) |
-| `Type` | :fontawesome-solid-circle-plus:{title="No"} No  | The type of object to make. | `BuiltinMeshType.Cube` | [`BuiltinMeshType`](../../../enums/BuiltinMeshType) |
+| `Type` | :fontawesome-solid-circle-plus:{title="No"} No  | The type of object to make. | `BuiltinMeshType::Cube` | [`BuiltinMeshType`](../../../enums/BuiltinMeshType) |
 
 </div>
 
