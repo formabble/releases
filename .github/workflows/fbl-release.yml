@@ -225,7 +225,7 @@ jobs:
       - id: release
         uses: "./.github/actions/make-release-zip"
         with:
-          in-files: "'fbl.xcarchive'"
+          in-files: "'../fbl.xcarchive', 'RelWithDebInfo/fbl.app.dSYM'"
           out-name: formabble-ios-arm64
           github-token:  ${{ secrets.GITHUB_TOKEN }}
 
