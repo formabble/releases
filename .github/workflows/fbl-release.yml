@@ -126,17 +126,17 @@ jobs:
           cmake -Bbuild -GXcode -DCMAKE_BUILD_TYPE=RelWithDebInfo \
             -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho \
             -DXCODE_SDK=macosx
-          cmake --build build --target fbl --config Release -- -arch arm64 -sdk macosx CODE_SIGN_IDENTITY="-" CODE_SIGNING_ALLOWED=NO
+          cmake --build build --target fbl --config RelWithDebInfo -- -arch arm64 -sdk macosx CODE_SIGN_IDENTITY="-" CODE_SIGNING_ALLOWED=NO
 
-          sudo codesign -s 7Q267P2WJ build/Release/fbl.app
+          # sudo codesign -s 7Q267P2WJ build/RelWithDebInfo/fbl.app
 
-          ls -l build/Release/fbl.app
+          ls -l build/RelWithDebInfo/fbl.app
           ls -l build/
 
       - id: release
         uses: "./.github/actions/make-release-zip"
         with:
-          in-files: "'Release/fbl.app'"
+          in-files: "'RelWithDebInfo/fbl.app'"
           out-name: formabble-macosx-arm64
           github-token:  ${{ secrets.GITHUB_TOKEN }}
 
@@ -168,20 +168,20 @@ jobs:
           ./bootstrap
           popd
           pushd formabble
-          cmake -Bbuild -GXcode -DCMAKE_BUILD_TYPE=Release \
+          cmake -Bbuild -GXcode -DCMAKE_BUILD_TYPE=RelWithDebInfo \
             -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho \
             -DCMAKE_OSX_ARCHITECTURES=x86_64 \
             -DBOOST_CONTEXT_ABI=sysv -DBOOST_CONTEXT_ARCHITECTURE=x86_64 \
             -DRUST_CARGO_TARGET=x86_64-apple-darwin \
             -DXCODE_SDK=macosx
-          cmake --build build --target fbl --config Release -- -arch arm64 -sdk macosx CODE_SIGN_IDENTITY="-" CODE_SIGNING_ALLOWED=NO
+          cmake --build build --target fbl --config RelWithDebInfo -- -arch arm64 -sdk macosx CODE_SIGN_IDENTITY="-" CODE_SIGNING_ALLOWED=NO
 
-          sudo codesign -s 7Q267P2WJ build/Release/fbl.app
+          # sudo codesign -s 7Q267P2WJ build/RelWithDebInfo/fbl.app
 
       - id: release
         uses: "./.github/actions/make-release-zip"
         with:
-          in-files: "'Release/fbl.app'"
+          in-files: "'RelWithDebInfo/fbl.app'"
           out-name: formabble-macosx-x86_64
           github-token:  ${{ secrets.GITHUB_TOKEN }}
 
@@ -214,13 +214,13 @@ jobs:
           ./bootstrap
           popd
           pushd formabble
-          cmake -Bbuild -GXcode -DCMAKE_BUILD_TYPE=Release \
+          cmake -Bbuild -GXcode -DCMAKE_BUILD_TYPE=RelWithDebInfo \
             -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho \
             -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_SYSTEM_PROCESSOR=arm64 \
             -DXCODE_SDK=iphoneos \
             -DCMAKE_OSX_DEPLOYMENT_TARGET=16.3 \
             -DCMAKE_XCODE_ATTRIBUTE_DEVELOPMENT_TEAM=97G32G3972
-          xcodebuild -project build/fbl.xcodeproj -sdk iphoneos -arch arm64 -scheme fbl -configuration Release archive -archivePath fbl.xcarchive CODE_SIGN_IDENTITY="-" CODE_SIGNING_ALLOWED=NO
+          xcodebuild -project build/fbl.xcodeproj -sdk iphoneos -arch arm64 -scheme fbl -configuration RelWithDebInfo archive -archivePath fbl.xcarchive CODE_SIGN_IDENTITY="-" CODE_SIGNING_ALLOWED=NO
 
       - id: release
         uses: "./.github/actions/make-release-zip"
@@ -268,7 +268,7 @@ jobs:
           ./bootstrap
           popd
           pushd formabble
-          cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release \
+          cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=RelWithDebInfo \
             -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho \
             -DSKIP_HEAVY_INLINE=1 -DUSE_LTO=0 \
             -DEMSCRIPTEN_PTHREADS=ON \
@@ -313,7 +313,7 @@ jobs:
           popd
           pushd formabble
           ANDROID_TOOLCHAIN=/usr/local/lib/android/sdk/ndk/25.2.9519653
-          cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release \
+          cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=RelWithDebInfo \
             -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho \
             -DANDROID_ABI=arm64-v8a \
             -DANDROID_PLATFORM=android-33 \
