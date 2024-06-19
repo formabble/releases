@@ -170,11 +170,11 @@ jobs:
           pushd formabble
           cmake -Bbuild -GXcode -DCMAKE_BUILD_TYPE=RelWithDebInfo \
             -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho \
-            -DCMAKE_OSX_ARCHITECTURES=x86_64 \
+            -DCMAKE_SYSTEM_PROCESSOR=x86_64 -DCMAKE_OSX_ARCHITECTURES=x86_64 \
             -DBOOST_CONTEXT_ABI=sysv -DBOOST_CONTEXT_ARCHITECTURE=x86_64 \
             -DRUST_CARGO_TARGET=x86_64-apple-darwin \
             -DXCODE_SDK=macosx
-          cmake --build build --target fbl --config RelWithDebInfo -- -arch arm64 -sdk macosx CODE_SIGN_IDENTITY="-" CODE_SIGNING_ALLOWED=NO
+          cmake --build build --target fbl --config RelWithDebInfo -- -arch x86_64 -sdk macosx CODE_SIGN_IDENTITY="-" CODE_SIGNING_ALLOWED=NO
 
           # sudo codesign -s 7Q267P2WJ build/RelWithDebInfo/fbl.app
 
@@ -268,17 +268,22 @@ jobs:
           ./bootstrap
           popd
           pushd formabble
-          cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+          cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release \
             -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho \
             -DSKIP_HEAVY_INLINE=1 -DUSE_LTO=0 \
             -DEMSCRIPTEN_PTHREADS=ON \
             -DCMAKE_TOOLCHAIN_FILE=$EMSDK/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake
           cmake --build build --target fbl
 
+          cp app/web/favicon.svg build/favicon.svg
+          cp app/web/fbl-loader.js build/fbl-loader.js
+          cp app/web/index.html build/index.html
+          cp app/web/style.css build/style.css
+
       - id: release
         uses: "./.github/actions/make-release-zip"
         with:
-          in-files: "'fbl.js', 'fbl.wasm'"
+          in-files: "'fbl.js', 'fbl.wasm', 'fbl-loader.js', 'index.html', 'style.css'"
           out-name: formabble-wasm
           github-token:  ${{ secrets.GITHUB_TOKEN }}
 
