@@ -8,9 +8,11 @@ function getJsFiles(dir) {
 
 // Function to update references in a file
 function updateFileReferences(filePath, oldNames, newNames) {
+  if (path.extname(filePath) !== '.js')
+    return;
   let content = fs.readFileSync(filePath, 'utf8');
   oldNames.forEach((oldName, index) => {
-    const regex = new RegExp('"' + oldName +'"', 'g');
+    const regex = new RegExp('"' + oldName + '"', 'g');
     content = content.replace(regex, '"' + newNames[index] + '"');
   });
   fs.writeFileSync(filePath, content);
@@ -36,15 +38,15 @@ function processDirectory(dir, uid) {
   // Rename JS files
   oldNames.forEach((file, index) => {
     const oldPath = path.join(dir, file);
-    if(!fs.existsSync(oldPath)) {
+    if (!fs.existsSync(oldPath)) {
       console.warn(`File "${oldPath}" does not exist.`);
-     return;
+      return;
     }
     const baseNewName = path.basename(newNames[index]);
-    
+
     // Update references in renamed files
     updateFileReferences(oldPath, oldNames, newNames);
-    
+
     const newPath = path.join(dir, baseNewName);
     fs.renameSync(oldPath, newPath);
     console.log(`Renamed ${oldPath} to ${newPath}`);
