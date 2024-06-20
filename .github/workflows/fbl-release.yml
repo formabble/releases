@@ -130,8 +130,7 @@ jobs:
 
           # sudo codesign -s 7Q267P2WJ build/RelWithDebInfo/fbl.app
 
-          ls -l build/RelWithDebInfo/fbl.app
-          ls -l build/
+          find build/RelWithDebInfo
 
       - id: release
         uses: "./.github/actions/make-release-zip"
@@ -177,6 +176,8 @@ jobs:
           cmake --build build --target fbl --config RelWithDebInfo -- -arch x86_64 -sdk macosx CODE_SIGN_IDENTITY="-" CODE_SIGNING_ALLOWED=NO
 
           # sudo codesign -s 7Q267P2WJ build/RelWithDebInfo/fbl.app
+
+          find build/RelWithDebInfo
 
       - id: release
         uses: "./.github/actions/make-release-zip"
@@ -291,9 +292,9 @@ jobs:
 
           export CLOUDFLARE_ACCOUNT_ID=${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           export CLOUDFLARE_API_TOKEN=${{ secrets.CLOUDFLARE_API_TOKEN }}
-          npx -y wrangler r2 object put formabble-releases/fbl-${VERSION_ID}.js --file=dist/fbl-${VERSION_ID}.js
           npx -y wrangler r2 object put formabble-releases/fbl-${VERSION_ID}.wasm --file=dist/fbl-${VERSION_ID}.wasm
-          npx -y wrangler r2 object put formabble-releases/fbl-loader-${VERSION_ID}.js --file=dist/fbl-loader-${VERSION_ID}.js
+          npx -y wrangler r2 object put --ct text/javascript formabble-releases/fbl-${VERSION_ID}.js --file=dist/fbl-${VERSION_ID}.js
+          npx -y wrangler r2 object put --ct text/javascript formabble-releases/fbl-loader-${VERSION_ID}.js --file=dist/fbl-loader-${VERSION_ID}.js
 
           DIST=`pwd`/dist
 
