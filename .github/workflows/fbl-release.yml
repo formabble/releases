@@ -293,8 +293,6 @@ jobs:
           export CLOUDFLARE_ACCOUNT_ID=${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           export CLOUDFLARE_API_TOKEN=${{ secrets.CLOUDFLARE_API_TOKEN }}
           npx -y wrangler r2 object put formabble-releases/fbl-${VERSION_ID}.wasm --file=dist/fbl-${VERSION_ID}.wasm
-          npx -y wrangler r2 object put --ct text/javascript formabble-releases/fbl-${VERSION_ID}.js --file=dist/fbl-${VERSION_ID}.js
-          npx -y wrangler r2 object put --ct text/javascript formabble-releases/fbl-loader-${VERSION_ID}.js --file=dist/fbl-loader-${VERSION_ID}.js
 
           DIST=`pwd`/dist
 
@@ -311,6 +309,7 @@ jobs:
 
           pushd web-release
           cp -f $DIST/index.html ./
+          cp -f $DIST/fbl-*.js ./versions
           git add -u
           git commit -m "Update to $VERSION_ID"
           git push
