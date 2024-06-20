@@ -14,6 +14,10 @@ inputs:
     description: "Is this a pre-release?"
     required: false
     default: false
+  zip-root:
+    description: "Zip root path to look for files"
+    required: false
+    default: "formabble/build"
 runs:
   using: "composite"
   steps:
@@ -21,7 +25,7 @@ runs:
       shell: pwsh
       run: |
         $files = ${{ inputs.in-files }}
-        $path = 'formabble/build'
+        $path = '${{ inputs.zip-root }}'
         $existingFiles = @()
         foreach ($file in $files) {
           $fullPath = Join-Path -Path $path -ChildPath $file

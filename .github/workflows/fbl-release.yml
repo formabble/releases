@@ -229,7 +229,6 @@ jobs:
           out-name: formabble-ios-arm64
           github-token:  ${{ secrets.GITHUB_TOKEN }}
 
-
   wasm-release:
     runs-on: ubuntu-latest
     needs: prebuild-sho
@@ -275,15 +274,42 @@ jobs:
             -DCMAKE_TOOLCHAIN_FILE=$EMSDK/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake
           cmake --build build --target fbl
 
-          cp app/web/favicon.svg build/favicon.svg
-          cp app/web/fbl-loader.js build/fbl-loader.js
-          cp app/web/index.html build/index.html
-          cp app/web/style.css build/style.css
+          mkdir -p dist
+          cp app/web/favicon.svg dist/favicon.svg
+          cp app/web/fbl-loader.js dist/fbl-loader.js
+          cp app/web/index.html dist/index.html
+          cp build/fbl.js dist/fbl.js
+          cp build/fbl.wasm dist/fbl.wasm
+
+          # Store unmodified version for zipping
+          cp -r dist dist-zip
+
+          # Post process the build files to be unique
+          VERSION_ID=$(git rev-parse --short $GITHUB_SHA)
+          echo "Version ID: $VERSION_ID"
+          node ../scripts/fixup_build.js dist $VERSION_ID
+
+          export CLOUDFLARE_ACCOUNT_ID=${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          export CLOUDFLARE_API_TOKEN=${{ secrets.CLOUDFLARE_API_TOKEN }}
+          npx -y wrangler r2 object put formabble-releases/fbl-${VERSION_ID}.js --file=dist/fbl-${VERSION_ID}.js
+          npx -y wrangler r2 object put formabble-releases/fbl-${VERSION_ID}.wasm --file=dist/fbl-${VERSION_ID}.wasm
+          npx -y wrangler r2 object put formabble-releases/fbl-loader-${VERSION_ID}.js --file=dist/fbl-loader-${VERSION_ID}.js
+
+          DIST=`pwd`/dist
+          echo "Updating hosted web release"
+          git clone git@github.com:formabble/web-release.git
+          pushd web-release
+          cp -f $DIST/index.html ./
+          git add -u
+          git commit -m "Update to $VERSION_ID"
+          git push
+          popd
 
       - id: release
         uses: "./.github/actions/make-release-zip"
         with:
-          in-files: "'fbl.js', 'fbl.wasm', 'fbl-loader.js', 'index.html', 'style.css'"
+          zip-root: formabble/dist-zip
+          in-files: "'fbl.js', 'fbl.wasm', 'fbl-loader.js', 'index.html', 'style.css', 'favicon.svg'"
           out-name: formabble-wasm
           github-token:  ${{ secrets.GITHUB_TOKEN }}
 
