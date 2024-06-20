@@ -296,8 +296,10 @@ jobs:
           npx -y wrangler r2 object put formabble-releases/fbl-loader-${VERSION_ID}.js --file=dist/fbl-loader-${VERSION_ID}.js
 
           DIST=`pwd`/dist
+
           echo "Updating hosted web release"
-          git clone git@github.com:formabble/web-release.git
+          git clone https://${{ secrets.GITHUB_TOKEN }}@github.com/formabble/web-release.git
+          
           pushd web-release
           cp -f $DIST/index.html ./
           git add -u
