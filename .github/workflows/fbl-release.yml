@@ -299,7 +299,7 @@ jobs:
 
           echo "Updating hosted web release"
           git clone https://${{ secrets.GITHUB_TOKEN }}@github.com/formabble/web-release.git
-          
+
           pushd web-release
           cp -f $DIST/index.html ./
           git add -u
@@ -353,7 +353,7 @@ jobs:
           export LIBCLANG_PATH=$ANDROID_TOOLCHAIN/toolchains/llvm/prebuilt/linux-x86_64/bin
           export CLANG_PATH=$ANDROID_TOOLCHAIN/toolchains/llvm/prebuilt/linux-x86_64/bin/clang
 
-          ls -la $ANDROID_TOOLCHAIN/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang
+          find $ANDROID_TOOLCHAIN/toolchains/llvm/prebuilt/linux-x86_64/lib64
 
           cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=RelWithDebInfo \
             -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho \
