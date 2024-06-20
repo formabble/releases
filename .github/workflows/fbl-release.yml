@@ -170,7 +170,7 @@ jobs:
           pushd formabble
           cmake -Bbuild -GXcode -DCMAKE_BUILD_TYPE=RelWithDebInfo \
             -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho \
-            -DCMAKE_SYSTEM_PROCESSOR=x86_64 -DCMAKE_OSX_ARCHITECTURES=x86_64 \
+            -DCMAKE_SYSTEM_NAME=Darwin -DCMAKE_SYSTEM_PROCESSOR=x86_64 -DCMAKE_OSX_ARCHITECTURES=x86_64 \
             -DBOOST_CONTEXT_ABI=sysv -DBOOST_CONTEXT_ARCHITECTURE=x86_64 \
             -DRUST_CARGO_TARGET=x86_64-apple-darwin \
             -DXCODE_SDK=macosx
@@ -336,6 +336,7 @@ jobs:
           $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --install "build-tools;33.0.2"
           $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --install "platforms;android-33"
 
+
       - name: Build
         shell: bash
         run: |
@@ -343,7 +344,15 @@ jobs:
           ./bootstrap
           popd
           pushd formabble
+
           ANDROID_TOOLCHAIN=/usr/local/lib/android/sdk/ndk/26.3.11579264
+          ls -la $ANDROID_TOOLCHAIN/toolchains/llvm/prebuilt
+
+          export LIBCLANG_PATH=$ANDROID_TOOLCHAIN/toolchains/llvm/prebuilt/linux-x86_64/bin
+          export CLANG_PATH=$ANDROID_TOOLCHAIN/toolchains/llvm/prebuilt/linux-x86_64/bin/clang
+
+          ls -la $ANDROID_TOOLCHAIN/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang
+
           cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=RelWithDebInfo \
             -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho \
             -DANDROID_ABI=arm64-v8a \
