@@ -35,8 +35,12 @@ function processDirectory(dir, uid) {
 
   // Rename JS files
   oldNames.forEach((file, index) => {
-    const baseNewName = path.basename(newNames[index]);
     const oldPath = path.join(dir, file);
+    if(!fs.existsSync(oldPath)) {
+      console.warn(`File "${oldPath}" does not exist.`);
+     return;
+    }
+    const baseNewName = path.basename(newNames[index]);
     
     // Update references in renamed files
     updateFileReferences(oldPath, oldNames, newNames);
