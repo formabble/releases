@@ -8,7 +8,7 @@ function getJsFiles(dir) {
 
 // Function to update references in a file
 function updateFileReferences(filePath, oldNames, newNames) {
-  if (path.extname(filePath) !== '.js')
+  if (path.extname(filePath) !== '.js' && path.extname(filePath) !== '.html')
     return;
   let content = fs.readFileSync(filePath, 'utf8');
   oldNames.forEach((oldName, index) => {
@@ -23,15 +23,16 @@ function processDirectory(dir, uid) {
   var oldNames = [];
   var newNames = [];
   oldNames.push("fbl.js");
-  newNames.push(`https://app-bin.formabble.com/fbl-${uid}.js`);
+  newNames.push(`./fbl-${uid}.js`);
   oldNames.push("fbl.wasm");
   newNames.push(`https://app-bin.formabble.com/fbl-${uid}.wasm`);
   oldNames.push("fbl-loader.js");
-  newNames.push(`https://app-bin.formabble.com/fbl-loader-${uid}.js`);
+  newNames.push(`versions/fbl-loader-${uid}.js`);
 
   // Update references in index.html
   const indexPath = path.join(dir, 'index.html');
   if (fs.existsSync(indexPath)) {
+    console.log("Updating index.html");
     updateFileReferences(indexPath, oldNames, newNames);
   }
 

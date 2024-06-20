@@ -35,6 +35,7 @@ runs:
         }
         if ($existingFiles.Count -gt 0) {
           Compress-Archive -Path $existingFiles -DestinationPath ${{ inputs.out-name }}.zip -Force
+          Expand-Archive -Path ${{ inputs.out-name }}.zip -DestinationPath ${{ inputs.out-name }}-extracted
         } else {
           Write-Host "No files found to zip."
         }
@@ -43,8 +44,7 @@ runs:
       uses: actions/upload-artifact@v3
       with:
         name: ${{ inputs.out-name }}
-        path: |
-          ${{ inputs.out-name }}.zip
+        path: ${{ inputs.out-name }}-extracted/*
         if-no-files-found: error
 
     - name: Publish release

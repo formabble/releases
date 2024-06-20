@@ -308,6 +308,7 @@ jobs:
           git config --global user.name "Github Actions"
 
           pushd web-release
+          mkdir -p versions
           cp -f $DIST/index.html ./
           cp -f $DIST/fbl-*.js ./versions
           git add -u
