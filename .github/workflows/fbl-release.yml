@@ -298,7 +298,12 @@ jobs:
           DIST=`pwd`/dist
 
           echo "Updating hosted web release"
-          git clone https://${{ secrets.GITHUB_TOKEN }}@github.com/formabble/web-release.git
+          mkdir -p ~/.ssh
+          echo "${{ secrets.WEB_DEPLOY_KEY }}" > ~/.ssh/id_ecdsa
+          chmod 600 ~/.ssh/id_ecdsa
+          # ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+          git clone git@github.com:formabble/web-release.git
 
           git config --global user.email "runner@github.com"
           git config --global user.name "Github Actions"
