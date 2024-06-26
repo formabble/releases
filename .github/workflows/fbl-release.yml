@@ -113,6 +113,7 @@ jobs:
       - uses: "./.github/actions/checkout"
         with:
           github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+          apple-signing-cert: ${{ secrets.APPLE_SIGNING_CERT }}
 
       - name: Build
         shell: bash
@@ -122,14 +123,19 @@ jobs:
           ./bootstrap
           popd
           pushd formabble
-          cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release \
-            -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho
-          cmake --build build --target fbl
+          cmake -Bbuild -GXcode -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+            -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho \
+            -DXCODE_SDK=macosx
+          cmake --build build --target fbl --config RelWithDebInfo -- -arch arm64 -sdk macosx CODE_SIGN_IDENTITY="-" CODE_SIGNING_ALLOWED=NO
+
+          # sudo codesign -s 7Q267P2WJ build/RelWithDebInfo/fbl.app
+
+          find build/RelWithDebInfo
 
       - id: release
         uses: "./.github/actions/make-release-zip"
         with:
-          in-files: "'fbl', 'fbl.dSYM'"
+          in-files: "'RelWithDebInfo/fbl.app'"
           out-name: formabble-macosx-arm64
           github-token:  ${{ secrets.GITHUB_TOKEN }}
 
@@ -146,6 +152,7 @@ jobs:
       - uses: "./.github/actions/checkout"
         with:
           github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+          apple-signing-cert: ${{ secrets.APPLE_SIGNING_CERT }}
 
       - name: Set up dependencies
         shell: bash
@@ -160,17 +167,22 @@ jobs:
           ./bootstrap
           popd
           pushd formabble
-          cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release \
+          cmake -Bbuild -GXcode -DCMAKE_BUILD_TYPE=RelWithDebInfo \
             -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho \
-            -DCMAKE_OSX_ARCHITECTURES=x86_64 \
+            -DCMAKE_SYSTEM_NAME=Darwin -DCMAKE_SYSTEM_PROCESSOR=x86_64 -DCMAKE_OSX_ARCHITECTURES=x86_64 \
             -DBOOST_CONTEXT_ABI=sysv -DBOOST_CONTEXT_ARCHITECTURE=x86_64 \
-            -DRUST_CARGO_TARGET=x86_64-apple-darwin
-          cmake --build build --target fbl
+            -DRUST_CARGO_TARGET=x86_64-apple-darwin \
+            -DXCODE_SDK=macosx
+          cmake --build build --target fbl --config RelWithDebInfo -- -arch x86_64 -sdk macosx CODE_SIGN_IDENTITY="-" CODE_SIGNING_ALLOWED=NO
+
+          # sudo codesign -s 7Q267P2WJ build/RelWithDebInfo/fbl.app
+
+          find build/RelWithDebInfo
 
       - id: release
         uses: "./.github/actions/make-release-zip"
         with:
-          in-files: "'fbl', 'fbl.dSYM'"
+          in-files: "'RelWithDebInfo/fbl.app'"
           out-name: formabble-macosx-x86_64
           github-token:  ${{ secrets.GITHUB_TOKEN }}
 
@@ -187,6 +199,7 @@ jobs:
       - uses: "./.github/actions/checkout"
         with:
           github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+          apple-signing-cert: ${{ secrets.APPLE_SIGNING_CERT }}
 
       - name: Set up dependencies
         shell: bash
@@ -202,21 +215,20 @@ jobs:
           ./bootstrap
           popd
           pushd formabble
-          cmake -Bbuild -GXcode -DCMAKE_BUILD_TYPE=Release \
+          cmake -Bbuild -GXcode -DCMAKE_BUILD_TYPE=RelWithDebInfo \
             -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho \
             -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_SYSTEM_PROCESSOR=arm64 \
             -DXCODE_SDK=iphoneos \
             -DCMAKE_OSX_DEPLOYMENT_TARGET=16.3 \
             -DCMAKE_XCODE_ATTRIBUTE_DEVELOPMENT_TEAM=97G32G3972
-          xcodebuild -project build/fbl.xcodeproj -sdk iphoneos -arch arm64 -scheme fbl -configuration Release archive -archivePath fbl.xcarchive
+          xcodebuild -project build/fbl.xcodeproj -sdk iphoneos -arch arm64 -scheme fbl -configuration RelWithDebInfo archive -archivePath fbl.xcarchive CODE_SIGN_IDENTITY="-" CODE_SIGNING_ALLOWED=NO
 
       - id: release
         uses: "./.github/actions/make-release-zip"
         with:
-          in-files: "'fbl.xcarchive'"
+          in-files: "'../fbl.xcarchive', 'RelWithDebInfo/fbl.app.dSYM'"
           out-name: formabble-ios-arm64
           github-token:  ${{ secrets.GITHUB_TOKEN }}
-
 
   wasm-release:
     runs-on: ubuntu-latest
@@ -263,10 +275,52 @@ jobs:
             -DCMAKE_TOOLCHAIN_FILE=$EMSDK/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake
           cmake --build build --target fbl
 
+          mkdir -p dist
+          cp app/web/favicon.svg dist/favicon.svg
+          cp app/web/fbl-loader.js dist/fbl-loader.js
+          cp app/web/index.html dist/index.html
+          cp build/fbl.js dist/fbl.js
+          cp build/fbl.wasm dist/fbl.wasm
+
+          # Store unmodified version for zipping
+          cp -r dist dist-zip
+
+          # Post process the build files to be unique
+          VERSION_ID=$(git rev-parse --short $GITHUB_SHA)
+          echo "Version ID: $VERSION_ID"
+          node ../scripts/fixup_build.js dist $VERSION_ID
+
+          export CLOUDFLARE_ACCOUNT_ID=${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          export CLOUDFLARE_API_TOKEN=${{ secrets.CLOUDFLARE_API_TOKEN }}
+          npx -y wrangler r2 object put formabble-releases/fbl-${VERSION_ID}.wasm --file=dist/fbl-${VERSION_ID}.wasm
+
+          DIST=`pwd`/dist
+
+          echo "Updating hosted web release"
+          mkdir -p ~/.ssh
+          echo "${{ secrets.WEB_DEPLOY_KEY }}" > ~/.ssh/id_ecdsa
+          chmod 600 ~/.ssh/id_ecdsa
+          # ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+          git clone git@github.com:formabble/web-release.git
+
+          git config --global user.email "runner@github.com"
+          git config --global user.name "Github Actions"
+
+          pushd web-release
+          cp -v $DIST/index.html ./
+          cp -v $DIST/fbl-*.js ./versions/
+          git add -u
+          git add ./versions
+          git commit -m "Update to $VERSION_ID"
+          git push
+          popd
+
       - id: release
         uses: "./.github/actions/make-release-zip"
         with:
-          in-files: "'fbl.js', 'fbl.wasm'"
+          zip-root: formabble/dist-zip
+          in-files: "'fbl.js', 'fbl.wasm', 'fbl-loader.js', 'index.html', 'style.css', 'favicon.svg'"
           out-name: formabble-wasm
           github-token:  ${{ secrets.GITHUB_TOKEN }}
 
@@ -293,6 +347,7 @@ jobs:
           $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --install "build-tools;33.0.2"
           $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --install "platforms;android-33"
 
+
       - name: Build
         shell: bash
         run: |
@@ -300,8 +355,16 @@ jobs:
           ./bootstrap
           popd
           pushd formabble
-          ANDROID_TOOLCHAIN=/usr/local/lib/android/sdk/ndk/25.2.9519653
-          cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release \
+
+          ANDROID_TOOLCHAIN=/usr/local/lib/android/sdk/ndk/26.3.11579264
+          ls -la $ANDROID_TOOLCHAIN/toolchains/llvm/prebuilt
+
+          export LIBCLANG_PATH=$ANDROID_TOOLCHAIN/toolchains/llvm/prebuilt/linux-x86_64/bin
+          export CLANG_PATH=$ANDROID_TOOLCHAIN/toolchains/llvm/prebuilt/linux-x86_64/bin/clang
+
+          find $ANDROID_TOOLCHAIN/toolchains/llvm/prebuilt/linux-x86_64/lib64
+
+          cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=RelWithDebInfo \
             -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho \
             -DANDROID_ABI=arm64-v8a \
             -DANDROID_PLATFORM=android-33 \

@@ -1,9 +1,7 @@
-# Formabble Docs
+# Formabble
 
-[https://docs.formabble.com](https://docs.formabble.com)
+This page hosts Formabble releases, check [this page to grab the latest release](https://github.com/formabble/releases/releases) 
 
-## How to generate
+To read the documentation for the latest release, check [https://docs.formabble.com](https://docs.formabble.com)
 
-```
-./build/fbl --root ~/devel/formabble-docs/docs --entry-point generate-docs.shs --early-exit
-```
+<sub>[BUILDING.md](./BUILDING.md) contains more technical information about this repo for formabble developers</sub>

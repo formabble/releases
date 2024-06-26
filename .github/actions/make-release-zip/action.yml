@@ -14,6 +14,10 @@ inputs:
     description: "Is this a pre-release?"
     required: false
     default: false
+  zip-root:
+    description: "Zip root path to look for files"
+    required: false
+    default: "formabble/build"
 runs:
   using: "composite"
   steps:
@@ -21,7 +25,7 @@ runs:
       shell: pwsh
       run: |
         $files = ${{ inputs.in-files }}
-        $path = 'formabble/build'
+        $path = '${{ inputs.zip-root }}'
         $existingFiles = @()
         foreach ($file in $files) {
           $fullPath = Join-Path -Path $path -ChildPath $file
@@ -31,6 +35,7 @@ runs:
         }
         if ($existingFiles.Count -gt 0) {
           Compress-Archive -Path $existingFiles -DestinationPath ${{ inputs.out-name }}.zip -Force
+          Expand-Archive -Path ${{ inputs.out-name }}.zip -DestinationPath ${{ inputs.out-name }}-extracted
         } else {
           Write-Host "No files found to zip."
         }
@@ -39,8 +44,7 @@ runs:
       uses: actions/upload-artifact@v3
       with:
         name: ${{ inputs.out-name }}
-        path: |
-          ${{ inputs.out-name }}.zip
+        path: ${{ inputs.out-name }}-extracted/*
         if-no-files-found: error
 
     - name: Publish release
