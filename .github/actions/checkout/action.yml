@@ -59,7 +59,7 @@ runs:
 
     - name: Fetching prebuilt shards scripts
       uses: actions/download-artifact@v3
-      if: ${{ !inputs.no-prebuilt-sho }}
+      if: ${{ ! inputs.no-prebuilt-sho }}
       with:
         name: build_sho
         path: build_sho
@@ -69,6 +69,7 @@ runs:
       env:
         RUSTUP_USE_CURL: 1
       run: |
+        echo "${{ ! inputs.no-prebuilt-sho }}"
         ls -l build_sho
 
         RUSTUP_TOOLCHAIN=`cat shards/rust.version`${{ inputs.rust-toolchain-suffix }}
