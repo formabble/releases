@@ -81,13 +81,6 @@ runs:
       run: |
         brew install cmake ninja clang-format base64
 
-        # Setup signing cert
-        echo "${{ inputs.apple-signing-cert }}" | base64 -d > temp.p12
-
-        base64 -Dd -i dist.base64 > tmp.p12
-        sudo security import temp.p12 -k /Library/Keychains/System.keychain -P "" -T /usr/bin/codesign
-        rm -rf temp.p12
-
     - name: Set up Windows
       shell: bash
       if: runner.os == 'Windows'
