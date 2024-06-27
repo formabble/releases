@@ -6,10 +6,11 @@ inputs:
     default: ''
   github-token:
     required: true
-  no-prebuilt-sho:
-    description: Skip fetching prebuilt scripts
-    default: false
+  fetch-sho-artifact:
+    description: Fetching build_sho artifact
+    default: true
     required: false
+    type: boolean
   apple-signing-cert:
     description: Apple signing certificate
     required: false
@@ -59,7 +60,7 @@ runs:
 
     - name: Fetching prebuilt shards scripts
       uses: actions/download-artifact@v3
-      if: ${{ ! inputs.no-prebuilt-sho }}
+      if: ${{ inputs.fetch-sho-artifact == 'true' }}
       with:
         name: build_sho
         path: build_sho
@@ -69,7 +70,10 @@ runs:
       env:
         RUSTUP_USE_CURL: 1
       run: |
-        echo "${{ ! inputs.no-prebuilt-sho }}"
+        echo "${{ inputs.fetch-sho-artifact }}"
+        echo "${{ !inputs.fetch-sho-artifact }}"
+        echo "${{ inputs.fetch-sho-artifact == true }}"
+        echo "${{ inputs.fetch-sho-artifact == false }}"
         ls -l build_sho
 
         RUSTUP_TOOLCHAIN=`cat shards/rust.version`${{ inputs.rust-toolchain-suffix }}
