@@ -288,15 +288,24 @@ jobs:
             -DCMAKE_OSX_DEPLOYMENT_TARGET=16.3 \
             -DCMAKE_XCODE_ATTRIBUTE_DEVELOPMENT_TEAM=97G32G3972
             "-DCMAKE_XCODE_ATTRIBUTE_PROVISIONING_PROFILE=550e0747-f4ab-4580-8aa4-b96b3dc0e9cc"
-          xcodebuild -project build/fbl.xcodeproj -sdk iphoneos -arch arm64 -scheme fbl -configuration RelWithDebInfo archive -archivePath fbl.xcarchive CODE_SIGN_IDENTITY="7Q267P2WJ3"
-          xcodebuild -exportArchive -archivePath fbl.xcarchive -exportPath fbl.ipa -exportOptionsPlist ../ios-export.plist
+          xcodebuild -project build/fbl.xcodeproj -sdk iphoneos -arch arm64 -scheme fbl -configuration RelWithDebInfo archive -archivePath Formabble.xcarchive CODE_SIGN_IDENTITY="7Q267P2WJ3"
+          xcodebuild -exportArchive -archivePath Formabble.xcarchive -exportPath Formabble.ipa -exportOptionsPlist ../ios-export.plist
 
-      - id: release
-        uses: "./.github/actions/make-release-zip"
+          find build/RelWithDebInfo
+
+      - uses: actions/upload-artifact@v3
         with:
-          in-files: "'../fbl.xcarchive', 'RelWithDebInfo/fbl.app.dSYM'"
-          out-name: formabble-ios-arm64
-          github-token:  ${{ secrets.GITHUB_TOKEN }}
+          name: formabble-ios-arm64
+          path: |
+            formabble/Formabble.ipa
+          if-no-files-found: error
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: formabble-ios-arm64-dsym
+          path: |
+            formabble/build/RelWithDebInfo/Formabble.app.dSYM/
+          if-no-files-found: error
 
   wasm-release:
     if: ${{ needs.prebuild-sho.outputs.ENABLE_WASM_RELEASE == 1 }}
