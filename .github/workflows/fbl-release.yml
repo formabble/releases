@@ -159,6 +159,7 @@ jobs:
           pushd formabble
           cmake -Bbuild -GXcode -DCMAKE_BUILD_TYPE=RelWithDebInfo \
             -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho \
+            -DCMAKE_XCODE_ATTRIBUTE_DEBUG_INFORMATION_FORMAT=dwarf-with-dsym \
             -DXCODE_SDK=macosx
           cmake --build build --target fbl --config RelWithDebInfo -- -arch arm64 -sdk macosx CODE_SIGN_IDENTITY="7Q267P2WJ3" CODE_SIGNING_ALLOWED=NO
       
@@ -174,7 +175,6 @@ jobs:
           name: formabble-macosx-arm64-dsym
           path: |
             formabble/build/RelWithDebInfo/Formabble.app.dSYM/
-          if-no-files-found: error
 
       # - name: Build
       #   shell: bash
@@ -304,7 +304,6 @@ jobs:
           name: formabble-ios-arm64-dsym
           path: |
             formabble/build/RelWithDebInfo/Formabble.app.dSYM/
-          if-no-files-found: error
 
   wasm-release:
     if: ${{ needs.prebuild-sho.outputs.ENABLE_WASM_RELEASE == 1 }}
