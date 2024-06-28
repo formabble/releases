@@ -15,7 +15,7 @@ jobs:
       ENABLE_IOS_RELEASE: ${{ steps.import-config.outputs.ENABLE_IOS_RELEASE }}
       ENABLE_WASM_RELEASE: ${{ steps.import-config.outputs.ENABLE_WASM_RELEASE }}
       ENABLE_ANDROID_RELEASE: ${{ steps.import-config.outputs.ENABLE_ANDROID_RELEASE }}
-    runs-on: macos-latest
+    runs-on: [self-hosted, macOS, ARM64]
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -107,12 +107,32 @@ jobs:
           echo "Building shards"
           cmake --build build --target fbl
 
-      - id: release
-        uses: "./.github/actions/make-release-zip"
+      - uses: actions/upload-artifact@v3
         with:
-          in-files: "'fbl.exe', 'fbl.pdb', 'crsqlite.dll', 'crsqlite.pdb'"
-          out-name: formabble-win64
-          github-token:  ${{ secrets.GITHUB_TOKEN }}
+          name: formabble-win64
+          path: |
+            formabble/build/fbl.exe
+          if-no-files-found: error
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: formabble-win64-pdb
+          path: |
+            formabble/build/fbl.pdb
+          if-no-files-found: error
+
+      - name: Package Release
+        if: startsWith(github.ref, 'refs/tags/')
+        shell: bash
+        run: pushd build; 7z a ../formabble-win64.zip fbl.exe
+
+      - name: Publish release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v1
+        with:
+          files: formabble-win64.zip
+          token: ${{ secrets.GITHUB_TOKEN }}
+          prerelease: ${{ env.IS_PRE_RELEASE }}
 
   macosx-arm64-release:
     if: ${{ needs.prebuild-sho.outputs.ENABLE_MACOSX_ARM64_RELEASE == 1 }}
@@ -141,18 +161,44 @@ jobs:
           cmake -Bbuild -GXcode -DCMAKE_BUILD_TYPE=RelWithDebInfo \
             -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho \
             -DXCODE_SDK=macosx
-          cmake --build build --target fbl --config RelWithDebInfo -- -arch arm64 -sdk macosx CODE_SIGN_IDENTITY="-" CODE_SIGNING_ALLOWED=NO
-
-          # sudo codesign -s 7Q267P2WJ build/RelWithDebInfo/fbl.app
-
-          find build/RelWithDebInfo
-
-      - id: release
-        uses: "./.github/actions/make-release-zip"
+          cmake --build build --target fbl --config RelWithDebInfo -- -arch arm64 -sdk macosx CODE_SIGN_IDENTITY="7Q267P2WJ3" CODE_SIGNING_ALLOWED=NO
+      
+      - uses: actions/upload-artifact@v3
         with:
-          in-files: "'RelWithDebInfo/fbl.app'"
-          out-name: formabble-macosx-arm64
-          github-token:  ${{ secrets.GITHUB_TOKEN }}
+          name: formabble-macosx-arm64-unsigned
+          path: |
+            formabble/build/RelWithDebInfo/Formabble.app/
+          if-no-files-found: error
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: formabble-macosx-arm64-dsym
+          path: |
+            formabble/build/RelWithDebInfo/Formabble.app.dSYM/
+          if-no-files-found: error
+
+      # - name: Build
+      #   shell: bash
+      #   run: |
+      #     pushd formabble
+      #     sudo codesign --force -s 7Q267P2WJ3 --timestamp --options runtime build/RelWithDebInfo/Formabble.app
+      #     pushd build/RelWithDebInfo
+      #     zip -r ../../Formabble.zip Formabble.app
+      #     popd
+      #     xcrun notarytool submit Formabble.zip --keychain-profile "Fragcolor macOS" --wait
+
+      # - name: Package Release
+      #   if: startsWith(github.ref, 'refs/tags/')
+      #   shell: bash
+      #   run: pushd build/RelWithDebInfo; 7z a ../../formabble-macosx-arm64.zip Formabble.app
+
+      # - name: Publish release
+      #   if: startsWith(github.ref, 'refs/tags/')
+      #   uses: softprops/action-gh-release@v1
+      #   with:
+      #     files: formabble-macosx-arm64.zip
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+      #     prerelease: ${{ env.IS_PRE_RELEASE }}
 
   macosx-x86-release:
     if: ${{ needs.prebuild-sho.outputs.ENABLE_MACOSX_X86_RELEASE == 1 }}
@@ -189,22 +235,25 @@ jobs:
             -DBOOST_CONTEXT_ABI=sysv -DBOOST_CONTEXT_ARCHITECTURE=x86_64 \
             -DRUST_CARGO_TARGET=x86_64-apple-darwin \
             -DXCODE_SDK=macosx
-          cmake --build build --target fbl --config RelWithDebInfo -- -arch x86_64 -sdk macosx CODE_SIGN_IDENTITY="-" CODE_SIGNING_ALLOWED=NO
+          cmake --build build --target fbl --config RelWithDebInfo -- -arch x86_64 -sdk macosx CODE_SIGN_IDENTITY="7Q267P2WJ3" CODE_SIGNING_ALLOWED=NO
 
-          # sudo codesign -s 7Q267P2WJ build/RelWithDebInfo/fbl.app
-
-          find build/RelWithDebInfo
-
-      - id: release
-        uses: "./.github/actions/make-release-zip"
+      - uses: actions/upload-artifact@v3
         with:
-          in-files: "'RelWithDebInfo/fbl.app'"
-          out-name: formabble-macosx-x86_64
-          github-token:  ${{ secrets.GITHUB_TOKEN }}
+          name: formabble-macosx-x86-unsigned
+          path: |
+            formabble/build/RelWithDebInfo/Formabble.app/
+          if-no-files-found: error
 
+      - uses: actions/upload-artifact@v3
+        with:
+          name: formabble-macosx-x86-dsym
+          path: |
+            formabble/build/RelWithDebInfo/Formabble.app.dSYM/
+          if-no-files-found: error
+        
   ios-release:
     if: ${{ needs.prebuild-sho.outputs.ENABLE_IOS_RELEASE == 1 }}
-    runs-on: macos-latest
+    runs-on: [self-hosted, macOS, ARM64]
     needs: prebuild-sho
     permissions:
       contents: write
@@ -238,7 +287,9 @@ jobs:
             -DXCODE_SDK=iphoneos \
             -DCMAKE_OSX_DEPLOYMENT_TARGET=16.3 \
             -DCMAKE_XCODE_ATTRIBUTE_DEVELOPMENT_TEAM=97G32G3972
-          xcodebuild -project build/fbl.xcodeproj -sdk iphoneos -arch arm64 -scheme fbl -configuration RelWithDebInfo archive -archivePath fbl.xcarchive CODE_SIGN_IDENTITY="-" CODE_SIGNING_ALLOWED=NO
+            "-DCMAKE_XCODE_ATTRIBUTE_PROVISIONING_PROFILE=550e0747-f4ab-4580-8aa4-b96b3dc0e9cc"
+          xcodebuild -project build/fbl.xcodeproj -sdk iphoneos -arch arm64 -scheme fbl -configuration RelWithDebInfo archive -archivePath fbl.xcarchive CODE_SIGN_IDENTITY="7Q267P2WJ3"
+          xcodebuild -exportArchive -archivePath fbl.xcarchive -exportPath fbl.ipa -exportOptionsPlist ../ios-export.plist
 
       - id: release
         uses: "./.github/actions/make-release-zip"
