@@ -124,7 +124,7 @@ jobs:
       - name: Package Release
         if: startsWith(github.ref, 'refs/tags/')
         shell: bash
-        run: pushd formabble/build; 7z a ../../formabble-win64.zip fbl.exe
+        run: pushd build; 7z a ../formabble-win64.zip fbl.exe
 
       - name: Publish release
         if: startsWith(github.ref, 'refs/tags/')
@@ -153,7 +153,6 @@ jobs:
       - name: Build
         shell: bash
         run: |
-          sudo xcode-select --switch /Applications/Xcode_15.4.app
           pushd shards
           ./bootstrap
           popd
@@ -164,64 +163,41 @@ jobs:
             -DXCODE_SDK=macosx
           cmake --build build --target fbl --config RelWithDebInfo -- -arch arm64 -sdk macosx CODE_SIGN_IDENTITY="7Q267P2WJ3" CODE_SIGNING_ALLOWED=NO
 
-          mkdir -p zip-app
-          cp -r build/RelWithDebInfo/Formabble.app zip-app/
-          mkdir -p zip-dsym
-          cp -r build/RelWithDebInfo/Formabble.app.dSYM zip-dsym/
-      
       - uses: actions/upload-artifact@v3
         with:
           name: formabble-macosx-arm64-unsigned
           path: |
-            formabble/zip-app/
+            formabble/build/RelWithDebInfo/Formabble.app/
           if-no-files-found: error
 
       - uses: actions/upload-artifact@v3
         with:
           name: formabble-macosx-arm64-dsym
           path: |
-            formabble/zip-dsym/
+            formabble/build/RelWithDebInfo/Formabble.app.dSYM/
 
-  macosx-arm64-release-sign:
-    if: ${{ needs.prebuild-sho.outputs.ENABLE_MACOSX_ARM64_RELEASE == 1 }}
-    runs-on: [self-hosted, macOS, ARM64]
-    needs: macosx-arm64-release
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/download-artifact@v3
-        with:
-          name: formabble-macosx-arm64-unsigned
-          path: files-to-sign
-      - name: Build
-        shell: bash
-        run: |
-          pushd files-to-sign
-          sudo codesign --force -s 7Q267P2WJ3 --timestamp --options runtime Formabble.app
-          zip -r Formabble.zip Formabble.app
-          xcrun notarytool submit Formabble.zip --keychain-profile "Fragcolor macOS" --wait
-          xcrun stapler staple Formabble.app
+      # - name: Build
+      #   shell: bash
+      #   run: |
+      #     pushd formabble
+      #     sudo codesign --force -s 7Q267P2WJ3 --timestamp --options runtime build/RelWithDebInfo/Formabble.app
+      #     pushd build/RelWithDebInfo
+      #     zip -r ../../Formabble.zip Formabble.app
+      #     popd
+      #     xcrun notarytool submit Formabble.zip --keychain-profile "Fragcolor macOS" --wait
 
-          mkdir -p ../zip-app
-          cp -r Formabble.app ../zip-app/
+      # - name: Package Release
+      #   if: startsWith(github.ref, 'refs/tags/')
+      #   shell: bash
+      #   run: pushd build/RelWithDebInfo; 7z a ../../formabble-macosx-arm64.zip Formabble.app
 
-      - uses: actions/upload-artifact@v3
-        with:
-          name: formabble-macosx-arm64
-          path: zip-app/
-
-      - name: Package Release
-        if: startsWith(github.ref, 'refs/tags/')
-        shell: bash
-        run: pushd files-to-sign; 7z a ../formabble-macosx-arm64.zip Formabble.app
-
-      - name: Publish release
-        if: startsWith(github.ref, 'refs/tags/')
-        uses: softprops/action-gh-release@v1
-        with:
-          files: formabble-macosx-arm64.zip
-          token: ${{ secrets.GITHUB_TOKEN }}
-          prerelease: ${{ env.IS_PRE_RELEASE }}
+      # - name: Publish release
+      #   if: startsWith(github.ref, 'refs/tags/')
+      #   uses: softprops/action-gh-release@v1
+      #   with:
+      #     files: formabble-macosx-arm64.zip
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+      #     prerelease: ${{ env.IS_PRE_RELEASE }}
 
   macosx-x86-release:
     if: ${{ needs.prebuild-sho.outputs.ENABLE_MACOSX_X86_RELEASE == 1 }}
@@ -273,7 +249,7 @@ jobs:
           path: |
             formabble/build/RelWithDebInfo/Formabble.app.dSYM/
           if-no-files-found: error
-        
+
   ios-release:
     if: ${{ needs.prebuild-sho.outputs.ENABLE_IOS_RELEASE == 1 }}
     runs-on: [self-hosted, macOS, ARM64]
@@ -308,31 +284,25 @@ jobs:
             -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_SYSTEM_PROCESSOR=arm64 \
             -DXCODE_SDK=iphoneos \
             -DCMAKE_OSX_DEPLOYMENT_TARGET=16.3 \
-            -DCMAKE_XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY=7Q267P2WJ3 \
-            -DCMAKE_XCODE_ATTRIBUTE_PROVISIONING_PROFILE_SPECIFIER="Formabble Public"
+            -DCMAKE_XCODE_ATTRIBUTE_DEVELOPMENT_TEAM=97G32G3972
+            "-DCMAKE_XCODE_ATTRIBUTE_PROVISIONING_PROFILE=550e0747-f4ab-4580-8aa4-b96b3dc0e9cc"
           xcodebuild -project build/fbl.xcodeproj -sdk iphoneos -arch arm64 -scheme fbl -configuration RelWithDebInfo archive -archivePath Formabble.xcarchive CODE_SIGN_IDENTITY="7Q267P2WJ3"
           xcodebuild -exportArchive -archivePath Formabble.xcarchive -exportPath Formabble.ipa -exportOptionsPlist ../ios-export.plist
 
           find build/RelWithDebInfo
 
-          mkdir -p zip-app
-          mv Formabble.ipa zip-app/
-          mkdir -p zip-dsym
-          mv build/RelWithDebInfo/Formabble.app.dSYM zip-dsym/
-
-
       - uses: actions/upload-artifact@v3
         with:
           name: formabble-ios-arm64
           path: |
-            formabble/zip-app/
+            formabble/Formabble.ipa
           if-no-files-found: error
 
       - uses: actions/upload-artifact@v3
         with:
           name: formabble-ios-arm64-dsym
           path: |
-            formabble/zip-dsym/
+            formabble/build/RelWithDebInfo/Formabble.app.dSYM/
 
   wasm-release:
     if: ${{ needs.prebuild-sho.outputs.ENABLE_WASM_RELEASE == 1 }}
