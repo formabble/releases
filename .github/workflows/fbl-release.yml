@@ -18,7 +18,7 @@ jobs:
     runs-on: [self-hosted, macOS, ARM64]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Fetch all history for all tags and branches
 
@@ -64,7 +64,7 @@ jobs:
           $shards build formabble/app/scripts/shared.shs -o build_sho/shared.sho
 
       - name: Upload prebuilt scripts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build_sho
           path: build_sho
@@ -78,7 +78,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Fetch all history for all tags and branches
       - uses: "./.github/actions/checkout"
@@ -107,14 +107,14 @@ jobs:
           echo "Building shards"
           cmake --build build --target fbl
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: formabble-win64
           path: |
             formabble/build/fbl.exe
           if-no-files-found: error
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: formabble-win64-pdb
           path: |
@@ -142,7 +142,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Fetch all history for all tags and branches
       - uses: "./.github/actions/checkout"
@@ -169,14 +169,14 @@ jobs:
           mkdir -p zip-dsym
           cp -r build/RelWithDebInfo/Formabble.app.dSYM zip-dsym/
       
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: formabble-macosx-arm64-unsigned
           path: |
             formabble/zip-app/
           if-no-files-found: error
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: formabble-macosx-arm64-dsym
           path: |
@@ -189,7 +189,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: formabble-macosx-arm64-unsigned
           path: files-to-sign
@@ -205,7 +205,7 @@ jobs:
           mkdir -p ../zip-app
           cp -r Formabble.app ../zip-app/
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: formabble-macosx-arm64
           path: zip-app/
@@ -231,7 +231,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Fetch all history for all tags and branches
       - uses: "./.github/actions/checkout"
@@ -260,14 +260,14 @@ jobs:
             -DXCODE_SDK=macosx
           cmake --build build --target fbl --config RelWithDebInfo -- -arch x86_64 -sdk macosx CODE_SIGN_IDENTITY="7Q267P2WJ3" CODE_SIGNING_ALLOWED=NO
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: formabble-macosx-x86-unsigned
           path: |
             formabble/build/RelWithDebInfo/Formabble.app/
           if-no-files-found: error
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: formabble-macosx-x86-dsym
           path: |
@@ -282,7 +282,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Fetch all history for all tags and branches
       - uses: "./.github/actions/checkout"
@@ -320,14 +320,14 @@ jobs:
           mkdir -p zip-dsym
           mv build/RelWithDebInfo/Formabble.app.dSYM zip-dsym/
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: formabble-ios-arm64
           path: |
             formabble/zip-app/
           if-no-files-found: error
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: formabble-ios-arm64-dsym
           path: |
@@ -341,7 +341,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Fetch all history for all tags and branches
       - uses: "./.github/actions/checkout"
@@ -349,7 +349,7 @@ jobs:
           github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
 
       - name: Checkout emsdk
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: emscripten-core/emsdk
           path: emsdk
@@ -436,7 +436,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Fetch all history for all tags and branches
       - uses: "./.github/actions/checkout"
