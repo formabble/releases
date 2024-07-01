@@ -464,11 +464,12 @@ jobs:
           echo "${{ secrets.ANDROID_KEYSTORE }}" | base64 -d > keystore.jks
 
           export ANDROID_TOOLCHAIN=/usr/local/lib/android/sdk/ndk/26.3.11579264
-          export LIBCLANG_PATH=$ANDROID_TOOLCHAIN/toolchains/llvm/prebuilt/linux-x86_64/bin
+          export LIBCLANG_PATH=$ANDROID_TOOLCHAIN/toolchains/llvm/prebuilt/linux-x86_64/lib
           export CLANG_PATH=$ANDROID_TOOLCHAIN/toolchains/llvm/prebuilt/linux-x86_64/bin/clang
 
-          find $ANDROID_TOOLCHAIN/toolchains/llvm/prebuilt/linux-x86_64
-          find $LIBCLANG_PATH
+          # /usr/local/lib/android/sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/linux-x86_64/lib/libclang.so
+          # find $ANDROID_TOOLCHAIN/toolchains/llvm/prebuilt/linux-x86_64
+          # find $LIBCLANG_PATH
 
           cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=RelWithDebInfo \
             -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho \
