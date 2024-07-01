@@ -449,7 +449,7 @@ jobs:
           rustup +$RUSTUP_TOOLCHAIN target add aarch64-linux-android
           rustup +$RUSTUP_TOOLCHAIN component add rust-src
 
-          $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --install "build-tools;33.0.2"
+          $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --install "build-tools;34.0.0"
           $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --install "platforms;android-33"
 
 
@@ -461,13 +461,11 @@ jobs:
           popd
           pushd formabble
 
-          ANDROID_TOOLCHAIN=/usr/local/lib/android/sdk/ndk/26.3.11579264
-          ls -la $ANDROID_TOOLCHAIN/toolchains/llvm/prebuilt
+          echo "${{ secrets.ANDROID_KEYSTORE }}" | base64 -d > keystore.jks
 
+          export ANDROID_TOOLCHAIN=/usr/local/lib/android/sdk/ndk/26.3.11579264
           export LIBCLANG_PATH=$ANDROID_TOOLCHAIN/toolchains/llvm/prebuilt/linux-x86_64/bin
           export CLANG_PATH=$ANDROID_TOOLCHAIN/toolchains/llvm/prebuilt/linux-x86_64/bin/clang
-
-          find $ANDROID_TOOLCHAIN/toolchains/llvm/prebuilt/linux-x86_64/lib64
 
           cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=RelWithDebInfo \
             -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho \
@@ -476,7 +474,10 @@ jobs:
             -DANDROID_SDK_ROOT=$ANDROID_SDK_ROOT \
             -DANDROID_TOOLS_VERSION=34.0.0 \
             -DJAVA_HOME=$JAVA_HOME_11_X64 \
-            -DCMAKE_TOOLCHAIN_FILE=$ANDROID_TOOLCHAIN/build/cmake/android.toolchain.cmake
+            -DCMAKE_TOOLCHAIN_FILE=$ANDROID_TOOLCHAIN/build/cmake/android.toolchain.cmake \
+            -DCMAKE_KEYSTORE_PATH=`pwd`/keystore.jks \
+            -DANDROID_KEYSTORE_KEY_ALIAS=release \
+            -DCMAKE_KEYSTORE_PASSWORD=formabble
           cmake --build build --target fbl
 
       - id: release
