@@ -153,6 +153,7 @@ jobs:
       - name: Build
         shell: bash
         run: |
+          sudo xcode-select --switch /Applications/Xcode_15.4.app
           pushd shards
           ./bootstrap
           popd
@@ -196,7 +197,7 @@ jobs:
         shell: bash
         run: |
           pushd files-to-sign
-          sudo codesign --force -s 7Q267P2WJ3 --timestamp --options runtime Formabble.app
+          codesign --force -s 7Q267P2WJ3 --timestamp --options runtime Formabble.app
           zip -r Formabble.zip Formabble.app
           xcrun notarytool submit Formabble.zip --keychain-profile "Fragcolor macOS" --wait
           xcrun stapler staple Formabble.app
