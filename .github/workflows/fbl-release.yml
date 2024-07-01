@@ -488,5 +488,5 @@ jobs:
         uses: "./.github/actions/make-release-zip"
         with:
           in-files: "'fbl.apk'"
-          out-name: formabble-wasm
+          out-name: formabble-android-arm64
           github-token:  ${{ secrets.GITHUB_TOKEN }}
