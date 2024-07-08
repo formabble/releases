@@ -53,15 +53,22 @@ jobs:
 
           pushd shards
           ./bootstrap
+          popd
+          pushd formabble
           cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release -DSKIP_HEAVY_INLINE=1
           cmake --build build --target shards
+          cmake --build build --target fbl
           shards=`pwd`/build/shards
+          fbl=`pwd`/build/fbl
           popd
 
           mkdir -p build_sho
           $shards build formabble/app/scripts/start.shs -o build_sho/start.sho
           $shards build formabble/app/scripts/domain.shs -o build_sho/domain.sho
           $shards build formabble/app/scripts/shared.shs -o build_sho/shared.sho
+
+          $fbl -r . --entry-point shards/utils/compress-strings.shs --early-exit
+          mv shccstrings.hpp build_sho/shccstrings.hpp
 
       - name: Upload prebuilt scripts
         uses: actions/upload-artifact@v3
@@ -93,6 +100,7 @@ jobs:
         run: |
           pushd shards
           ./bootstrap
+          mv ../build_sho/shccstrings.hpp shards/core/shccstrings.hpp
           popd
           pushd formabble
           cmake -Bbuild -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo \
@@ -155,6 +163,7 @@ jobs:
         run: |
           pushd shards
           ./bootstrap
+          mv ../build_sho/shccstrings.hpp shards/core/shccstrings.hpp
           popd
           pushd formabble
           cmake -Bbuild -GXcode -DCMAKE_BUILD_TYPE=RelWithDebInfo \
@@ -226,6 +235,7 @@ jobs:
           sudo xcode-select --switch /Applications/Xcode_15.4.app
           pushd shards
           ./bootstrap
+          mv ../build_sho/shccstrings.hpp shards/core/shccstrings.hpp
           popd
           pushd formabble
           cmake -Bbuild -GXcode -DCMAKE_BUILD_TYPE=RelWithDebInfo \
@@ -277,6 +287,7 @@ jobs:
         run: |
           pushd shards
           ./bootstrap
+          mv ../build_sho/shccstrings.hpp shards/core/shccstrings.hpp
           popd
           pushd formabble
           cmake -Bbuild -GXcode -DCMAKE_BUILD_TYPE=RelWithDebInfo \
@@ -341,6 +352,7 @@ jobs:
           source emsdk/emsdk_env.sh
           pushd shards
           ./bootstrap
+          mv ../build_sho/shccstrings.hpp shards/core/shccstrings.hpp
           popd
           pushd formabble
           cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release \
@@ -429,6 +441,7 @@ jobs:
         run: |
           pushd shards
           ./bootstrap
+          mv ../build_sho/shccstrings.hpp shards/core/shccstrings.hpp
           popd
           pushd formabble
 
