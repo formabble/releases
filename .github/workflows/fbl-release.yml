@@ -112,7 +112,6 @@ jobs:
             -DSHARDS_DEFAULT_STDOUT_LOG_LEVEL=SPDLOG_LEVEL_INFO \
             -DSHARDS_DEFAULT_FILE_LOG_LEVEL=SPDLOG_LEVEL_DEBUG
 
-          echo "Building shards"
           cmake --build build --target fbl
 
       - uses: actions/upload-artifact@v3
