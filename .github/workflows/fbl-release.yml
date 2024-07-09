@@ -18,7 +18,7 @@ jobs:
     runs-on: [self-hosted, macOS, ARM64]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Fetch all history for all tags and branches
 
@@ -78,7 +78,7 @@ jobs:
           fi
 
       - name: Upload prebuilt scripts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build_sho
           path: build_sho
@@ -92,7 +92,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Fetch all history for all tags and branches
       - uses: "./.github/actions/checkout"
@@ -121,14 +121,14 @@ jobs:
 
           cmake --build build --target fbl
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: formabble-win64
           path: |
             formabble/build/fbl.exe
           if-no-files-found: error
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: formabble-win64-pdb
           path: |
@@ -138,7 +138,7 @@ jobs:
       - name: Package Release
         if: startsWith(github.ref, 'refs/tags/')
         shell: bash
-        run: pushd build; 7z a ../formabble-win64.zip fbl.exe
+        run: pushd formabble/build; 7z a ../../formabble-win64.zip fbl.exe
 
       - name: Publish release
         if: startsWith(github.ref, 'refs/tags/')
@@ -156,7 +156,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Fetch all history for all tags and branches
       - uses: "./.github/actions/checkout"
@@ -167,6 +167,7 @@ jobs:
       - name: Build
         shell: bash
         run: |
+          sudo xcode-select --switch /Applications/Xcode_15.4.app
           pushd shards
           ./bootstrap
           mv ../build_sho/shccstrings.hpp shards/core/shccstrings.hpp
@@ -178,41 +179,64 @@ jobs:
             -DXCODE_SDK=macosx
           cmake --build build --target fbl --config RelWithDebInfo -- -arch arm64 -sdk macosx CODE_SIGN_IDENTITY="7Q267P2WJ3" CODE_SIGNING_ALLOWED=NO
 
-      - uses: actions/upload-artifact@v3
+          mkdir -p zip-app
+          cp -r build/RelWithDebInfo/Formabble.app zip-app/
+          mkdir -p zip-dsym
+          cp -r build/RelWithDebInfo/Formabble.app.dSYM zip-dsym/
+      
+      - uses: actions/upload-artifact@v4
         with:
           name: formabble-macosx-arm64-unsigned
           path: |
-            formabble/build/RelWithDebInfo/Formabble.app/
+            formabble/zip-app/
           if-no-files-found: error
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: formabble-macosx-arm64-dsym
           path: |
-            formabble/build/RelWithDebInfo/Formabble.app.dSYM/
+            formabble/zip-dsym/
 
-      # - name: Build
-      #   shell: bash
-      #   run: |
-      #     pushd formabble
-      #     sudo codesign --force -s 7Q267P2WJ3 --timestamp --options runtime build/RelWithDebInfo/Formabble.app
-      #     pushd build/RelWithDebInfo
-      #     zip -r ../../Formabble.zip Formabble.app
-      #     popd
-      #     xcrun notarytool submit Formabble.zip --keychain-profile "Fragcolor macOS" --wait
+  macosx-arm64-release-sign:
+    if: ${{ needs.prebuild-sho.outputs.ENABLE_MACOSX_ARM64_RELEASE == 1 }}
+    runs-on: [self-hosted, macOS, ARM64]
+    needs: macosx-arm64-release
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: formabble-macosx-arm64-unsigned
+          path: files-to-sign
+      - name: Build
+        shell: bash
+        run: |
+          pushd files-to-sign
+          codesign --force -s 7Q267P2WJ3 --timestamp --options runtime Formabble.app
+          zip -r Formabble.zip Formabble.app
+          xcrun notarytool submit Formabble.zip --keychain-profile "Fragcolor macOS" --wait
+          xcrun stapler staple Formabble.app
 
-      # - name: Package Release
-      #   if: startsWith(github.ref, 'refs/tags/')
-      #   shell: bash
-      #   run: pushd build/RelWithDebInfo; 7z a ../../formabble-macosx-arm64.zip Formabble.app
+          mkdir -p ../zip-app
+          cp -r Formabble.app ../zip-app/
 
-      # - name: Publish release
-      #   if: startsWith(github.ref, 'refs/tags/')
-      #   uses: softprops/action-gh-release@v1
-      #   with:
-      #     files: formabble-macosx-arm64.zip
-      #     token: ${{ secrets.GITHUB_TOKEN }}
-      #     prerelease: ${{ env.IS_PRE_RELEASE }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: formabble-macosx-arm64
+          path: zip-app/
+
+      - name: Package Release
+        if: startsWith(github.ref, 'refs/tags/')
+        shell: bash
+        run: pushd files-to-sign; 7z a ../formabble-macosx-arm64.zip Formabble.app
+
+      - name: Publish release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v1
+        with:
+          files: formabble-macosx-arm64.zip
+          token: ${{ secrets.GITHUB_TOKEN }}
+          prerelease: ${{ env.IS_PRE_RELEASE }}
 
   macosx-x86-release:
     if: ${{ needs.prebuild-sho.outputs.ENABLE_MACOSX_X86_RELEASE == 1 }}
@@ -222,7 +246,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Fetch all history for all tags and branches
       - uses: "./.github/actions/checkout"
@@ -252,20 +276,20 @@ jobs:
             -DXCODE_SDK=macosx
           cmake --build build --target fbl --config RelWithDebInfo -- -arch x86_64 -sdk macosx CODE_SIGN_IDENTITY="7Q267P2WJ3" CODE_SIGNING_ALLOWED=NO
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: formabble-macosx-x86-unsigned
           path: |
             formabble/build/RelWithDebInfo/Formabble.app/
           if-no-files-found: error
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: formabble-macosx-x86-dsym
           path: |
             formabble/build/RelWithDebInfo/Formabble.app.dSYM/
           if-no-files-found: error
-
+        
   ios-release:
     if: ${{ needs.prebuild-sho.outputs.ENABLE_IOS_RELEASE == 1 }}
     runs-on: [self-hosted, macOS, ARM64]
@@ -274,7 +298,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Fetch all history for all tags and branches
       - uses: "./.github/actions/checkout"
@@ -301,25 +325,30 @@ jobs:
             -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_SYSTEM_PROCESSOR=arm64 \
             -DXCODE_SDK=iphoneos \
             -DCMAKE_OSX_DEPLOYMENT_TARGET=16.3 \
-            -DCMAKE_XCODE_ATTRIBUTE_DEVELOPMENT_TEAM=97G32G3972
-            "-DCMAKE_XCODE_ATTRIBUTE_PROVISIONING_PROFILE=550e0747-f4ab-4580-8aa4-b96b3dc0e9cc"
+            -DCMAKE_XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY=7Q267P2WJ3 \
+            -DCMAKE_XCODE_ATTRIBUTE_PROVISIONING_PROFILE_SPECIFIER="Formabble Public"
           xcodebuild -project build/fbl.xcodeproj -sdk iphoneos -arch arm64 -scheme fbl -configuration RelWithDebInfo archive -archivePath Formabble.xcarchive CODE_SIGN_IDENTITY="7Q267P2WJ3"
           xcodebuild -exportArchive -archivePath Formabble.xcarchive -exportPath Formabble.ipa -exportOptionsPlist ../ios-export.plist
 
           find build/RelWithDebInfo
 
-      - uses: actions/upload-artifact@v3
+          mkdir -p zip-app
+          mv Formabble.ipa zip-app/
+          mkdir -p zip-dsym
+          mv build/RelWithDebInfo/Formabble.app.dSYM zip-dsym/
+
+      - uses: actions/upload-artifact@v4
         with:
           name: formabble-ios-arm64
           path: |
-            formabble/Formabble.ipa
+            formabble/zip-app/
           if-no-files-found: error
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: formabble-ios-arm64-dsym
           path: |
-            formabble/build/RelWithDebInfo/Formabble.app.dSYM/
+            formabble/zip-dsym/
 
   wasm-release:
     if: ${{ needs.prebuild-sho.outputs.ENABLE_WASM_RELEASE == 1 }}
@@ -329,7 +358,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Fetch all history for all tags and branches
       - uses: "./.github/actions/checkout"
@@ -337,7 +366,7 @@ jobs:
           github-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
 
       - name: Checkout emsdk
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: emscripten-core/emsdk
           path: emsdk
@@ -425,7 +454,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Fetch all history for all tags and branches
       - uses: "./.github/actions/checkout"
@@ -438,7 +467,7 @@ jobs:
           rustup +$RUSTUP_TOOLCHAIN target add aarch64-linux-android
           rustup +$RUSTUP_TOOLCHAIN component add rust-src
 
-          $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --install "build-tools;33.0.2"
+          $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --install "build-tools;34.0.0"
           $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --install "platforms;android-33"
 
 
@@ -451,13 +480,15 @@ jobs:
           popd
           pushd formabble
 
-          ANDROID_TOOLCHAIN=/usr/local/lib/android/sdk/ndk/26.3.11579264
-          ls -la $ANDROID_TOOLCHAIN/toolchains/llvm/prebuilt
+          echo "${{ secrets.ANDROID_KEYSTORE }}" | base64 -d > keystore.jks
 
-          export LIBCLANG_PATH=$ANDROID_TOOLCHAIN/toolchains/llvm/prebuilt/linux-x86_64/bin
+          export ANDROID_TOOLCHAIN=/usr/local/lib/android/sdk/ndk/26.3.11579264
+          export LIBCLANG_PATH=$ANDROID_TOOLCHAIN/toolchains/llvm/prebuilt/linux-x86_64/lib
           export CLANG_PATH=$ANDROID_TOOLCHAIN/toolchains/llvm/prebuilt/linux-x86_64/bin/clang
 
-          find $ANDROID_TOOLCHAIN/toolchains/llvm/prebuilt/linux-x86_64/lib64
+          # /usr/local/lib/android/sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/linux-x86_64/lib/libclang.so
+          # find $ANDROID_TOOLCHAIN/toolchains/llvm/prebuilt/linux-x86_64
+          # find $LIBCLANG_PATH
 
           cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=RelWithDebInfo \
             -DFBL_PREBUILT_SCRIPTS=ON -DFBL_PREBUILT_SCRIPTS_PATH=`pwd`/../build_sho \
@@ -466,12 +497,15 @@ jobs:
             -DANDROID_SDK_ROOT=$ANDROID_SDK_ROOT \
             -DANDROID_TOOLS_VERSION=34.0.0 \
             -DJAVA_HOME=$JAVA_HOME_11_X64 \
-            -DCMAKE_TOOLCHAIN_FILE=$ANDROID_TOOLCHAIN/build/cmake/android.toolchain.cmake
+            -DCMAKE_TOOLCHAIN_FILE=$ANDROID_TOOLCHAIN/build/cmake/android.toolchain.cmake \
+            -DCMAKE_KEYSTORE_PATH=`pwd`/keystore.jks \
+            -DANDROID_KEYSTORE_KEY_ALIAS=release \
+            -DCMAKE_KEYSTORE_PASSWORD=formabble
           cmake --build build --target fbl
 
       - id: release
         uses: "./.github/actions/make-release-zip"
         with:
           in-files: "'fbl.apk'"
-          out-name: formabble-wasm
+          out-name: formabble-android-arm64
           github-token:  ${{ secrets.GITHUB_TOKEN }}
