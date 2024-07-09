@@ -55,7 +55,7 @@ jobs:
           ./bootstrap
           popd
           pushd formabble
-          cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release -DSKIP_HEAVY_INLINE=1
+          cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Debug -DSKIP_HEAVY_INLINE=1 -DFBL_BUNDLED_FILES=OFF
           cmake --build build --target shards
           cmake --build build --target fbl
           shards=`pwd`/build/shards
