@@ -62,13 +62,20 @@ jobs:
           fbl=`pwd`/build/fbl
           popd
 
+          echo "Building prebuilt scripts"
           mkdir -p build_sho
           $shards build formabble/app/scripts/start.shs -o build_sho/start.sho
           $shards build formabble/app/scripts/domain.shs -o build_sho/domain.sho
           $shards build formabble/app/scripts/shared.shs -o build_sho/shared.sho
 
-          $fbl -r . --entry-point shards/utils/compress-strings.shs --early-exit
-          mv shccstrings.hpp build_sho/shccstrings.hpp
+          echo "Compressing strings"
+          if [[ -f shards/utils/compress-strings.shs ]]; then
+            $fbl -r . --entry-point shards/utils/compress-strings.shs --early-exit
+            mv shccstrings.hpp build_sho/shccstrings.hpp
+          else
+            echo "File shards/utils/compress-strings.shs does not exist"
+            exit 1
+          fi
 
       - name: Upload prebuilt scripts
         uses: actions/upload-artifact@v3
