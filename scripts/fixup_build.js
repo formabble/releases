@@ -22,12 +22,12 @@ function updateFileReferences(filePath, oldNames, newNames) {
 function processDirectory(dir, uid) {
   var oldNames = [];
   var newNames = [];
-  oldNames.push("fbl.js");
+  oldNames.push("./fbl.js");
   newNames.push(`./fbl-${uid}.js`);
   oldNames.push("fbl.wasm");
   newNames.push(`https://app-bin.formabble.com/fbl-${uid}.wasm`);
-  oldNames.push("fbl-loader.js");
-  newNames.push(`versions/fbl-loader-${uid}.js`);
+  oldNames.push("./fbl-loader.js");
+  newNames.push(`./versions/fbl-loader-${uid}.js`);
 
   // Update references in index.html
   const indexPath = path.join(dir, 'index.html');
