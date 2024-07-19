@@ -4,17 +4,17 @@ license: CC-BY-SA-4.0
 ---
 
 
-# Ed25519.PublicKey
+# Audio.Pause
 
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`Bytes`](../../types/#bytes) |
-| `Output ➡️` ||The resulting output of the shard | | [`Bytes`](../../types/#bytes) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Object`](../../types/#object) |
+| `Output ➡️` ||The resulting output of the shard | | [`String`](../../types/#string) |
 
 </div>
 
-Extracts the public key from an Ed25519 signing key
+
 
 --8<-- "includes/license.md"
 

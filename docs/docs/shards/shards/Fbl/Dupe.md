@@ -11,6 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The UUID or Entity ID of the form to be duplicated. | | [`None`](../../types/#none)[`Int16`](../../types/#int16)[`Fbl.TypedFormId`](../../types/#fbl.typedformid) |
 | `Output ➡️` ||The UUID of the newly duplicated form. | | [`None`](../../types/#none)[`Int16`](../../types/#int16)[`Fbl.TypedFormId`](../../types/#fbl.typedformid) |
+| `Wait` | :fontawesome-solid-circle-plus:{title="No"} No  | Wait for the duplication process to complete before continuing. | `true` | [`Bool`](../../types/#bool) |
 
 </div>
 

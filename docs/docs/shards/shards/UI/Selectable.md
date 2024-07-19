@@ -16,6 +16,7 @@ license: CC-BY-SA-4.0
 | `Clicked` | :fontawesome-solid-circle-plus:{title="No"} No  | Callback function for the contents of this shard is clicked. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
 | `DoubleClicked` | :fontawesome-solid-circle-plus:{title="No"} No  | Callback function for the contents of this shard is clicked. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
 | `ContextMenu` | :fontawesome-solid-circle-plus:{title="No"} No  | Callback function for the right-click context menu. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `DragData` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Enables dragging and sets the data for drag operations | `None` | [`Any`](../../types/#any) |
 | `ID` | :fontawesome-solid-circle-plus:{title="No"} No  | An optional ID value in case of ID conflicts. | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar)[`None`](../../types/#none) |
 
 </div>

@@ -9,6 +9,7 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Value  | Description |
 |------|---------------------|
+| `None` |  |
 | `Edit` | Indicates the domain is in edit mode |
 | `PlayExclusive` | Indicates the domain is in exclusive play mode |
 | `PlayLocal` | Indicates the domain is in local play mode |

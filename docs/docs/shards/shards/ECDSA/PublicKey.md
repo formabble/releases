@@ -9,7 +9,7 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The private key to generate the public key from. | | [`Bytes`](../../types/#bytes)[`String`](../../types/#string) |
+| `⬅️ Input` ||The private key to generate the public key from. | | [`Bytes`](../../types/#bytes) |
 | `Output ➡️` ||The public key generated from the private key. | | [`Bytes`](../../types/#bytes) |
 | `Compressed` | :fontawesome-solid-circle-plus:{title="No"} No  | Indicates if the output PublicKey should be in compressed format. | `false` | [`Bool`](../../types/#bool) |
 

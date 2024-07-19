@@ -9,10 +9,10 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The text to display. | | [`String`](../../types/#string) |
-| `Output ➡️` ||The output of this shard will be its input. | | [`String`](../../types/#string) |
-| `Wrap` | :fontawesome-solid-circle-plus:{title="No"} No  | Wrap the text depending on the layout. | `None` | [`Bool`](../../types/#bool)[`&Bool`](../../types/#contextvar)[`None`](../../types/#none) |
-| `Style` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The text style. | `None` | [`{Any}`](../../types/#table)[`&{Any}`](../../types/#contextvar) |
+| `⬅️ Input` ||The input of the shard, if any | | [`String`](../../types/#string) |
+| `Output ➡️` ||The resulting output of the shard | | [`String`](../../types/#string) |
+| `Wrap` | :fontawesome-solid-circle-plus:{title="No"} No  | The text wrapping mode. | `TextWrap::Extend` | [`TextWrap`](../../../enums/TextWrap)[`Bool`](../../types/#bool) |
+| `Style` | :fontawesome-solid-circle-plus:{title="No"} No  | The text style. | `None` | [`{Any}`](../../types/#table)[`&{Any}`](../../types/#contextvar)[`None`](../../types/#none) |
 
 </div>
 

@@ -4,17 +4,17 @@ license: CC-BY-SA-4.0
 ---
 
 
-# Ed25519.PublicKey
+# Mnemonic.ToSeed
 
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`Bytes`](../../types/#bytes) |
+| `⬅️ Input` ||The input of the shard, if any | | [`String`](../../types/#string) |
 | `Output ➡️` ||The resulting output of the shard | | [`Bytes`](../../types/#bytes) |
 
 </div>
 
-Extracts the public key from an Ed25519 signing key
+Converts a BIP39 mnemonic to a seed
 
 --8<-- "includes/license.md"
 

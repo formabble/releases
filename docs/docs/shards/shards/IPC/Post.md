@@ -4,17 +4,18 @@ license: CC-BY-SA-4.0
 ---
 
 
-# Ed25519.PublicKey
+# IPC.Post
 
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Bytes`](../../types/#bytes) |
-| `Output ➡️` ||The resulting output of the shard | | [`Bytes`](../../types/#bytes) |
+| `Output ➡️` ||The resulting output of the shard | | [`None`](../../types/#none) |
+| `Name` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Name of the socket | `None` | [`String`](../../types/#string) |
 
 </div>
 
-Extracts the public key from an Ed25519 signing key
+Reads a single message from a named socket
 
 --8<-- "includes/license.md"
 

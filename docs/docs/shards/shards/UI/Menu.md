@@ -16,9 +16,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-Creates a menu button that when clicked will show the given menu.
-
-If called from within a menu this will instead create a button for a sub-menu.
+Creates a menu button that when clicked will show the given menu. If called from within a menu this will instead create a button for a sub-menu.
 
 ## Examples
 

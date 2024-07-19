@@ -11,11 +11,11 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Bytes`](../../types/#bytes) |
 | `Output ➡️` ||The resulting output of the shard | | [`Bytes`](../../types/#bytes) |
-| `Key` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The private key to be used to sign the hashed message input. | `None` | [`Bytes`](../../types/#bytes)[`&Bytes`](../../types/#contextvar)[`String`](../../types/#string)[`&String`](../../types/#contextvar) |
+| `Key` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The private key to be used to sign the message input. | `None` | [`Bytes`](../../types/#bytes)[`&Bytes`](../../types/#contextvar) |
 
 </div>
 
-
+Signs a message using the Ed25519 signature algorithm.
 
 --8<-- "includes/license.md"
 

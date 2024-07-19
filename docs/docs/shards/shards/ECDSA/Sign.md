@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The message hash to sign with the private key, must be 32 bytes. | | [`Bytes`](../../types/#bytes) |
 | `Output ➡️` ||The signature generated from signing the input message with the private key. | | [`Bytes`](../../types/#bytes) |
-| `Key` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The private key used to sign the hashed message input. | `None` | [`Bytes`](../../types/#bytes)[`&Bytes`](../../types/#contextvar)[`String`](../../types/#string)[`&String`](../../types/#contextvar) |
+| `Key` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The private key used to sign the hashed message input. | `None` | [`Bytes`](../../types/#bytes)[`&Bytes`](../../types/#contextvar) |
 
 </div>
 
