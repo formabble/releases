@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Object`](../../types/#object) |
-| `Output ➡️` ||The resulting output of the shard | | [`String`](../../types/#string) |
+| `Output ➡️` ||The resulting output of the shard | | [`Object`](../../types/#object) |
 
 </div>
 
