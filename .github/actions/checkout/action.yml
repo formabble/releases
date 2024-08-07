@@ -65,6 +65,12 @@ runs:
         name: build_sho
         path: build_sho
 
+    - name: Move shccstrings.hpp
+      shell: bash
+      if: ${{ inputs.fetch-sho-artifact == 'true' }}
+      run: |
+        mv build_sho/shccstrings.hpp shards/core/shccstrings.hpp
+
     - name: Set up rust
       shell: bash
       env:
