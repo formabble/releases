@@ -69,7 +69,7 @@ runs:
       shell: bash
       if: ${{ inputs.fetch-sho-artifact == 'true' }}
       run: |
-        mv build_sho/shccstrings.hpp shards/core/shccstrings.hpp
+        mv build_sho/shccstrings.hpp shards/shards/core/shccstrings.hpp
 
     - name: Set up rust
       shell: bash
