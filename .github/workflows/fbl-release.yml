@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     tags:
-      - 'fbl-*'
+      - "fbl-*"
 
 jobs:
   prebuild-sho:
@@ -107,7 +107,6 @@ jobs:
         run: |
           pushd shards
           ./bootstrap
-          mv ../build_sho/shccstrings.hpp shards/core/shccstrings.hpp
           popd
           pushd formabble
           cmake -Bbuild -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo \
@@ -170,7 +169,6 @@ jobs:
           sudo xcode-select --switch /Applications/Xcode_15.4.app
           pushd shards
           ./bootstrap
-          mv ../build_sho/shccstrings.hpp shards/core/shccstrings.hpp
           popd
           pushd formabble
           cmake -Bbuild -GXcode -DCMAKE_BUILD_TYPE=RelWithDebInfo \
@@ -183,7 +181,7 @@ jobs:
           cp -r build/RelWithDebInfo/Formabble.app zip-app/
           mkdir -p zip-dsym
           cp -r build/RelWithDebInfo/Formabble.app.dSYM zip-dsym/
-      
+
       - uses: actions/upload-artifact@v4
         with:
           name: formabble-macosx-arm64-unsigned
@@ -265,7 +263,6 @@ jobs:
           sudo xcode-select --switch /Applications/Xcode_15.4.app
           pushd shards
           ./bootstrap
-          mv ../build_sho/shccstrings.hpp shards/core/shccstrings.hpp
           popd
           pushd formabble
           cmake -Bbuild -GXcode -DCMAKE_BUILD_TYPE=RelWithDebInfo \
@@ -289,7 +286,7 @@ jobs:
           path: |
             formabble/build/RelWithDebInfo/Formabble.app.dSYM/
           if-no-files-found: error
-        
+
   ios-release:
     if: ${{ needs.prebuild-sho.outputs.ENABLE_IOS_RELEASE == 1 }}
     runs-on: [self-hosted, macOS, ARM64]
@@ -317,7 +314,6 @@ jobs:
         run: |
           pushd shards
           ./bootstrap
-          mv ../build_sho/shccstrings.hpp shards/core/shccstrings.hpp
           popd
           pushd formabble
           cmake -Bbuild -GXcode -DCMAKE_BUILD_TYPE=RelWithDebInfo \
@@ -387,7 +383,6 @@ jobs:
           source emsdk/emsdk_env.sh
           pushd shards
           ./bootstrap
-          mv ../build_sho/shccstrings.hpp shards/core/shccstrings.hpp
           popd
           pushd formabble
           cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release \
@@ -422,15 +417,18 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.WEB_DEPLOY_KEY }}" > ~/.ssh/id_ecdsa
           chmod 600 ~/.ssh/id_ecdsa
-          # ssh-keyscan github.com >> ~/.ssh/known_hosts
 
           git clone git@github.com:formabble/web-release.git
-
           git config --global user.email "runner@github.com"
           git config --global user.name "Github Actions"
 
           pushd web-release
-          cp -v $DIST/index.html ./
+          if [[ ${IS_PRE_RELEASE} == false ]]; then
+            echo "Updating index.html to point to version ${VERSION_ID}"
+            cp -v $DIST/index.html ./
+          else
+            echo "Pulishing pre-release version at https://app.formabble.com?version=${VERSION_ID}"
+          fi
           cp -v $DIST/fbl-*.js ./versions/
           git add -u
           git add ./versions
@@ -444,7 +442,7 @@ jobs:
           zip-root: formabble/dist-zip
           in-files: "'fbl.js', 'fbl.wasm', 'fbl-loader.js', 'index.html', 'style.css', 'favicon.svg'"
           out-name: formabble-wasm
-          github-token:  ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
   android-release:
     if: ${{ needs.prebuild-sho.outputs.ENABLE_ANDROID_RELEASE == 1 }}
@@ -470,13 +468,11 @@ jobs:
           $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --install "build-tools;34.0.0"
           $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --install "platforms;android-33"
 
-
       - name: Build
         shell: bash
         run: |
           pushd shards
           ./bootstrap
-          mv ../build_sho/shccstrings.hpp shards/core/shccstrings.hpp
           popd
           pushd formabble
 
@@ -508,4 +504,4 @@ jobs:
         with:
           in-files: "'fbl.apk'"
           out-name: formabble-android-arm64
-          github-token:  ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
