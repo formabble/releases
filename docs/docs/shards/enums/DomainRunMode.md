@@ -11,9 +11,9 @@ license: CC-BY-SA-4.0
 |------|---------------------|
 | `None` |  |
 | `Edit` | Indicates the domain is in edit mode |
-| `PlayExclusive` | Indicates the domain is in exclusive play mode |
+| `Play` | Indicates the domain is in exclusive play mode |
 | `PlayLocal` | Indicates the domain is in local play mode |
-| `PlayRemote` | Indicates the domain is in remote play mode |
+| `PlayMatch` | Indicates the domain is in remote play mode |
 
 </div>
 

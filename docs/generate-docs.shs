@@ -19,6 +19,24 @@
 @define(output-help-shards {If({IsNotNone} {ExpectString} {""}) | If(Is("") {"The resulting output of the shard"} Pass)})
 @define(params-types-shards {Map({ExpectTable | Take("name")}) | ToString | Slice(1 -1)})
 
+@env("GEN_EMBEDDINGS") | When(Is("true") {
+  DB.LoadExtension("../../sqlite-rembed/target/release/libsqlite_rembed.dylib" EntryPoint: "sqlite3_rembed_init")
+  DB.LoadExtension("sqlite-vec")
+
+  """
+INSERT INTO temp.rembed_clients(name, options)
+ VALUES ('text-embedding-3-small', 'openai');
+""" | Maybe(DB.RawQuery)
+
+  """
+create table docs(
+  id integer primary key autoincrement,
+  shard_doc text
+);
+""" | Maybe(DB.RawQuery)
+  Msg("Generating embeddings")
+})
+
 @template(get-filename [path extension fallback-general] {
   = f
   Regex.Match("""(\w+)\.(.*)""") = match
@@ -136,34 +154,34 @@
 
   {
     [
-      "ToInt", "ToInt2", "ToInt3", "ToInt4", "ToInt8", "ToInt16", "ToColor", "ToFloat", "ToFloat2", "ToFloat3", "ToFloat4",
-      "MakeInt2", "MakeInt3", "MakeInt4", "MakeInt8", "MakeInt16", "MakeColor", "MakeFloat2", "MakeFloat3", "MakeFloat4",
-      "ToString", "ToHex", "VarAddr", "BitSwap32", "BitSwap64",
-      "Expect", "ExpectNone", "ExpectInt", "ExpectInt2", "ExpectInt3", "ExpectInt4", "ExpectInt8", "ExpectInt16", "ExpectFloat",
-      "ExpectFloat2", "ExpectFloat3", "ExpectFloat4", "ExpectBytes", "ExpectString", "ExpectImage", "ExpectBool", "ExpectColor",
-      "ExpectWire", "ExpectTable", "ExpectAudio", "ExpectSeq", "ExpectFloatSeq", "ExpectFloat2Seq", "ExpectFloat3Seq",
-      "ExpectFloat4Seq", "ExpectIntSeq", "ExpectInt2Seq", "ExpectInt3Seq", "ExpectInt4Seq", "ExpectInt8Seq", "ExpectInt16Seq",
-      "ExpectBytesSeq", "ExpectStringSeq", "ExpectImageSeq", "ExpectBoolSeq", "ExpectColorSeq", "ExpectWireSeq", "ExpectAudioSeq",
-      "ExpectLike", "TypeOf", "IsInt", "IsInt2", "IsInt3", "IsInt4", "IsInt8", "IsInt16", "IsFloat", "IsFloat2", "IsFloat3",
-      "IsFloat4", "IsBytes", "IsString", "IsImage", "IsBool", "IsColor", "IsSeq", "IsWire", "IsTable", "IsAudio",
-      "ImageToFloats", "FloatsToImage", "BytesToInts", "BytesToString", "IntsToBytes", "StringToBytes", "ImageToBytes",
-      "ToBase64", "FromBase64", "HexToBytes", "VarPtr",
-      "SwitchTo", "Wait", "Stop", "Do", "Detach", "Step", "WireLoader", "WireRunner", "Recur", "TryMany", "Spawn", "Expand",
-      "Branch", "StepMany", "DoMany", "Peek", "IsRunning", "Suspend", "Resume", "WhenDone",
-      "Fbl.FormId", "Fbl.Formalize", "Fbl.WithTrait", "Fbl.Deform", "Fbl.Dispatch", "Fbl.Fetch", "Fbl.Dupe", "Fbl.Find",
-      "Fbl.HasTags", "Fbl.WithTag", "Fbl.WithTags", "Fbl.WaitMatch", "Fbl.ExitMatch", "Fbl.NextFrame", "Fbl.Username",
-      "Fbl.Slot", "Fbl.RunMode", "Fbl.Users"
+      "ToInt" "ToInt2" "ToInt3" "ToInt4" "ToInt8" "ToInt16" "ToColor" "ToFloat" "ToFloat2" "ToFloat3" "ToFloat4"
+      "MakeInt2" "MakeInt3" "MakeInt4" "MakeInt8" "MakeInt16" "MakeColor" "MakeFloat2" "MakeFloat3" "MakeFloat4"
+      "ToString" "ToHex" "VarAddr" "BitSwap32" "BitSwap64"
+      "Expect" "ExpectNone" "ExpectInt" "ExpectInt2" "ExpectInt3" "ExpectInt4" "ExpectInt8" "ExpectInt16" "ExpectFloat"
+      "ExpectFloat2" "ExpectFloat3" "ExpectFloat4" "ExpectBytes" "ExpectString" "ExpectImage" "ExpectBool" "ExpectColor"
+      "ExpectWire" "ExpectTable" "ExpectAudio" "ExpectSeq" "ExpectFloatSeq" "ExpectFloat2Seq" "ExpectFloat3Seq"
+      "ExpectFloat4Seq" "ExpectIntSeq" "ExpectInt2Seq" "ExpectInt3Seq" "ExpectInt4Seq" "ExpectInt8Seq" "ExpectInt16Seq"
+      "ExpectBytesSeq" "ExpectStringSeq" "ExpectImageSeq" "ExpectBoolSeq" "ExpectColorSeq" "ExpectWireSeq" "ExpectAudioSeq"
+      "ExpectLike" "TypeOf" "IsInt" "IsInt2" "IsInt3" "IsInt4" "IsInt8" "IsInt16" "IsFloat" "IsFloat2" "IsFloat3"
+      "IsFloat4" "IsBytes" "IsString" "IsImage" "IsBool" "IsColor" "IsSeq" "IsWire" "IsTable" "IsAudio"
+      "ImageToFloats" "FloatsToImage" "BytesToInts" "BytesToString" "IntsToBytes" "StringToBytes" "ImageToBytes"
+      "ToBase64" "FromBase64" "HexToBytes" "VarPtr"
+      "SwitchTo" "Wait" "Stop" "Do" "Detach" "Step" "WireLoader" "WireRunner" "Recur" "TryMany" "Spawn" "Expand"
+      "Branch" "StepMany" "DoMany" "Peek" "IsRunning" "Suspend" "Resume" "WhenDone"
+      "Fbl.FormId" "Fbl.Formalize" "Fbl.WithTrait" "Fbl.Deform" "Fbl.Dispatch" "Fbl.Fetch" "Fbl.Dupe" "Fbl.Find"
+      "Fbl.HasTags" "Fbl.WithTag" "Fbl.WithTags" "Fbl.WaitMatch" "Fbl.ExitMatch" "Fbl.NextFrame" "Fbl.Username"
+      "Fbl.Slot" "Fbl.RunMode" "Fbl.Users"
     ] = done-seq
   }
 
   {
     false >= is-it-done
-    
+
     done-seq | ForEach({
-    When(Predicate:{Is(shard-name)} Action:{
-      true >= is-it-done
+      When(Predicate: {Is(shard-name)} Action: {
+        true >= is-it-done
+      })
     })
-  })
   }
 
   Set(shard-doc "name")
@@ -362,6 +380,8 @@
 
     "\nParams: " | AppendTo(shard-doc-string)
     parameters-seq-edited | ToJson | AppendTo(shard-doc-string)
+
+    [shard-doc-string] | DB.Query("insert into docs(shard_doc) values(?)")
 
     "\n----\n" | AppendTo(shard-doc-string)
     "shards_docs_merged.txt" | FS.Write(shard-doc-string Append: true)
@@ -614,10 +634,10 @@
 ;   object-id | Shards.ObjectTypeHelp = object-help | Log
 ; })
 
-;;Deleta pages first
-Http.Post("https://api.notion.com/v1/databases/@notion-db-id/query" Headers: @headers) | Take("results") | ForEach({
-  Take("id") | Http.Delete("https://api.notion.com/v1/pages/" + _ Headers: @headers)
-})
+; ;;Deleta pages first
+; Http.Post("https://api.notion.com/v1/databases/@notion-db-id/query" Headers: @headers) | Take("results") | ForEach({
+;   Take("id") | Http.Delete("https://api.notion.com/v1/pages/" Headers: @headers)
+; })
 
 "shards_docs_merged.txt" | FS.Remove
 
@@ -637,6 +657,21 @@ out | String.Join("") = file-content
 Shards.EnumTypes | TryMany(document-enum Threads: 4)
 
 ; Shards.ObjectTypes | TryMany(document-object Threads: 4)
+
+
+@env("GEN_EMBEDDINGS") | When(Is("true") {
+  ; finally generate embeddings
+  """
+-- Build a vector table with embeddings of article headlines, using OpenAI's API
+create virtual table vec_docs using vec0(
+  shard_doc_embeddings float[1536]
+);
+
+insert into vec_docs(rowid, shard_doc_embeddings)
+  select rowid, rembed('text-embedding-3-small', shard_doc)
+  from docs;
+""" | Maybe(DB.RawQuery)
+})
 
 Pause(2.0)
 

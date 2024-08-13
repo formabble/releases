@@ -2,3 +2,5 @@
 *.log
 docs/forbidden_shards.inl
 docs/shards_docs_merged.txt
+docs/.env
+docs/*.db

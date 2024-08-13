@@ -9,8 +9,8 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||A bytes or string value to be encoded to Base64. | | [`Bytes`](../../types/#bytes)[`String`](../../types/#string) |
-| `Output ➡️` ||The Base64 encoded string representation of the input value. | | [`String`](../../types/#string) |
+| `⬅️ Input` ||Accepts a bytes sequence or a string value as input. | | [`Bytes`](../../types/#bytes)[`String`](../../types/#string) |
+| `Output ➡️` ||Returns the Base64 encoded string representation of the input value. | | [`String`](../../types/#string) |
 
 </div>
 

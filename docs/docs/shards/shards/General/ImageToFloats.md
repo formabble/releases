@@ -9,12 +9,12 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||A sequence of bytes or an image that will be converted into a sequence of another type. Each byte or pixel in the input is interpreted according to the specified type. | | [`Image`](../../types/#image) |
-| `Output ➡️` ||The output is a sequence of the specified type created from the input bytes or image. Each byte or pixel is converted to an element of the output sequence. | | [`[Float]`](../../types/#seq) |
+| `⬅️ Input` ||Takes an image as input. | | [`Image`](../../types/#image) |
+| `Output ➡️` ||Returns the input image represented as a seqeunce of floats. | | [`[Float]`](../../types/#seq) |
 
 </div>
 
-Converts a sequence of bytes or an image into a sequence of another specified type. Each byte or pixel in the input is interpreted and converted to an element of the output sequence of the specified type.
+Convert an image into a sequence of floats. Each pixel in the image is converted to a float value between 0 and 1 and stored in the sequence.
 
 --8<-- "includes/license.md"
 

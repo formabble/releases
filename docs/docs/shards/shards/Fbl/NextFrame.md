@@ -10,11 +10,11 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Any input type is accepted. The input value will pass through unchanged. | | [`Any`](../../types/#any) |
-| `Output ➡️` ||The output will be the same as the input value. | | [`Any`](../../types/#any) |
+| `Output ➡️` ||Outputs the input value, passed through unchanged. | | [`Any`](../../types/#any) |
 
 </div>
 
-Suspends execution until the next frame is processed. This operation is typically used to synchronize between subsystems.
+Suspends execution until the next frame is processed. This operation is typically used to synchronize between Behaviors.
 
 --8<-- "includes/license.md"
 

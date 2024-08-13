@@ -9,13 +9,13 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
-| `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
-| `Wire` | :fontawesome-solid-circle-plus:{title="No"} No  | The wire to suspend. | `None` | [`Wire`](../../types/#wire)[`String`](../../types/#string)[`None`](../../types/#none)[`&Wire`](../../types/#contextvar) |
+| `⬅️ Input` ||Any input type is accepted. The input value will pass through unchanged. | | [`Any`](../../types/#any) |
+| `Output ➡️` ||Outputs the input value, passed through unchanged. | | [`Any`](../../types/#any) |
+| `Wire` | :fontawesome-solid-circle-plus:{title="No"} No  | The wire to pause. | `None` | [`Wire`](../../types/#wire)[`String`](../../types/#string)[`None`](../../types/#none)[`&Wire`](../../types/#contextvar) |
 
 </div>
 
-Pauses another wire. If no wire is given, pauses the current wire.
+Pauses a specified Wire's execution. If no Wire is specified, pauses the current wire.
 
 --8<-- "includes/license.md"
 

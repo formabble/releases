@@ -9,8 +9,8 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||Any input value. The input is passed through unchanged. | | [`Any`](../../types/#any) |
-| `Output ➡️` ||The input value, passed through unchanged. | | [`Any`](../../types/#any) |
+| `⬅️ Input` ||Any input value is accepted. The input is passed through unchanged. | | [`Any`](../../types/#any) |
+| `Output ➡️` ||Outputs the input value, passed through unchanged. | | [`Any`](../../types/#any) |
 
 </div>
 

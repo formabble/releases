@@ -9,7 +9,7 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||Any value to be converted to a string. | | [`Any`](../../types/#any) |
+| `⬅️ Input` ||Input of any type is accepted. | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The string representation of the input value. | | [`String`](../../types/#string) |
 
 </div>

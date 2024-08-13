@@ -4,17 +4,17 @@ license: CC-BY-SA-4.0
 ---
 
 
-# ExpectInt
+# IsInt16
 
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Input of any type is accepted. | | [`Any`](../../types/#any) |
-| `Output ➡️` ||Returns the input value unchanged if it is of type Int. | | [`Int`](../../types/#int) |
+| `Output ➡️` ||Returns true if the input value is of type Int16, and false otherwise. | | [`Bool`](../../types/#bool) |
 
 </div>
 
-Checks the input value if it is of type Int. The shard returns the input value unchanged if it is of the appropriate type; otherwise, the shard will trigger an error, preventing further execution.
+Checks the input value if it is a vector of 16 Int elements. The shard will return true if the input is of the appropriate type, and false otherwise.
 
 --8<-- "includes/license.md"
 

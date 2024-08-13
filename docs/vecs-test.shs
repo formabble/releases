@@ -1,0 +1,26 @@
+@define(db "shards_vecs.db")
+DB.LoadExtension("../../sqlite-rembed/target/release/libsqlite_rembed.dylib" EntryPoint: "sqlite3_rembed_init" Database: @db)
+DB.LoadExtension("sqlite-vec" @db)
+Msg("Loaded")
+
+"""
+INSERT INTO temp.rembed_clients(name, options)
+ VALUES ('text-embedding-3-small', 'openai');
+""" | Maybe(DB.RawQuery(@db))
+
+["square root"] | DB.Query("""
+with matches as (
+  select
+    rowid,
+    distance
+  from vec_docs
+  where shard_doc_embeddings match rembed('text-embedding-3-small', ?)
+  order by distance
+  limit 10
+)
+select
+  shard_doc,
+  distance
+from matches
+left join docs on docs.rowid = matches.rowid
+""" @db) | Log

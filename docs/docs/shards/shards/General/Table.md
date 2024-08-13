@@ -12,7 +12,7 @@ license: CC-BY-SA-4.0
 | `⬅️ Input` ||Any input is ignored. | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The input to this shard is passed through as its output. | | [`Any`](../../types/#any) |
 | `Name` | :fontawesome-solid-circle-plus:{title="No"} No  | The name of the variable. | `` | [`String`](../../types/#string)[`&Any`](../../types/#contextvar) |
-| `Key` | :fontawesome-solid-circle-plus:{title="No"} No  | The key of the value to write in the table (parameter applicable only if the target variable is a table). | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar)[`None`](../../types/#none) |
+| `Key` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The key of the value to write in the table (parameter applicable only if the target variable is a table). | `None` | [`Any`](../../types/#any) |
 | `Global` | :fontawesome-solid-circle-plus:{title="No"} No  | If the variable is available to all of the wires in the same mesh. | `false` | [`Bool`](../../types/#bool) |
 | `Type` | :fontawesome-solid-circle-plus:{title="No"} No  | The table type to forward declare. | `None` | [`None`](../../types/#none)[`Type`](../../types/#type) |
 

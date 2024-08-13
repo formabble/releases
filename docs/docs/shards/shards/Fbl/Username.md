@@ -14,7 +14,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-Retrieves the current user's display name as a string.
+Retrieves the current user's username as a string.
 
 --8<-- "includes/license.md"
 

@@ -9,13 +9,13 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
-| `Output ➡️` ||The resulting output of the shard | | [`Bool`](../../types/#bool) |
-| `Wire` | :fontawesome-solid-circle-plus:{title="No"} No  | The wire to run. | `None` | [`Wire`](../../types/#wire)[`String`](../../types/#string)[`None`](../../types/#none) |
+| `⬅️ Input` ||The input of this shard is ignored. | | [`None`](../../types/#none) |
+| `Output ➡️` ||This shard will either return true if the specified Wire is still running, or false if it has ended. | | [`Bool`](../../types/#bool) |
+| `Wire` | :fontawesome-solid-circle-plus:{title="No"} No  | The wire to check. | `None` | [`Wire`](../../types/#wire)[`String`](../../types/#string)[`None`](../../types/#none)[`&Wire`](../../types/#contextvar) |
 
 </div>
 
-Checks if a wire is running and outputs true if that is the case, false if not.
+Checks if a Wire is running and outputs true if it is, false if otherwise. (Note that a looped Wire will always be running and thus will always return true)
 
 --8<-- "includes/license.md"
 

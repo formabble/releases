@@ -9,12 +9,12 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The tag to filter forms by. | | [`Any`](../../types/#any) |
-| `Output ➡️` ||A sequence of UUIDs of forms that have the specified tag. | | [`[Int16]`](../../types/#seq) |
+| `⬅️ Input` ||The tag to check for. | | [`Any`](../../types/#any) |
+| `Output ➡️` ||A sequence of untyped Form IDs that have the specified tag. | | [`[Int16]`](../../types/#seq) |
 
 </div>
 
-Filters forms by the specified tag and outputs a sequence of UUIDs of forms that have that tag.
+Checks forms for the specified tag and outputs a sequence of untyped Form IDs that have that tag.
 
 --8<-- "includes/license.md"
 

@@ -9,13 +9,13 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||Any input value. This shard checks if the input value matches the expected complex type. | | [`Any`](../../types/#any) |
-| `Output ➡️` ||The input value if it matches the expected complex type. | | [`[Int16]`](../../types/#seq) |
-| `Unsafe` | :fontawesome-solid-circle-plus:{title="No"} No  | If we should skip performing deep type hashing and comparison. (generally fast but this might improve performance) | `false` | [`Bool`](../../types/#bool) |
+| `⬅️ Input` ||This shard accepts a sequence of values. | | [`Any`](../../types/#any) |
+| `Output ➡️` ||Returns the input value unchanged if it is a sequence of Int16 vectors. | | [`[Int16]`](../../types/#seq) |
+| `Unsafe` | :fontawesome-solid-circle-plus:{title="No"} No  | When set to true, it will skip type comparison. Generally unsafe but it can improve performance. Only set to true if you are certain that the input type matches the expected type. | `false` | [`Bool`](../../types/#bool) |
 
 </div>
 
-Checks if the input value matches the expected complex type. If the input value does not match the expected type, an error is thrown. The 'Unsafe' parameter can be set to skip deep type hashing and comparison to improve performance.
+Checks if the input value is a sequence of Int16 vectors. The shard returns the input value unchanged if it is of the appropriate type; otherwise, the shard will trigger an error, preventing further execution.
 
 --8<-- "includes/license.md"
 

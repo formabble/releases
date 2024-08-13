@@ -9,12 +9,12 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||Any value to check the type of. | | [`Any`](../../types/#any) |
-| `Output ➡️` ||A boolean value indicating whether the input type matches the specified type. | | [`Bool`](../../types/#bool) |
+| `⬅️ Input` ||Input of any type is accepted. | | [`Any`](../../types/#any) |
+| `Output ➡️` ||Returns true if the input value is of type Bytes, and false otherwise. | | [`Bool`](../../types/#bool) |
 
 </div>
 
-Checks if the input value is of the specified type and returns a boolean result.
+Checks the input value if it is of type Bytes. The shard will return true if the input is of the appropriate type, and false otherwise.
 
 --8<-- "includes/license.md"
 
