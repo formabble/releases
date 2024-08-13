@@ -381,7 +381,9 @@ create table docs(
     "\nParams: " | AppendTo(shard-doc-string)
     parameters-seq-edited | ToJson | AppendTo(shard-doc-string)
 
-    [shard-doc-string] | DB.Query("insert into docs(shard_doc) values(?)")
+    @env("GEN_EMBEDDINGS") | When(Is("true") {
+      [shard-doc-string] | DB.Query("insert into docs(shard_doc) values(?)")
+    })
 
     "\n----\n" | AppendTo(shard-doc-string)
     "shards_docs_merged.txt" | FS.Write(shard-doc-string Append: true)
