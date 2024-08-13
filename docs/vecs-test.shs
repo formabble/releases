@@ -4,8 +4,7 @@ DB.LoadExtension("sqlite-vec" @db)
 Msg("Loaded")
 
 """
-INSERT INTO temp.rembed_clients(name, options)
- VALUES ('text-embedding-3-small', 'openai');
+INSERT INTO temp.rembed_clients(name, options) VALUES ('text-embedding-3-small', 'openai');
 """ | Maybe(DB.RawQuery(@db))
 
 ["square root"] | DB.Query("""
@@ -23,4 +22,4 @@ select
   distance
 from matches
 left join docs on docs.rowid = matches.rowid
-""" @db) | Log
+""" @db AsRows: true) | ForEach(Log)
