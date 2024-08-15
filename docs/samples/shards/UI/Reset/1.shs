@@ -7,7 +7,7 @@
         Contents:
         UI.Tooltip(
           Contents:
-          UI.Button ("Reset UI memory" UI.Reset)
+          UI.Button("Reset UI memory" UI.Reset)
           OnHover:
           {
             "Forget scroll, positions, sizes, etc." | UI.Label

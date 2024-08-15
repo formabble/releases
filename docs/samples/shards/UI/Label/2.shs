@@ -6,10 +6,12 @@
     Width: 700
     Height: 400
     Contents: {
-          UI.Columns(
-     [{"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." | UI.Label(Wrap: true)}
-      none
-      {"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." | UI.Label(Wrap: false)}])
+      UI.Columns(
+        [{"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." | UI.Label(Wrap: true)}
+          none
+          {"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." | UI.Label(Wrap: false)}
+        ]
+      )
     }
   )
 } Looped: true)

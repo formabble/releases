@@ -18,6 +18,6 @@
       ; | Log ; Passthrough
     }
   )
-} Looped:  true)
+} Looped: true)
 
-{ui-behavior:  ui-wire}
+{ui-behavior: ui-wire}

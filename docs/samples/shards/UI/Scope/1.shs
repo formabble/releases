@@ -6,9 +6,10 @@
     Height: 400
     Contents: {
       UI.CentralPanel(
-    UI.Scope(
-     Contents:
-     {"Hello" | UI.Label}))
+        UI.Scope(
+        Contents:
+        {"Hello" | UI.Label})
+      )
     }
   )
 } Looped: true)

@@ -50,6 +50,6 @@
       "Highest: Debug" | UI.Label(Wrap: false)
     }
   )
-} Looped:  true)
+} Looped: true)
 
 {ui-behavior: ui-wire}

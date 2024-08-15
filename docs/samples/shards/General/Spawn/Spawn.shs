@@ -1,13 +1,14 @@
 
-@wire (spawn-wire {Msg ("Msg 1")
-                   Pause (1.0)
-                   Msg ("Msg 2")
-                   Pause (1.0)
-                   Msg ("Msg 3")
-                   Stop})
+@wire(spawn-wire {Msg("Msg 1")
+  Pause(1.0)
+  Msg("Msg 2")
+  Pause(1.0)
+  Msg("Msg 3")
+  Stop
+})
 
-@wire (main-wire {Once ({Spawn (spawn-wire)})})
+@wire(main-wire {Once({Spawn(spawn-wire)})})
 
-@mesh (main)
-@schedule (main main-wire)
-@run (main)
+@mesh(main)
+@schedule(main main-wire)
+@run(main)

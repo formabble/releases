@@ -6,18 +6,18 @@
     Width: 700
     Height: 400
     Contents: {
-        Once({
-          "Hello shards!" >= text
-        })
-        
-        UI.Horizontal(
-          {
-            "Text: " | UI.Label
-            UI.TextField(text)
-          }
-        )
-        
-        text | UI.HexViewer
+      Once({
+        "Hello shards!" >= text
+      })
+      
+      UI.Horizontal(
+        {
+          "Text: " | UI.Label
+          UI.TextField(text)
+        }
+      )
+      
+      text | UI.HexViewer
     }
   )
 } Looped: true)

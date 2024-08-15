@@ -7,11 +7,11 @@
     Height: 400
     Contents: {
       Once({
-        asset/r0| GFX.Texture = uiImage1 ;; replace with whatever image you have as references
-
+        asset/r0 | GFX.Texture = uiImage1 ;; replace with whatever image you have as references
+        
       })
-
-      uiImage1 | UI.ImageButton(Action:{
+      
+      uiImage1 | UI.ImageButton(Action: {
         Msg("Image Button Working")
       })
     }

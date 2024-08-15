@@ -6,17 +6,21 @@
     Width: 700
     Height: 400
     Contents: {
-   UI.DockArea(
-    Contents:
-    {
-     UI.Tab(
-      Title: "Tab 1"
-      Contents:
-      { "Tab 1 contents" | UI.Label})
-     UI.Tab(
-      Title: "Tab 2"
-      Contents:
-      {"Tab 2 contents" | UI.Label})})
+      UI.DockArea(
+        Contents:
+        {
+          UI.Tab(
+            Title: "Tab 1"
+            Contents:
+            {"Tab 1 contents" | UI.Label}
+          )
+          UI.Tab(
+            Title: "Tab 2"
+            Contents:
+            {"Tab 2 contents" | UI.Label}
+          )
+        }
+      )
     }
   )
 } Looped: true)

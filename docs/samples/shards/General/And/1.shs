@@ -1,8 +1,9 @@
 5 = x
 
 x
-If(Predicate: {IsMore(1) | And | IsLess(10)} Then:{
-  Log("Value is more than 1 and less than 10")
-} Else:{
-  Log("Value is not more than 1 and less than 10")
-})
+If(Predicate: {IsMore(1) | And | IsLess(10)} Then: {
+    Log("Value is more than 1 and less than 10")
+  } Else: {
+    Log("Value is not more than 1 and less than 10")
+  }
+)

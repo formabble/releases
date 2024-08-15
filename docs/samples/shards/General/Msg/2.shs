@@ -6,8 +6,8 @@
 
 @wire(main-wire {
   
-Msg("Hello World" LogLevel::Info) ; ; prints string
-@msgshard("Bye" "Universe")
+  Msg("Hello World" LogLevel::Info) ; ; prints string
+  @msgshard("Bye" "Universe")
   
 })
 

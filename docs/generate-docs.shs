@@ -17,7 +17,7 @@
 
 @define(input-help-shards {If({IsNotNone} {ExpectString} {""}) | If(Is("") {"The input of the shard, if any"} Pass)})
 @define(output-help-shards {If({IsNotNone} {ExpectString} {""}) | If(Is("") {"The resulting output of the shard"} Pass)})
-@define(params-types-shards {Map({ExpectTable | Take("name")}) | ToString | Slice(1 -1)})
+@define(params-types-shards Map({ExpectTable | Take("name")}))
 
 @env("GEN_EMBEDDINGS") | When(Is("true") {
   DB.LoadExtension("../../sqlite-rembed/target/release/libsqlite_rembed.dylib" EntryPoint: "sqlite3_rembed_init")
@@ -377,7 +377,7 @@ create table docs(
     parameters-seq | Map({
       ExpectTable = param-table
       param-table:types | ExpectSeq
-      Map({ExpectTable | Take("name")}) | ToString | Slice(1 -1) | Set(param-table "types")
+      Map({ExpectTable | Take("name")}) | Set(param-table "types")
       param-table
     }) = parameters-seq-edited
 
@@ -591,10 +591,6 @@ create table docs(
   ""
 })
 
-@notion-api-key | When(IsNot("") {
-  @notion-db-id | Log("Populating notion database")
-})
-
 @wire(document-enum {
   = enum-id
   enum-id | Shards.EnumTypeHelp = enum-help
@@ -640,6 +636,20 @@ create table docs(
   name | @get-filename(@enums-path ".md" false) = file
   file | FS.Write(content Overwrite: true)
 
+  {
+    // Create a JSON-like string with all enum data
+    ["{\n  \"name\": \"" name "\",\n"] | String.Join >= enum-doc-string
+    ["  \"labels\": " (labels | ToJson) ",\n"] | String.Join | AppendTo(enum-doc-string)
+    ["  \"descriptions\": " (descriptions | ToJson) "\n}"] | String.Join | AppendTo(enum-doc-string)
+
+    @env("GEN_EMBEDDINGS") | When(Is("true") {
+      [enum-doc-string] | DB.Query("insert into docs(shard_doc) values(?)")
+    })
+
+    "\n----\n" | AppendTo(enum-doc-string)
+    "enums_docs_merged.txt" | FS.Write(enum-doc-string Append: true)
+  }
+
   none
 })
 
@@ -654,6 +664,7 @@ create table docs(
 ; })
 
 "shards_docs_merged.txt" | FS.Remove
+"enums_docs_merged.txt" | FS.Remove
 
 ; process documentation in parallel
 ; Empty results indicate success, returning the shard name adds it to the skipped list
@@ -676,12 +687,12 @@ Shards.EnumTypes | TryMany(document-enum Threads: 4)
 @env("GEN_EMBEDDINGS") | When(Is("true") {
   ; finally generate embeddings
   """
--- Build a vector table with embeddings of article headlines, using OpenAI's API
+-- Build a vector table with embeddings of shard and enum documentation, using OpenAI's API
 create virtual table vec_docs using vec0(
-  shard_doc_embeddings float[1536] -- openai 1536, jina: 768
+  doc_embeddings float[1536] -- openai 1536, jina: 768
 );
 
-insert into vec_docs(rowid, shard_doc_embeddings)
+insert into vec_docs(rowid, doc_embeddings)
   select rowid, rembed('text-embedding-3-small', shard_doc)
   -- select rowid, rembed('jina-embeddings-v2-base-en', shard_doc)
   from docs;

@@ -6,13 +6,15 @@
     Height: 200
     Flags: [WindowFlags::NoResize]
     Contents: {
-    UI.CentralPanel({
-      UI.ScrollArea(
-     Horizontal: true
-     AlwaysShow: true
-     Contents:{
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." | UI.Label(Wrap: false)})
-    })
+      UI.CentralPanel({
+        UI.ScrollArea(
+          Horizontal: true
+          AlwaysShow: true
+          Contents: {
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." | UI.Label(Wrap: false)
+          }
+        )
+      })
     }
   )
 } Looped: true)
