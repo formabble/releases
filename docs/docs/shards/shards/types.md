@@ -24,7 +24,7 @@ Type **Any** indicates that all data types are allowed.
 
 For example, **Any** as the allowed data type for input and `Value:` parameter of shard [`All`](../General/All/) means that `All` accepts and compares across all data types.
 
-```clojure linenums="1"
+```shards linenums="1"
 [1]
 All(Value: [(Any)])
 ```
@@ -33,7 +33,7 @@ All(Value: [(Any)])
 
 === "Code"
 
-```clojure linenums="1"
+```shards linenums="1"
 [4 5 6] | All(Value: [4 5 6])
 Log   ;; value and type match => true
 
@@ -86,7 +86,7 @@ Consider the shard [`Is`](../General/Is/). This shard compares its input and the
 
 === "Code"
 
-```clojure linenums="1"
+```shards linenums="1"
 100 | Is(Value: (* 10 10))
 Log   ;; Is equal => true
 
@@ -128,7 +128,7 @@ The shard [`ToColor`](../General/ToColor/) converts its input into a **Color** t
 
 === "Code"
 
-```clojure linenums="1"
+```shards linenums="1"
 @color(0xFFFFFFFF)
 Log ;; Logs: (255 255 255 255)
 
@@ -162,7 +162,7 @@ The shard [`Math.Inc`](../Math/Inc/) accepts only **ContextVar** type numeric da
 
 === "Code"
 
-```clojure linenums="1"
+```shards linenums="1"
 11 >= intvar  ;; intvar is of type `ContextVar`
 Math.Inc(intvar)
 intvar | Log ;; => 12
@@ -192,7 +192,7 @@ For an overview of all enums and valid values check the [Enums](../../enums) pag
 
 For example, in [`Math.Mean`](../Math/Mean/) the value for `Kind:` parameter needs to be of type [**Mean**](../../enums/Mean/).
 
-```clojure linenums="1"
+```shards linenums="1"
 Math.Mean(Kind: Mean)
 ```
 
@@ -207,7 +207,7 @@ In simple terms it just means that you pass in one of the allowed named constant
 
 === "Code"
 
-```clojure linenums="1"
+```shards linenums="1"
 [2.0 10.0]
 Math.Mean(Kind: Mean::Arithmetic)
 Log ; ; AM => 6
@@ -251,7 +251,7 @@ A **Float** value looks like this: `2.53`.
 
 === "Code"
 
-```clojure linenums="1"
+```shards linenums="1"
 2.4 | Math.Add(1.43)
 Log   ;; float output => 3.83
 ```
@@ -278,7 +278,7 @@ A **Float2** type value looks like this: `@f2(3.4 -5.0)`.
 
 === "Code"
 
-```clojure linenums="1"
+```shards linenums="1"
 @f2(4.1 5.0) | Math.Add(@f2(6.3 9.2))
 Log  ;; float2 output => (10.4 14.2)
 ```
@@ -306,7 +306,7 @@ A **Float3** type value looks like this: `@f3(2.9 -4.23 7.83)`.
 
 === "Code"
 
-```clojure linenums="1"
+```shards linenums="1"
 @f3(1.2 3.4 5.6) | Math.Add(@f3(6.5 4.3 2.1))
 Log ;; float3 output => (7.7 7.7 7.7)
 ```
@@ -330,7 +330,7 @@ A **Float4** type value looks like this: `@f4(-8.84 38.2 4.7 0.4)`.
 
 === "Code"
 
-```clojure linenums="1"
+```shards linenums="1"
 @f4(3.1 6.4 9.2 4.6)
 Math.Add (@f4(6.8 3.5 0.9 5.3))
 Log   ;; Int4 output => (9.9, 9.9, 9.9, 9.9)
@@ -366,7 +366,7 @@ An **Int** value looks like this: `2`.
 
 === "Code"
 
-```clojure linenums="1"
+```shards linenums="1"
 3 | Math.Add(2)
 Log   ;; int output => 5
 ```
@@ -393,7 +393,7 @@ An **Int2** type value looks like this: `@i2(3 -5)`.
 
 === "Code"
 
-```clojure linenums="1"
+```shards linenums="1"
 @i2(4 5) | Math.Add(@i2(6 9))
 Log   ;; int2 output => (10, 14)
 ```
@@ -419,7 +419,7 @@ An **Int3** type value looks like this: `@i3(2 4 -4)`.
 
 === "Code"
 
-```clojure linenums="1"
+```shards linenums="1"
 @i3(1 10 99) | Math.Add( @i3(99 90 1))
 Log   ;; int3 output => (100, 100, 100)
 ```
@@ -443,7 +443,7 @@ An **Int4** type value looks like this: `@i4(1 -4 0 3)`.
 
 === "Code"
 
-```clojure linenums="1"
+```shards linenums="1"
 @i4(3 6 9 4)
 Math.Add(@i4(6 3 0 5))
 Log   ;; int4 output => (9 9 9 9)
@@ -477,7 +477,7 @@ Type **None** indicates that no data type is expected. This implies that no valu
 
 For example, **None** as one of the valid data types for `Max:` parameter in shard [`RandomInt`](../General/RandomInt/) means that setting a value for this parameter is not mandatory.
 
-```clojure linenums="1"
+```shards linenums="1"
 RandomInt(Max: none)
 Log ;; Will log a random int
 ```
@@ -486,7 +486,7 @@ Log ;; Will log a random int
 
 === "Code"
 
-```clojure linenums="1"
+```shards linenums="1"
 RandomInt(8)
 Log   ;; max int that can be generated is 7
 
@@ -544,7 +544,7 @@ The shard [`Take`](../General/Take/) works on this type. This shard can access *
 
 === "Code"
 
-```clojure linenums="1"
+```shards linenums="1"
 [7 2 54 42] | Take(2)
 Log   ;; print the 2nd element => 54
 ```
@@ -572,7 +572,7 @@ The shard [`ForEach`](../General/ForEach/) expects a value with the type **Shard
 
 When more that one shard is accepted it is indicated as a sequence of shards, any description can be turned into a sequence of shards by wrapping it with `{}`, for example:
 
-```clojure linenums="1"
+```shards linenums="1"
 [1 2 3 4 5]
 ForEach({ ;; ForEach will apply the following shards to each element of the sequence
 	Math.Add(1)
@@ -605,7 +605,7 @@ An example of a shard that processes **String** type data is [`String.ToUpper`](
 
 === "Code"
 
-```clojure linenums="1"
+```shards linenums="1"
 "Hello World!" | String.ToUpper
 Log   ;; upper case version => HELLO WORLD!
 
@@ -627,7 +627,7 @@ Its also known as map, data dictionary, or associative array. An example of a **
 
 === "Code"
 
-```clojure linenums="1"
+```shards linenums="1"
 {k1: 123} = tabvar ;;tabvar is now of type table
 tabvar | Take("k1")
 Log  ;; Logs: 123

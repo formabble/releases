@@ -20,11 +20,6 @@ license: CC-BY-SA-4.0
 
 Creates an immutable reference variable. Once created this variable cannot be changed.
 
-## Details
-
---8<-- "details/shards/General/Ref.md"
-
-
 ## Examples
 
 === "Code"

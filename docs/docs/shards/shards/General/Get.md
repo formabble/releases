@@ -20,11 +20,6 @@ license: CC-BY-SA-4.0
 
 Reads the value of the specified variable.
 
-## Details
-
---8<-- "details/shards/General/Get.md"
-
-
 ## Examples
 
 === "Code"

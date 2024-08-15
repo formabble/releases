@@ -19,11 +19,6 @@ license: CC-BY-SA-4.0
 
 Clears all elements from the sequence or table passed to it. Applicable only to sequences and tables. For sequences, this operation is very fast as Shards recycles memory extensively. If the variable does not exist or the type is not a sequence or table, it simply passes through without failing.
 
-## Details
-
---8<-- "details/shards/General/Clear.md"
-
-
 ## Examples
 
 === "Code"

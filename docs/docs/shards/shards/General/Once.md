@@ -18,11 +18,6 @@ license: CC-BY-SA-4.0
 
 Executes the shard or sequence of shards with the desired frequency in a wire flow execution.
 
-## Details
-
---8<-- "details/shards/General/Once.md"
-
-
 ## Examples
 
 === "Code"

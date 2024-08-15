@@ -17,10 +17,5 @@ license: CC-BY-SA-4.0
 
 Checks if the input is less than or equal to the operand.
 
-## Details
-
---8<-- "details/shards/General/IsLessEqual.md"
-
-
 --8<-- "includes/license.md"
 

@@ -3,4 +3,4 @@
 This is called asynchronous computation and is used to prevent resource intensive processing (like downloading a large file data from an http server) from holding up the execution of the rest of the program.
 
 !!! note
-    Await is best used for shards that will take a long time to complete theri tasks. Shards like `FS.Read` and `FS.Write` are good candidates to be wrapped in `Await`.
+    Await is best used for shards that will take a long time to complete their tasks. Shards like `FS.Read` and `FS.Write` are good candidates to be wrapped in `Await`.

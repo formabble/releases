@@ -19,11 +19,6 @@ license: CC-BY-SA-4.0
 
 This assertion is used to check whether the input is almost equal to a given value.
 
-## Details
-
---8<-- "details/shards/Assert/IsAlmost.md"
-
-
 ## Examples
 
 === "Code"

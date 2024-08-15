@@ -19,11 +19,6 @@ license: CC-BY-SA-4.0
 
 Outputs the count of characters (if the input is a string), elements (if the input is a sequence), or key-value pairs (if the input is a table). If the input type does not match any of these, it outputs 0.
 
-## Details
-
---8<-- "details/shards/General/Count.md"
-
-
 ## Examples
 
 === "Code"

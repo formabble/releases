@@ -19,11 +19,6 @@ license: CC-BY-SA-4.0
 
 Pops (removes and outputs) the last element of the sequence variable. Works only on sequences. If the variable is not a sequence or the sequence is empty, an error is thrown.
 
-## Details
-
---8<-- "details/shards/General/Pop.md"
-
-
 ## Examples
 
 === "Code"

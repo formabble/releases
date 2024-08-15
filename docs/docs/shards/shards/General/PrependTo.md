@@ -17,11 +17,6 @@ license: CC-BY-SA-4.0
 
 Prepends the input to the context variable passed to `Collection`.
 
-## Details
-
---8<-- "details/shards/General/PrependTo.md"
-
-
 ## Examples
 
 === "Code"

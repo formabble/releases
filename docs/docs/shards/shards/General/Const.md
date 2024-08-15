@@ -17,11 +17,6 @@ license: CC-BY-SA-4.0
 
 Declares an un-named constant value (of any data type).
 
-## Details
-
---8<-- "details/shards/General/Const.md"
-
-
 ## Examples
 
 === "Code"

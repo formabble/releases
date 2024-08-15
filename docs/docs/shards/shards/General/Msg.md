@@ -18,11 +18,6 @@ license: CC-BY-SA-4.0
 
 Displays the passed message string to the user via standard output. The input variable is ignored, and only the static message is displayed.
 
-## Details
-
---8<-- "details/shards/General/Msg.md"
-
-
 ## Examples
 
 === "Code"

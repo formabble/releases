@@ -18,11 +18,6 @@ license: CC-BY-SA-4.0
 
 Logs the output of a shard or the value of a variable to the console along with an optional prefix string. The logging level can be specified to control the verbosity of the log output.
 
-## Details
-
---8<-- "details/shards/General/Log.md"
-
-
 ## Examples
 
 === "Code"

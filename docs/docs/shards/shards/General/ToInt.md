@@ -16,11 +16,6 @@ license: CC-BY-SA-4.0
 
 Converts various input types to type Int.
 
-## Details
-
---8<-- "details/shards/General/ToInt.md"
-
-
 ## Examples
 
 === "Code"

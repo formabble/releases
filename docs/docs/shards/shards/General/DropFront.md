@@ -19,11 +19,6 @@ license: CC-BY-SA-4.0
 
 Drops the first element of the sequence variable. Works only on sequences. If the variable is not a sequence, it simply passes through without failing.
 
-## Details
-
---8<-- "details/shards/General/DropFront.md"
-
-
 ## Examples
 
 === "Code"

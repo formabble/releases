@@ -17,11 +17,6 @@ license: CC-BY-SA-4.0
 
 Applies the unary operation on the input value and returns the result. If the input is a sequence, the operation is applied to each element of the sequence.
 
-## Details
-
---8<-- "details/shards/Math/Dec.md"
-
-
 ## Examples
 
 === "Code"

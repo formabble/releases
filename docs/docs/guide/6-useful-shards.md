@@ -14,10 +14,10 @@ The first step of creating any game is to place your meticulously created pieces
   | Output | Int16 | Returns the formalized form’s UUID as an Int16 |
 
 <br>
-  
+
 **Example**
 
-``` clojure
+``` shards
 {Graphics: {"anIIEJZ5Z/direction": 1}}
 Fbl.Formalize("ndnkXDDGZkYOruIIEJZ5Z" Wait: true)
 = form-uuid
@@ -41,7 +41,7 @@ Like two sides of a coin, the ability to create also comes with the ability to d
 
 **Example**
 
-``` clojure
+``` shards
 form-uuid | Fbl.Deform
 ```
 
@@ -55,7 +55,7 @@ Naturally, just placing forms into a scene does not make a game. `fbl/pose` give
 
 **Example**
 
-``` clojure
+``` shards
 fbl/rotation | Math.Rotation >  rot-mat
 fbl/translation | Math.Translation > tsl-mat
 fbl/scale | Math.Scaling > scl-mat
@@ -87,7 +87,7 @@ Forms in Formabble are not isolated individuals that exist in a void. They can i
 
 **Example**
 
-``` clojure
+``` shards
 none
 Fbl.Fetch(Behavior: WirePoolType::UI Name: "aZmg4RodY/equipment-index")
 ExpectInt > equipment-index
@@ -100,7 +100,7 @@ In this example, we are fetching the variable equipment-index from the form *aZm
 
     **Example**
 
-    ```clojure
+    ```shards
     @wire(main-graphics-wire {
       Once({
         10 >= translation
@@ -139,8 +139,8 @@ On the flipside, `Fbl.Dispatch` can be used to send variables from a behavior in
 
 **Example**
 
-``` clojure
-direction | 
+``` shards
+direction |
 Fbl.Dispatch (Form: form-uuid Behavior: WirePoolType::Graphics Name:"anIIEJZ5Z/direction")
 ```
 
@@ -151,7 +151,7 @@ Here, we are dispatching the variable direction to the form with a Form UUID sto
 
     **Example**
 
-    ```clojure
+    ```shards
     @wire(main-graphics-wire {
       Once({
         10 >= translation

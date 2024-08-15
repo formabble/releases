@@ -4,7 +4,7 @@ Shards syntax directly maps a visual model enabling efficient round-trip code ge
 Shards powers an upcoming AI-powered game creation system where communities can play and collaborate in real time. While Shards is often not explicitly seen there, it is the language behind the AI-assisted visual interactions that will allow users to create games and experiences in a low to no-code environment.
 In Shards, every primitive is a shard, flowing from shard to shard, to build a computational graph that represents a visual model. Example:
 
-```clojure
+```shards
 [[1 2 3] [2 3 4] [3 4 5]] | Reduce(Math.Add($0)) | Assert.Is([6 9 12]) | Log
 ;=> [6 9 12]
 ```

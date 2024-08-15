@@ -17,11 +17,6 @@ license: CC-BY-SA-4.0
 
 Checks if the input is not equal to the operand.
 
-## Details
-
---8<-- "details/shards/General/IsNot.md"
-
-
 ## Examples
 
 === "Code"

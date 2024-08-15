@@ -18,11 +18,6 @@ license: CC-BY-SA-4.0
 
 Swaps the values of the two variables passed to it via `First` and `Second` parameters.
 
-## Details
-
---8<-- "details/shards/General/Swap.md"
-
-
 ## Examples
 
 === "Code"

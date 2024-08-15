@@ -17,11 +17,6 @@ license: CC-BY-SA-4.0
 
 Checks if the input is greater than the operand.
 
-## Details
-
---8<-- "details/shards/General/IsMore.md"
-
-
 ## Examples
 
 === "Code"

@@ -310,12 +310,15 @@ create table docs(
   shard-doc:help | If({IsNotNone} {ExpectString} {"ToDo"}) >> o
   "\r\n\r\n" >> o
 
-  When({shard-doc:name | @get-filename(@shards-details-path ".md" true) | FS.IsFile} {
+  "" >= shard-details
+  shard-doc:name | @get-filename(@shards-details-path ".md" true) = details-file-name
+  When({details-file-name | FS.IsFile} {
     "## Details\r\n\r\n" >> o
     "--8<-- \"" >> o
-    shard-doc:name | @get-filename(@shards-details-path ".md" true) >> o
+    shard-doc:name | details-file-name >> o
     "\"\r\n" >> o
     "\r\n\r\n" >> o
+    details-file-name | FS.Read > shard-details
   })
 
   When({shard-doc:name | @get-filename(@shards-sample-path "" true) | FS.IsDirectory} {
@@ -380,8 +383,15 @@ create table docs(
 
     shard-doc | ToJson >= shard-doc-string
 
-    "\nParams: " | AppendTo(shard-doc-string)
-    parameters-seq-edited | ToJson | AppendTo(shard-doc-string)
+    Count(parameters-seq-edited) | When(IsMore(0) {
+      "\nParams: " | AppendTo(shard-doc-string)
+      parameters-seq-edited | ToJson | AppendTo(shard-doc-string)
+    })
+
+    shard-details | When(IsNot("") {
+      "\nDetails:\n" | AppendTo(shard-doc-string)
+      shard-details | AppendTo(shard-doc-string)
+    })
 
     @env("GEN_EMBEDDINGS") | When(Is("true") {
       [shard-doc-string] | DB.Query("insert into docs(shard_doc) values(?)")
