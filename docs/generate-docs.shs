@@ -382,6 +382,7 @@ create table docs(
     }) = parameters-seq-edited
 
     shard-doc | ToJson >= shard-doc-string
+    "Shard: " | PrependTo(shard-doc-string)
 
     Count(parameters-seq-edited) | When(IsMore(0) {
       "\nParams: " | AppendTo(shard-doc-string)
@@ -591,6 +592,10 @@ create table docs(
   ""
 })
 
+@notion-api-key | When(IsNot("") {
+  @notion-db-id | Log("Populating notion database")
+})
+
 @wire(document-enum {
   = enum-id
   enum-id | Shards.EnumTypeHelp = enum-help
@@ -607,13 +612,15 @@ create table docs(
   "\r\n\r\n" >> o
 
   "# " >> o
-  enum-help:name | ExpectString = name
+  enum-help:name | ExpectString = name | Set(enum-doc "name")
   name >> o
   "\r\n\r\n" >> o
 
   "<div class=\"sh-parameters\" markdown=\"1\">\r\n" >> o
   "| Value  | Description |\r\n" >> o
   "|------|---------------------|\r\n" >> o
+
+  ; Sequence(enum-doc "values")
 
   0 >= idx
   Repeat({
@@ -624,6 +631,12 @@ create table docs(
     "` | " >> o
     description >> o
     " |\r\n" >> o
+
+    {
+      label: label
+      description: description
+    } | Push(enum-doc "values" Clear: false)
+
     Inc(idx)
   } Times: count)
 
@@ -636,19 +649,15 @@ create table docs(
   name | @get-filename(@enums-path ".md" false) = file
   file | FS.Write(content Overwrite: true)
 
-  {
-    // Create a JSON-like string with all enum data
-    ["{\n  \"name\": \"" name "\",\n"] | String.Join >= enum-doc-string
-    ["  \"labels\": " (labels | ToJson) ",\n"] | String.Join | AppendTo(enum-doc-string)
-    ["  \"descriptions\": " (descriptions | ToJson) "\n}"] | String.Join | AppendTo(enum-doc-string)
+  enum-doc | ToJson >= enum-doc-string
+  "Enum: " | PrependTo(enum-doc-string)
 
-    @env("GEN_EMBEDDINGS") | When(Is("true") {
-      [enum-doc-string] | DB.Query("insert into docs(shard_doc) values(?)")
-    })
+  @env("GEN_EMBEDDINGS") | When(Is("true") {
+    [enum-doc-string] | DB.Query("insert into docs(shard_doc) values(?)")
+  })
 
-    "\n----\n" | AppendTo(enum-doc-string)
-    "enums_docs_merged.txt" | FS.Write(enum-doc-string Append: true)
-  }
+  "\n----\n" | AppendTo(enum-doc-string)
+  "enums_docs_merged.txt" | FS.Write(enum-doc-string Append: true)
 
   none
 })
@@ -687,12 +696,12 @@ Shards.EnumTypes | TryMany(document-enum Threads: 4)
 @env("GEN_EMBEDDINGS") | When(Is("true") {
   ; finally generate embeddings
   """
--- Build a vector table with embeddings of shard and enum documentation, using OpenAI's API
+-- Build a vector table with embeddings of article headlines, using OpenAI's API
 create virtual table vec_docs using vec0(
-  doc_embeddings float[1536] -- openai 1536, jina: 768
+  shard_doc_embeddings float[1536] -- openai 1536, jina: 768
 );
 
-insert into vec_docs(rowid, doc_embeddings)
+insert into vec_docs(rowid, shard_doc_embeddings)
   select rowid, rembed('text-embedding-3-small', shard_doc)
   -- select rowid, rembed('jina-embeddings-v2-base-en', shard_doc)
   from docs;
