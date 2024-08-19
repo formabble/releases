@@ -9,17 +9,17 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`Audio`](../../types/#audio) |
-| `Output ➡️` ||The resulting output of the shard | | [`Audio`](../../types/#audio) |
+| `⬅️ Input` ||Accepts audio data as an Audio chunk, containing the sample rate, number of samples, number of channels, and the audio samples. | | [`Audio`](../../types/#audio) |
+| `Output ➡️` ||Outputs the same audio data as the input, allowing for further processing in the audio chain. | | [`Audio`](../../types/#audio) |
 | `File` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The audio file to read from (wav,ogg,mp3,flac). | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar) |
-| `Channels` | :fontawesome-solid-circle-plus:{title="No"} No  | The number of desired output audio channels. | `2` | [`Int`](../../types/#int) |
-| `SampleRate` | :fontawesome-solid-circle-plus:{title="No"} No  | The desired output sampling rate. | `44100` | [`Int`](../../types/#int) |
+| `Channels` | :fontawesome-solid-circle-plus:{title="No"} No  | An int representing the number of desired output audio channels. | `2` | [`Int`](../../types/#int) |
+| `SampleRate` | :fontawesome-solid-circle-plus:{title="No"} No  | An int representing the desired number of samples in the output. | `44100` | [`Int`](../../types/#int) |
 
 </div>
 
 --8<-- "includes/experimental.md"
 
-
+This shard writes audio data to WAV format file.
 
 --8<-- "includes/license.md"
 

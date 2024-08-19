@@ -9,12 +9,12 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||Any valid integer(s), floating point number(s), or a sequence of these types supported by this operation. | | [`[Float4]`](../../types/#seq) |
-| `Output ➡️` ||The result of the operation, usually in the same type as the input value. If the input is a sequence, the output will be a sequence of results, with possible broadcasting according to the input and operand. | | [`[Float4]`](../../types/#seq) |
+| `⬅️ Input` ||Takes a 4x4 matrix (a sequence of four float4 vectors) as input. | | [`[Float4]`](../../types/#seq) |
+| `Output ➡️` ||Returns the inverse of the input 4x4 matrix. | | [`[Float4]`](../../types/#seq) |
 
 </div>
 
-
+This shard takes a 4x4 matrices as input and computes its inverse. A 4x4 matrix is a sequence with exactly 4 float4 vectors while a float4 vector is a vector with 4 float elements.
 
 --8<-- "includes/license.md"
 

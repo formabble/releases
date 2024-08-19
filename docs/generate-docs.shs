@@ -181,7 +181,7 @@ create table docs(
 
     done-seq | ForEach({
       When(Predicate: {Is(shard-name)} Action: {
-        true >= is-it-done
+        true > is-it-done
       })
     })
   }
@@ -321,9 +321,10 @@ create table docs(
     details-file-name | FS.Read > shard-details
   })
 
-  When({shard-doc:name | @get-filename(@shards-sample-path "" true) | FS.IsDirectory} {
+  shard-doc:name | @get-filename(@shards-sample-path "" true) = samples-dir
+  When({samples-dir | FS.IsDirectory} {
     "## Examples\r\n\r\n" >> o
-    shard-doc:name | @get-filename(@shards-sample-path "" true) | FS.Iterate | ForEach({
+    samples-dir | FS.Iterate | ForEach({
       When({FS.Extension | Is(".shs")} {
         FS.Filename(NoExtension: true) = sample-filename
         [shard-doc:name "/" sample-filename ".shs"] | String.Join = sample-script-fname
@@ -700,12 +701,22 @@ Shards.EnumTypes | TryMany(document-enum Threads: 4)
 create virtual table vec_docs using vec0(
   shard_doc_embeddings float[1536] -- openai 1536, jina: 768
 );
+""" | Maybe(DB.RawQuery)
 
-insert into vec_docs(rowid, shard_doc_embeddings)
+  false >= done
+  Repeat({
+    Maybe({
+      """
+insert or ignore into vec_docs(rowid, shard_doc_embeddings)
   select rowid, rembed('text-embedding-3-small', shard_doc)
   -- select rowid, rembed('jina-embeddings-v2-base-en', shard_doc)
   from docs;
-""" | Maybe(DB.RawQuery)
+""" | DB.RawQuery
+
+      Msg("Generated embeddings")
+      true > done
+    })
+  } Until: {done})
 })
 
 Pause(2.0)

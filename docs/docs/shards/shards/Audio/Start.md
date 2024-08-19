@@ -9,13 +9,13 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`Object`](../../types/#object) |
-| `Output ➡️` ||The resulting output of the shard | | [`Object`](../../types/#object) |
-| `Looped` | :fontawesome-solid-circle-plus:{title="No"} No  | If the sound should be played in loop or should stop the wire when it ends. | `false` | [`Bool`](../../types/#bool) |
+| `⬅️ Input` ||Accepts a Sound object created by the Audio.Sound shard. | | [`Object`](../../types/#object) |
+| `Output ➡️` ||Returns the same Sound object that was input, allowing for further manipulation. | | [`Object`](../../types/#object) |
+| `Looped` | :fontawesome-solid-circle-plus:{title="No"} No  | If the sound should be played in loop or should stop the wire when it ends and play only once. | `false` | [`Bool`](../../types/#bool) |
 
 </div>
 
-
+The Audio.Start shard begins playback of a sound object in the mesh. It takes a Sound object created by Audio.Sound and starts playing it and also allows control over whether the sound should loop or play once. It's typically used in conjunction with Audio.Engine, Audio.Sound, Audio.Pause, and Audio.Stop to manage audio playback.
 
 --8<-- "includes/license.md"
 

@@ -9,13 +9,13 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`Float`](../../types/#float) |
-| `Output ➡️` ||The resulting output of the shard | | [`Float`](../../types/#float) |
-| `Sound` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The sound to set the volume. | `None` | [`Object`](../../types/#object) |
+| `⬅️ Input` ||A float value representing the new volume level. 0.0 is silence, 1.0 is full volume, and values above 1.0 can be used for amplification. | | [`Float`](../../types/#float) |
+| `Output ➡️` ||Outputs the input value, passed through unchanged. | | [`Float`](../../types/#float) |
+| `Sound` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The sound object to manipulate | `None` | [`Object`](../../types/#object)[`&Object`](../../types/#contextvar) |
 
 </div>
 
-
+The Audio.Volume shard adjusts the volume of a sound object in the mesh, thus allowing for the dynamic control over the volume of individual sound objects during playback. It takes the Sound object, created by Audio.Sound specified in the Sound parameter, and sets the volume to the float value provided as input. It's typically used in conjunction with Audio.Engine, Audio.Sound, Audio.Start, and other audio shards to manage audio playback and control.
 
 --8<-- "includes/license.md"
 
