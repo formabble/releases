@@ -15,6 +15,9 @@
     (String.Starts(With: "Reflect."))
     (String.Starts(With: "DB.")) ; File access
     (String.Starts(With: "Shards.")) ; Sandbox escape and internal
+    (String.Starts(With: "SchemeHandler.")) ; unused/unsafe
+    (String.Starts(With: "CRDT.")) ; experimental, will change
+    (String.Starts(With: "IPC.")) ; unused/unsafe
     (Is("ReadFile"))
     (Is("WriteFile"))
     (Is("WritePNG"))
