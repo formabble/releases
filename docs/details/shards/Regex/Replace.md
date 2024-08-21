@@ -1,0 +1,1 @@
+- If the input string contains no occurences of the regex, the input is returned unchanged.
