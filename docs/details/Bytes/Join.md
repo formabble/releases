@@ -1,0 +1,1 @@
+- This shard is also able to accpet a sequence that contains a mixture of strings and bytes.
