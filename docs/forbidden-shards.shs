@@ -1,0 +1,48 @@
+@define(is-forbidden-shards {
+  [
+    (String.Starts(With: "_"))
+    (String.Starts(With: "Desktop."))
+    (String.Starts(With: "FS."))
+    (String.Starts(With: "Debug."))
+    (String.Starts(With: "Process."))
+    (String.Starts(With: "Tracy."))
+    (String.Starts(With: "Wasm."))
+    (String.Starts(With: "Substrate."))
+    (String.Starts(With: "Eth."))
+    (String.Starts(With: "Desktop."))
+    (String.Starts(With: "Events."))
+    (String.Starts(With: "_Emscripten."))
+    (String.Starts(With: "Reflect."))
+    (String.Starts(With: "DB.")) ; File access
+    (String.Starts(With: "Shards.")) ; Sandbox escape and internal
+    (Is("ReadFile"))
+    (Is("WriteFile"))
+    (Is("WritePNG"))
+    (Is("SleepBlocking"))
+    (Is("PtrToString"))
+    (Is("BytesBuffer"))
+    (Is("VarPtr"))
+    (Is("VarAddr"))
+    (Is("Pack"))
+    (Is("Unpack"))
+    ; Channels
+    (Is("Produce"))
+    (Is("Broadcast"))
+    (Is("Consume"))
+    (Is("Listen"))
+    (Is("Complete"))
+    (Is("Flush"))
+    ; Audio
+    (Is("Audio.Device"))
+    (Is("Audio.Engine"))
+    ; GFX
+    (Is("GFX.MainWindow"))
+    (Is("GFX.Renderer"))
+    ; Input
+    (Is("Inputs.Detached"))
+    ; Unsafe stuff
+    (Is("UnsafeActivate!"))
+    (Is("SleepBlocking!"))
+    (Is("Exit"))
+    (Is("DShard"))] | IsAny(true)
+})

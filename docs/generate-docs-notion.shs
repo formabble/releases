@@ -1,3 +1,5 @@
+@include("forbidden-shards.shs" Once: true)
+
 @define(shards-path "docs/shards/shards/")
 @define(enums-path "docs/shards/enums/")
 @define(shards-details-path "details/shards/")
@@ -83,99 +85,52 @@
 })
 
 @wire(document-shard {
-  ; remove forbidden/internal shards
-  = shard-name
-  {[
-      (String.Starts(With: "_"))
-      (String.Starts(With: "Desktop."))
-      (String.Starts(With: "FS."))
-      (String.Starts(With: "Debug."))
-      (String.Starts(With: "Process."))
-      (String.Starts(With: "Tracy."))
-      (String.Starts(With: "Wasm."))
-      (String.Starts(With: "Substrate."))
-      (String.Starts(With: "Eth."))
-      (String.Starts(With: "Desktop."))
-      (String.Starts(With: "Events."))
-      (String.Starts(With: "_Emscripten."))
-      (String.Starts(With: "Reflect."))
-      (String.Starts(With: "DB.")) ; File access
-      (String.Starts(With: "Shards.")) ; Sandbox escape and internal
-      (Is("ReadFile"))
-      (Is("WriteFile"))
-      (Is("WritePNG"))
-      (Is("SleepBlocking"))
-      (Is("PtrToString"))
-      (Is("BytesBuffer"))
-      (Is("VarPtr"))
-      (Is("VarAddr"))
-      (Is("Pack"))
-      (Is("Unpack"))
-      ; Channels
-      (Is("Produce"))
-      (Is("Broadcast"))
-      (Is("Consume"))
-      (Is("Listen"))
-      (Is("Complete"))
-      ; Audio
-      (Is("Audio.Device"))
-      ; GFX
-      (Is("GFX.MainWindow"))
-      (Is("GFX.Renderer"))
-      ; Input
-      (Is("Inputs.Detached"))
-      ; Unsafe stuff
-      (Is("UnsafeActivate!"))
-      (Is("SleepBlocking!"))
-      (Is("Exit"))
-      (Is("DShard"))]
-    When(IsAny(true) {
-      shard-name | Stop
-    })
-  }
+  = shard-name | When(@is-forbidden-shards {
+    shard-name | Stop
+  })
 
   {
     [
-      "ToInt", "ToInt2", "ToInt3", "ToInt4", "ToInt8", "ToInt16", "ToColor", "ToFloat", "ToFloat2", "ToFloat3", "ToFloat4",
-      "MakeInt2", "MakeInt3", "MakeInt4", "MakeInt8", "MakeInt16", "MakeColor", "MakeFloat2", "MakeFloat3", "MakeFloat4",
-      "ToString", "ToHex", "VarAddr", "BitSwap32", "BitSwap64",
-      "Expect", "ExpectNone", "ExpectInt", "ExpectInt2", "ExpectInt3", "ExpectInt4", "ExpectInt8", "ExpectInt16", "ExpectFloat",
-      "ExpectFloat2", "ExpectFloat3", "ExpectFloat4", "ExpectBytes", "ExpectString", "ExpectImage", "ExpectBool", "ExpectColor",
-      "ExpectWire", "ExpectTable", "ExpectAudio", "ExpectSeq", "ExpectFloatSeq", "ExpectFloat2Seq", "ExpectFloat3Seq",
-      "ExpectFloat4Seq", "ExpectIntSeq", "ExpectInt2Seq", "ExpectInt3Seq", "ExpectInt4Seq", "ExpectInt8Seq", "ExpectInt16Seq",
-      "ExpectBytesSeq", "ExpectStringSeq", "ExpectImageSeq", "ExpectBoolSeq", "ExpectColorSeq", "ExpectWireSeq", "ExpectAudioSeq",
-      "ExpectLike", "TypeOf", "IsInt", "IsInt2", "IsInt3", "IsInt4", "IsInt8", "IsInt16", "IsFloat", "IsFloat2", "IsFloat3",
-      "IsFloat4", "IsBytes", "IsString", "IsImage", "IsBool", "IsColor", "IsSeq", "IsWire", "IsTable", "IsAudio",
-      "ImageToFloats", "FloatsToImage", "BytesToInts", "BytesToString", "IntsToBytes", "StringToBytes", "ImageToBytes",
-      "ToBase64", "FromBase64", "HexToBytes", "VarPtr",
-      "SwitchTo", "Wait", "Stop", "Do", "Detach", "Step", "WireLoader", "WireRunner", "Recur", "TryMany", "Spawn", "Expand",
-      "Branch", "StepMany", "DoMany", "Peek", "IsRunning", "Suspend", "Resume", "WhenDone",
-      "Fbl.FormId", "Fbl.Formalize", "Fbl.WithTrait", "Fbl.Deform", "Fbl.Dispatch", "Fbl.Fetch", "Fbl.Dupe", "Fbl.Find",
-      "Fbl.HasTags", "Fbl.WithTag", "Fbl.WithTags", "Fbl.WaitMatch", "Fbl.ExitMatch", "Fbl.NextFrame", "Fbl.Username",
-      "Fbl.Slot", "Fbl.RunMode", "Fbl.Users",
-      "Inputs.Size", "Inputs.PixelSize", "Inputs.MousePixelPos", "Inputs.MousePos", "Inputs.MouseDelta", "Inputs.Mouse",
-      "Inputs.IsKeyDown", "Inputs.HandleURL", "Inputs.MouseDown", "Inputs.MouseUp", "Inputs.KeyDown", "Inputs.KeyUp",
-      "Inputs.MatchModifier", "Is", "IsNot", "IsMore", "IsLess", "IsMoreEqual", "IsLessEqual", "IsAny", "IsAll",
-      "IsAnyNot", "IsAllNot", "IsAnyMore", "IsAllMore", "IsAnyLess", "IsAllLess", "IsAnyMoreEqual", "IsAllMoreEqual",
-      "IsAnyLessEqual", "IsAllLessEqual",
-      "Audio.Device", "Audio.Channel", "Audio.Oscillator", "Audio.ReadFile", "Audio.WriteFile",
-      "Audio.Engine", "Audio.Sound", "Audio.Start", "Audio.Pause", "Audio.Stop", "Audio.Volume",
-      "Audio.Pan", "Audio.Pitch", "Audio.Position", "Audio.Direction", "Audio.Cones", "Audio.Velocity",
-      "BigInt", "BigInt.Add", "BigInt.Subtract", "BigInt.Multiply", "BigInt.Divide", "BigInt.Xor", "BigInt.And",
-      "BigInt.Or", "BigInt.Mod", "BigInt.Shift", "BigInt.ToFloat", "BigInt.ToInt", "BigInt.FromFloat", "BigInt.ToString",
-      "BigInt.ToBytes", "BigInt.ToHex", "BigInt.Is", "BigInt.IsNot", "BigInt.IsMore", "BigInt.IsLess", "BigInt.IsMoreEqual",
-      "BigInt.IsLessEqual", "BigInt.Min", "BigInt.Max", "BigInt.Pow", "BigInt.Abs", "BigInt.Sqrt"
+      "ToInt" "ToInt2" "ToInt3" "ToInt4" "ToInt8" "ToInt16" "ToColor" "ToFloat" "ToFloat2" "ToFloat3" "ToFloat4"
+      "MakeInt2" "MakeInt3" "MakeInt4" "MakeInt8" "MakeInt16" "MakeColor" "MakeFloat2" "MakeFloat3" "MakeFloat4"
+      "ToString" "ToHex" "VarAddr" "BitSwap32" "BitSwap64"
+      "Expect" "ExpectNone" "ExpectInt" "ExpectInt2" "ExpectInt3" "ExpectInt4" "ExpectInt8" "ExpectInt16" "ExpectFloat"
+      "ExpectFloat2" "ExpectFloat3" "ExpectFloat4" "ExpectBytes" "ExpectString" "ExpectImage" "ExpectBool" "ExpectColor"
+      "ExpectWire" "ExpectTable" "ExpectAudio" "ExpectSeq" "ExpectFloatSeq" "ExpectFloat2Seq" "ExpectFloat3Seq"
+      "ExpectFloat4Seq" "ExpectIntSeq" "ExpectInt2Seq" "ExpectInt3Seq" "ExpectInt4Seq" "ExpectInt8Seq" "ExpectInt16Seq"
+      "ExpectBytesSeq" "ExpectStringSeq" "ExpectImageSeq" "ExpectBoolSeq" "ExpectColorSeq" "ExpectWireSeq" "ExpectAudioSeq"
+      "ExpectLike" "TypeOf" "IsInt" "IsInt2" "IsInt3" "IsInt4" "IsInt8" "IsInt16" "IsFloat" "IsFloat2" "IsFloat3"
+      "IsFloat4" "IsBytes" "IsString" "IsImage" "IsBool" "IsColor" "IsSeq" "IsWire" "IsTable" "IsAudio"
+      "ImageToFloats" "FloatsToImage" "BytesToInts" "BytesToString" "IntsToBytes" "StringToBytes" "ImageToBytes"
+      "ToBase64" "FromBase64" "HexToBytes" "VarPtr"
+      "SwitchTo" "Wait" "Stop" "Do" "Detach" "Step" "WireLoader" "WireRunner" "Recur" "TryMany" "Spawn" "Expand"
+      "Branch" "StepMany" "DoMany" "Peek" "IsRunning" "Suspend" "Resume" "WhenDone"
+      "Fbl.FormId" "Fbl.Formalize" "Fbl.WithTrait" "Fbl.Deform" "Fbl.Dispatch" "Fbl.Fetch" "Fbl.Dupe" "Fbl.Find"
+      "Fbl.HasTags" "Fbl.WithTag" "Fbl.WithTags" "Fbl.WaitMatch" "Fbl.ExitMatch" "Fbl.NextFrame" "Fbl.Username"
+      "Fbl.Slot" "Fbl.RunMode" "Fbl.Users"
+      "Inputs.Size" "Inputs.PixelSize" "Inputs.MousePixelPos" "Inputs.MousePos" "Inputs.MouseDelta" "Inputs.Mouse"
+      "Inputs.IsKeyDown" "Inputs.HandleURL" "Inputs.MouseDown" "Inputs.MouseUp" "Inputs.KeyDown" "Inputs.KeyUp"
+      "Inputs.MatchModifier" "Is" "IsNot" "IsMore" "IsLess" "IsMoreEqual" "IsLessEqual" "IsAny" "IsAll"
+      "IsAnyNot" "IsAllNot" "IsAnyMore" "IsAllMore" "IsAnyLess" "IsAllLess" "IsAnyMoreEqual" "IsAllMoreEqual"
+      "IsAnyLessEqual" "IsAllLessEqual"
+      "Audio.Device" "Audio.Channel" "Audio.Oscillator" "Audio.ReadFile" "Audio.WriteFile"
+      "Audio.Engine" "Audio.Sound" "Audio.Start" "Audio.Pause" "Audio.Stop" "Audio.Volume"
+      "Audio.Pan" "Audio.Pitch" "Audio.Position" "Audio.Direction" "Audio.Cones" "Audio.Velocity"
+      "BigInt" "BigInt.Add" "BigInt.Subtract" "BigInt.Multiply" "BigInt.Divide" "BigInt.Xor" "BigInt.And"
+      "BigInt.Or" "BigInt.Mod" "BigInt.Shift" "BigInt.ToFloat" "BigInt.ToInt" "BigInt.FromFloat" "BigInt.ToString"
+      "BigInt.ToBytes" "BigInt.ToHex" "BigInt.Is" "BigInt.IsNot" "BigInt.IsMore" "BigInt.IsLess" "BigInt.IsMoreEqual"
+      "BigInt.IsLessEqual" "BigInt.Min" "BigInt.Max" "BigInt.Pow" "BigInt.Abs" "BigInt.Sqrt"
     ] = done-seq
   }
 
   {
     false >= is-it-done
-    
+
     done-seq | ForEach({
-    When(Predicate:{Is(shard-name)} Action:{
-      true >= is-it-done
+      When(Predicate: {Is(shard-name)} Action: {
+        true >= is-it-done
+      })
     })
-  })
   }
 
   Set(shard-doc "name")
