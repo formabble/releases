@@ -16,5 +16,10 @@ license: CC-BY-SA-4.0
 
 
 
+## Details
+
+--8<-- "details/shards/Time/EpochMs.md"
+
+
 --8<-- "includes/license.md"
 

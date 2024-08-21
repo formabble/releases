@@ -17,5 +17,10 @@ license: CC-BY-SA-4.0
 
 This shard searches the input string for the regex pattern specified in the Regex parameter and outputs a sequence of strings, containing every occurrence of the pattern. An empty sequence is returned if there are no matches
 
+## Details
+
+--8<-- "details/shards/Regex/Search.md"
+
+
 --8<-- "includes/license.md"
 

@@ -17,6 +17,11 @@ license: CC-BY-SA-4.0
 
 Schedules the specified Wire and runs it asynchronously. The current Wire will continue its execution independently of the specified Wire. Unlike Detach, a copy of the specified Wire is scheduled every time the shard is called.
 
+## Details
+
+--8<-- "details/shards/General/Spawn.md"
+
+
 ## Examples
 
 === "Code"

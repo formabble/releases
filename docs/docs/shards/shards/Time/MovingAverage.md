@@ -17,5 +17,10 @@ license: CC-BY-SA-4.0
 
 Computes a moving average of a single floating point number.
 
+## Details
+
+--8<-- "details/shards/Time/MovingAverage.md"
+
+
 --8<-- "includes/license.md"
 

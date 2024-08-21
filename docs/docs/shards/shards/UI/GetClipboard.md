@@ -16,5 +16,10 @@ license: CC-BY-SA-4.0
 
 Retrieves the current system clipboard contents.
 
+## Details
+
+--8<-- "details/shards/UI/GetClipboard.md"
+
+
 --8<-- "includes/license.md"
 

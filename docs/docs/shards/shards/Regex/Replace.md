@@ -18,5 +18,10 @@ license: CC-BY-SA-4.0
 
 This shard modifies the input string by replacing all occurrences of the regex pattern, specified in the Regex parameter, with the replacement string specified in the Replacement parameter.
 
+## Details
+
+--8<-- "details/shards/Regex/Replace.md"
+
+
 --8<-- "includes/license.md"
 

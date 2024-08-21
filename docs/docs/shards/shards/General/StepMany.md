@@ -17,5 +17,10 @@ license: CC-BY-SA-4.0
 
 This shard takes a sequence of values as input, schedules multiple copies of the specified Wire and progresses their states concurrently. This means that a pause in any copy of the specified Wire, will not pause the parent Wire's execution. Each value from the sequence is provided as input to its corresponding copy of the specified Wire. The shard then returns a sequence of values containing the output of all scheduled copies.
 
+## Details
+
+--8<-- "details/shards/General/StepMany.md"
+
+
 --8<-- "includes/license.md"
 

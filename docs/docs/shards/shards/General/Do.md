@@ -17,6 +17,11 @@ license: CC-BY-SA-4.0
 
 Schedules and executes the specified Wire inline of the current Wire. The specified Wire needs to complete its execution before the current Wire continues its execution. This means that a pause in execution of the child Wire will also pause the parent Wire.
 
+## Details
+
+--8<-- "details/shards/General/Do.md"
+
+
 ## Examples
 
 === "Code"

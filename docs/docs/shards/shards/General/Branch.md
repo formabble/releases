@@ -20,6 +20,11 @@ license: CC-BY-SA-4.0
 
 Creates a branch from the specified Behavior and schedules all the Wires specified. Every time this shard is called, it will progress the state of all the Wires specified asynchronously and continue execution of the current Wire. This shard is like a mass Step, where it Steps all the Wires specified.
 
+## Details
+
+--8<-- "details/shards/General/Branch.md"
+
+
 ## Examples
 
 === "Code"

@@ -20,6 +20,11 @@ license: CC-BY-SA-4.0
 
 Schedules (n) number of copies of the specified Wire, where (n) is the number specified in the Size parameter. The parent Wire will wait until all the scheduled copies have ended and will either return a sequence of values outputs of all the copied Wires or the output of the first Wire that succeeds. Once done, it will continue with its own execution.
 
+## Details
+
+--8<-- "details/shards/General/Expand.md"
+
+
 ## Examples
 
 === "Code"

@@ -17,5 +17,10 @@ license: CC-BY-SA-4.0
 
 This shard matches the entire input string against the regex pattern specified in the Regex parameter and outputs a sequence of strings, containing the fully matched string and any capture groups. It will return an empty sequence if there are no matches.
 
+## Details
+
+--8<-- "details/shards/Regex/Match.md"
+
+
 --8<-- "includes/license.md"
 

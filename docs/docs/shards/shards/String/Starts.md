@@ -17,5 +17,10 @@ license: CC-BY-SA-4.0
 
 This shard checks if the input string starts with the string specified in the With parameter. If the input string does contain the string specified, the shard will output true. Otherwise, it will output false.
 
+## Details
+
+--8<-- "details/shards/String/Starts.md"
+
+
 --8<-- "includes/license.md"
 

@@ -650,6 +650,10 @@ Shards.EnumTypes | TryMany(document-enum Threads: 4)
 
 
 @env("GEN_EMBEDDINGS") | When(Is("true") {
+  ; add some extra documents
+  "docs/guide/8-shards-architecture.md" | FS.Read = shards-architecture
+  [shards-architecture] | DB.Query("insert into docs(shard_doc) values(?)")
+
   ; finally generate embeddings
   """
 -- Build a vector table with embeddings of article headlines, using OpenAI's API

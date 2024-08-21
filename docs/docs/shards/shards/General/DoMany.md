@@ -18,5 +18,10 @@ license: CC-BY-SA-4.0
 
 This shard takes a sequence of values as input, schedules multiple copies of a specified Wire and executes them sequentially. Each value from the sequence is provided as input to its corresponding copy of the specified Wire. The shard then returns a sequence of values containing the output of all copies of the specified Wire.
 
+## Details
+
+--8<-- "details/shards/General/DoMany.md"
+
+
 --8<-- "includes/license.md"
 

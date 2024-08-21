@@ -17,6 +17,11 @@ license: CC-BY-SA-4.0
 
 Converts the string representation of a number to its signed integer equivalent.
 
+## Details
+
+--8<-- "details/shards/General/ParseInt.md"
+
+
 ## Examples
 
 === "Code"

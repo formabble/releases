@@ -17,6 +17,11 @@ license: CC-BY-SA-4.0
 
 The first time Step is called, the specified wire is scheduled. On subsequent calls, the specified Wire's state is progressed before the current Wire continues its execution. This means that a pause in execution of the child Wire will not pause the parent Wire.(Note that the output of the of the specified Wire might change as their state progresses and thus the Type of the output of this shard should always be checked or converted).
 
+## Details
+
+--8<-- "details/shards/General/Step.md"
+
+
 ## Examples
 
 === "Code"

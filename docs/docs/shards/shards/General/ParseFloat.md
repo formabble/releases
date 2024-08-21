@@ -16,6 +16,11 @@ license: CC-BY-SA-4.0
 
 Converts the string representation of a number to its floating-point number equivalent.
 
+## Details
+
+--8<-- "details/shards/General/ParseFloat.md"
+
+
 ## Examples
 
 === "Code"

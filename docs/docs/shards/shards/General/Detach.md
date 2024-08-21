@@ -18,6 +18,11 @@ license: CC-BY-SA-4.0
 
 Schedules and executes the specified Wire asynchronously. The current Wire will continue its execution independently of the specified Wire. Unlike Spawn, only one unique copy of the specified Wire can be scheduled using Detach. Future calls of Detach that schedules the same Wire will be ignored unless the specified Wire is Stopped or ends naturally.
 
+## Details
+
+--8<-- "details/shards/General/Detach.md"
+
+
 ## Examples
 
 === "Code"

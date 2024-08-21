@@ -19,6 +19,11 @@ license: CC-BY-SA-4.0
 
 This shard takes a sequence of values as input, schedules multiple copies of a specified Wire and executes them asynchronously. Each value from the sequence is provided as input to its corresponding copy of the scheduled Wire. The shard will then wait for all the scheduled Wires to end, and then, depending on the Policy specified, the shard will either return the output of the first successful Wire, return a sequence with all the output from all the copies of the specified Wire or stop execution of the current Wire if all the copies failed.
 
+## Details
+
+--8<-- "details/shards/General/TryMany.md"
+
+
 ## Examples
 
 === "Code"

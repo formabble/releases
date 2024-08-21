@@ -18,5 +18,10 @@ license: CC-BY-SA-4.0
 
 Replaces all occurrences of the pattern(specified in the Patterns parameter) found in the input sequence or string, with replacements (specified in the Replacements parameter).
 
+## Details
+
+--8<-- "details/shards/General/Replace.md"
+
+
 --8<-- "includes/license.md"
 

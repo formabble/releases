@@ -25,5 +25,10 @@ license: CC-BY-SA-4.0
 
 
 
+## Details
+
+--8<-- "details/shards/General/Evolve.md"
+
+
 --8<-- "includes/license.md"
 
