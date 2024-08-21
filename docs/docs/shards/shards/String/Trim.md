@@ -9,12 +9,12 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`String`](../../types/#string) |
-| `Output ➡️` ||The resulting output of the shard | | [`String`](../../types/#string) |
+| `⬅️ Input` ||The string to trim. | | [`String`](../../types/#string) |
+| `Output ➡️` ||The input string with all leading and trailing whitespace characters removed. | | [`String`](../../types/#string) |
 
 </div>
 
-
+This shard removes all leading and trailing whitespace characters from the input string and outputs the trimmed string.
 
 --8<-- "includes/license.md"
 

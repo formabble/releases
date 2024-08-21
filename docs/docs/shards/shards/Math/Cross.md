@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Accepts float3 vector (a vector with 3 float elements) as input. | | [`Float3`](../../types/#float3)[`[Float3]`](../../types/#seq) |
 | `Output ➡️` ||Returns the result of the cross product as a float3 vector or a sequence of float3 vectors if the input was a sequence of float3 vectors. | | [`Float3`](../../types/#float3)[`[Float3]`](../../types/#seq) |
-| `Operand` | :fontawesome-solid-circle-plus:{title="No"} No  | The float3 vector to compute the cross product with. | `0` | [`Float2`](../../types/#float2)[`[Float2]`](../../types/#seq)[`Float3`](../../types/#float3)[`[Float3]`](../../types/#seq)[`Float4`](../../types/#float4)[`[Float4]`](../../types/#seq)[`&Float2`](../../types/#contextvar)[`&[Float2]`](../../types/#contextvar)[`&Float3`](../../types/#contextvar)[`&[Float3]`](../../types/#contextvar)[`&Float4`](../../types/#contextvar)[`&[Float4]`](../../types/#contextvar) |
+| `Operand` | :fontawesome-solid-circle-plus:{title="No"} No  | The float3 vector to compute the cross product with. | `0` | [`Float2`](../../types/#float2)[`[Float2]`](../../types/#seq)[`Float3`](../../types/#float3)[`[Float3]`](../../types/#seq)[`Float4`](../../types/#float4)[`[Float4]`](../../types/#seq)[`Var(Float2)`](../../types/#contextvar)[`Var([Float2])`](../../types/#contextvar)[`Var(Float3)`](../../types/#contextvar)[`Var([Float3])`](../../types/#contextvar)[`Var(Float4)`](../../types/#contextvar)[`Var([Float4])`](../../types/#contextvar) |
 
 </div>
 

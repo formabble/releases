@@ -10,12 +10,12 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Any valid big integer(s) represented as bytes supported by this operation. | | [`Bytes`](../../types/#bytes)[`[Bytes]`](../../types/#seq) |
-| `Output ➡️` ||The result of the operation, usually in the same type as the input value. If the input is a sequence, the output will be a sequence of results, with possible broadcasting according to the input and operand. | | [`Bytes`](../../types/#bytes)[`[Bytes]`](../../types/#seq) |
-| `Operand` | :fontawesome-solid-circle-plus:{title="No"} No  | The bytes variable representing the operand | `0` | [`&Bytes`](../../types/#contextvar)[`&[Bytes]`](../../types/#contextvar) |
+| `Output ➡️` ||Returns the result of the AND operation as a big integer represented as bytes. | | [`Bytes`](../../types/#bytes)[`[Bytes]`](../../types/#seq) |
+| `Operand` | :fontawesome-solid-circle-plus:{title="No"} No  | The second big integer to perform the AND operation with. | `0` | [`Var(Bytes)`](../../types/#contextvar)[`Var([Bytes])`](../../types/#contextvar) |
 
 </div>
 
-Applies the binary operation on the input value and the operand and returns the result (or a sequence of results if the input and the operand are sequences).
+This shard performs a bitwise AND operation on the input big integer with the big integer specified in the Operand parameter and returns the result. A bitwise AND operation is a binary operation that compares each bit of the binary representations of two numbers and returns 1 if the bits are 1 and 0 otherwise. The resulting number is a big integer representation of the 1s and 0s concatenated.
 
 ## Examples
 

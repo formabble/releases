@@ -137,8 +137,10 @@ create table docs(
       (Is("Consume"))
       (Is("Listen"))
       (Is("Complete"))
+      (Is("Flush"))
       ; Audio
       (Is("Audio.Device"))
+      (Is("Audio.Engine"))
       ; GFX
       (Is("GFX.MainWindow"))
       (Is("GFX.Renderer"))
@@ -680,7 +682,7 @@ create table docs(
 ; Empty results indicate success, returning the shard name adds it to the skipped list
 Shards.Enumerate | TryMany(document-shard Threads: 4) = tmp-list
 Remove(tmp-list Predicate: Is("")) = skipped-list
-["constexpr std::array<std::string_view, " (Count(skipped-list)) "> ForbiddenShards = {\n"] | String.Format >> out
+["// This is a generated file. Do not edit directly.\n\nconstexpr std::array<std::string_view, " (Count(skipped-list)) "> ForbiddenShards = {\n"] | String.Format >> out
 skipped-list | ForEach({
   = shard-name
   ["  \"" shard-name "\",\n"] | String.Format >> out

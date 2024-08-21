@@ -9,13 +9,13 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||Big integer represented as bytes. | | [`Bytes`](../../types/#bytes) |
+| `⬅️ Input` ||The big integer to convert, represented as bytes. | | [`Bytes`](../../types/#bytes) |
 | `Output ➡️` ||Floating point number representation of the big integer value. | | [`Float`](../../types/#float) |
-| `ShiftedBy` | :fontawesome-solid-circle-plus:{title="No"} No  | The shift is of the decimal point, i.e. of powers of ten, and is to the left if n is negative or to the right if n is positive. | `0` | [`Int`](../../types/#int) |
+| `ShiftedBy` | :fontawesome-solid-circle-plus:{title="No"} No  | The number of decimal places to shift the input big integer by. A positive number shifts the decimal point to the right, while a negative number shifts it to the left. | `0` | [`Int`](../../types/#int) |
 
 </div>
 
-Converts a big integer value to a floating point number.
+This shard converts the input big integer value to a floating point number.
 
 ## Examples
 

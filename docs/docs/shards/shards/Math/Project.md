@@ -11,9 +11,9 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Takes a float3 vector representing the 3D point in world space where x, y, and z are the coordinates in world space. | | [`Float3`](../../types/#float3) |
 | `Output ➡️` ||Returns a float3 vector representing the projected 2D point (x, y) in screen space, with the z component representing the depth. | | [`Float3`](../../types/#float3) |
-| `Matrix` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The combined 4x4 view-projection matrix (sequence of four float4 vectors) to use. | `None` | [`[Float4]`](../../types/#seq)[`&[Float4]`](../../types/#contextvar) |
-| `ScreenSize` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The size of the screen or viewport in pixels. | `None` | [`Float2`](../../types/#float2)[`&Float2`](../../types/#contextvar) |
-| `FlipY` | :fontawesome-solid-circle-plus:{title="No"} No  | Flip Y coordinate (on by default). | `true` | [`Bool`](../../types/#bool)[`&&Bool`](../../types/#contextvar) |
+| `Matrix` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The combined 4x4 view-projection matrix (sequence of four float4 vectors) to use. | `None` | [`[Float4](4)`](../../types/#seq)[`Var([Float4](4))`](../../types/#contextvar) |
+| `ScreenSize` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The size of the screen or viewport in pixels. | `None` | [`Float2`](../../types/#float2)[`Var(Float2)`](../../types/#contextvar) |
+| `FlipY` | :fontawesome-solid-circle-plus:{title="No"} No  | Flip Y coordinate (on by default). | `true` | [`Bool`](../../types/#bool)[`Var(Var(Bool))`](../../types/#contextvar) |
 
 </div>
 

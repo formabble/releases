@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||A float value representing the new pan position. -1.0 is full left, 0.0 is center, and 1.0 is full right. Values outside of this range will be clamped to the nearest extreme. | | [`Float`](../../types/#float) |
 | `Output ➡️` ||Outputs the input value, passed through unchanged. | | [`Float`](../../types/#float) |
-| `Sound` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The sound object to manipulate | `None` | [`Object`](../../types/#object)[`&Object`](../../types/#contextvar) |
+| `Sound` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The sound object to manipulate | `None` | [`Object`](../../types/#object)[`Var(Object)`](../../types/#contextvar) |
 
 </div>
 

@@ -9,13 +9,13 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||A string representing a number. | | [`String`](../../types/#string) |
+| `⬅️ Input` ||A number represented as a string. | | [`String`](../../types/#string) |
 | `Output ➡️` ||A signed integer equivalent to the number contained in the string input. | | [`Int`](../../types/#int) |
 | `Base` | :fontawesome-solid-circle-plus:{title="No"} No  | Numerical base (radix) that determines the valid characters and their interpretation. | `10` | [`Int`](../../types/#int) |
 
 </div>
 
-Converts the string representation of a number to a signed integer equivalent.
+Converts the string representation of a number to its signed integer equivalent.
 
 ## Examples
 

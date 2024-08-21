@@ -9,8 +9,8 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||Takes a 4x4 matrix (a sequence of four float4 vectors) as input. | | [`[Float4]`](../../types/#seq) |
-| `Output ➡️` ||Returns the inverse of the input 4x4 matrix. | | [`[Float4]`](../../types/#seq) |
+| `⬅️ Input` ||Takes a 4x4 matrix (a sequence of four float4 vectors) as input. | | [`[Float4](4)`](../../types/#seq) |
+| `Output ➡️` ||Returns the inverse of the input 4x4 matrix. | | [`[Float4](4)`](../../types/#seq) |
 
 </div>
 

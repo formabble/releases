@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The value is ignored. | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The output of this shard will be its input. | | [`Any`](../../types/#any) |
-| `Size` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Overrides the size of the spinner. This sets both the height and width, as the spinner is always square. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
+| `Size` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Overrides the size of the spinner. This sets both the height and width, as the spinner is always square. | `None` | [`Float`](../../types/#float)[`Var(Float)`](../../types/#contextvar) |
 
 </div>
 

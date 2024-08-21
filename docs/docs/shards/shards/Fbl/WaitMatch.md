@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Any input value is accepted. The input is passed through unchanged. | | [`Any`](../../types/#any) |
 | `Output ➡️` ||Outputs the input value, passed through unchanged. | | [`Any`](../../types/#any) |
-| `Players` | :fontawesome-solid-circle-plus:{title="No"} No  | The number of players to wait for | `2` | [`Int`](../../types/#int)[`&Int`](../../types/#contextvar) |
+| `Players` | :fontawesome-solid-circle-plus:{title="No"} No  | The number of players to wait for | `2` | [`Int`](../../types/#int)[`Var(Int)`](../../types/#contextvar) |
 
 </div>
 

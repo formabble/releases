@@ -12,7 +12,7 @@ license: CC-BY-SA-4.0
 | `⬅️ Input` ||A sequence of point coordinates. | | [`[Float2]`](../../types/#seq) |
 | `Output ➡️` ||The output of this shard will be its input. | | [`[Float2]`](../../types/#seq) |
 | `Name` | :fontawesome-solid-circle-plus:{title="No"} No  | Name of this chart, displayed in the plot legend. | `None` | [`String`](../../types/#string)[`None`](../../types/#none) |
-| `Color` | :fontawesome-solid-circle-plus:{title="No"} No  | Stroke color. | `None` | [`Color`](../../types/#color)[`&Color`](../../types/#contextvar)[`None`](../../types/#none) |
+| `Color` | :fontawesome-solid-circle-plus:{title="No"} No  | Stroke color. | `None` | [`Color`](../../types/#color)[`Var(Color)`](../../types/#contextvar)[`None`](../../types/#none) |
 | `Shape` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Shape of the marker. | `None` | [`MarkerShape`](../../../enums/MarkerShape) |
 | `Radius` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Radius of the marker. | `None` | [`Float`](../../types/#float) |
 

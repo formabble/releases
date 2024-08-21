@@ -10,11 +10,11 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Big integer represented as bytes. | | [`Bytes`](../../types/#bytes) |
-| `Output ➡️` ||Big integer represented as bytes. | | [`Bytes`](../../types/#bytes) |
+| `Output ➡️` ||The resulting big integer with an absolute value, represented as bytes. | | [`Bytes`](../../types/#bytes) |
 
 </div>
 
-Computes the absolute value of a big integer.
+This shard computes the absolute value of a big integer.
 
 ## Examples
 

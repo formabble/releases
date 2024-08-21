@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Takes a float3 vector representing the 3D vector to be rotated. | | [`Float3`](../../types/#float3) |
 | `Output ➡️` ||Returns a float3 vector representing the rotated 3D vector. | | [`Float3`](../../types/#float3) |
-| `Operand` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The float4 vector representing the quaternion to rotate the input 3D vector by. | `None` | [`Float4`](../../types/#float4)[`&Float4`](../../types/#contextvar) |
+| `Operand` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The float4 vector representing the quaternion to rotate the input 3D vector by. | `None` | [`Float4`](../../types/#float4)[`Var(Float4)`](../../types/#contextvar) |
 
 </div>
 

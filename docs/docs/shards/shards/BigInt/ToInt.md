@@ -9,12 +9,12 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||Big integer represented as bytes. | | [`Bytes`](../../types/#bytes) |
+| `⬅️ Input` ||The big integer to convert, represented as bytes. | | [`Bytes`](../../types/#bytes) |
 | `Output ➡️` ||Integer representation of the big integer value. | | [`Int`](../../types/#int) |
 
 </div>
 
-Converts a big integer value to an integer.
+This shard converts the input big integer value to an integer.
 
 ## Examples
 

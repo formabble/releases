@@ -11,8 +11,8 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
 | `Output ➡️` ||The resulting output of the shard | | [`None`](../../types/#none) |
-| `Steps` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Render steps to follow. | `None` | [`&[GFX.PipelineStep]`](../../types/#contextvar)[`[GFX.PipelineStep]`](../../types/#seq) |
-| `View` | :fontawesome-solid-circle-plus:{title="No"} No  | The view to render. (Optional) | `None` | [`None`](../../types/#none)[`&GFX.View`](../../types/#contextvar) |
+| `Steps` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Render steps to follow. | `None` | [`Var([GFX.PipelineStep])`](../../types/#contextvar)[`[GFX.PipelineStep]`](../../types/#seq) |
+| `View` | :fontawesome-solid-circle-plus:{title="No"} No  | The view to render. (Optional) | `None` | [`None`](../../types/#none)[`Var(GFX.View)`](../../types/#contextvar) |
 
 </div>
 

@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
 | `Output ➡️` ||The resulting output of the shard | | [`Float4`](../../types/#float4) |
-| `Name` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Name of the texture | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar) |
+| `Name` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Name of the texture | `None` | [`String`](../../types/#string)[`Var(String)`](../../types/#contextvar) |
 
 </div>
 

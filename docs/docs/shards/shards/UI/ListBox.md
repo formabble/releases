@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||A sequence of values. | | [`[Any]`](../../types/#seq) |
 | `Output ➡️` ||The selected value. | | [`Any`](../../types/#any) |
-| `Index` | :fontawesome-solid-circle-plus:{title="No"} No  | The index of the selected item. | `None` | [`Int`](../../types/#int)[`&Int`](../../types/#contextvar)[`None`](../../types/#none) |
+| `Index` | :fontawesome-solid-circle-plus:{title="No"} No  | The index of the selected item. | `None` | [`Int`](../../types/#int)[`Var(Int)`](../../types/#contextvar)[`None`](../../types/#none) |
 | `IsSelected` | :fontawesome-solid-circle-plus:{title="No"} No  | Predicate that should return selection state of an item, receives the index in the list, should return true/false. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
 | `Clicked` | :fontawesome-solid-circle-plus:{title="No"} No  | Action to perform if an element of the list is being clicked. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
 | `Template` | :fontawesome-solid-circle-plus:{title="No"} No  | Custom rendering | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |

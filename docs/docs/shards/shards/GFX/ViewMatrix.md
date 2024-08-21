@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`GFX.View`](../../types/#gfx.view) |
-| `Output ➡️` ||The resulting output of the shard | | [`[Float4]`](../../types/#seq) |
+| `Output ➡️` ||The resulting output of the shard | | [`[Float4](4)`](../../types/#seq) |
 
 </div>
 

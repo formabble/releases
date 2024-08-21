@@ -9,12 +9,12 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||A string. | | [`String`](../../types/#string) |
-| `Output ➡️` ||A string in uppercase. | | [`String`](../../types/#string) |
+| `⬅️ Input` ||The string to convert to uppercase. | | [`String`](../../types/#string) |
+| `Output ➡️` ||The input string converted to uppercase. | | [`String`](../../types/#string) |
 
 </div>
 
-Converts a string to uppercase
+This shard converts all characters in the input string to uppercase.
 
 ## Examples
 

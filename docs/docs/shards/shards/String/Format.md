@@ -9,7 +9,7 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||A sequence of values that will be converted to string and joined together. | | [`[Any]`](../../types/#seq) |
+| `⬅️ Input` ||A sequence of values that will be converted to string and concatenated together. | | [`[Any]`](../../types/#seq) |
 | `Output ➡️` ||A string consisting of all the elements of the sequence. | | [`String`](../../types/#string) |
 
 </div>

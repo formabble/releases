@@ -11,8 +11,8 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
-| `Buffer` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The buffer | `None` | [`&GFX.Buffer`](../../types/#contextvar) |
-| `RuntimeLength` | :fontawesome-solid-circle-plus:{title="No"} No  | The length of the runtime sized array of the buffer, if any | `None` | [`None`](../../types/#none)[`Int`](../../types/#int)[`&Int`](../../types/#contextvar) |
+| `Buffer` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The buffer | `None` | [`Var(GFX.Buffer)`](../../types/#contextvar) |
+| `RuntimeLength` | :fontawesome-solid-circle-plus:{title="No"} No  | The length of the runtime sized array of the buffer, if any | `None` | [`None`](../../types/#none)[`Int`](../../types/#int)[`Var(Int)`](../../types/#contextvar) |
 
 </div>
 

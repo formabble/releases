@@ -11,8 +11,8 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
-| `Server` | :fontawesome-solid-circle-plus:{title="No"} No  | The server | `ContextVariable: Network.Server` | [`&Object`](../../types/#contextvar) |
-| `Exclude` | :fontawesome-solid-circle-plus:{title="No"} No  | Peer IDs to exclude | `None` | [`&[Int]`](../../types/#contextvar)[`[Int]`](../../types/#seq)[`None`](../../types/#none) |
+| `Server` | :fontawesome-solid-circle-plus:{title="No"} No  | The server | `ContextVariable: Network.Server` | [`Var(Object)`](../../types/#contextvar) |
+| `Exclude` | :fontawesome-solid-circle-plus:{title="No"} No  | Peer IDs to exclude | `None` | [`Var([Int])`](../../types/#contextvar)[`[Int]`](../../types/#seq)[`None`](../../types/#none) |
 
 </div>
 

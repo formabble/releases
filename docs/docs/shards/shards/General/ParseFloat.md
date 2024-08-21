@@ -14,7 +14,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-Converts the string representation of a number to a floating-point number equivalent.
+Converts the string representation of a number to its floating-point number equivalent.
 
 ## Examples
 

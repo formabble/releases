@@ -10,12 +10,12 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Big integer represented as bytes. | | [`Bytes`](../../types/#bytes) |
-| `Output ➡️` ||Big integer represented as bytes. | | [`Bytes`](../../types/#bytes) |
-| `Operand` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The integer operand, can be a variable | `None` | [`Int`](../../types/#int)[`&Int`](../../types/#contextvar) |
+| `Output ➡️` ||Returns the BigInt result of the operation as bytes. | | [`Bytes`](../../types/#bytes) |
+| `Operand` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The power to which the input big integer will be raised. This must be a non-negative integer. | `None` | [`Int`](../../types/#int)[`Var(Int)`](../../types/#contextvar) |
 
 </div>
 
-
+This shard raises the input big integer to the power of the exponent specified in the  Operand parameter.
 
 ## Examples
 

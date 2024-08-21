@@ -15,7 +15,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-Converts a floating point number to a big integer.
+This shard converts a floating point number to a big integer.
 
 ## Examples
 

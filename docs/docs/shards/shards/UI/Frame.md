@@ -15,8 +15,8 @@ license: CC-BY-SA-4.0
 | `InnerMargin` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The margin inside the frame, between the outline and the contents. | `None` | [`Float4`](../../types/#float4) |
 | `OuterMargin` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The margin outside the frame. | `None` | [`Float4`](../../types/#float4) |
 | `Rounding` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Rounding radiuses for the corners. | `None` | [`Float4`](../../types/#float4) |
-| `FillColor` | :fontawesome-solid-circle-plus:{title="No"} No  | The color filling the background of the frame. | `None` | [`Color`](../../types/#color)[`&Color`](../../types/#contextvar)[`None`](../../types/#none) |
-| `StrokeColor` | :fontawesome-solid-circle-plus:{title="No"} No  | The color for the frame outline. | `None` | [`Color`](../../types/#color)[`&Color`](../../types/#contextvar)[`None`](../../types/#none) |
+| `FillColor` | :fontawesome-solid-circle-plus:{title="No"} No  | The color filling the background of the frame. | `None` | [`Color`](../../types/#color)[`Var(Color)`](../../types/#contextvar)[`None`](../../types/#none) |
+| `StrokeColor` | :fontawesome-solid-circle-plus:{title="No"} No  | The color for the frame outline. | `None` | [`Color`](../../types/#color)[`Var(Color)`](../../types/#contextvar)[`None`](../../types/#none) |
 | `StrokeWidth` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The width of the frame outline. | `None` | [`Float`](../../types/#float) |
 
 </div>

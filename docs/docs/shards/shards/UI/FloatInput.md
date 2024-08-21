@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The value is ignored. | | [`None`](../../types/#none) |
 | `Output ➡️` ||The value produced. | | [`Float`](../../types/#float) |
-| `Variable` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The variable that holds the input value. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
+| `Variable` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The variable that holds the input value. | `None` | [`Float`](../../types/#float)[`Var(Float)`](../../types/#contextvar) |
 | `Prefix` | :fontawesome-solid-circle-plus:{title="No"} No  | Display a prefix before the number. | `None` | [`String`](../../types/#string)[`None`](../../types/#none) |
 
 </div>

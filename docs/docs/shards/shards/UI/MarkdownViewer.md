@@ -9,12 +9,12 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The markdown text to render. | | [`String`](../../types/#string) |
-| `Output ➡️` ||The output of this shard will be its input. | | [`String`](../../types/#string) |
+| `⬅️ Input` ||The input of the shard, if any | | [`String`](../../types/#string) |
+| `Output ➡️` ||The resulting output of the shard | | [`String`](../../types/#string) |
 
 </div>
 
-Renders a markdown text.
+A markdown viewer.
 
 ## Examples
 

@@ -12,9 +12,9 @@ license: CC-BY-SA-4.0
 | `⬅️ Input` ||The value is ignored. | | [`None`](../../types/#none) |
 | `Output ➡️` ||Indicates whether the radio button was clicked during this frame. | | [`Bool`](../../types/#bool) |
 | `Label` | :fontawesome-solid-circle-plus:{title="No"} No  | The text label of this radio button. | `None` | [`String`](../../types/#string)[`None`](../../types/#none) |
-| `Variable` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The variable that holds the input value. | `None` | [`Any`](../../types/#any)[`&Any`](../../types/#contextvar) |
+| `Variable` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The variable that holds the input value. | `None` | [`Any`](../../types/#any)[`Var(Any)`](../../types/#contextvar) |
 | `Value` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The value to compare with. | `None` | [`Any`](../../types/#any) |
-| `Style` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The text style. | `None` | [`{Any}`](../../types/#table)[`&{Any}`](../../types/#contextvar) |
+| `Style` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The text style. | `None` | [`{Any}`](../../types/#table)[`Var({Any})`](../../types/#contextvar) |
 
 </div>
 

@@ -9,7 +9,7 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`[Float3]`](../../types/#seq) |
+| `⬅️ Input` ||The input of the shard, if any | | [`[Float3](2)`](../../types/#seq) |
 | `Output ➡️` ||The resulting output of the shard | | [`[Object]`](../../types/#seq) |
 
 </div>

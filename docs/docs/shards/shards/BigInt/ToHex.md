@@ -9,12 +9,12 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`Int`](../../types/#int)[`Bytes`](../../types/#bytes)[`String`](../../types/#string) |
-| `Output ➡️` ||Hexadecimal representation of the integer value. | | [`String`](../../types/#string) |
+| `⬅️ Input` ||Big integer to convert, represented as bytes. | | [`Int`](../../types/#int)[`Bytes`](../../types/#bytes)[`String`](../../types/#string) |
+| `Output ➡️` ||Returns the hexadecimal representation of the input big integer value. | | [`String`](../../types/#string) |
 
 </div>
 
-Converts the value to a hexadecimal representation.
+This shard converts the input big integer value to its hexadecimal representation.
 
 ## Examples
 

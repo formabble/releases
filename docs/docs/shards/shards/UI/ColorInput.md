@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The value is ignored. | | [`None`](../../types/#none) |
 | `Output ➡️` ||The selected color. | | [`Color`](../../types/#color) |
-| `Variable` | :fontawesome-solid-circle-plus:{title="No"} No  | The variable that holds the input value. | `None` | [`Color`](../../types/#color)[`&Color`](../../types/#contextvar)[`None`](../../types/#none) |
+| `Variable` | :fontawesome-solid-circle-plus:{title="No"} No  | The variable that holds the input value. | `None` | [`Color`](../../types/#color)[`Var(Color)`](../../types/#contextvar)[`None`](../../types/#none) |
 
 </div>
 

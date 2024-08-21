@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
 | `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any)[`None`](../../types/#none) |
-| `Source` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The WGSL source code to insert | `None` | [`String`](../../types/#string)[`&String`](../../types/#contextvar)[`[String &Any]`](../../types/#seq) |
+| `Source` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The WGSL source code to insert | `None` | [`String`](../../types/#string)[`Var(String)`](../../types/#contextvar)[`[String Var(Any)]`](../../types/#seq) |
 | `Type` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Where to insert the code. | `None` | [`ShaderLiteralType`](../../../enums/ShaderLiteralType) |
 | `OutputType` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The type that this code is expected to output. (default: none) | `None` | [`ShaderFieldBaseType`](../../../enums/ShaderFieldBaseType) |
 | `OutputDimension` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The dimension that this code is expected to output. (default: 4) | `None` | [`Int`](../../types/#int) |

@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`GFX.Drawable`](../../types/#gfx.drawable)[`[GFX.Drawable]`](../../types/#seq) |
 | `Output ➡️` ||The resulting output of the shard | | [`GFX.Drawable`](../../types/#gfx.drawable)[`[GFX.Drawable]`](../../types/#seq) |
-| `Queue` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The queue to add the draw command to (Optional). Uses the default queue if not specified | `None` | [`&GFX.DrawQueue`](../../types/#contextvar) |
+| `Queue` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The queue to add the draw command to (Optional). Uses the default queue if not specified | `None` | [`Var(GFX.DrawQueue)`](../../types/#contextvar) |
 
 </div>
 

@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The value is ignored. | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The output of this shard will be its input. | | [`Any`](../../types/#any) |
-| `Amount` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The amount of space to insert. | `None` | [`Float`](../../types/#float)[`&Float`](../../types/#contextvar) |
+| `Amount` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The amount of space to insert. | `None` | [`Float`](../../types/#float)[`Var(Float)`](../../types/#contextvar) |
 
 </div>
 
