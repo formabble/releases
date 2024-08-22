@@ -10,3 +10,5 @@
   - 4 - 2 = 2 ($0 then becomes 2)
   - 5 - 2 = 3 ($0 then becomes 3)
   - The final value of `$0` is then returned.
+
+- Do note that this instance of `$0` is unique to the Reduce shard and do not exist outside of the context of its `Apply` parameter. Values set to this instance of `$0` will not be reflected on other `$0` created in a different call of another Reduce shard or any other shard that is also able to use `$0`.
