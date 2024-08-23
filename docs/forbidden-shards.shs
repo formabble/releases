@@ -28,6 +28,11 @@
     (Is("VarAddr"))
     (Is("Pack"))
     (Is("Unpack"))
+    (Is("Inputs.Detached"))
+    (Is("Inputs.GetContext"))
+    (Is("Inputs.Mouse"))
+    (Is("WireRunner"))
+    (Is("WireLoader"))
     ; Channels
     (Is("Produce"))
     (Is("Broadcast"))
