@@ -1,4 +1,4 @@
-- This shard is able to use the special variable `$0` and `$1` within its `Apply` parameter.
+- This shard is able to use the internal variable `$0` and `$1` within its `Apply` parameter.
 
 - If a sequence was provided as input, the variable `$0` will take the value of the current element of the sequence it is iterating over. ($1 does not exist when iterating over a sequence)
   For example:
