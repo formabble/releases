@@ -18,6 +18,7 @@
     (String.Starts(With: "SchemeHandler.")) ; unused/unsafe
     (String.Starts(With: "CRDT.")) ; experimental, will change
     (String.Starts(With: "IPC.")) ; unused/unsafe
+    (String.Starts(With: "ONNX.")) ; currently no way to load through formabble
     (Is("ReadFile"))
     (Is("WriteFile"))
     (Is("WritePNG"))
