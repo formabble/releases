@@ -5,9 +5,9 @@
     "param1": "value1"
     "param2": "value2"
     "param3": "value3"
-  } = queryParams
+  } = query-params
 
-  queryParams
+  query-params
   Http.Get("https://api.example.com/endpoint")
   ```
   The Http.Get shard will append the query parameters to the URL and the resulting constructed URL will be: `https://api.example.com/endpoint?param1=value1&param2=value2&param3=value3`
