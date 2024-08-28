@@ -134,7 +134,7 @@
 
     done-seq | ForEach({
       When(Predicate: {Is(shard-name)} Action: {
-        true >= is-it-done
+        true > is-it-done
       })
     })
   }

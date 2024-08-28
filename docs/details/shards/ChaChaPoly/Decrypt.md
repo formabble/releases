@@ -1,0 +1,1 @@
+- If the wrong key was provided in the `Key` parameter to decrypt the input, the shard will throw an error.
