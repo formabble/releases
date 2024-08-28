@@ -11,9 +11,9 @@
 - If the output of the shard is a table, it will have the following format:
   ```shards
   {
-    status: Int,
-    headers: Table(String, String),
-    body: String or Bytes
+    status: @type(Type::Int)
+    headers: {header: @type(Type::String)}
+    body: @type(Type::String) ;; or @type(Type::Bytes)
   }
   ```
   - **status**: An integer representing the HTTP status code.

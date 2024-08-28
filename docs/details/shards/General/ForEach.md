@@ -12,6 +12,8 @@
   ```
   `$0` will take the value of 1 and then 2 and then 3 accordingly.
 
+- When iterating over a sequence with elements of different types, `$0` will adopt the type of the current element it is iterating over, convert its type as necessary.
+
 - If a table was provided as input, the variable `$0` will be the current key of the table it is iterating over while `$1` will take the value associated with the key.
   For example:
   ```shards
@@ -36,8 +38,6 @@
 - Do note that this instance of `$0` and `$1` are unique to the `ForEach` shard and do not exist outside of the context of its `Apply` parameter. Values set to this instance of `$0` and `$1` will not be reflected on other `$0` and `$1` created in a different call of another `ForEach` shard or any other shard that is also able to use `$0` and `$1`.
 
 - `ForEach` returns the input unchanged unlike Map which returns the modified sequence or table.
-
-
 
 
 
