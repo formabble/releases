@@ -1,0 +1,5 @@
+- The elements of the int4 output of this shard represent the viewport dimensions in the following format:
+  - The first element represents the x coordinate of the top left edge of the viewport.
+  - The second element represents the y coordinate of the top left edge of the viewport.
+  - The thrid element represents the x coordinate of the bottom right edge of the viewport.
+  - The fourth element represents the y coordinate of the bottom right edge of the viewport.

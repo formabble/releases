@@ -6,7 +6,7 @@
 @define(shards-sample-path "samples/shards/")
 
 @define(notion-api-key @env("NOTION_API_KEY"))
-@define(notion-db-id "0a24c90c4e344381a01c73cb140e4969")
+@define(notion-db-id "c25113fdbbdd42fcb8315e93958cec36")
 
 @define(headers {
   "Authorization": #(["Bearer " @notion-api-key] | String.Join)
