@@ -1,0 +1,4 @@
+- This can be used in the `Shader` parameter of `GFX.Feature` or the `EntryPoint` parameter of `GFX.EffectPass`.
+- The functions differently when used in the Vertex stage and the Fragment stage of the entry point.
+  - When used in the Vertex stage, this shard will read the value of the vertex attribute specified in the `Name` parameter.
+  - When used in the Fragment stage, it will read the interpolated value of the vertex attribute specified, that is supplied to the pixel. (Regardless of whether the vertex attribute was explicitly output in the vertex stage using `Shader.WriteOutput` or not.)
