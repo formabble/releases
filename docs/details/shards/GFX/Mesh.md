@@ -1,4 +1,4 @@
-- The sequence of strings given to the `Layout` parameter will be used as the pattern to inepret the sequence value in the Vertices key of the input table.
+- The sequence of strings given to the `Layout` parameter will be used as the pattern to interpret the sequence value in the Vertices key of the input table.
 
 - Consider the following example:
   ```shards
@@ -32,7 +32,7 @@
 
     The sequence in the `Layout` parameter will make it such that each pair of elements in the sequence represent a vertex, with the first value in the pair representing the vertex position and the second value represents the vertex colour. Thus element 1 and element 2 in the sequence repesent the first vertex, element 3 and element 4 represent the second vertex and so on and so forth.
 
-- Any string can be added to the sequence of string in the `Layout` parameter, however the following strings already have a set definition and will be inepreted accordingly:
+- Any string can be added to the sequence of string in the `Layout` parameter, however the following strings already have a set definition and will be interpreted accordingly:
   - "position" : Vertex position (usually 2D or 3D)
   - "color" : Vertex color
   - "normal" : Vertex normal (for lighting calculations)
@@ -41,7 +41,7 @@
 
 - The `Shader.ReadInput` shard can be used to read the values assigned to the strings specified in the `Layout` parameter. `Shader.ReadInput(Name: "texCoord0")` for example will read the texture coordinates of the current vertex set to texCoord0.
 
-- The sequence of indeces in the `Indeces` key of the input table will be used to draw the triangles that will make up the mesh, with each set of three indeces representing a single triangle.
+- The sequence of indices in the `Indices` key of the input table will be used to draw the triangles that will make up the mesh, with each set of three indices representing a single triangle.
 
 - Consider the following example:
   ```shards
@@ -74,7 +74,7 @@
     ```
     In this example, the vertex with index 0, 1 and 2 will form the first triangle, the vertex with index 1, 3 and 2 will form the second triangle and so on and so forth.
 
-- The `WindingOrder` can either be `WindingOrder::CW` or `WindingOrder::CCW`. This will determine the orientation of the triangles that will be created from the indeces.
+- The `WindingOrder` can either be `WindingOrder::CW` or `WindingOrder::CCW`. This will determine the orientation of the triangles that will be created from the indices.
 
 - Consider the following example:
   ```shards
@@ -119,4 +119,4 @@
     However, now this order (0 -> 1 -> 2) is considered to be the back face of the triangle. The front face would be the reverse order: 2 -> 1 -> 0.
     The normal of this triangle would point away from the viewer (into the screen).
 
-- The mesh object output created by this shard can be passed to the `Mesh` parameter of the `GFX.DrawablePass` shard to be added to the reder pipeline and subsequently rendered.
+- The mesh object output created by this shard can be passed to the `Mesh` parameter of the `GFX.DrawablePass` shard to be added to the render pipeline and subsequently rendered.
