@@ -9,12 +9,12 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`Bytes`](../../types/#bytes) |
-| `Output ➡️` ||The resulting output of the shard | | [`None`](../../types/#none) |
+| `⬅️ Input` ||The UI state to restore to represented as a byte sequence. | | [`Bytes`](../../types/#bytes) |
+| `Output ➡️` ||The output of this shard will be its input passed through unchanged. | | [`Bytes`](../../types/#bytes) |
 
 </div>
 
-
+This shard restores the UI to a previously saved state (provided as input as a byte sequence).
 
 --8<-- "includes/license.md"
 

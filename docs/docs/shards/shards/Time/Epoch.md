@@ -9,12 +9,12 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
-| `Output ➡️` ||The resulting output of the shard | | [`Int`](../../types/#int) |
+| `⬅️ Input` ||The input of this shard is ignored. | | [`None`](../../types/#none) |
+| `Output ➡️` ||Amount of time since the Unix epoch in seconds. | | [`Int`](../../types/#int) |
 
 </div>
 
-
+This shard returns the the amount of time that has elapsed from the Unix epoch to the current system time in seconds.
 
 ## Details
 

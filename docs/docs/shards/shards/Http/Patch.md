@@ -9,8 +9,8 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none)[`{String}`](../../types/#table)[`Bytes`](../../types/#bytes)[`String`](../../types/#string) |
-| `Output ➡️` ||The resulting output of the shard | | [`{status: Int headers: {String} body: Bytes}`](../../types/#table)[`Bytes`](../../types/#bytes)[`{status: Int headers: {String} body: String}`](../../types/#table)[`String`](../../types/#string)[`Object`](../../types/#object) |
+| `⬅️ Input` ||The input for this shard should either be none, string, bytes, or string table to send in the body of the PATCH request. | | [`None`](../../types/#none)[`{String}`](../../types/#table)[`Bytes`](../../types/#bytes)[`String`](../../types/#string) |
+| `Output ➡️` ||The output is the response from the server through the PATCH request as a string, byte sequence, or table (if the FullResponse parameter is set to true). | | [`{status: Int headers: {String} body: Bytes}`](../../types/#table)[`Bytes`](../../types/#bytes)[`{status: Int headers: {String} body: String}`](../../types/#table)[`String`](../../types/#string)[`Object`](../../types/#object) |
 | `URL` | :fontawesome-solid-circle-plus:{title="No"} No  | The url to request to. | `` | [`String`](../../types/#string)[`Var(String)`](../../types/#contextvar) |
 | `Headers` | :fontawesome-solid-circle-plus:{title="No"} No  | If a table of headers is provided, it will be used as is; if no headers are provided, a Content-Type header will be derived based on the input type. | `None` | [`None`](../../types/#none)[`{String}`](../../types/#table)[`Var({String})`](../../types/#contextvar) |
 | `Timeout` | :fontawesome-solid-circle-plus:{title="No"} No  | How many seconds to wait for the request to complete. | `10` | [`Int`](../../types/#int) |
@@ -23,6 +23,11 @@ license: CC-BY-SA-4.0
 
 </div>
 
+This shard sends a HTTP PATCH request to the specified URL and returns the response.
+
+## Details
+
+--8<-- "details/shards/Http/Patch.md"
 
 
 --8<-- "includes/license.md"

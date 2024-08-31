@@ -14,7 +14,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-Retrieves the current system clipboard contents.
+This shard retrieves the current system clipboard contents.
 
 ## Details
 

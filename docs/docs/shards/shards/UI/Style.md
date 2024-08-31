@@ -9,8 +9,8 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
-| `Output ➡️` ||The resulting output of the shard | | [`None`](../../types/#none) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
+| `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
 | `InheritDefault` | :fontawesome-solid-circle-plus:{title="No"} No  | Inherit default style instead of current style. | `false` | [`Bool`](../../types/#bool) |
 | `OverrideTextStyle` | :fontawesome-solid-circle-plus:{title="No"} No  | If set this will change the default TextStyle for all widgets. | `None` | [`None`](../../types/#none)[`TextStyle`](../../../enums/TextStyle)[`Var(TextStyle)`](../../types/#contextvar)[`String`](../../types/#string)[`Var(String)`](../../types/#contextvar) |
 | `FontId` | :fontawesome-solid-circle-plus:{title="No"} No  | If set this will change the font family and size for all widgets. | `None` | [`None`](../../types/#none)[`{Any}`](../../types/#table)[`Var({Any})`](../../types/#contextvar) |

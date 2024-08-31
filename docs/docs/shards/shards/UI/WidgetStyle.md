@@ -9,8 +9,8 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
-| `Output ➡️` ||The resulting output of the shard | | [`None`](../../types/#none) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
+| `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
 | `NonInteractive` | :fontawesome-solid-circle-plus:{title="No"} No  | The style of a widget that you cannot interact with. | `None` | [`None`](../../types/#none)[`{Any}`](../../types/#table)[`Var({Any})`](../../types/#contextvar) |
 | `Inactive` | :fontawesome-solid-circle-plus:{title="No"} No  | The style of an interactive widget, such as a button, at rest. | `None` | [`None`](../../types/#none)[`{Any}`](../../types/#table)[`Var({Any})`](../../types/#contextvar) |
 | `Hovered` | :fontawesome-solid-circle-plus:{title="No"} No  | The style of an interactive widget while you hover it, or when it is highlighted. | `None` | [`None`](../../types/#none)[`{Any}`](../../types/#table)[`Var({Any})`](../../types/#contextvar) |

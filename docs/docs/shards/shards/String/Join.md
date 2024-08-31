@@ -15,7 +15,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-Concatenates all the elements of a string sequence, using the specified separator between each element.
+This shard concatenates all the elements of a string sequence, using the specified separator between each element.
 
 ## Examples
 

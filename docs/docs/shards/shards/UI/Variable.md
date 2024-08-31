@@ -9,14 +9,14 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
-| `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
+| `⬅️ Input` ||The value is ignored. | | [`Any`](../../types/#any) |
+| `Output ➡️` ||The output of this shard will be its input passed through unchanged. | | [`Any`](../../types/#any) |
 | `Variable` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The variable that holds the value. | `None` | [`Var(Any)`](../../types/#contextvar) |
 | `Labeled` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | If the name of the variable should be visible as a label. | `None` | [`Bool`](../../types/#bool) |
 
 </div>
 
-
+This shard creates a UI element that displays and allows interaction with the variable specified in the Variable parameter.
 
 ## Details
 

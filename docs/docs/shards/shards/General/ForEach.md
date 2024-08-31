@@ -10,12 +10,17 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Sequence/table whose elements or key-value pairs need to be processed. | | [`[Any]`](../../types/#seq)[`{Any}`](../../types/#table) |
-| `Output ➡️` ||The output from processing the sequence/table elements or key-value pairs. | | [`[Any]`](../../types/#seq)[`{Any}`](../../types/#table) |
+| `Output ➡️` ||Outputs the input value, passed through unchanged. | | [`[Any]`](../../types/#seq)[`{Any}`](../../types/#table) |
 | `Apply` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The processing logic (in the form of a shard or sequence of shards) to apply to the input sequence/table. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
 
 </div>
 
-Processes every element or key-value pair of a sequence/table with a given shard or sequence of shards.
+Processes every element or key-value pair of a sequence/table with the shards specified in the `Apply` parameter. Note that this shard is able to use the $0 and $1 internal variables.
+
+## Details
+
+--8<-- "details/shards/General/ForEach.md"
+
 
 ## Examples
 

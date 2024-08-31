@@ -9,13 +9,13 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`[Any]`](../../types/#seq) |
-| `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
+| `⬅️ Input` ||The sequence to reduce. | | [`[Any]`](../../types/#seq) |
+| `Output ➡️` ||The resulting value after applying the operation to each item of the sequence. | | [`Any`](../../types/#any) |
 | `Apply` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The function to apply to each item of the sequence. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
 
 </div>
 
-
+Reduces a sequence to a single value by applying a an operation(specified in the Apply parameter) to each item of the sequence. Note that this shard is able to use the $0 internal variable.
 
 ## Details
 

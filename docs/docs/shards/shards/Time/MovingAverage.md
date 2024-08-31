@@ -9,13 +9,13 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`Float`](../../types/#float) |
-| `Output ➡️` ||The resulting output of the shard | | [`Float`](../../types/#float) |
-| `Window` | :fontawesome-solid-circle-plus:{title="No"} No  | The moving average window length (in frames) | `16` | [`Int`](../../types/#int) |
+| `⬅️ Input` ||The floating point number to compute the average of. | | [`Float`](../../types/#float) |
+| `Output ➡️` ||The average of the floating point number over the specified number of frames. | | [`Float`](../../types/#float) |
+| `Window` | :fontawesome-solid-circle-plus:{title="No"} No  | The sample size in frames | `16` | [`Int`](../../types/#int) |
 
 </div>
 
-Computes a moving average of a single floating point number.
+This shard computes the average of a floating point number over a specified number of frames.
 
 ## Details
 

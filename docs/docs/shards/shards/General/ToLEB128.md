@@ -9,13 +9,13 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`Int`](../../types/#int) |
-| `Output ➡️` ||The resulting output of the shard | | [`Bytes`](../../types/#bytes) |
+| `⬅️ Input` ||The integer to encode. | | [`Int`](../../types/#int) |
+| `Output ➡️` ||Returns the LEB128 encoded byte sequence. | | [`Bytes`](../../types/#bytes) |
 | `Signed` | :fontawesome-solid-circle-plus:{title="No"} No  | If the integer to encode/decode is signed and can be negative. | `false` | [`Bool`](../../types/#bool) |
 
 </div>
 
-
+This shard encodes the input(a signed or unsigned integer) into a LEB128 encoded byte sequence.
 
 ## Details
 

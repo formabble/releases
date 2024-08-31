@@ -15,7 +15,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-Converts time into a human readable string.
+This shard converts time into a human readable string.
 
 ## Examples
 

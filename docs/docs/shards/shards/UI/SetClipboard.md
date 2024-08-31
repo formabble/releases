@@ -14,7 +14,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-Sets the input string to the system clipboard.
+This shard sets the input string to the system clipboard.
 
 --8<-- "includes/license.md"
 

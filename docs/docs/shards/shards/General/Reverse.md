@@ -14,7 +14,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-Reverses the order of the elements in the input sequence or string.
+This shard reverses the order of the elements in the input sequence or string.
 
 --8<-- "includes/license.md"
 

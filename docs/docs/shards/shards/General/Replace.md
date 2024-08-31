@@ -16,7 +16,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-Replaces all occurrences of the pattern(specified in the Patterns parameter) found in the input sequence or string, with replacements (specified in the Replacements parameter).
+This shard replaces all occurrences of the pattern(specified in the Patterns parameter) found in the input sequence or string, with replacements (specified in the Replacements parameter).
 
 ## Details
 

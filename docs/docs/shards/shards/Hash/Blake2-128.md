@@ -9,11 +9,16 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`Bytes`](../../types/#bytes)[`[Bytes]`](../../types/#seq)[`String`](../../types/#string)[`[String]`](../../types/#seq) |
-| `Output ➡️` ||The resulting output of the shard | | [`Bytes`](../../types/#bytes) |
+| `⬅️ Input` ||The string, bytes or a sequence of strings/bytes to hash. | | [`Bytes`](../../types/#bytes)[`[Bytes]`](../../types/#seq)[`String`](../../types/#string)[`[String]`](../../types/#seq) |
+| `Output ➡️` ||Returns the 128-bit hash as a byte sequence (returns a sequence of bytes instead if the input was a sequence). | | [`Bytes`](../../types/#bytes) |
 
 </div>
 
+This shard converts the input (string, bytes or a sequence of strings/bytes) into a compact 128-bit hash(of 16 bytes) using the BLAKE2b-128 hashing algorithm.
+
+## Details
+
+--8<-- "details/shards/Hash/Blake2-128.md"
 
 
 --8<-- "includes/license.md"

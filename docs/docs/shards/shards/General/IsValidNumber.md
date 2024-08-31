@@ -14,7 +14,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-
+Checks if the input is a valid floating-point number (not zero, subnormal, infinity, or NaN). Returns true if the input is a normal floating-point number, otherwise returns false.
 
 --8<-- "includes/license.md"
 

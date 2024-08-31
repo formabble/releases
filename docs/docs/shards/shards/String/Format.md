@@ -14,7 +14,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-Concatenates all the elements of a sequence into a string
+This shard concatenates all the elements of a sequence into a string
 
 --8<-- "includes/license.md"
 

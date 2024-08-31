@@ -9,8 +9,8 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
-| `Output ➡️` ||The resulting output of the shard | | [`[Float Wire]`](../../types/#seq) |
+| `⬅️ Input` ||The input of this shard is ignored. | | [`Any`](../../types/#any) |
+| `Output ➡️` ||This shard returns a [Type::Float Type::Wire] pair. This pair represents the wire configuration from the current generation that scored the best fitness score and the fitness score itself. | | [`[Float Wire]`](../../types/#seq) |
 | `Wire` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The wire to optimize and evolve. | `None` | [`Wire`](../../types/#wire) |
 | `Fitness` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The fitness wire to run at the end of the main wire evaluation and using its last output; should output a Float fitness value. | `None` | [`Wire`](../../types/#wire) |
 | `Population` | :fontawesome-solid-circle-plus:{title="No"} No  | The population size. | `64` | [`Int`](../../types/#int) |
@@ -23,7 +23,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-
+This shard uses genetic algorithm to evolve and change the configuration of the wire specified in the Wire parameter. The evolved wires are given a score based on the fitness wire specified in the Fitness Wire parameter. The shard then outputs the best wire and its fitness score. This shard should be used in conjunction with the Mutant shard.
 
 ## Details
 

@@ -9,12 +9,12 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
-| `Output ➡️` ||The resulting output of the shard | | [`Float`](../../types/#float) |
+| `⬅️ Input` ||The input of this shard is ignored. | | [`None`](../../types/#none) |
+| `Output ➡️` ||Returns the amount of time that has elapsed in milliseconds. | | [`Float`](../../types/#float) |
 
 </div>
 
-Gives the time between the last activation of this shard and the current, capped to a limit
+Returns the time between the last call of this shard and the current call in milliseconds, capped to a limit
 
 --8<-- "includes/license.md"
 

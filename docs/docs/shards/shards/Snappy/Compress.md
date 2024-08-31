@@ -9,12 +9,12 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`Bytes`](../../types/#bytes) |
-| `Output ➡️` ||The resulting output of the shard | | [`Bytes`](../../types/#bytes) |
+| `⬅️ Input` ||The bytes sequence to compress. | | [`Bytes`](../../types/#bytes) |
+| `Output ➡️` ||The compressed bytes sequence. | | [`Bytes`](../../types/#bytes) |
 
 </div>
 
-
+This shard compresses the input bytes sequence using the Snappy algorithm and returns the compressed bytes sequence.
 
 --8<-- "includes/license.md"
 

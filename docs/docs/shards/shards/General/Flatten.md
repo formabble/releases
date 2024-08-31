@@ -9,12 +9,12 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
-| `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
+| `⬅️ Input` ||This shard will take a sequence or a table with nested values. | | [`Any`](../../types/#any) |
+| `Output ➡️` ||This shard will return a single sequence with all of values, nested values and keys of the input as elements. | | [`Any`](../../types/#any) |
 
 </div>
 
-
+This shard will take a sequence with nested values (eg. a sequence of sequences or a sequence of tables) and create a single sequence with all of values, nested values and keys as elements.
 
 ## Details
 
