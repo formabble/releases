@@ -1,19 +1,32 @@
+@define(ml/embeddings/use-gpu false)
+@include("../../shards/lib/ml/embeddings.shs" Once: true)
+
 @define(db "shards_vecs.db")
-DB.LoadExtension("../../sqlite-rembed/target/release/libsqlite_rembed.dylib" EntryPoint: "sqlite3_rembed_init" Database: @db)
 DB.LoadExtension("sqlite-vec" @db)
 Msg("Loaded")
 
-"""
-INSERT INTO temp.rembed_clients(name, options) VALUES ('text-embedding-3-small', 'openai');
-""" | Maybe(DB.RawQuery(@db))
+"Coding question" | Do(ml/embed) | Take(0) = coding-embedding
+"General question" | Do(ml/embed) | Take(0) = general-embedding
+"Game engine question" | Do(ml/embed) | Take(0) = game-engine-embedding
 
-["square root"] | DB.Query("""
+"How to render a 3d model?" | Log("QUERY")
+Do(ml/embed) | Take(0) = query-embedding
+[(query-embedding | Tensor.ToFloats)]
+Pack("f32[384]") = query-embedding-packed
+
+[query-embedding coding-embedding] | Do(ml/cosine-similarity) | Log("Coding similarity")
+[query-embedding general-embedding] | Do(ml/cosine-similarity) | Log("General similarity")
+[query-embedding game-engine-embedding] | Do(ml/cosine-similarity) | Log("Game engine similarity")
+
+Msg("Embedding done")
+
+[query-embedding-packed] | DB.Query("""
 with matches as (
   select
     rowid,
     distance
   from vec_docs
-  where shard_doc_embeddings match rembed('text-embedding-3-small', ?)
+  where shard_doc_embeddings match ?
   order by distance
   limit 10
 )

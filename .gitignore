@@ -6,3 +6,8 @@ docs/.env
 docs/*.db
 docs/enums_docs_merged.txt
 docs/shards.db-journal
+docs/shards_docs_merged.md
+docs/shards.ml.embeddings.config.bin
+docs/shards.ml.embeddings.model.bin
+docs/shards.ml.embeddings.tokenizer.bin
+docs/shards.ml.embeddings.version.txt
