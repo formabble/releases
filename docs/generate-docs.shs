@@ -214,35 +214,35 @@ create virtual table vec_docs using vec0(
     [""] >= o
 
     ; metadata (front matter)
-    "---\r\n" >> o
-    "authors: Formabble & contributors\r\n" >> o
-    "license: CC-BY-SA-4.0\r\n" >> o
-    "---\r\n" >> o
-    "\r\n\r\n" >> o
+    "---\n" >> o
+    "authors: Formabble & contributors\n" >> o
+    "license: CC-BY-SA-4.0\n" >> o
+    "---\n" >> o
+    "\n\n" >> o
 
     ; title
     "# " >> o
     shard-doc:name >> o
-    "\r\n\r\n" >> o
+    "\n\n" >> o
 
     ; ; Combined table showing the input/outpus and parameters
-    "<div class=\"sh-parameters\" markdown=\"1\">\r\n" >> o
-    "| Name | Mandatory | Description | Default | Type |\r\n" >> o
-    "|------|---------------------|-------------|---------|------|\r\n" >> o
+    "<div class=\"sh-parameters\" markdown=\"1\">\n" >> o
+    "| Name | Mandatory | Description | Default | Type |\n" >> o
+    "|------|---------------------|-------------|---------|------|\n" >> o
 
     "| `⬅️ Input` ||" >> o
     shard-doc:input-help | @input-help-shards >> o
     " | " >> o
     "| " >> o
     shard-doc:input-types | ForEach(@print-type-info(o))
-    " |\r\n" >> o
+    " |\n" >> o
 
     "| `Output ➡️` ||" >> o
     shard-doc:output-help | @output-help-shards >> o
     " | " >> o
     "| " >> o
     shard-doc:output-types | ForEach(@print-type-info(o))
-    " |\r\n" >> o
+    " |\n" >> o
 
     parameters-seq | ForEach({
       ExpectTable
@@ -265,44 +265,44 @@ create virtual table vec_docs using vec0(
       p-default >> o
       "` | " >> o
       p-types | ForEach(@print-type-info(o))
-      " |\r\n" >> o
+      " |\n" >> o
     })
 
-    "\r\n</div>\r\n" >> o
-    "\r\n" >> o
+    "\n</div>\n" >> o
+    "\n" >> o
 
     properties | When(IsNotNone {
       ExpectTable
       {
         Take("deprecated") | When({IsNotNone | And | ExpectBool | IsTrue} {
-          "--8<-- \"includes/deprecated.md\"\r\n\r\n" >> o
+          "--8<-- \"includes/deprecated.md\"\n\n" >> o
         })
       }
       {
         Take("experimental") | When({IsNotNone | And | ExpectBool | IsTrue} {
-          "--8<-- \"includes/experimental.md\"\r\n\r\n" >> o
+          "--8<-- \"includes/experimental.md\"\n\n" >> o
         })
       }
     })
 
     ; Help text
     shard-doc:help | If({IsNotNone} {ExpectString} {"ToDo"}) >> o
-    "\r\n\r\n" >> o
+    "\n\n" >> o
 
     "" >= shard-details
     shard-doc:name | @get-filename(@shards-details-path ".md" true) = details-file-name
     When({details-file-name | FS.IsFile} {
-      "## Details\r\n\r\n" >> o
+      "## Details\n\n" >> o
       "--8<-- \"" >> o
       shard-doc:name | details-file-name >> o
-      "\"\r\n" >> o
-      "\r\n\r\n" >> o
+      "\"\n" >> o
+      "\n\n" >> o
       details-file-name | FS.Read > shard-details
     })
 
     shard-doc:name | @get-filename(@shards-sample-path "" true) = samples-dir
     When({samples-dir | FS.IsDirectory} {
-      "## Examples\r\n\r\n" >> o
+      "## Examples\n\n" >> o
       samples-dir | FS.Iterate | ForEach({
         When({FS.Extension | Is(".shs")} {
           FS.Filename(NoExtension: true) = sample-filename
@@ -310,32 +310,32 @@ create virtual table vec_docs using vec0(
           [shard-doc:name "/" sample-filename ".shs.log"] | String.Join = sample-log-fname
           [shard-doc:name "/" sample-filename ".out.md"] | String.Join = sample-out-md-fname
 
-          "=== \"Code\"\r\n\r\n" >> o
-          "  ```x86asm linenums=\"1\"\r\n" >> o
+          "=== \"Code\"\n\n" >> o
+          "  ```x86asm linenums=\"1\"\n" >> o
           "  --8<-- \"" >> o
           sample-script-fname | @get-filename(@shards-sample-path "" true) >> o
-          "\"\r\n" >> o
-          "  ```\r\n\r\n" >> o
+          "\"\n" >> o
+          "  ```\n\n" >> o
 
           sample-out-md-fname | @get-filename(@shards-sample-path "" true) | FS.IsFile | When(IsTrue {
-            "=== \"Output\"\r\n\r\n" >> o
+            "=== \"Output\"\n\n" >> o
             "  --8<-- \"" >> o
             sample-out-md-fname | @get-filename(@shards-sample-path "" true) >> o
-            "\"\r\n\r\n" >> o
+            "\"\n\n" >> o
           })
 
-          "  ```\r\n" >> o
+          "  ```\n" >> o
           "  --8<-- \"" >> o
           sample-log-fname | @get-filename(@shards-sample-path "" true) >> o
-          "\"\r\n" >> o
-          "  ```\r\n" >> o
+          "\"\n" >> o
+          "  ```\n" >> o
 
-          "&nbsp;\r\n" >> o
+          "&nbsp;\n" >> o
         })
       })
     })
 
-    "--8<-- \"includes/license.md\"\r\n\r\n" >> o
+    "--8<-- \"includes/license.md\"\n\n" >> o
 
     o | String.Join = content
     file | FS.Write(content Overwrite: true)
@@ -421,20 +421,6 @@ create virtual table vec_docs using vec0(
         shard-details | AppendTo(shard-doc-string)
         "\n" | AppendTo(shard-doc-string)
       })
-
-      ; shard-doc | ToJson >= shard-doc-string
-      ; shard-doc | ToJson >= shard-doc-string
-      ; "Shard: " | PrependTo(shard-doc-string)
-
-      ; Count(parameters-seq-edited) | When(IsMore(0) {
-      ;   "\nParams: " | AppendTo(shard-doc-string)
-      ;   parameters-seq-edited | ToJson | AppendTo(shard-doc-string)
-      ; })
-
-      ; shard-details | When(IsNot("") {
-      ;   "\nDetails:\n" | AppendTo(shard-doc-string)
-      ;   shard-details | AppendTo(shard-doc-string)
-      ; })
 
       @env("GEN_EMBEDDINGS") | When(Is("true") {
         shard-doc-string | Produce("FBL.Embed")
@@ -647,20 +633,20 @@ create virtual table vec_docs using vec0(
     Count(labels) = count
 
     "" >> o
-    "---\r\n" >> o
-    "authors: Formabble & contributors\r\n" >> o
-    "license: CC-BY-SA-4.0\r\n" >> o
-    "---\r\n" >> o
-    "\r\n\r\n" >> o
+    "---\n" >> o
+    "authors: Formabble & contributors\n" >> o
+    "license: CC-BY-SA-4.0\n" >> o
+    "---\n" >> o
+    "\n\n" >> o
 
     "# " >> o
     enum-help:name | ExpectString = name | Set(enum-doc "name")
     name >> o
-    "\r\n\r\n" >> o
+    "\n\n" >> o
 
-    "<div class=\"sh-parameters\" markdown=\"1\">\r\n" >> o
-    "| Value  | Description |\r\n" >> o
-    "|------|---------------------|\r\n" >> o
+    "<div class=\"sh-parameters\" markdown=\"1\">\n" >> o
+    "| Value  | Description |\n" >> o
+    "|------|---------------------|\n" >> o
 
     ; Sequence(enum-doc "values")
 
@@ -672,7 +658,7 @@ create virtual table vec_docs using vec0(
       label >> o
       "` | " >> o
       description >> o
-      " |\r\n" >> o
+      " |\n" >> o
 
       {
         label: label
@@ -682,24 +668,33 @@ create virtual table vec_docs using vec0(
       Inc(idx)
     } Times: count)
 
-    "\r\n</div>\r\n" >> o
-    "\r\n" >> o
+    "\n</div>\n" >> o
+    "\n" >> o
 
-    "--8<-- \"includes/license.md\"\r\n" >> o
+    "--8<-- \"includes/license.md\"\n" >> o
 
     o | String.Join = content
     name | @get-filename(@enums-path ".md" false) = file
     file | FS.Write(content Overwrite: true)
 
-    enum-doc | ToJson >= enum-doc-string
-    "Enum: " | PrependTo(enum-doc-string)
+    ["# " name " {.enum}\n\n"] | String.Join >= enum-doc-string
+    enum-help:help | ExpectString | AppendTo(enum-doc-string)
+    "\n\n" | AppendTo(enum-doc-string)
+    "| Value  | Description |\n" | AppendTo(enum-doc-string)
+    "|------|---------------------|\n" | AppendTo(enum-doc-string)
+    enum-doc:values | ExpectSeq | ForEach({
+      ExpectTable
+      {Take("label") | ExpectString = label}
+      {Take("description") | ExpectString = description}
+      ["| `" label "` | " description " |\n"] | String.Join | AppendTo(enum-doc-string)
+    })
 
     @env("GEN_EMBEDDINGS") | When(Is("true") {
       enum-doc-string | Produce("FBL.Embed")
     })
 
     "\n----\n" | AppendTo(enum-doc-string)
-    "enums_docs_merged.txt" | FS.Write(enum-doc-string Append: true)
+    "enums_docs_merged.md" | FS.Write(enum-doc-string Append: true)
 
     none
   })
@@ -715,7 +710,7 @@ create virtual table vec_docs using vec0(
   ; })
 
   "shards_docs_merged.md" | FS.Remove
-  "enums_docs_merged.txt" | FS.Remove
+  "enums_docs_merged.md" | FS.Remove
 
   ; process documentation in parallel
   ; Empty results indicate success, returning the shard name adds it to the skipped list

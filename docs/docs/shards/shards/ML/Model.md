@@ -18,7 +18,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-A model is a collection of parameters and biases.
+This shard allows you to load a machine learning model and specify its format and configuration.
 
 --8<-- "includes/license.md"
 
