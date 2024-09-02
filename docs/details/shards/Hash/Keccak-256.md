@@ -1,1 +1,1 @@
-- Keccak-256 is a cryptographic hash algorithm, providing strong security properties.
+Keccak-256 is a cryptographic hash algorithm, providing strong security properties.

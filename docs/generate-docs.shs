@@ -9,6 +9,8 @@
 @define(notion-api-key @env("NOTION_API_KEY"))
 @define(notion-db-id "0a24c90c4e344381a01c73cb140e4969")
 
+@define(fbl-documentation-db "fbl.documentation.db")
+
 @define(headers {
   "Authorization": #(["Bearer " @notion-api-key] | String.Join)
   "Content-Type": "application/json"
@@ -24,7 +26,7 @@
 
 @wire(main {
   @env("GEN_EMBEDDINGS") | When(Is("true") {
-    DB.LoadExtension("sqlite-vec")
+    DB.LoadExtension("sqlite-vec" @fbl-documentation-db)
 
     """
 create table docs(
@@ -35,15 +37,22 @@ create table docs(
 create virtual table vec_docs using vec0(
   shard_doc_embeddings float[384]
 );
-""" | Maybe(DB.RawQuery)
+""" | Maybe(DB.RawQuery(@fbl-documentation-db))
     Msg("Generating embeddings")
   })
 
   @wire(embeddings-generator {
+    @ml/embeddings/prepare
+
+    Once({
+      @i2(0 0) >= docs-hash
+    })
+
     Consume("FBL.Embed" Type: @type(Type::String)) = text
+    {Hash | Add(docs-hash) > docs-hash}
     When(Is("__DONE__") {
       Msg("Done")
-      none | Stop
+      docs-hash | Stop
     })
 
     Msg("Processing embedding")
@@ -54,13 +63,13 @@ create virtual table vec_docs using vec0(
           = floats
           Count(floats) | Assert.Is(384)
           [floats] | Pack("f32[384]") = floats-packed
-          [text] | DB.Query("insert into docs(shard_doc) values(?)")
-          [floats-packed] | DB.Query("insert into vec_docs(shard_doc_embeddings) values(?)")
+          [text] | DB.Query("insert into docs(shard_doc) values(?)" @fbl-documentation-db)
+          [floats-packed] | DB.Query("insert into vec_docs(shard_doc_embeddings) values(?)" @fbl-documentation-db)
         })
-      })
+      } @fbl-documentation-db)
     })
 
-    none
+    docs-hash
   } Looped: true)
 
   Detach(embeddings-generator)
@@ -400,13 +409,13 @@ create virtual table vec_docs using vec0(
           "\n" | AppendTo(shard-doc-string)
           p-help | AppendTo(shard-doc-string)
           "\n" | AppendTo(shard-doc-string)
-          "**Default:** " | AppendTo(shard-doc-string)
+          "\n**Default:** " | AppendTo(shard-doc-string)
           p-default | AppendTo(shard-doc-string)
           "\n" | AppendTo(shard-doc-string)
-          "**Optional:** " | AppendTo(shard-doc-string)
+          "\n**Optional:** " | AppendTo(shard-doc-string)
           (p-optional | If(IsTrue {"Yes"} {"No"})) | AppendTo(shard-doc-string)
           "\n" | AppendTo(shard-doc-string)
-          "**Type:**\n" | AppendTo(shard-doc-string)
+          "\n**Type:**\n" | AppendTo(shard-doc-string)
           p-types | ForEach({
             {"  * " | AppendTo(shard-doc-string)}
             ExpectString | AppendTo(shard-doc-string)
@@ -733,7 +742,8 @@ create virtual table vec_docs using vec0(
 
   "__DONE__" | Produce("FBL.Embed")
 
-  Wait(embeddings-generator)
+  Wait(embeddings-generator) | ToBytes | Hash.Blake2-128 | ToHex = documentation-hash
+  "fbl.documentation.hash.txt" | FS.Write(documentation-hash Overwrite: true)
 
   Pause(2.0)
 

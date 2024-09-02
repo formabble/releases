@@ -1,1 +1,1 @@
-- This shard is also able to accept a sequence that contains a mixture of strings and bytes.
+This shard is also able to accept a sequence that contains a mixture of strings and bytes.

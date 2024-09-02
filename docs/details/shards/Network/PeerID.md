@@ -1,1 +1,1 @@
-- If no specific peer is provided in the `Peer` parameter, this shard will return the Peer ID of the current wire.
+If no specific peer is provided in the `Peer` parameter, this shard will return the Peer ID of the current wire.

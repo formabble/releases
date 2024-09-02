@@ -6,9 +6,9 @@ For existing sequences `Push` pushes in the new elements. If a sequence doesn't 
 
 For tables `Push` can update only those existing keys whose values are of the type sequence. In such cases `Push` can push in new elements in those key-value pair sequences. The key to be updated must be passed in via the `Key` parameter.
 
-!!! note
-   1. Do not use `Push` to update any variables created by `Set` (or its aliases `>=`). `Push` is best used to update variables that were themselves created by `Push` (first push).
-   2. Though, if you really want to do (1.) you can offload the current sequence into another sequence variable, push new values into it, and update the table with this sequence variable (see the last code example).
+> [!NOTE]
+> 1. Do not use `Push` to update any variables created by `Set` (or its aliases `>=`). `Push` is best used to update variables that were themselves created by `Push` (first push).
+> 2. Though, if you really want to do (1.) you can offload the current sequence into another sequence variable, push new values into it, and update the table with this sequence variable (see the last code example).
 
 The `Global` parameter controls whether the created variables can be referenced across wires (`Global` set to `true`) or only within the current wire (`Global` set to `false`, default behavior).
 
@@ -18,10 +18,5 @@ The parameter `Clear` controls whether we should clear out this sequence after e
 
 The input to this shard is the new update value that is to be pushed into the sequence/table being modified. This value is also passed through as this shard's output.
 
-!!! note
-    `Push` has one alias: `>>` which is equal to `Push(... Clear: true)`.
-
-!!! note "See also"
-    - [`AppendTo`](../AppendTo)
-    - [`PrependTo`](../PrependTo)
-    - [`Sequence`](../Sequence)
+> [!NOTE]
+> `Push` has one alias: `>>` which is equal to `Push(... Clear: true)`.

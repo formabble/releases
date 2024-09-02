@@ -5,10 +5,3 @@ Whether the created table variable has a global scope (available to all wires on
 In addition to the key and the scope, this shard can also define the table's inner data types via the `Types` parameter. More than one data type may be set.
 
 Any input to this shard is ignored and instead passed through as its output.
-
-!!! note "See also"
-    - [`Get`](../Get)
-    - [`Push`](../Push)
-    - [`Sequence`](../Sequence)
-    - [`Set`](../Set)
-    - [`Update`](../Update)

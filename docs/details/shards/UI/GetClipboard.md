@@ -1,1 +1,1 @@
-- If the clipboard contains a value that is not a string, eg. an image, the shard will return an empty string.
+If the clipboard contains a value that is not a string, eg. an image, the shard will return an empty string.
