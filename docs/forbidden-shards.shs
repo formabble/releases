@@ -47,6 +47,8 @@
     ; GFX
     (Is("GFX.MainWindow"))
     (Is("GFX.Renderer"))
+    (Is("GFX.MoveWindow"))
+    (Is("GFX.ResizeWindow"))
     ; Input
     (Is("Inputs.Detached"))
     ; Unsafe stuff
