@@ -1,8 +1,8 @@
-- The `GFX.Feature` shard is used to create a custom feature using the parameters provided while the `GFX.BuiltinFeature` shard is for adding a "ready-made" feature.
+The `GFX.Feature` shard is used to create a custom feature using the parameters provided while the `GFX.BuiltinFeature` shard is for adding a "ready-made" feature.
 
-- The feature object created by this shard is usually collected into a sequence, which is then in turn used to create a render pass using `GFX.DrawablePass`.
+The feature object created by this shard is usually collected into a sequence, which is then in turn used to create a render pass using `GFX.DrawablePass`.
 
-- Listed below are the different available built in features that can be used in the `Id` parameter.
+Listed below are the different available built in features that can be used in the `Id` parameter.
 
   - ### Transform
     This Feature implements basic world/view/projection transform.

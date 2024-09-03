@@ -1,4 +1,4 @@
-- The `Params` parameter can accept a table with keys representing the shader parameters for the material and their respective values. For example:
+The `Params` parameter can accept a table with keys representing the shader parameters for the material and their respective values. For example:
   ``` shards
   GFX.Material(Params: {
   baseColor: @f4(1.0 0.5 0.2 1.0)
@@ -10,4 +10,4 @@
   })
   ```
 
-- The `Features` parameter can accept a sequence of feature objects, created either with the `GFX.Feature` or `GFX.BuiltinFeature` shard.
+The `Features` parameter can accept a sequence of feature objects, created either with the `GFX.Feature` or `GFX.BuiltinFeature` shard.
