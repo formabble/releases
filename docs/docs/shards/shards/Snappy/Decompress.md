@@ -9,12 +9,12 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The compressed bytes sequence to decompress. | | [`Bytes`](../../types/#bytes) |
-| `Output ➡️` ||The decompressed bytes sequence. | | [`Bytes`](../../types/#bytes) |
+| `⬅️ Input` ||The compressed byte array to decompress. | | [`Bytes`](../../types/#bytes) |
+| `Output ➡️` ||The decompressed byte array. | | [`Bytes`](../../types/#bytes) |
 
 </div>
 
-This shard decompressed the input bytes sequence that has been previously compressed using the Snappy.Compress shard.
+This shard decompressed the input byte array that has been previously compressed using the Snappy.Compress shard.
 
 --8<-- "includes/license.md"
 

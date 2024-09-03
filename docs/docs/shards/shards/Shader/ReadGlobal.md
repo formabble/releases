@@ -9,13 +9,13 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
-| `Output ➡️` ||The resulting output of the shard | |  |
-| `Name` | :fontawesome-solid-circle-plus:{title="No"} No  | The name of the field to read/write | `` | [`String`](../../types/#string) |
+| `⬅️ Input` ||The input of this shard is ignored. | | [`None`](../../types/#none) |
+| `Output ➡️` ||The value of the global variable specified. | |  |
+| `Name` | :fontawesome-solid-circle-plus:{title="No"} No  | The name of global shader variable to read. | `` | [`String`](../../types/#string) |
 
 </div>
 
-
+This shard reads the value of the global shader variable specified in the Name parameter.
 
 --8<-- "includes/license.md"
 

@@ -9,8 +9,8 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
-| `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any)[`None`](../../types/#none) |
+| `⬅️ Input` ||The input of this shard is ignored. | | [`None`](../../types/#none) |
+| `Output ➡️` ||This shard outputs the type set in the OutputType parameter. | | [`Any`](../../types/#any)[`None`](../../types/#none) |
 | `Source` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The WGSL source code to insert | `None` | [`String`](../../types/#string)[`Var(String)`](../../types/#contextvar)[`[String Var(Any)]`](../../types/#seq) |
 | `Type` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Where to insert the code. | `None` | [`ShaderLiteralType`](../../../enums/ShaderLiteralType) |
 | `OutputType` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The type that this code is expected to output. (default: none) | `None` | [`ShaderFieldBaseType`](../../../enums/ShaderFieldBaseType) |
@@ -19,7 +19,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-
+This shard allows the user to write WGSL code directly and insert it into the shader code. The WGSL code is written as a sequence of strings in the Source parameter.
 
 ## Details
 

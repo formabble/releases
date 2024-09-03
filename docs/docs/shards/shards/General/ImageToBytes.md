@@ -10,11 +10,11 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Accepts an image as input. | | [`Image`](../../types/#image) |
-| `Output ➡️` ||The input image represented as a byte sequence. | | [`Bytes`](../../types/#bytes) |
+| `Output ➡️` ||The input image represented as a byte array. | | [`Bytes`](../../types/#bytes) |
 
 </div>
 
-Converts an image into a byte sequence.
+Converts an image into a byte array.
 
 --8<-- "includes/license.md"
 

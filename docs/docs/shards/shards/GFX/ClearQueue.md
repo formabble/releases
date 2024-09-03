@@ -9,12 +9,12 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`GFX.DrawQueue`](../../types/#gfx.drawqueue) |
-| `Output ➡️` ||The resulting output of the shard | | [`None`](../../types/#none) |
+| `⬅️ Input` ||The drawable queue object to clear. | | [`GFX.DrawQueue`](../../types/#gfx.drawqueue) |
+| `Output ➡️` ||None. | | [`None`](../../types/#none) |
 
 </div>
 
-Clears a draw queue
+Removes all drawable objects from the input drawable queue.
 
 --8<-- "includes/license.md"
 

@@ -9,14 +9,14 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`{Vertices: [Float2 Float3 Float4 Color] Indices: [Int]}`](../../types/#table) |
-| `Output ➡️` ||The resulting output of the shard | | [`GFX.Mesh`](../../types/#gfx.mesh) |
-| `Layout` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The names for each vertex attribute. | `None` | [`[String]`](../../types/#seq) |
-| `WindingOrder` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Front facing winding order for this mesh. | `None` | [`WindingOrder`](../../../enums/WindingOrder) |
+| `⬅️ Input` ||The input table containing Vertices and Indices keys with the relevent values to construct the mesh object. | | [`{Vertices: [Float2 Float3 Float4 Color] Indices: [Int]}`](../../types/#table) |
+| `Output ➡️` ||The created mesh object. | | [`GFX.Mesh`](../../types/#gfx.mesh) |
+| `Layout` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The names for each vertex attribute. The sequence provided will also be the pattern that dictates how the sequence value of the Vertices key in the input table will be interpreted. | `None` | [`[String]`](../../types/#seq) |
+| `WindingOrder` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Determines which side of the triangle is considered the front face. | `None` | [`WindingOrder`](../../../enums/WindingOrder) |
 
 </div>
 
-
+This shard creates a mesh object using the data provided in the Vertices and Indices keys of the input table.
 
 --8<-- "includes/license.md"
 

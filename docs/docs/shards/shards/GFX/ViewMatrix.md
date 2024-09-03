@@ -9,12 +9,12 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`GFX.View`](../../types/#gfx.view) |
-| `Output ➡️` ||The resulting output of the shard | | [`[Float4](4)`](../../types/#seq) |
+| `⬅️ Input` ||A view object created by GFX.View. | | [`GFX.View`](../../types/#gfx.view) |
+| `Output ➡️` ||A 4x4 matrix representing the view object's view matrix. | | [`[Float4](4)`](../../types/#seq) |
 
 </div>
 
-Returns the view matrix of the view
+This shard takes the input view object and returns its view matrix, which represents the camera's position and orientation in the world space.
 
 --8<-- "includes/license.md"
 

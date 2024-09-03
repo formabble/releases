@@ -9,13 +9,13 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
-| `Output ➡️` ||The resulting output of the shard | | [`None`](../../types/#none) |
-| `Name` | :fontawesome-solid-circle-plus:{title="No"} No  | The name of the field to read/write | `` | [`String`](../../types/#string) |
+| `⬅️ Input` ||The value to set to the global shader variable specified. | | [`Any`](../../types/#any) |
+| `Output ➡️` ||The shard outputs none, but the value is set to the global shader variable specified. | | [`None`](../../types/#none) |
+| `Name` | :fontawesome-solid-circle-plus:{title="No"} No  | The name of global variable to set the input value to. | `` | [`String`](../../types/#string) |
 
 </div>
 
-
+This shard sets the value passed as input to the global shader variable specified in the Name parameter.
 
 --8<-- "includes/license.md"
 

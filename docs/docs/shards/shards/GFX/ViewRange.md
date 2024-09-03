@@ -9,12 +9,12 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`GFX.View`](../../types/#gfx.view) |
-| `Output ➡️` ||The resulting output of the shard | | [`Float2`](../../types/#float2) |
+| `⬅️ Input` ||A view object created by GFX.View. | | [`GFX.View`](../../types/#gfx.view) |
+| `Output ➡️` ||A float2 representing the view's near and far clipping range. | | [`Float2`](../../types/#float2) |
 
 </div>
 
-Returns the view near/far range
+This shard takes the input view object and returns a float2 representing the view's near and far clipping range. The first value in the float2 represents the near clipping range while the second value represents the far clipping range.
 
 --8<-- "includes/license.md"
 

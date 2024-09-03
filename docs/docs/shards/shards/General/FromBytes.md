@@ -9,7 +9,7 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||This shard will take a byte sequence. | | [`Bytes`](../../types/#bytes) |
+| `⬅️ Input` ||This shard will take a byte array. | | [`Bytes`](../../types/#bytes) |
 | `Output ➡️` ||This shard will return the original value converted back to its original type. | | [`Any`](../../types/#any) |
 
 </div>

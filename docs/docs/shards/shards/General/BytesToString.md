@@ -9,7 +9,7 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||Accepts a byte sequence as input. Each byte in the sequence is interpreted as a character. | | [`Bytes`](../../types/#bytes) |
+| `⬅️ Input` ||Accepts a byte array as input. Each byte in the sequence is interpreted as a character. | | [`Bytes`](../../types/#bytes) |
 | `Output ➡️` ||The output is a string created from the input sequence of bytes. | | [`String`](../../types/#string) |
 
 </div>

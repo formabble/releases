@@ -10,11 +10,11 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The value is ignored. | | [`None`](../../types/#none) |
-| `Output ➡️` ||Returns the current state of the UI as a byte sequence. | | [`Bytes`](../../types/#bytes) |
+| `Output ➡️` ||Returns the current state of the UI as a byte array. | | [`Bytes`](../../types/#bytes) |
 
 </div>
 
-This shard saves the current state of the UI as a byte sequence. It saves UI information such as the position of windows, the state of checkboxes, the state of sliders, etc.
+This shard saves the current state of the UI as a byte array. It saves UI information such as the position of windows, the state of checkboxes, the state of sliders, etc.
 
 --8<-- "includes/license.md"
 

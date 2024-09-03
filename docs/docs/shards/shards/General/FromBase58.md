@@ -10,11 +10,11 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The base58 encoded string to decode. | | [`String`](../../types/#string) |
-| `Output ➡️` ||Returns the decoded byte sequence. | | [`Bytes`](../../types/#bytes) |
+| `Output ➡️` ||Returns the decoded byte array. | | [`Bytes`](../../types/#bytes) |
 
 </div>
 
-This shard decodes the base58 encoded string and returns it as a decoded byte sequence.
+This shard decodes the base58 encoded string and returns it as a decoded byte array.
 
 --8<-- "includes/license.md"
 

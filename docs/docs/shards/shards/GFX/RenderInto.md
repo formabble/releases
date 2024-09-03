@@ -9,8 +9,8 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
-| `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
+| `⬅️ Input` ||Any input type is accepted. The input value will pass through unchanged. | | [`Any`](../../types/#any) |
+| `Output ➡️` ||Outputs the input value, passed through unchanged. | | [`Any`](../../types/#any) |
 | `Textures` | :fontawesome-solid-circle-plus:{title="No"} No  | The textures to render into to create. | `None` | [`None`](../../types/#none)[`{{Any} Var(GFX.Texture2D)}`](../../types/#table) |
 | `Contents` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The shards that will render into the given textures. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
 | `Size` | :fontawesome-solid-circle-plus:{title="No"} No  | The reference size. This will control the size of the render targets. | `None` | [`None`](../../types/#none)[`Int2`](../../types/#int2)[`Var(Int2)`](../../types/#contextvar) |

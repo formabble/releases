@@ -9,14 +9,14 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
-| `Output ➡️` ||The resulting output of the shard | | [`None`](../../types/#none) |
-| `Steps` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Render steps to follow. | `None` | [`Var([GFX.PipelineStep])`](../../types/#contextvar)[`[GFX.PipelineStep]`](../../types/#seq) |
-| `View` | :fontawesome-solid-circle-plus:{title="No"} No  | The view to render. (Optional) | `None` | [`None`](../../types/#none)[`Var(GFX.View)`](../../types/#contextvar) |
+| `⬅️ Input` ||The input of this shard is ignored. | | [`None`](../../types/#none) |
+| `Output ➡️` ||This shard returns none. | | [`None`](../../types/#none) |
+| `Steps` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Sequence of render pass objects to process. | `None` | [`Var([GFX.PipelineStep])`](../../types/#contextvar)[`[GFX.PipelineStep]`](../../types/#seq) |
+| `View` | :fontawesome-solid-circle-plus:{title="No"} No  | The view to render. If no view object is provided, the default view will be used. | `None` | [`None`](../../types/#none)[`Var(GFX.View)`](../../types/#contextvar) |
 
 </div>
 
-
+This shard takes the sequence of render pass objects specified in the Steps parameter, processes it sequentially, and renders the final scene based on the view object specified in the View parameter.
 
 ## Examples
 

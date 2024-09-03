@@ -15,7 +15,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-This shard sends the input bytes sequence or string to the peer specified in the Peer parameter.
+This shard sends the input byte array or string to the peer specified in the Peer parameter.
 
 ## Details
 

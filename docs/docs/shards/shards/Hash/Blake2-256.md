@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The string, bytes or a sequence of strings/bytes to hash. | | [`Bytes`](../../types/#bytes)[`[Bytes]`](../../types/#seq)[`String`](../../types/#string)[`[String]`](../../types/#seq) |
-| `Output ➡️` ||Returns the 256-bit hash as a byte sequence (returns a sequence of bytes instead if the input was a sequence). | | [`Bytes`](../../types/#bytes) |
+| `Output ➡️` ||Outputs the 256-bit hash as a byte sequence (outputs a sequence of bytes instead if the input was a sequence). | | [`Bytes`](../../types/#bytes) |
 
 </div>
 
