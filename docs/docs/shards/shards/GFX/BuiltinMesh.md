@@ -17,5 +17,10 @@ license: CC-BY-SA-4.0
 
 This shard creates the ready-made mesh object of the shape defined in the Type parameter.
 
+## Details
+
+--8<-- "details/shards/GFX/BuiltinMesh.md"
+
+
 --8<-- "includes/license.md"
 

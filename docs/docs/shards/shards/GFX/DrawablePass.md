@@ -23,5 +23,10 @@ license: CC-BY-SA-4.0
 
 This shard creates a render pass object, meant for rendering drawable objects, using the drawables from the drawables queue (specified in the Queue parameter) and the sequence of features objects (specified in the Features parameter).
 
+## Details
+
+--8<-- "details/shards/GFX/DrawablePass.md"
+
+
 --8<-- "includes/license.md"
 

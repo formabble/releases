@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Bytes`](../../types/#bytes) |
-| `Output ➡️` ||The resulting output of the shard | | [`Object`](../../types/#object) |
+| `Output ➡️` ||The resulting output of the shard | | [`Model`](../../types/#model) |
 | `Model` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The model to use. | `None` | [`MLModels`](../../../enums/MLModels) |
 | `Format` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The format of the model. | `None` | [`MLFormats`](../../../enums/MLFormats) |
 | `Configuration` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The configuration of the model. | `None` | [`{Any}`](../../types/#table)[`Var({Any})`](../../types/#contextvar) |

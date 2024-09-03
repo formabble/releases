@@ -9,8 +9,8 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`[Object]`](../../types/#seq) |
-| `Output ➡️` ||The resulting output of the shard | | [`Object`](../../types/#object) |
+| `⬅️ Input` ||The input of the shard, if any | | [`[Tensor]`](../../types/#seq) |
+| `Output ➡️` ||The resulting output of the shard | | [`Tensor`](../../types/#tensor) |
 | `Dim` | :fontawesome-solid-circle-plus:{title="No"} No  | The dimension along which to stack the tensors. Default is 0. | `0` | [`Int`](../../types/#int)[`Var(Int)`](../../types/#contextvar)[`None`](../../types/#none) |
 
 </div>

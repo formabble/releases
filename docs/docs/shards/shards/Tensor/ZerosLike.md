@@ -9,8 +9,8 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`Object`](../../types/#object) |
-| `Output ➡️` ||The resulting output of the shard | | [`Object`](../../types/#object) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Tensor`](../../types/#tensor) |
+| `Output ➡️` ||The resulting output of the shard | | [`Tensor`](../../types/#tensor) |
 
 </div>
 

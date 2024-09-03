@@ -18,5 +18,10 @@ license: CC-BY-SA-4.0
 
 This shard creates a material from the given parameters and features.
 
+## Details
+
+--8<-- "details/shards/GFX/Material.md"
+
+
 --8<-- "includes/license.md"
 

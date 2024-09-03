@@ -22,5 +22,10 @@ license: CC-BY-SA-4.0
 
 This shard creates and manages a view object, which defines and controls the view or camera settings for a rendering pipeline.
 
+## Details
+
+--8<-- "details/shards/GFX/View.md"
+
+
 --8<-- "includes/license.md"
 

@@ -18,5 +18,10 @@ license: CC-BY-SA-4.0
 
 This shard creates a mesh object using the data provided in the Vertices and Indices keys of the input table.
 
+## Details
+
+--8<-- "details/shards/GFX/Mesh.md"
+
+
 --8<-- "includes/license.md"
 

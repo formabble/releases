@@ -17,5 +17,10 @@ license: CC-BY-SA-4.0
 
 This shard writes the input value to the shader output or one of the outputs of the render pass (specified in the Name parameter).
 
+## Details
+
+--8<-- "details/shards/Shader/WriteOutput.md"
+
+
 --8<-- "includes/license.md"
 

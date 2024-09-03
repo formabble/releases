@@ -1,17 +1,17 @@
 This shard can take a table as input that contains the following keys with the following values:
   - "transform": The 4x4 transformation matrix that contains the translation, rotation and scale for the glTF model to adopt.
   - "materials": A sub-table that contains information to modify the materials of the glTF model.
-  - ["node" "path"]: A node can be modified by passing the path as a sequence of strings as the key and a sub-table containing the      parameters to modify.
+  - ["bone1" "bone2" "bone3"]: A node can be modified by passing the bones path as a sequence of strings as the key and a sub-table containing the parameters to modify.
     Eg.
     ```shards
     {
-      ["rootNode" "spine" "upperBody" "etc."]: {
+      ["rootNode" "spine" "upperBody"]: {
         scale: @f3(2.0)
       }
-    } GFX.glTF(...)
+    } GFX.glTF(Bytes: asset/my-model)
     ```
 
-The sub-table that can be provided in the materials key of the input table will take the following format: `"key" : value` where the key will be the name of the material to modify and the value can either be: 
+The sub-table that can be provided in the materials key of the input table will take the following format: `"key" : value` where the key will be the name of the material to modify and the value can either be:
   - a material object to replace the current material of the glTF model with, or
   - another sub-table which contains information that can modify the current material.
 

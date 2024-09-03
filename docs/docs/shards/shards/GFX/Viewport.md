@@ -16,5 +16,10 @@ license: CC-BY-SA-4.0
 
 This shard returns the dimensions of the current viewport as an int4
 
+## Details
+
+--8<-- "details/shards/GFX/Viewport.md"
+
+
 --8<-- "includes/license.md"
 

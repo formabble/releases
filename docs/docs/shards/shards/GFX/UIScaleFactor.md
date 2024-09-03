@@ -17,5 +17,10 @@ license: CC-BY-SA-4.0
 
 Outputs the scaling factor for UI as determined by the operating system.
 
+## Details
+
+--8<-- "details/shards/GFX/UIScaleFactor.md"
+
+
 --8<-- "includes/license.md"
 

@@ -9,9 +9,9 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`[Object]`](../../types/#seq) |
-| `Output ➡️` ||The resulting output of the shard | | [`[Object]`](../../types/#seq) |
-| `Model` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The model to use. | `None` | [`Var(Object)`](../../types/#contextvar) |
+| `⬅️ Input` ||The input of the shard, if any | | [`[Tensor]`](../../types/#seq) |
+| `Output ➡️` ||The resulting output of the shard | | [`[Tensor]`](../../types/#seq) |
+| `Model` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The model to use. | `None` | [`Var(Model)`](../../types/#contextvar) |
 
 </div>
 

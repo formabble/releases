@@ -24,5 +24,10 @@ license: CC-BY-SA-4.0
 
 This shard creates a render pass object designed for applying post processing effects or full-screen rendering techniques.
 
+## Details
+
+--8<-- "details/shards/GFX/EffectPass.md"
+
+
 --8<-- "includes/license.md"
 

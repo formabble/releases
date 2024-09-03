@@ -366,7 +366,7 @@ create virtual table vec_docs using vec0(
       parameters-seq | Map({
         ExpectTable = param-table
         param-table:types | ExpectSeq
-        Map({ExpectTable | Take("name")}) | Set(param-table "types")
+        Map({ExpectTable | Take("name")}) | Update(param-table "types")
         param-table
       }) = parameters-seq-edited
 
@@ -375,20 +375,20 @@ create virtual table vec_docs using vec0(
       " {.shard}\n\n" | AppendTo(shard-doc-string)
       Get(shard-doc "help") | ExpectString | AppendTo(shard-doc-string)
       "\n\n" | AppendTo(shard-doc-string)
-      "## Input\n\n" | AppendTo(shard-doc-string)
+      "## Shard Input\n\n" | AppendTo(shard-doc-string)
       Get(shard-doc "input-help") | AppendTo(shard-doc-string)
       "\n\n" | AppendTo(shard-doc-string)
-      "### Types\n" | AppendTo(shard-doc-string)
+      "### Possible Input Types\n" | AppendTo(shard-doc-string)
       Get(shard-doc "input-types") | ForEach({
         {"* " | AppendTo(shard-doc-string)}
         ExpectString | AppendTo(shard-doc-string)
         "\n" | AppendTo(shard-doc-string)
       })
       "\n" | AppendTo(shard-doc-string)
-      "## Output\n\n" | AppendTo(shard-doc-string)
+      "## Shard Output\n\n" | AppendTo(shard-doc-string)
       Get(shard-doc "output-help") | AppendTo(shard-doc-string)
       "\n\n" | AppendTo(shard-doc-string)
-      "### Types\n" | AppendTo(shard-doc-string)
+      "### Possible Output Types\n" | AppendTo(shard-doc-string)
       Get(shard-doc "output-types") | ForEach({
         {"* " | AppendTo(shard-doc-string)}
         ExpectString | AppendTo(shard-doc-string)
@@ -396,7 +396,7 @@ create virtual table vec_docs using vec0(
       })
       "\n" | AppendTo(shard-doc-string)
       Count(parameters-seq-edited) | When(IsMore(0) {
-        "## Parameters\n\n" | AppendTo(shard-doc-string)
+        "## Shard Parameters\n\n" | AppendTo(shard-doc-string)
         parameters-seq-edited | ForEach({
           ExpectTable
           {Take("name") | ExpectString = p-name}
@@ -404,18 +404,18 @@ create virtual table vec_docs using vec0(
           {Take("help") | ExpectString = p-help}
           {Take("default") | ExpectString = p-default}
           {Take("optional") | ExpectBool = p-optional}
-          "### " | AppendTo(shard-doc-string)
+          "### Parameter: " | AppendTo(shard-doc-string)
           p-name | AppendTo(shard-doc-string)
           "\n" | AppendTo(shard-doc-string)
           p-help | AppendTo(shard-doc-string)
           "\n" | AppendTo(shard-doc-string)
-          "\n**Default:** " | AppendTo(shard-doc-string)
+          "\n**Default value:** " | AppendTo(shard-doc-string)
           p-default | AppendTo(shard-doc-string)
           "\n" | AppendTo(shard-doc-string)
-          "\n**Optional:** " | AppendTo(shard-doc-string)
+          "\n**Is the parameter optional?** " | AppendTo(shard-doc-string)
           (p-optional | If(IsTrue {"Yes"} {"No"})) | AppendTo(shard-doc-string)
           "\n" | AppendTo(shard-doc-string)
-          "\n**Type:**\n" | AppendTo(shard-doc-string)
+          "\n**Possible parameter types:**\n" | AppendTo(shard-doc-string)
           p-types | ForEach({
             {"  * " | AppendTo(shard-doc-string)}
             ExpectString | AppendTo(shard-doc-string)
@@ -426,7 +426,7 @@ create virtual table vec_docs using vec0(
       })
 
       shard-details | When(IsNot("") {
-        "## Details\n" | AppendTo(shard-doc-string)
+        "## Shard Details\n" | AppendTo(shard-doc-string)
         shard-details | AppendTo(shard-doc-string)
         "\n" | AppendTo(shard-doc-string)
       })

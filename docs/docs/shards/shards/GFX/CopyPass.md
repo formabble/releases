@@ -20,5 +20,10 @@ license: CC-BY-SA-4.0
 
 This shard creates a render pass object that is meant for transferring render data from one stage of the render pipeline to the next. It is also able to make changes to the render data specified in the Inputs parameter, like changing its texture format or down sampling the texture. It makes these changes through its Outputs and OutputScale parameters.
 
+## Details
+
+--8<-- "details/shards/GFX/CopyPass.md"
+
+
 --8<-- "includes/license.md"
 

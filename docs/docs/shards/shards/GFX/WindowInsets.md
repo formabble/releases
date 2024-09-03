@@ -17,5 +17,10 @@ license: CC-BY-SA-4.0
 
 Retrieves the window inset values when rendering on mobile devices and screens with a keep-out area.
 
+## Details
+
+--8<-- "details/shards/GFX/WindowInsets.md"
+
+
 --8<-- "includes/license.md"
 

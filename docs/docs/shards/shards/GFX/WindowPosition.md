@@ -17,5 +17,10 @@ license: CC-BY-SA-4.0
 
 This shard returns the position of the window specified in the Window parameter.
 
+## Details
+
+--8<-- "details/shards/GFX/WindowPosition.md"
+
+
 --8<-- "includes/license.md"
 

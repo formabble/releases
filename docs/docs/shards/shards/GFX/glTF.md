@@ -23,5 +23,10 @@ license: CC-BY-SA-4.0
 
 This shard takes the glTF model (specified either in the Path, Bytes or Copy parameter) and outputs a drawable object which can be subsequently added to the drawables queue for the render pipline.
 
+## Details
+
+--8<-- "details/shards/GFX/glTF.md"
+
+
 --8<-- "includes/license.md"
 

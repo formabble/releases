@@ -17,5 +17,10 @@ license: CC-BY-SA-4.0
 
 This shard sets the value passed as input to the global shader variable specified in the Name parameter.
 
+## Details
+
+--8<-- "details/shards/Shader/WriteGlobal.md"
+
+
 --8<-- "includes/license.md"
 

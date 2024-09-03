@@ -17,5 +17,10 @@ license: CC-BY-SA-4.0
 
 This shard creates the ready-made feature object of the feature specified in the ID parameter, for use in a rendering pass.
 
+## Details
+
+--8<-- "details/shards/GFX/BuiltinFeature.md"
+
+
 --8<-- "includes/license.md"
 

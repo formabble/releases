@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`String`](../../types/#string) |
 | `Output ➡️` ||The resulting output of the shard | | [`[Int]`](../../types/#seq) |
-| `Tokenizer` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The tokenizer to use. | `None` | [`Var(Object)`](../../types/#contextvar) |
+| `Tokenizer` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The tokenizer to use. | `None` | [`Var(Tokenizer)`](../../types/#contextvar) |
 | `AddSpecialTokens` | :fontawesome-solid-circle-plus:{title="No"} No  | If true, add special tokens. | `true` | [`Bool`](../../types/#bool) |
 | `AsTensor` | :fontawesome-solid-circle-plus:{title="No"} No  | Outputs a tensor object instead of an int sequence. | `false` | [`Bool`](../../types/#bool) |
 | `Format` | :fontawesome-solid-circle-plus:{title="No"} No  | The format of the output tensor. If As Tensor is true. | `TensorType::U32` | [`TensorType`](../../../enums/TensorType) |

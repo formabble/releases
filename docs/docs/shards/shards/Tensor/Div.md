@@ -9,9 +9,9 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`Object`](../../types/#object) |
-| `Output ➡️` ||The resulting output of the shard | | [`Object`](../../types/#object) |
-| `Other` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The tensor to divide by. | `None` | [`Var(Object)`](../../types/#contextvar)[`Float`](../../types/#float) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Tensor`](../../types/#tensor) |
+| `Output ➡️` ||The resulting output of the shard | | [`Tensor`](../../types/#tensor) |
+| `Other` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The tensor to divide by. | `None` | [`Var(Tensor)`](../../types/#contextvar)[`Float`](../../types/#float) |
 
 </div>
 

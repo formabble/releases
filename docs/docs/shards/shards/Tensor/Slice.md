@@ -9,8 +9,8 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of the shard, if any | | [`Object`](../../types/#object) |
-| `Output ➡️` ||The resulting output of the shard | | [`Object`](../../types/#object) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Tensor`](../../types/#tensor) |
+| `Output ➡️` ||The resulting output of the shard | | [`Tensor`](../../types/#tensor) |
 | `Dim` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The dimension along which to slice the tensor. | `None` | [`Int`](../../types/#int)[`Var(Int)`](../../types/#contextvar) |
 | `Start` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The starting index of the slice. | `None` | [`Int`](../../types/#int)[`Var(Int)`](../../types/#contextvar) |
 | `End` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The ending index of the slice (exclusive). | `None` | [`Int`](../../types/#int)[`Var(Int)`](../../types/#contextvar) |

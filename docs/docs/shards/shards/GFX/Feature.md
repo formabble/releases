@@ -25,5 +25,10 @@ license: CC-BY-SA-4.0
 
 This shard creates a feature object based on what was provided in the different parameters.
 
+## Details
+
+--8<-- "details/shards/GFX/Feature.md"
+
+
 --8<-- "includes/license.md"
 
