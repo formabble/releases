@@ -1,4 +1,5 @@
 - This can be used in the `Shader` parameter of `GFX.Feature` or the `EntryPoint` parameter of `GFX.EffectPass`.
+
 - The functions differently when used in the Vertex stage and the Fragment stage of the entry point.
-  - When used in the Vertex stage, this shard will set the value to the vertex attribute specified in the `Name` parameter and supply the interpolated value as input to the pixel in the Fragment stage.
-  - When used in the Fragment stage, it will set the value to the attribute specified and supply the value as input to the `Output`parameter of the `GFX.DrawablePass` shard, if the feature is used. The `GFX.DrawablePass` shard will then write the value to the render targets specified in the `Outputs` parameter.
+  - When used in the Vertex stage, will write or create a new shader output and supply it to the fragment stage.
+  - When used in the Fragment stage, it will write the value supplied as input to the shard, to one of the outputs attached to the render pass.
