@@ -10,12 +10,12 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Any valid big integer(s) represented as bytes supported by this operation. | | [`Bytes`](../../types/#bytes)[`[Bytes]`](../../types/#seq) |
-| `Output ➡️` ||Returns the result of the operation as a big integer or sequence of big integers represented as bytes. | | [`Bytes`](../../types/#bytes)[`[Bytes]`](../../types/#seq) |
+| `Output ➡️` ||Outputs the result of the operation as a big integer or sequence of big integers represented as bytes. | | [`Bytes`](../../types/#bytes)[`[Bytes]`](../../types/#seq) |
 | `Operand` | :fontawesome-solid-circle-plus:{title="No"} No  | The big integer to add to the input as bytes. | `0` | [`Var(Bytes)`](../../types/#contextvar)[`Var([Bytes])`](../../types/#contextvar) |
 
 </div>
 
-This shard adds the input big integer to the big integer specified in the Operand parameter and returns the result.
+This shard adds the input big integer to the big integer specified in the Operand parameter and outputs the result.
 
 ## Examples
 

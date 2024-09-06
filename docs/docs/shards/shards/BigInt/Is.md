@@ -10,8 +10,8 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Big integer represented as bytes. | | [`Bytes`](../../types/#bytes) |
-| `Output ➡️` ||Returns true if the input big integer is equal to the big integer specified in the Operand parameter and false otherwise. | | [`Bool`](../../types/#bool) |
-| `Operand` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The big integer to compare against represented as bytes. | `None` | [`Var(Bytes)`](../../types/#contextvar) |
+| `Output ➡️` ||Outputs true if the input big integer is equal to the big integer specified in the Operand parameter and false otherwise. | | [`Bool`](../../types/#bool) |
+| `Operand` | :fontawesome-solid-circle-plus:{title="No"} No  | The big integer to compare against represented as bytes. | `none` | [`Var(Bytes)`](../../types/#contextvar) |
 
 </div>
 

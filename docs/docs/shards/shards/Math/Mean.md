@@ -9,13 +9,13 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||A sequence of floating point numbers. | | [`[Float]`](../../types/#seq) |
-| `Output ➡️` ||The calculated mean. | | [`Float`](../../types/#float) |
-| `Kind` | :fontawesome-solid-circle-plus:{title="No"} No  | The kind of Pythagorean means. | `Mean::Arithmetic` | [`Mean`](../../../enums/Mean) |
+| `⬅️ Input` ||The sequence of floating point numbers to calculate the average of. | | [`[Float]`](../../types/#seq) |
+| `Output ➡️` ||The calculated average as a float. | | [`Float`](../../types/#float) |
+| `Kind` | :fontawesome-solid-circle-plus:{title="No"} No  | The type of average to calculate. | `Mean::Arithmetic` | [`Mean`](../../../enums/Mean) |
 
 </div>
 
-Calculates the mean of a sequence of floating point numbers.
+Calculates the average value of a sequence of floating point numbers.
 
 ## Examples
 

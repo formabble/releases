@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Path to the glTF file to convert. | | [`String`](../../types/#string) |
-| `Output ➡️` ||Returns the GLB bytes of the converted glTF file. | | [`Bytes`](../../types/#bytes) |
+| `Output ➡️` ||Outputs the GLB bytes of the converted glTF file. | | [`Bytes`](../../types/#bytes) |
 
 </div>
 

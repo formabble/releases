@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
-| `Context` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The context | `None` | [`Var(Physics.Context)`](../../types/#contextvar) |
+| `Context` | :fontawesome-solid-circle-plus:{title="No"} No  | The context | `none` | [`Var(Physics.Context)`](../../types/#contextvar) |
 | `DrawConstraints` | :fontawesome-solid-circle-plus:{title="No"} No  | Draw constraints | `true` | [`Bool`](../../types/#bool)[`Var(Bool)`](../../types/#contextvar) |
 | `DrawConstraintLimits` | :fontawesome-solid-circle-plus:{title="No"} No  | Draw constraint limits | `false` | [`Bool`](../../types/#bool)[`Var(Bool)`](../../types/#contextvar) |
 | `DrawConstraintReferenceFrames` | :fontawesome-solid-circle-plus:{title="No"} No  | Draw constraint reference frames | `false` | [`Bool`](../../types/#bool)[`Var(Bool)`](../../types/#contextvar) |

@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of this shard is ignored. | | [`None`](../../types/#none) |
-| `Output ➡️` ||Returns a random sequence of bytes. | | [`Bytes`](../../types/#bytes) |
+| `Output ➡️` ||Outputs a random sequence of bytes. | | [`Bytes`](../../types/#bytes) |
 | `Size` | :fontawesome-solid-circle-plus:{title="No"} No  | The amount of bytes to output. | `32` | [`Int`](../../types/#int) |
 
 </div>

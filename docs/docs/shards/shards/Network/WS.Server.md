@@ -11,11 +11,11 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of this shard is ignored. | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The server object created. | | [`Object`](../../types/#object) |
-| `Address` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The local bind address or the remote address. | `None` | [`String`](../../types/#string)[`Var(String)`](../../types/#contextvar) |
-| `Port` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The port to bind if server or to connect to if client. | `None` | [`Int`](../../types/#int)[`Var(Int)`](../../types/#contextvar) |
-| `Handler` | :fontawesome-solid-circle-plus:{title="No"} No  | The wire to spawn for each new peer that connects, stopping that wire will break the connection. | `None` | [`None`](../../types/#none)[`Wire`](../../types/#wire)[`[Shard]`](../../types/#seq) |
-| `Timeout` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The timeout in seconds after which a peer will be disconnected if there is no network activity. | `None` | [`Float`](../../types/#float) |
-| `OnDisconnect` | :fontawesome-solid-circle-plus:{title="No"} No  | The shards to execute when a peer disconnects, The Peer ID will be the input. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
+| `Address` | :fontawesome-solid-circle-plus:{title="No"} No  | The local bind address or the remote address. | `none` | [`String`](../../types/#string)[`Var(String)`](../../types/#contextvar) |
+| `Port` | :fontawesome-solid-circle-plus:{title="No"} No  | The port to bind if server or to connect to if client. | `none` | [`Int`](../../types/#int)[`Var(Int)`](../../types/#contextvar) |
+| `Handler` | :fontawesome-solid-circle-plus:{title="No"} No  | The wire to spawn for each new peer that connects, stopping that wire will break the connection. | `none` | [`None`](../../types/#none)[`Wire`](../../types/#wire)[`[Shard]`](../../types/#seq) |
+| `Timeout` | :fontawesome-solid-circle-plus:{title="No"} No  | The timeout in seconds after which a peer will be disconnected if there is no network activity. | `none` | [`Float`](../../types/#float) |
+| `OnDisconnect` | :fontawesome-solid-circle-plus:{title="No"} No  | The shards to execute when a peer disconnects, The Peer ID will be the input. | `none` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
 
 </div>
 

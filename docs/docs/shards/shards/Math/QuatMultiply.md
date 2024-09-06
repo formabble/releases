@@ -10,8 +10,8 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Takes a float4 vector representing the quaternion to be multiplied. | | [`Float4`](../../types/#float4) |
-| `Output ➡️` ||Returns a float4 vector representing the resulting quaternion after multiplication. | | [`Float4`](../../types/#float4) |
-| `Operand` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The float4 vector representing the second quaternion to multiply the input quaternion with. | `None` | [`Float4`](../../types/#float4)[`Var(Float4)`](../../types/#contextvar) |
+| `Output ➡️` ||Outputs a float4 vector representing the resulting quaternion after multiplication. | | [`Float4`](../../types/#float4) |
+| `Operand` | :fontawesome-solid-circle-plus:{title="No"} No  | The float4 vector representing the second quaternion to multiply the input quaternion with. | `none` | [`Float4`](../../types/#float4)[`Var(Float4)`](../../types/#contextvar) |
 
 </div>
 

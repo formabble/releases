@@ -11,9 +11,9 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Tensor`](../../types/#tensor) |
 | `Output ➡️` ||The resulting output of the shard | | [`Tensor`](../../types/#tensor) |
-| `Dim` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The dimension along which to slice the tensor. | `None` | [`Int`](../../types/#int)[`Var(Int)`](../../types/#contextvar) |
-| `Start` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The starting index of the slice. | `None` | [`Int`](../../types/#int)[`Var(Int)`](../../types/#contextvar) |
-| `End` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The ending index of the slice (exclusive). | `None` | [`Int`](../../types/#int)[`Var(Int)`](../../types/#contextvar) |
+| `Dim` | :fontawesome-solid-circle-plus:{title="No"} No  | The dimension along which to slice the tensor. | `none` | [`Int`](../../types/#int)[`Var(Int)`](../../types/#contextvar) |
+| `Start` | :fontawesome-solid-circle-plus:{title="No"} No  | The starting index of the slice. | `none` | [`Int`](../../types/#int)[`Var(Int)`](../../types/#contextvar) |
+| `End` | :fontawesome-solid-circle-plus:{title="No"} No  | The ending index of the slice (exclusive). | `none` | [`Int`](../../types/#int)[`Var(Int)`](../../types/#contextvar) |
 
 </div>
 

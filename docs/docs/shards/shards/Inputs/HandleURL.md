@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Any input type is accepted. The input value will pass through unchanged. | | [`None`](../../types/#none) |
 | `Output ➡️` ||Outputs the input value, passed through unchanged. | | [`Any`](../../types/#any) |
-| `Action` | :fontawesome-solid-circle-plus:{title="No"} No  | Code to execute when a file drop event or URL event is received. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
+| `Action` | :fontawesome-solid-circle-plus:{title="No"} No  | Code to execute when a file drop event or URL event is received. | `none` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
 
 </div>
 

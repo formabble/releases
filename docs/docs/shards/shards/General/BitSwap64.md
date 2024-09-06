@@ -14,7 +14,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-This shard takes a 64-bit integer, reverses their order of its bytes, and returns the result as an integer. This is useful for converting between different endianness formats.
+This shard takes a 64-bit integer, reverses their order of its bytes, and outputs the result as an integer. This is useful for converting between different endianness formats.
 
 --8<-- "includes/license.md"
 

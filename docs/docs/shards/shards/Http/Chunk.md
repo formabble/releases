@@ -12,7 +12,7 @@ license: CC-BY-SA-4.0
 | `⬅️ Input` ||The input to the chunk shard is the data (String or Bytes) to be sent in the current chunk. This data is part of a larger response that will be sent in multiple chunks if necessary. | | [`String`](../../types/#string)[`Bytes`](../../types/#bytes) |
 | `Output ➡️` ||The output is the same as the input. The chunked transfer encoding is handled internally when writing to the socket. | | [`String`](../../types/#string)[`Bytes`](../../types/#bytes) |
 | `Status` | :fontawesome-solid-circle-plus:{title="No"} No  | The HTTP status code to return. | `200` | [`Int`](../../types/#int) |
-| `Headers` | :fontawesome-solid-circle-plus:{title="No"} No  | The headers to attach to this response. | `None` | [`{String}`](../../types/#table)[`Var({String})`](../../types/#contextvar)[`None`](../../types/#none) |
+| `Headers` | :fontawesome-solid-circle-plus:{title="No"} No  | The headers to attach to this response. | `none` | [`{String}`](../../types/#table)[`Var({String})`](../../types/#contextvar)[`None`](../../types/#none) |
 
 </div>
 

@@ -11,11 +11,11 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of this shard is ignored. | | [`None`](../../types/#none) |
 | `Output ➡️` ||This shard outputs the type set in the OutputType parameter. | | [`Any`](../../types/#any)[`None`](../../types/#none) |
-| `Source` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The WGSL source code to insert | `None` | [`String`](../../types/#string)[`Var(String)`](../../types/#contextvar)[`[String Var(Any)]`](../../types/#seq) |
-| `Type` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Where to insert the code. | `None` | [`ShaderLiteralType`](../../../enums/ShaderLiteralType) |
-| `OutputType` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The type that this code is expected to output. (default: none) | `None` | [`ShaderFieldBaseType`](../../../enums/ShaderFieldBaseType) |
-| `OutputDimension` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The dimension that this code is expected to output. (default: 4) | `None` | [`Int`](../../types/#int) |
-| `OutputMatrixDimension` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The matrix dimension that this code is expected to output. (default: 1) | `None` | [`Int`](../../types/#int) |
+| `Source` | :fontawesome-solid-circle-plus:{title="No"} No  | The WGSL source code to insert | `none` | [`String`](../../types/#string)[`Var(String)`](../../types/#contextvar)[`[String Var(Any)]`](../../types/#seq) |
+| `Type` | :fontawesome-solid-circle-plus:{title="No"} No  | Where to insert the code. | `none` | [`ShaderLiteralType`](../../../enums/ShaderLiteralType) |
+| `OutputType` | :fontawesome-solid-circle-plus:{title="No"} No  | The type that this code is expected to output. (default: none) | `none` | [`ShaderFieldBaseType`](../../../enums/ShaderFieldBaseType) |
+| `OutputDimension` | :fontawesome-solid-circle-plus:{title="No"} No  | The dimension that this code is expected to output. (default: 4) | `none` | [`Int`](../../types/#int) |
+| `OutputMatrixDimension` | :fontawesome-solid-circle-plus:{title="No"} No  | The matrix dimension that this code is expected to output. (default: 1) | `none` | [`Int`](../../types/#int) |
 
 </div>
 

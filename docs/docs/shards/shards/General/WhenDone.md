@@ -10,8 +10,8 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Any input type is accepted. The input of this shard will be given as input for the specified Wire | | [`Any`](../../types/#any) |
-| `Output ➡️` ||Returns the specific copy of the Wire that was scheduled. | | [`Any`](../../types/#any) |
-| `Wire` | :fontawesome-solid-circle-plus:{title="No"} No  | The Wire to schedule and run asynchronously | `None` | [`None`](../../types/#none)[`Wire`](../../types/#wire)[`[Shard]`](../../types/#seq) |
+| `Output ➡️` ||Outputs the specific copy of the Wire that was scheduled. | | [`Any`](../../types/#any) |
+| `Wire` | :fontawesome-solid-circle-plus:{title="No"} No  | The Wire to schedule and run asynchronously | `none` | [`None`](../../types/#none)[`Wire`](../../types/#wire)[`[Shard]`](../../types/#seq) |
 
 </div>
 

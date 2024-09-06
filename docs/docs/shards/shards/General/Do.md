@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Any input type is accepted. The input of this shard will be given as input for the specified Wire | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The output of this shard will be the output of the Wire that is executed. | | [`Any`](../../types/#any) |
-| `Wire` | :fontawesome-solid-circle-plus:{title="No"} No  | The Wire to execute inline. | `None` | [`Wire`](../../types/#wire)[`String`](../../types/#string)[`None`](../../types/#none) |
+| `Wire` | :fontawesome-solid-circle-plus:{title="No"} No  | The Wire to execute inline. | `none` | [`Wire`](../../types/#wire)[`String`](../../types/#string)[`None`](../../types/#none) |
 
 </div>
 

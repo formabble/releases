@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The message hash to recover the public key from. | | [`Bytes`](../../types/#bytes) |
 | `Output ➡️` ||The public key recovered from the signature and message. | | [`Bytes`](../../types/#bytes) |
-| `Signature` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The signature generated from signing the input message with the private key. | `None` | [`Bytes`](../../types/#bytes)[`Var(Bytes)`](../../types/#contextvar) |
+| `Signature` | :fontawesome-solid-circle-plus:{title="No"} No  | The signature generated from signing the input message with the private key. | `none` | [`Bytes`](../../types/#bytes)[`Var(Bytes)`](../../types/#contextvar) |
 | `Compressed` | :fontawesome-solid-circle-plus:{title="No"} No  | Indicates if the output PublicKey should be in compressed format. | `false` | [`Bool`](../../types/#bool) |
 
 </div>

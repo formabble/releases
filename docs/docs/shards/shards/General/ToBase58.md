@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The byte array or string to encode. | | [`Bytes`](../../types/#bytes)[`String`](../../types/#string) |
-| `Output ➡️` ||Returns the base58 encoded string. | | [`String`](../../types/#string) |
+| `Output ➡️` ||Outputs the base58 encoded string. | | [`String`](../../types/#string) |
 
 </div>
 

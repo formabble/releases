@@ -11,8 +11,8 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input to broadcast to all connected peers. | | [`Any`](../../types/#any) |
 | `Output ➡️` ||Outputs the input value, passed through unchanged. | | [`Any`](../../types/#any) |
-| `Server` | :fontawesome-solid-circle-plus:{title="No"} No  | The server to send the input to. | `ContextVariable: Network.Server` | [`Var(Object)`](../../types/#contextvar) |
-| `Exclude` | :fontawesome-solid-circle-plus:{title="No"} No  | The list of Peer IDs to exclude from the broadcast. | `None` | [`Var([Int])`](../../types/#contextvar)[`[Int]`](../../types/#seq)[`None`](../../types/#none) |
+| `Server` | :fontawesome-solid-circle-plus:{title="No"} No  | The server to send the input to. | `Var: Network.Server` | [`Var(Object)`](../../types/#contextvar) |
+| `Exclude` | :fontawesome-solid-circle-plus:{title="No"} No  | The list of Peer IDs to exclude from the broadcast. | `none` | [`Var([Int])`](../../types/#contextvar)[`[Int]`](../../types/#seq)[`None`](../../types/#none) |
 
 </div>
 

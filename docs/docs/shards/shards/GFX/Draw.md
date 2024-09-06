@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The drawable object (or sequence of drawable objects) to add to the draw queue. | | [`GFX.Drawable`](../../types/#gfx.drawable)[`[GFX.Drawable]`](../../types/#seq) |
 | `Output ➡️` ||Outputs the input value, passed through unchanged. | | [`GFX.Drawable`](../../types/#gfx.drawable)[`[GFX.Drawable]`](../../types/#seq) |
-| `Queue` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The queue object to add the drawable object to. | `None` | [`Var(GFX.DrawQueue)`](../../types/#contextvar) |
+| `Queue` | :fontawesome-solid-circle-plus:{title="No"} No  | The queue object to add the drawable object to. | `none` | [`Var(GFX.DrawQueue)`](../../types/#contextvar) |
 
 </div>
 

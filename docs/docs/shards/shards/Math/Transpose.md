@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Takes a matrix (sequence of float2, float3, or float4 vectors) as input. | | [`[Float4](4)`](../../types/#seq)[`[Float3](3)`](../../types/#seq)[`[Float2](2)`](../../types/#seq) |
-| `Output ➡️` ||Returns the transposed the matrix. | | [`[Float4](4)`](../../types/#seq)[`[Float3](3)`](../../types/#seq)[`[Float2](2)`](../../types/#seq) |
+| `Output ➡️` ||Outputs the transposed the matrix. | | [`[Float4](4)`](../../types/#seq)[`[Float3](3)`](../../types/#seq)[`[Float2](2)`](../../types/#seq) |
 
 </div>
 

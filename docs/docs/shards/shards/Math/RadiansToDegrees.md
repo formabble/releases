@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Takes a float value representing an angle in radians. | | [`Float`](../../types/#float) |
-| `Output ➡️` ||Returns a float value representing the input angle in degrees. | | [`Float`](../../types/#float) |
+| `Output ➡️` ||Outputs a float value representing the input angle in degrees. | | [`Float`](../../types/#float) |
 
 </div>
 

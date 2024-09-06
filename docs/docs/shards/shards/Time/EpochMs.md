@@ -14,7 +14,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-This shard returns the the amount of time that has elapsed from the Unix epoch to the current system time in milliseconds.
+This shard outputs the the amount of time that has elapsed from the Unix epoch to the current system time in milliseconds.
 
 ## Details
 

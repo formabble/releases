@@ -14,7 +14,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-Stops the current flow and returns the provided input. This shard is used to exit the execution of the current wire early within loops or conditional flows, returning the specified input.
+Stops the current flow and outputs the provided input. This shard is used to exit the execution of the current wire early within loops or conditional flows, returning the specified input.
 
 --8<-- "includes/license.md"
 

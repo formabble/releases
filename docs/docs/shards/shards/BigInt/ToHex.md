@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Big integer to convert, represented as bytes. | | [`Int`](../../types/#int)[`Bytes`](../../types/#bytes)[`String`](../../types/#string) |
-| `Output ➡️` ||Returns the hexadecimal representation of the input big integer value. | | [`String`](../../types/#string) |
+| `Output ➡️` ||Outputs the hexadecimal representation of the input big integer value. | | [`String`](../../types/#string) |
 
 </div>
 

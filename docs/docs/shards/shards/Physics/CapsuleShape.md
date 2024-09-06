@@ -11,8 +11,8 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The resulting output of the shard | | [`Physics.Shape`](../../types/#physics.shape) |
-| `HalfHeight` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Half the height of the capsule | `None` | [`Float`](../../types/#float)[`Var(Float)`](../../types/#contextvar) |
-| `Radius` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Radius of the capsule | `None` | [`Float`](../../types/#float)[`Var(Float)`](../../types/#contextvar) |
+| `HalfHeight` | :fontawesome-solid-circle-plus:{title="No"} No  | Half the height of the capsule | `none` | [`Float`](../../types/#float)[`Var(Float)`](../../types/#contextvar) |
+| `Radius` | :fontawesome-solid-circle-plus:{title="No"} No  | Radius of the capsule | `none` | [`Float`](../../types/#float)[`Var(Float)`](../../types/#contextvar) |
 
 </div>
 

@@ -11,9 +11,9 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Bytes`](../../types/#bytes) |
 | `Output ➡️` ||The resulting output of the shard | | [`Model`](../../types/#model) |
-| `Model` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The model to use. | `None` | [`MLModels`](../../../enums/MLModels) |
-| `Format` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The format of the model. | `None` | [`MLFormats`](../../../enums/MLFormats) |
-| `Configuration` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The configuration of the model. | `None` | [`{Any}`](../../types/#table)[`Var({Any})`](../../types/#contextvar) |
+| `Model` | :fontawesome-solid-circle-plus:{title="No"} No  | The model to use. | `none` | [`MLModels`](../../../enums/MLModels) |
+| `Format` | :fontawesome-solid-circle-plus:{title="No"} No  | The format of the model. | `none` | [`MLFormats`](../../../enums/MLFormats) |
+| `Configuration` | :fontawesome-solid-circle-plus:{title="No"} No  | The configuration of the model. | `none` | [`{Any}`](../../types/#table)[`Var({Any})`](../../types/#contextvar) |
 | `GPU` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether to use the GPU (if available). | `false` | [`Bool`](../../types/#bool) |
 
 </div>

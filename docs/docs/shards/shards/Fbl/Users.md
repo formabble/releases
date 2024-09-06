@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||No input is required for this operation. | | [`None`](../../types/#none) |
-| `Output ➡️` ||A copy of the network clients' data, retrieved from the latest frame. | | [`{count: Int username: String lfg: Int channel: Int slot: Int server-id: Int is-agent: Bool}`](../../types/#table) |
+| `Output ➡️` ||A copy of the network clients' data, retrieved from the latest frame. | | [`{none: {count: Int username: String lfg: Int channel: Int slot: Int server-id: Int is-agent: Bool}}`](../../types/#table) |
 
 </div>
 

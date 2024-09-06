@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`[Tensor]`](../../types/#seq) |
 | `Output ➡️` ||The resulting output of the shard | | [`[Tensor]`](../../types/#seq) |
-| `Model` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The model to use. | `None` | [`Var(Model)`](../../types/#contextvar) |
+| `Model` | :fontawesome-solid-circle-plus:{title="No"} No  | The model to use. | `none` | [`Var(Model)`](../../types/#contextvar) |
 
 </div>
 

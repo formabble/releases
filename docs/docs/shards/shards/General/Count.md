@@ -12,7 +12,7 @@ license: CC-BY-SA-4.0
 | `⬅️ Input` ||The input of this shard is ignored. | | [`None`](../../types/#none) |
 | `Output ➡️` ||Outputs the count of characters, elements, or key-value pairs in the specified variable. If the variable type does not match, it outputs 0. | | [`Int`](../../types/#int) |
 | `Name` | :fontawesome-solid-circle-plus:{title="No"} No  | The name of the variable. | `` | [`String`](../../types/#string)[`Var(Any)`](../../types/#contextvar) |
-| `Key` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The key of the value to read from the table (parameter applicable only if the target variable is a table). | `None` | [`Any`](../../types/#any) |
+| `Key` | :fontawesome-solid-circle-plus:{title="No"} No  | The key of the value to read from the table (parameter applicable only if the target variable is a table). | `none` | [`Any`](../../types/#any) |
 | `Global` | :fontawesome-solid-circle-plus:{title="No"} No  | If the variable is available to all of the wires in the same mesh. | `false` | [`Bool`](../../types/#bool) |
 
 </div>

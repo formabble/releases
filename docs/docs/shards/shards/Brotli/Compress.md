@@ -15,7 +15,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-This shard compresses the input byte array using the Brotli algorithm and returns the smaller compressed byte array. The size of the resulting byte array and the speed of compression can be controlled using the Quality parameter.
+This shard compresses the input byte array using the Brotli algorithm and outputs the smaller compressed byte array. The size of the resulting byte array and the speed of compression can be controlled using the Quality parameter.
 
 ## Details
 

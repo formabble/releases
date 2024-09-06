@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Takes a sequence of floats as input and converts it into an image. The sequence length must be equal to Width x Height x Channels. | | [`[Float]`](../../types/#seq) |
-| `Output ➡️` ||This shard returns and image. | | [`Image`](../../types/#image) |
+| `Output ➡️` ||This shard outputs and image. | | [`Image`](../../types/#image) |
 | `Width` | :fontawesome-solid-circle-plus:{title="No"} No  | The width of the output image. | `16` | [`Int`](../../types/#int) |
 | `Height` | :fontawesome-solid-circle-plus:{title="No"} No  | The height of the output image. | `16` | [`Int`](../../types/#int) |
 | `Channels` | :fontawesome-solid-circle-plus:{title="No"} No  | The channels of the output image. | `1` | [`Int`](../../types/#int) |

@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Accepts a Sound object created by the Audio.Sound shard. | | [`Object`](../../types/#object) |
-| `Output ➡️` ||Returns the same Sound object that was input, allowing for further manipulation. | | [`Object`](../../types/#object) |
+| `Output ➡️` ||Outputs the same Sound object that was input, allowing for further manipulation. | | [`Object`](../../types/#object) |
 | `Looped` | :fontawesome-solid-circle-plus:{title="No"} No  | If the sound should be played in loop or should stop the wire when it ends and play only once. | `false` | [`Bool`](../../types/#bool) |
 
 </div>

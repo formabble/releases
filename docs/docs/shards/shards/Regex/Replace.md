@@ -12,7 +12,7 @@ license: CC-BY-SA-4.0
 | `⬅️ Input` ||The string to modify. | | [`String`](../../types/#string) |
 | `Output ➡️` ||The input string with all occurrences of the regex pattern replaced with the replacement string. | | [`String`](../../types/#string) |
 | `Regex` | :fontawesome-solid-circle-plus:{title="No"} No  | The regular expression as a string. | `` | [`String`](../../types/#string) |
-| `Replacement` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The regex replacement expression. | `None` | [`String`](../../types/#string)[`Var(String)`](../../types/#contextvar) |
+| `Replacement` | :fontawesome-solid-circle-plus:{title="No"} No  | The regex replacement expression. | `none` | [`String`](../../types/#string)[`Var(String)`](../../types/#contextvar) |
 
 </div>
 

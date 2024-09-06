@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Takes a byte array as input. | | [`Bytes`](../../types/#bytes) |
-| `Output ➡️` ||Returns the input bytes represented as a sequence of integers. | | [`[Int]`](../../types/#seq) |
+| `Output ➡️` ||Outputs the input bytes represented as a sequence of integers. | | [`[Int]`](../../types/#seq) |
 
 </div>
 

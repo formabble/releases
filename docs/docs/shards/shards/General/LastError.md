@@ -14,7 +14,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-This shard returns the last error message that occurred and returns it as a string.
+This shard outputs the last error message that occurred as a string.
 
 --8<-- "includes/license.md"
 

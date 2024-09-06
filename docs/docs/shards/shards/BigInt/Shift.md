@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Big integer represented as bytes. | | [`Bytes`](../../types/#bytes) |
-| `Output ➡️` ||Returns the big integer with its decimal point shifted represented as bytes. | | [`Bytes`](../../types/#bytes) |
+| `Output ➡️` ||Outputs the big integer with its decimal point shifted represented as bytes. | | [`Bytes`](../../types/#bytes) |
 | `By` | :fontawesome-solid-circle-plus:{title="No"} No  | The number of decimal places to shift the input big integer by. A positive number shifts the decimal point to the right, while a negative number shifts it to the left. | `0` | [`Int`](../../types/#int)[`Var(Int)`](../../types/#contextvar) |
 
 </div>

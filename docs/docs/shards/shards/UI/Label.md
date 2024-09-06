@@ -12,7 +12,7 @@ license: CC-BY-SA-4.0
 | `⬅️ Input` ||The input of the shard, if any | | [`String`](../../types/#string) |
 | `Output ➡️` ||The resulting output of the shard | | [`String`](../../types/#string) |
 | `Wrap` | :fontawesome-solid-circle-plus:{title="No"} No  | The text wrapping mode. | `TextWrap::Extend` | [`TextWrap`](../../../enums/TextWrap)[`Bool`](../../types/#bool) |
-| `Style` | :fontawesome-solid-circle-plus:{title="No"} No  | The text style. | `None` | [`{Any}`](../../types/#table)[`Var({Any})`](../../types/#contextvar)[`None`](../../types/#none) |
+| `Style` | :fontawesome-solid-circle-plus:{title="No"} No  | The text style. | `none` | [`{Any}`](../../types/#table)[`Var({Any})`](../../types/#contextvar)[`None`](../../types/#none) |
 
 </div>
 

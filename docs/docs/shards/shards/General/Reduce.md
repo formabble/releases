@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The sequence to reduce. | | [`[Any]`](../../types/#seq) |
 | `Output ➡️` ||The resulting value after applying the operation to each item of the sequence. | | [`Any`](../../types/#any) |
-| `Apply` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The function to apply to each item of the sequence. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `Apply` | :fontawesome-solid-circle-plus:{title="No"} No  | The function to apply to each item of the sequence. | `none` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
 
 </div>
 

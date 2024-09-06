@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Any input type is accepted. The input value will pass through unchanged. | | [`Any`](../../types/#any) |
 | `Output ➡️` ||Outputs the input value, passed through unchanged. | | [`Any`](../../types/#any) |
-| `Handler` | :fontawesome-solid-circle-plus:{title="No"} No  | The wire that will be spawned and handle a remote request. | `None` | [`Wire`](../../types/#wire)[`None`](../../types/#none) |
+| `Handler` | :fontawesome-solid-circle-plus:{title="No"} No  | The wire that will be spawned and handle a remote request. | `none` | [`Wire`](../../types/#wire)[`None`](../../types/#none) |
 | `Endpoint` | :fontawesome-solid-circle-plus:{title="No"} No  | The URL from where your service can be accessed by a client. | `0.0.0.0` | [`String`](../../types/#string) |
 | `Port` | :fontawesome-solid-circle-plus:{title="No"} No  | The port this service will use. | `7070` | [`Int`](../../types/#int) |
 

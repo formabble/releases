@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Input of any type is accepted. | | [`Any`](../../types/#any) |
-| `Output ➡️` ||Returns true if the input value is of type Int8, and false otherwise. | | [`Bool`](../../types/#bool) |
+| `Output ➡️` ||Outputs true if the input value is of type Int8, and false otherwise. | | [`Bool`](../../types/#bool) |
 
 </div>
 

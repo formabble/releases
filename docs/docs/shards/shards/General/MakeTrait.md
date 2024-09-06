@@ -11,8 +11,8 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of this shard is ignored. | | [`None`](../../types/#none) |
 | `Output ➡️` ||The trait object created. | | [`Any`](../../types/#any) |
-| `Name` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The trait name | `None` | [`String`](../../types/#string) |
-| `Types` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The trait types | `None` | [`{Type}`](../../types/#table) |
+| `Name` | :fontawesome-solid-circle-plus:{title="No"} No  | The trait name | `none` | [`String`](../../types/#string) |
+| `Types` | :fontawesome-solid-circle-plus:{title="No"} No  | The trait types | `none` | [`{Type}`](../../types/#table) |
 
 </div>
 

@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Takes input values of type `Int`, `Float`, `String`, or a collection  of `Int`s and `Float`s. Note that the shard can only convert strings that represent numerical values, such as "5", and not words like "Five". | | [`Any`](../../types/#any) |
-| `Output ➡️` ||Returns a vector of eight Int elements. | | [`Any`](../../types/#any) |
+| `Output ➡️` ||Outputs a vector of eight Int elements. | | [`Any`](../../types/#any) |
 
 </div>
 

@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
 | `Output ➡️` ||The resulting output of the shard | | [`Int2`](../../types/#int2) |
-| `Trait` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The trait | `None` | [`Trait`](../../types/#trait) |
+| `Trait` | :fontawesome-solid-circle-plus:{title="No"} No  | The trait | `none` | [`Trait`](../../types/#trait) |
 
 </div>
 

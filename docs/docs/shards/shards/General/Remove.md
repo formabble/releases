@@ -11,9 +11,9 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Any input is ignored. | | [`None`](../../types/#none) |
 | `Output ➡️` ||Output is the filtered sequence. | | [`[Any]`](../../types/#seq) |
-| `From` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The name of the sequence variable to edit in place. | `None` | [`Var([Any])`](../../types/#contextvar) |
-| `Join` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Other columns to join sort/filter using the input (they must be of the same length). | `None` | [`Var([Any])`](../../types/#contextvar)[`[Var([Any])]`](../../types/#seq) |
-| `Predicate` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The shards to use as predicate, if true the item will be popped from the sequence. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `From` | :fontawesome-solid-circle-plus:{title="No"} No  | The name of the sequence variable to edit in place. | `none` | [`Var([Any])`](../../types/#contextvar) |
+| `Join` | :fontawesome-solid-circle-plus:{title="No"} No  | Other columns to join sort/filter using the input (they must be of the same length). | `none` | [`Var([Any])`](../../types/#contextvar)[`[Var([Any])]`](../../types/#seq) |
+| `Predicate` | :fontawesome-solid-circle-plus:{title="No"} No  | The shards to use as predicate, if true the item will be popped from the sequence. | `none` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
 | `Unordered` | :fontawesome-solid-circle-plus:{title="No"} No  | Turn on to remove items very quickly but will not preserve the sequence items order. | `false` | [`Bool`](../../types/#bool) |
 
 </div>

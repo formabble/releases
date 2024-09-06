@@ -10,9 +10,9 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of this shard is ignored. | | [`None`](../../types/#none) |
-| `Output ➡️` ||This shard returns none. | | [`None`](../../types/#none) |
-| `Steps` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Sequence of render pass objects to process. | `None` | [`Var([GFX.PipelineStep])`](../../types/#contextvar)[`[GFX.PipelineStep]`](../../types/#seq) |
-| `View` | :fontawesome-solid-circle-plus:{title="No"} No  | The view to render. If no view object is provided, the default view will be used. | `None` | [`None`](../../types/#none)[`Var(GFX.View)`](../../types/#contextvar) |
+| `Output ➡️` ||This shard outputs none. | | [`None`](../../types/#none) |
+| `Steps` | :fontawesome-solid-circle-plus:{title="No"} No  | Sequence of render pass objects to process. | `none` | [`Var([GFX.PipelineStep])`](../../types/#contextvar)[`[GFX.PipelineStep]`](../../types/#seq) |
+| `View` | :fontawesome-solid-circle-plus:{title="No"} No  | The view to render. If no view object is provided, the default view will be used. | `none` | [`None`](../../types/#none)[`Var(GFX.View)`](../../types/#contextvar) |
 
 </div>
 

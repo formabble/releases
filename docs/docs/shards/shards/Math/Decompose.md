@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Takes a 4x4 transformation matrix as input. This matrix should be a sequence of four float4 vectors representing the combined translation, rotation, and scale transformations. | | [`[Float4](4)`](../../types/#seq) |
-| `Output ➡️` ||Returns a table containing the Translation, Rotation, and Scale components. Eg. {translation: @f3(1 2 3), rotation: @f4(0 0 0 1), scale: @f3(1 1 1)} | | [`{translation: Float3 rotation: Float4 scale: Float3}`](../../types/#table) |
+| `Output ➡️` ||Outputs a table containing the Translation, Rotation, and Scale components. Eg. {translation: @f3(1 2 3), rotation: @f4(0 0 0 1), scale: @f3(1 1 1)} | | [`{translation: Float3 rotation: Float4 scale: Float3}`](../../types/#table) |
 
 </div>
 

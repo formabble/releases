@@ -9,12 +9,12 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||A floating point number, a vector of floats (Float2, Float3, Float4), a color, or a sequence of these types supported by this operation. | | [`Float`](../../types/#float)[`Float2`](../../types/#float2)[`Float3`](../../types/#float3)[`Float4`](../../types/#float4)[`Color`](../../types/#color)[`[Any]`](../../types/#seq) |
-| `Output ➡️` ||The result of the operation, usually in the same type as the input value. If the input is a sequence, the output will be a sequence of results, with possible broadcasting according to the input and operand. | | [`Float`](../../types/#float)[`Float2`](../../types/#float2)[`Float3`](../../types/#float3)[`Float4`](../../types/#float4)[`Color`](../../types/#color)[`[Any]`](../../types/#seq) |
+| `⬅️ Input` ||The input float or sequence of floats to calculate the error function of. This can be any real number. | | [`Float`](../../types/#float)[`Float2`](../../types/#float2)[`Float3`](../../types/#float3)[`Float4`](../../types/#float4)[`Color`](../../types/#color)[`[Any]`](../../types/#seq) |
+| `Output ➡️` ||Outputs probability result of the error function of the input. The output is always between -1 and 1. | | [`Float`](../../types/#float)[`Float2`](../../types/#float2)[`Float3`](../../types/#float3)[`Float4`](../../types/#float4)[`Color`](../../types/#color)[`[Any]`](../../types/#seq) |
 
 </div>
 
-Applies the unary operation on the input value and returns the result. If the input is a sequence, the operation is applied to each element of the sequence.
+This shard calculates the error function of the given input. The error function is related to the probability that a random variable with normal distribution of mean 0 and variance 1/2 falls in the range specified by the input value.
 
 ## Examples
 

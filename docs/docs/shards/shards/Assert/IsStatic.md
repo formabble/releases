@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`None`](../../types/#none) |
 | `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
-| `Value` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Any value to check for being static (non-var) | `None` | [`Any`](../../types/#any) |
+| `Value` | :fontawesome-solid-circle-plus:{title="No"} No  | Any value to check for being static (non-var) | `none` | [`Any`](../../types/#any) |
 
 </div>
 

@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Accepts a float vector of any dimension (e.g., float2, float3, float4) or a float sequence of any length. | | [`[Float]`](../../types/#seq)[`Float2`](../../types/#float2)[`[Float2]`](../../types/#seq)[`Float3`](../../types/#float3)[`[Float3]`](../../types/#seq)[`Float4`](../../types/#float4)[`[Float4]`](../../types/#seq) |
-| `Output ➡️` ||Returns a float vector of the same dimension or a float sequence of the same length as what was passed as input but with its values normalized to a magnitude of 1. | | [`[Float]`](../../types/#seq)[`Float2`](../../types/#float2)[`[Float2]`](../../types/#seq)[`Float3`](../../types/#float3)[`[Float3]`](../../types/#seq)[`Float4`](../../types/#float4)[`[Float4]`](../../types/#seq) |
+| `Output ➡️` ||Outputs a float vector of the same dimension or a float sequence of the same length as what was passed as input but with its values normalized to a magnitude of 1. | | [`[Float]`](../../types/#seq)[`Float2`](../../types/#float2)[`[Float2]`](../../types/#seq)[`Float3`](../../types/#float3)[`[Float3]`](../../types/#seq)[`Float4`](../../types/#float4)[`[Float4]`](../../types/#seq) |
 | `Positive` | :fontawesome-solid-circle-plus:{title="No"} No  | If set to true, the output will be in the range 0.0~1.0 instead of -1.0~1.0. | `false` | [`Bool`](../../types/#bool) |
 
 </div>

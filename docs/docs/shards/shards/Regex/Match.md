@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The string to match. | | [`String`](../../types/#string) |
-| `Output ➡️` ||Returns either a sequence of strings, containing the fully matched string and any capture groups or an empty sequence if there are no matches. | | [`[String]`](../../types/#seq) |
+| `Output ➡️` ||Outputs either a sequence of strings, containing the fully matched string and any capture groups or an empty sequence if there are no matches. | | [`[String]`](../../types/#seq) |
 | `Regex` | :fontawesome-solid-circle-plus:{title="No"} No  | The regular expression as a string. | `` | [`String`](../../types/#string) |
 
 </div>

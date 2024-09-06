@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The sequence from which elements will be extracted. | | [`Bytes`](../../types/#bytes)[`String`](../../types/#string)[`[Any]`](../../types/#seq) |
 | `Output ➡️` ||The extracted elements. | | [`Any`](../../types/#any) |
-| `Indices` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | One or more indices (counted backwards from the last element) to extract from a sequence. | `None` | [`Int`](../../types/#int)[`[Int]`](../../types/#seq)[`Var(Int)`](../../types/#contextvar)[`Var([Int])`](../../types/#contextvar) |
+| `Indices` | :fontawesome-solid-circle-plus:{title="No"} No  | One or more indices (counted backwards from the last element) to extract from a sequence. | `none` | [`Int`](../../types/#int)[`[Int]`](../../types/#seq)[`Var(Int)`](../../types/#contextvar)[`Var([Int])`](../../types/#contextvar) |
 
 </div>
 

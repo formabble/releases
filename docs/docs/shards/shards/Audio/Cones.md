@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||A float3 vector with each element representing the respective cone properties: innerAngleInRadians (the angle within which the sound is at full volume), outerAngleInRadians (the angle at which the sound starts to attenuate), and outerGain (the volume multiplier for sounds outside the outer angle). | | [`Float3`](../../types/#float3) |
 | `Output ➡️` ||Outputs the input value, passed through unchanged. | | [`Float3`](../../types/#float3) |
-| `Sound` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The sound object to manipulate | `None` | [`Object`](../../types/#object)[`Var(Object)`](../../types/#contextvar) |
+| `Sound` | :fontawesome-solid-circle-plus:{title="No"} No  | The sound object to manipulate | `none` | [`Object`](../../types/#object)[`Var(Object)`](../../types/#contextvar) |
 
 </div>
 

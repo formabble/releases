@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of this shard is ignored. | | [`None`](../../types/#none) |
 | `Output ➡️` ||This shard will either return true if the specified Wire is still running, or false if it has ended. | | [`Bool`](../../types/#bool) |
-| `Wire` | :fontawesome-solid-circle-plus:{title="No"} No  | The wire to check. | `None` | [`Wire`](../../types/#wire)[`String`](../../types/#string)[`None`](../../types/#none)[`Var(Wire)`](../../types/#contextvar) |
+| `Wire` | :fontawesome-solid-circle-plus:{title="No"} No  | The wire to check. | `none` | [`Wire`](../../types/#wire)[`String`](../../types/#string)[`None`](../../types/#none)[`Var(Wire)`](../../types/#contextvar) |
 
 </div>
 

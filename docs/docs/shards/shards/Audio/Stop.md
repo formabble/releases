@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Accepts a Sound object created by the Audio.Sound shard. | | [`Object`](../../types/#object) |
-| `Output ➡️` ||Returns the same Sound object that was input, allowing for further manipulation. | | [`Object`](../../types/#object) |
+| `Output ➡️` ||Outputs the same Sound object that was input, allowing for further manipulation. | | [`Object`](../../types/#object) |
 
 </div>
 

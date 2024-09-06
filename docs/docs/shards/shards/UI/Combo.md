@@ -11,10 +11,10 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||A sequence of values. | | [`[Any]`](../../types/#seq) |
 | `Output ➡️` ||The selected value. | | [`Any`](../../types/#any) |
-| `Label` | :fontawesome-solid-circle-plus:{title="No"} No  | The text label of this combobox. | `None` | [`String`](../../types/#string)[`None`](../../types/#none) |
-| `Index` | :fontawesome-solid-circle-plus:{title="No"} No  | The index of the selected item. | `None` | [`Int`](../../types/#int)[`Var(Int)`](../../types/#contextvar)[`None`](../../types/#none) |
-| `Width` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The width of the button and menu. | `None` | [`Float`](../../types/#float)[`Var(Float)`](../../types/#contextvar) |
-| `Style` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The text style. | `None` | [`{Any}`](../../types/#table)[`Var({Any})`](../../types/#contextvar) |
+| `Label` | :fontawesome-solid-circle-plus:{title="No"} No  | The text label of this combobox. | `none` | [`String`](../../types/#string)[`None`](../../types/#none) |
+| `Index` | :fontawesome-solid-circle-plus:{title="No"} No  | The index of the selected item. | `none` | [`Int`](../../types/#int)[`Var(Int)`](../../types/#contextvar)[`None`](../../types/#none) |
+| `Width` | :fontawesome-solid-circle-plus:{title="No"} No  | The width of the button and menu. | `none` | [`Float`](../../types/#float)[`Var(Float)`](../../types/#contextvar) |
+| `Style` | :fontawesome-solid-circle-plus:{title="No"} No  | The text style. | `none` | [`{Any}`](../../types/#table)[`Var({Any})`](../../types/#contextvar) |
 
 </div>
 

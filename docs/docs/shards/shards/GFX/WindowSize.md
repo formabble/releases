@@ -10,12 +10,12 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of this shard is ignored. | | [`None`](../../types/#none) |
-| `Output ➡️` ||Returns the dimensions of the window as an int2. The first element represents the width and the second represents the height. | | [`Int2`](../../types/#int2) |
-| `Window` | :fontawesome-solid-circle-plus:{title="No"} No  | The window to get the size of. | `None` | [`None`](../../types/#none)[`Var(Object)`](../../types/#contextvar) |
+| `Output ➡️` ||Outputs the dimensions of the window as an int2. The first element represents the width and the second represents the height. | | [`Int2`](../../types/#int2) |
+| `Window` | :fontawesome-solid-circle-plus:{title="No"} No  | The window to get the size of. | `none` | [`None`](../../types/#none)[`Var(Object)`](../../types/#contextvar) |
 
 </div>
 
-This shard returns the dimensions of the window specified in the Window parameter.
+This shard outputs the dimensions of the window specified in the Window parameter.
 
 ## Details
 

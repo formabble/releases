@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Sequence/table whose elements or key-value pairs need to be processed. | | [`[Any]`](../../types/#seq)[`{Any}`](../../types/#table) |
 | `Output ➡️` ||Outputs the input value, passed through unchanged. | | [`[Any]`](../../types/#seq)[`{Any}`](../../types/#table) |
-| `Apply` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The processing logic (in the form of a shard or sequence of shards) to apply to the input sequence/table. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `Apply` | :fontawesome-solid-circle-plus:{title="No"} No  | The processing logic (in the form of a shard or sequence of shards) to apply to the input sequence/table. | `none` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
 
 </div>
 

@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Accepts a byte array or a string value as input. | | [`Bytes`](../../types/#bytes)[`String`](../../types/#string) |
-| `Output ➡️` ||Returns the Base64 encoded string representation of the input value. | | [`String`](../../types/#string) |
+| `Output ➡️` ||Outputs the Base64 encoded string representation of the input value. | | [`String`](../../types/#string) |
 
 </div>
 

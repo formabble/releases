@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Takes an image as input. | | [`Image`](../../types/#image) |
-| `Output ➡️` ||Returns the input image represented as a seqeunce of floats. | | [`[Float]`](../../types/#seq) |
+| `Output ➡️` ||Outputs the input image represented as a seqeunce of floats. | | [`[Float]`](../../types/#seq) |
 
 </div>
 

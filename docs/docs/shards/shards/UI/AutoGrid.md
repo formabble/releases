@@ -11,12 +11,12 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`[Any]`](../../types/#seq) |
 | `Output ➡️` ||The resulting output of the shard | | [`[Any]`](../../types/#seq) |
-| `Contents` | :fontawesome-solid-circle-plus:{title="No"} No  | The UI contents to be generated and inserted in each column for each element in the given sequence. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `Contents` | :fontawesome-solid-circle-plus:{title="No"} No  | The UI contents to be generated and inserted in each column for each element in the given sequence. | `none` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
 | `Striped` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether to alternate a subtle background color to every other row. | `false` | [`Bool`](../../types/#bool)[`Var(Bool)`](../../types/#contextvar)[`None`](../../types/#none) |
-| `MaxGridWidth` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Maximum grid width. | `None` | [`Float`](../../types/#float)[`Var(Float)`](../../types/#contextvar) |
-| `ItemWidth` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The width of each item. | `None` | [`Float`](../../types/#float)[`Var(Float)`](../../types/#contextvar) |
-| `ColumnSpacing` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Spacing between columns. | `None` | [`Float`](../../types/#float)[`Var(Float)`](../../types/#contextvar) |
-| `RowSpacing` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Spacing between rows. | `None` | [`Float`](../../types/#float)[`Var(Float)`](../../types/#contextvar) |
+| `MaxGridWidth` | :fontawesome-solid-circle-plus:{title="No"} No  | Maximum grid width. | `none` | [`Float`](../../types/#float)[`Var(Float)`](../../types/#contextvar) |
+| `ItemWidth` | :fontawesome-solid-circle-plus:{title="No"} No  | The width of each item. | `none` | [`Float`](../../types/#float)[`Var(Float)`](../../types/#contextvar) |
+| `ColumnSpacing` | :fontawesome-solid-circle-plus:{title="No"} No  | Spacing between columns. | `none` | [`Float`](../../types/#float)[`Var(Float)`](../../types/#contextvar) |
+| `RowSpacing` | :fontawesome-solid-circle-plus:{title="No"} No  | Spacing between rows. | `none` | [`Float`](../../types/#float)[`Var(Float)`](../../types/#contextvar) |
 
 </div>
 

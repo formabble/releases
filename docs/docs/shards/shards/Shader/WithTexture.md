@@ -10,10 +10,10 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||This shard does not read the texture directly. Use Shader.SampleTexture within the Then branch if you need to access the texture. | | [`None`](../../types/#none) |
-| `Output ➡️` ||This shard returns none | | [`None`](../../types/#none) |
+| `Output ➡️` ||This shard outputs none | | [`None`](../../types/#none) |
 | `Name` | :fontawesome-solid-circle-plus:{title="No"} No  | The name of the texture to check for. | `` | [`String`](../../types/#string) |
-| `Then` | :fontawesome-solid-circle-plus:{title="No"} No  | The shards to execute if the texture is available | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
-| `Else` | :fontawesome-solid-circle-plus:{title="No"} No  | The shards to execute if the texture is not available | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
+| `Then` | :fontawesome-solid-circle-plus:{title="No"} No  | The shards to execute if the texture is available | `none` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
+| `Else` | :fontawesome-solid-circle-plus:{title="No"} No  | The shards to execute if the texture is not available | `none` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
 
 </div>
 

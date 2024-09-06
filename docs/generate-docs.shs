@@ -192,7 +192,9 @@ create virtual table vec_docs using vec0(
     0 >= idx
     parameters | ForEach({
       ExpectTable
-      {Take("default") | ToString = default-value | Set(param-doc "default")}
+      {Take("default")
+      {Set(param-doc "real-default")}
+      ToString = default-value | Set(param-doc "default")}
       {Take("help") | Set(param-doc "help")}
       {Take("name") | Set(param-doc "name")}
       {Take("types") = types}
@@ -350,6 +352,8 @@ create virtual table vec_docs using vec0(
     file | FS.Write(content Overwrite: true)
 
     {
+      "" >= usage-example
+
       ; for AI purposes
       shard-doc:input-help | @input-help-shards | Set(shard-doc "input-help")
       shard-doc:output-help | @output-help-shards | Set(shard-doc "output-help")
@@ -395,7 +399,9 @@ create virtual table vec_docs using vec0(
         "\n" | AppendTo(shard-doc-string)
       })
       "\n" | AppendTo(shard-doc-string)
-      Count(parameters-seq-edited) | When(IsMore(0) {
+      Count(parameters-seq-edited) | If(IsMore(0) {
+        ["```shards\n" shard-name "(\n"] | String.Join | AppendTo(usage-example)
+
         "## Shard Parameters\n\n" | AppendTo(shard-doc-string)
         parameters-seq-edited | ForEach({
           ExpectTable
@@ -403,7 +409,24 @@ create virtual table vec_docs using vec0(
           {Take("types") | ExpectSeq = p-types}
           {Take("help") | ExpectString = p-help}
           {Take("default") | ExpectString = p-default}
+          {Take("real-default") = p-real-default}
           {Take("optional") | ExpectBool = p-optional}
+
+          ; update usage example
+          ["  " p-name ": " (
+            p-real-default
+            Cond([
+              {IsString}
+              {["\"" p-default "\""] | String.Join}
+
+              {p-default | String.Starts(With: "Var: ")}
+              {["some-variable ; if omitted defaults to internal variable " p-real-default] | String.Format}
+
+              {true}
+              {p-default}
+            ] Passthrough: false)
+          ) "\n"] | String.Join | AppendTo(usage-example)
+
           "### Parameter: " | AppendTo(shard-doc-string)
           p-name | AppendTo(shard-doc-string)
           "\n" | AppendTo(shard-doc-string)
@@ -423,7 +446,14 @@ create virtual table vec_docs using vec0(
           })
           "\n" | AppendTo(shard-doc-string)
         })
+
+        ")\n```\n" | AppendTo(usage-example)
+      } {
+        ["```shards\n" shard-name "\n```\n"] | String.Join >= usage-example
       })
+
+      "## Example\n\n" | AppendTo(shard-doc-string)
+      usage-example | AppendTo(shard-doc-string)
 
       shard-details | When(IsNot("") {
         "## Shard Details\n" | AppendTo(shard-doc-string)

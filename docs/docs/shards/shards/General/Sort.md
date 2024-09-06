@@ -11,10 +11,10 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Any input is ignored. | | [`None`](../../types/#none) |
 | `Output ➡️` ||Output is the sorted sequence. | | [`[Any]`](../../types/#seq) |
-| `From` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The name of the sequence variable to edit in place. | `None` | [`Var([Any])`](../../types/#contextvar) |
-| `Join` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Other columns to join sort/filter using the input (they must be of the same length). | `None` | [`Var([Any])`](../../types/#contextvar)[`[Var([Any])]`](../../types/#seq) |
+| `From` | :fontawesome-solid-circle-plus:{title="No"} No  | The name of the sequence variable to edit in place. | `none` | [`Var([Any])`](../../types/#contextvar) |
+| `Join` | :fontawesome-solid-circle-plus:{title="No"} No  | Other columns to join sort/filter using the input (they must be of the same length). | `none` | [`Var([Any])`](../../types/#contextvar)[`[Var([Any])]`](../../types/#seq) |
 | `Desc` | :fontawesome-solid-circle-plus:{title="No"} No  | If sorting should be in descending order, defaults ascending. | `false` | [`Bool`](../../types/#bool) |
-| `Key` | :fontawesome-solid-circle-plus:{title="No"} No  | The shards to use to transform the collection's items before they are compared. Can be None. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
+| `Key` | :fontawesome-solid-circle-plus:{title="No"} No  | The shards to use to transform the collection's items before they are compared. Can be None. | `none` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
 
 </div>
 

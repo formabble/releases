@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The value is ignored. | | [`None`](../../types/#none) |
 | `Output ➡️` ||The value produced. | | [`Int4`](../../types/#int4) |
-| `Variable` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The variable that holds the input value. | `None` | [`Int4`](../../types/#int4)[`Var(Int4)`](../../types/#contextvar) |
+| `Variable` | :fontawesome-solid-circle-plus:{title="No"} No  | The variable that holds the input value. | `none` | [`Int4`](../../types/#int4)[`Var(Int4)`](../../types/#contextvar) |
 
 </div>
 

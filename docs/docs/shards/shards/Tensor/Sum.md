@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Tensor`](../../types/#tensor) |
 | `Output ➡️` ||The resulting output of the shard | | [`Tensor`](../../types/#tensor) |
-| `Dims` | :fontawesome-solid-circle-plus:{title="No"} No  | The dimensions to sum over. If not provided, sum over all dimensions. | `None` | [`[Int]`](../../types/#seq)[`Var([Int])`](../../types/#contextvar)[`None`](../../types/#none) |
+| `Dims` | :fontawesome-solid-circle-plus:{title="No"} No  | The dimensions to sum over. If not provided, sum over all dimensions. | `none` | [`[Int]`](../../types/#seq)[`Var([Int])`](../../types/#contextvar)[`None`](../../types/#none) |
 
 </div>
 

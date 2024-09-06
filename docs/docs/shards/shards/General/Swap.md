@@ -11,8 +11,8 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Input is ignored. | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The input to this shard is passed through as its output. | | [`Any`](../../types/#any) |
-| `First` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The name of first variable. | `None` | [`Var(Any)`](../../types/#contextvar) |
-| `Second` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The name of second variable. | `None` | [`Var(Any)`](../../types/#contextvar) |
+| `First` | :fontawesome-solid-circle-plus:{title="No"} No  | The name of first variable. | `none` | [`Var(Any)`](../../types/#contextvar) |
+| `Second` | :fontawesome-solid-circle-plus:{title="No"} No  | The name of second variable. | `none` | [`Var(Any)`](../../types/#contextvar) |
 
 </div>
 

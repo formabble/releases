@@ -18,7 +18,7 @@ license: CC-BY-SA-4.0
 
 --8<-- "includes/experimental.md"
 
-This shard performs an Inverse Fast Fourier Transform (IFFT) on the input. It takes the frequency-domain representation of an audio (represented as a float2 sequence) and returns its time-domain representation (as a float sequence, float2 sequence or an audio object.)
+This shard performs an Inverse Fast Fourier Transform (IFFT) on the input. It takes the frequency-domain representation of an audio (represented as a float2 sequence) and outputs its time-domain representation (as a float sequence, float2 sequence or an audio object.)
 
 --8<-- "includes/license.md"
 

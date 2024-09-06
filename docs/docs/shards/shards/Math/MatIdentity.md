@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of this shard is ignored. | | [`None`](../../types/#none) |
-| `Output ➡️` ||Returns a 4x4 identity matrix (a sequence of four float4 vectors). The matrix will have 1s on the main diagonal and 0s for the other elements. | | [`[Float4](4)`](../../types/#seq) |
+| `Output ➡️` ||Outputs a 4x4 identity matrix (a sequence of four float4 vectors). The matrix will have 1s on the main diagonal and 0s for the other elements. | | [`[Float4](4)`](../../types/#seq) |
 | `Type` | :fontawesome-solid-circle-plus:{title="No"} No  | The matrix row type of the corresponding matrix | `Type::Float4` | [`Type`](../../../enums/Type) |
 
 </div>

@@ -11,8 +11,8 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The value is ignored. | | [`None`](../../types/#none) |
 | `Output ➡️` ||The value produced when changed. | | [`Bool`](../../types/#bool) |
-| `Code` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The variable that holds the code to edit. | `None` | [`String`](../../types/#string)[`Var(String)`](../../types/#contextvar) |
-| `Language` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The name of the programming language for syntax highlighting. | `None` | [`String`](../../types/#string)[`Var(String)`](../../types/#contextvar) |
+| `Code` | :fontawesome-solid-circle-plus:{title="No"} No  | The variable that holds the code to edit. | `none` | [`String`](../../types/#string)[`Var(String)`](../../types/#contextvar) |
+| `Language` | :fontawesome-solid-circle-plus:{title="No"} No  | The name of the programming language for syntax highlighting. | `none` | [`String`](../../types/#string)[`Var(String)`](../../types/#contextvar) |
 
 </div>
 

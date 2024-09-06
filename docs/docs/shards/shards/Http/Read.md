@@ -14,7 +14,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-This shard reads incoming HTTP requests from a client connection, parses its components, and returns them as a table. This shard should be used in conjunction with the Http.Server shard to handle incoming requests.
+This shard reads incoming HTTP requests from a client connection, parses its components, and outputs them as a table. This shard should be used in conjunction with the Http.Server shard to handle incoming requests.
 
 ## Details
 

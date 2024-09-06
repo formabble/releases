@@ -16,7 +16,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-This shard extracts a patch from an image of dimensions specified in the Radius parameter and returns the extracted patch as an image. Everytime the shard is subsequently called, the centre of the patch to extract is advanced by the number of pixels specified in the Step parameter.
+This shard extracts a patch from an image of dimensions specified in the Radius parameter and outputs the extracted patch as an image. Everytime the shard is subsequently called, the centre of the patch to extract is advanced by the number of pixels specified in the Step parameter.
 
 ## Details
 

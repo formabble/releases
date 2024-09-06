@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Big integer represented as bytes. | | [`Bytes`](../../types/#bytes) |
-| `Output ➡️` ||Returns the square root of the input big integer represented as bytes. | | [`Bytes`](../../types/#bytes) |
+| `Output ➡️` ||Outputs the square root of the input big integer represented as bytes. | | [`Bytes`](../../types/#bytes) |
 
 </div>
 

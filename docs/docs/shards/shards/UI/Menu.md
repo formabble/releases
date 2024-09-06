@@ -11,8 +11,8 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The value that will be passed to the Contents shards of the menu. | | [`Any`](../../types/#any) |
 | `Output ➡️` ||A boolean value indicating whether the menu is active. | | [`Bool`](../../types/#bool) |
-| `Title` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The title of the menu. | `None` | [`String`](../../types/#string) |
-| `Contents` | :fontawesome-solid-circle-plus:{title="No"} No  | The UI contents. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `Title` | :fontawesome-solid-circle-plus:{title="No"} No  | The title of the menu. | `none` | [`String`](../../types/#string) |
+| `Contents` | :fontawesome-solid-circle-plus:{title="No"} No  | The UI contents. | `none` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
 
 </div>
 

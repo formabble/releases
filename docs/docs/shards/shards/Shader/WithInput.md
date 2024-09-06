@@ -10,10 +10,10 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||This shard does not read the attribute value directly. Use Shader.ReadInput within the Then branch if you need to access the shader input value. | | [`None`](../../types/#none) |
-| `Output ➡️` ||This shard returns none | | [`None`](../../types/#none) |
+| `Output ➡️` ||This shard outputs none | | [`None`](../../types/#none) |
 | `Name` | :fontawesome-solid-circle-plus:{title="No"} No  | The name of the attribute to check for | `` | [`String`](../../types/#string) |
-| `Then` | :fontawesome-solid-circle-plus:{title="No"} No  | The shards to execute if the attribute is being received. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
-| `Else` | :fontawesome-solid-circle-plus:{title="No"} No  | The shards to execute if the attribute is not being received | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
+| `Then` | :fontawesome-solid-circle-plus:{title="No"} No  | The shards to execute if the attribute is being received. | `none` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
+| `Else` | :fontawesome-solid-circle-plus:{title="No"} No  | The shards to execute if the attribute is not being received | `none` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
 
 </div>
 

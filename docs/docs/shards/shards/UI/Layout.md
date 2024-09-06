@@ -11,12 +11,12 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Not used. | | [`Any`](../../types/#any) |
 | `Output ➡️` ||Passthrough the input. | | [`Any`](../../types/#any) |
-| `Contents` | :fontawesome-solid-circle-plus:{title="No"} No  | The UI contents. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
-| `Class` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The Layout class defining all layout options. | `None` | [`Var(Object)`](../../types/#contextvar) |
-| `MinSize` | :fontawesome-solid-circle-plus:{title="No"} No  | Minimum reserved space for the UI. Overridden by FillWidth and FillHeight. | `None` | [`Float2`](../../types/#float2)[`Var(Float2)`](../../types/#contextvar)[`None`](../../types/#none) |
-| `MaxSize` | :fontawesome-solid-circle-plus:{title="No"} No  | Maximum reserved space for the UI. Overridden by FillWidth and FillHeight. | `None` | [`Float2`](../../types/#float2)[`Var(Float2)`](../../types/#contextvar)[`None`](../../types/#none) |
-| `FillWidth` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether the layout should occupy the full width. | `None` | [`Bool`](../../types/#bool)[`Var(Bool)`](../../types/#contextvar)[`None`](../../types/#none) |
-| `FillHeight` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether the layout should occupy the full height. | `None` | [`Bool`](../../types/#bool)[`Var(Bool)`](../../types/#contextvar)[`None`](../../types/#none) |
+| `Contents` | :fontawesome-solid-circle-plus:{title="No"} No  | The UI contents. | `none` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `Class` | :fontawesome-solid-circle-plus:{title="No"} No  | The Layout class defining all layout options. | `none` | [`Var(Object)`](../../types/#contextvar) |
+| `MinSize` | :fontawesome-solid-circle-plus:{title="No"} No  | Minimum reserved space for the UI. Overridden by FillWidth and FillHeight. | `none` | [`Float2`](../../types/#float2)[`Var(Float2)`](../../types/#contextvar)[`None`](../../types/#none) |
+| `MaxSize` | :fontawesome-solid-circle-plus:{title="No"} No  | Maximum reserved space for the UI. Overridden by FillWidth and FillHeight. | `none` | [`Float2`](../../types/#float2)[`Var(Float2)`](../../types/#contextvar)[`None`](../../types/#none) |
+| `FillWidth` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether the layout should occupy the full width. | `none` | [`Bool`](../../types/#bool)[`Var(Bool)`](../../types/#contextvar)[`None`](../../types/#none) |
+| `FillHeight` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether the layout should occupy the full height. | `none` | [`Bool`](../../types/#bool)[`Var(Bool)`](../../types/#contextvar)[`None`](../../types/#none) |
 
 </div>
 

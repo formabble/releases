@@ -10,8 +10,8 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Big integer represented as bytes. | | [`Bytes`](../../types/#bytes) |
-| `Output ➡️` ||Returns the BigInt result of the operation as bytes. | | [`Bytes`](../../types/#bytes) |
-| `Operand` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The power to which the input big integer will be raised. This must be a non-negative integer. | `None` | [`Int`](../../types/#int)[`Var(Int)`](../../types/#contextvar) |
+| `Output ➡️` ||Outputs the BigInt result of the operation as bytes. | | [`Bytes`](../../types/#bytes) |
+| `Operand` | :fontawesome-solid-circle-plus:{title="No"} No  | The power to which the input big integer will be raised. This must be a non-negative integer. | `none` | [`Int`](../../types/#int)[`Var(Int)`](../../types/#contextvar) |
 
 </div>
 

@@ -11,11 +11,11 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of this shard is ignored. | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The Peer ID of the peer specified in the Peer parameter. | | [`Int`](../../types/#int) |
-| `Peer` | :fontawesome-solid-circle-plus:{title="No"} No  | The Peer object to get the ID of. | `ContextVariable: Network.Peer` | [`Var(Object)`](../../types/#contextvar) |
+| `Peer` | :fontawesome-solid-circle-plus:{title="No"} No  | The Peer object to get the ID of. | `Var: Network.Peer` | [`Var(Object)`](../../types/#contextvar) |
 
 </div>
 
-This shard returns the Peer ID of the peer specified in the Peer parameter as an integer.
+This shard outputs the Peer ID of the peer specified in the Peer parameter as an integer.
 
 ## Details
 

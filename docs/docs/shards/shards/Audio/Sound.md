@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Accepts a string representing the path to the audio file or asset to be loaded. | | [`String`](../../types/#string) |
-| `Output ➡️` ||Returns a Sound object that can be used with other audio shards. | | [`Object`](../../types/#object) |
+| `Output ➡️` ||Outputs a Sound object that can be used with other audio shards. | | [`Object`](../../types/#object) |
 | `Spatialized` | :fontawesome-solid-circle-plus:{title="No"} No  | If the sound should have 3D audio capabilities. | `false` | [`Bool`](../../types/#bool) |
 
 </div>

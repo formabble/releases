@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The value that will be passed to the Contents shards of the layout. | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The output of this shard will be its input. | | [`Any`](../../types/#any) |
-| `Contents` | :fontawesome-solid-circle-plus:{title="No"} No  | The UI contents. | `None` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `Contents` | :fontawesome-solid-circle-plus:{title="No"} No  | The UI contents. | `none` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
 | `Width` | :fontawesome-solid-circle-plus:{title="No"} No  |  | `0` | [`Float`](../../types/#float) |
 | `Height` | :fontawesome-solid-circle-plus:{title="No"} No  |  | `0` | [`Float`](../../types/#float) |
 | `FillWidth` | :fontawesome-solid-circle-plus:{title="No"} No  |  | `false` | [`Bool`](../../types/#bool) |

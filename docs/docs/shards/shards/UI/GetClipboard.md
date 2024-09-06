@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of this shard is ignored. | | [`None`](../../types/#none) |
-| `Output ➡️` ||Returns the current clipboard contents as a string. | | [`String`](../../types/#string) |
+| `Output ➡️` ||Outputs the current clipboard contents as a string. | | [`String`](../../types/#string) |
 
 </div>
 

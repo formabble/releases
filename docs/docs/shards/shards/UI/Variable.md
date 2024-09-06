@@ -11,8 +11,8 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The value is ignored. | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The output of this shard will be its input passed through unchanged. | | [`Any`](../../types/#any) |
-| `Variable` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The variable that holds the value. | `None` | [`Var(Any)`](../../types/#contextvar) |
-| `Labeled` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | If the name of the variable should be visible as a label. | `None` | [`Bool`](../../types/#bool) |
+| `Variable` | :fontawesome-solid-circle-plus:{title="No"} No  | The variable that holds the value. | `none` | [`Var(Any)`](../../types/#contextvar) |
+| `Labeled` | :fontawesome-solid-circle-plus:{title="No"} No  | If the name of the variable should be visible as a label. | `none` | [`Bool`](../../types/#bool) |
 
 </div>
 

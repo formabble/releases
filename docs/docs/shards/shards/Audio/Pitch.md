@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||A float value representing the new pitch. 1.0 being the original pitch. | | [`Float`](../../types/#float) |
 | `Output ➡️` ||Outputs the input value, passed through unchanged. | | [`Float`](../../types/#float) |
-| `Sound` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The sound object to manipulate | `None` | [`Object`](../../types/#object)[`Var(Object)`](../../types/#contextvar) |
+| `Sound` | :fontawesome-solid-circle-plus:{title="No"} No  | The sound object to manipulate | `none` | [`Object`](../../types/#object)[`Var(Object)`](../../types/#contextvar) |
 
 </div>
 

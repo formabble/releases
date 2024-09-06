@@ -10,9 +10,9 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||No input is required. This shard uses the values provided in the parameters to construct the vector. | | [`None`](../../types/#none) |
-| `Output ➡️` ||Returns a vector of two Int elements. | | [`Any`](../../types/#any) |
-| `0` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Vector element | `None` | [`Var(Int)`](../../types/#contextvar)[`Int`](../../types/#int) |
-| `1` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | Vector element | `None` | [`Var(Int)`](../../types/#contextvar)[`Int`](../../types/#int) |
+| `Output ➡️` ||Outputs a vector of two Int elements. | | [`Any`](../../types/#any) |
+| `0` | :fontawesome-solid-circle-plus:{title="No"} No  | Vector element | `none` | [`Var(Int)`](../../types/#contextvar)[`Int`](../../types/#int) |
+| `1` | :fontawesome-solid-circle-plus:{title="No"} No  | Vector element | `none` | [`Var(Int)`](../../types/#contextvar)[`Int`](../../types/#int) |
 
 </div>
 

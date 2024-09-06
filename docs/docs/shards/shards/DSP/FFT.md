@@ -16,7 +16,7 @@ license: CC-BY-SA-4.0
 
 --8<-- "includes/experimental.md"
 
-This shard performs a Fast Fourier Transform (FFT) on the input. It takes the time-domain representation of an audio (represented as a sounds object, float sequence or float2 sequence) and returns its frequency-domain representation as a float2 sequence.
+This shard performs a Fast Fourier Transform (FFT) on the input. It takes the time-domain representation of an audio (represented as a sounds object, float sequence or float2 sequence) and outputs its frequency-domain representation as a float2 sequence.
 
 --8<-- "includes/license.md"
 

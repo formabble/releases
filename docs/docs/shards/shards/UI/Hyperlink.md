@@ -11,8 +11,8 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The URL. | | [`String`](../../types/#string) |
 | `Output ➡️` ||The output of this shard will be its input. | | [`String`](../../types/#string) |
-| `Label` | :fontawesome-solid-circle-plus:{title="No"} No  | Optional label for the hyperlink. | `None` | [`String`](../../types/#string)[`None`](../../types/#none) |
-| `Style` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The text style. | `None` | [`{Any}`](../../types/#table)[`Var({Any})`](../../types/#contextvar) |
+| `Label` | :fontawesome-solid-circle-plus:{title="No"} No  | Optional label for the hyperlink. | `none` | [`String`](../../types/#string)[`None`](../../types/#none) |
+| `Style` | :fontawesome-solid-circle-plus:{title="No"} No  | The text style. | `none` | [`{Any}`](../../types/#table)[`Var({Any})`](../../types/#contextvar) |
 
 </div>
 

@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input to send to the peer. | | [`Any`](../../types/#any) |
 | `Output ➡️` ||Outputs the input value, passed through unchanged. | | [`Any`](../../types/#any) |
-| `Peer` | :fontawesome-solid-circle-plus:{title="No"} No  | The optional explicit peer to send packets to. | `ContextVariable: Network.Peer` | [`Var(Object)`](../../types/#contextvar) |
+| `Peer` | :fontawesome-solid-circle-plus:{title="No"} No  | The optional explicit peer to send packets to. | `Var: Network.Peer` | [`Var(Object)`](../../types/#contextvar) |
 
 </div>
 

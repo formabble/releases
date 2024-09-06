@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Takes a float3 vector (a vector with 3 float elements) that represents the translation in x, y, and z directions. The first element in the vector being x, the second y and the third z. | | [`Float3`](../../types/#float3) |
-| `Output ➡️` ||Returns a 4x4 translation matrix (a sequence of four float4 vectors). | | [`[Float4](4)`](../../types/#seq) |
+| `Output ➡️` ||Outputs a 4x4 translation matrix (a sequence of four float4 vectors). | | [`[Float4](4)`](../../types/#seq) |
 
 </div>
 

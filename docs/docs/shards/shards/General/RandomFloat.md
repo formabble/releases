@@ -10,8 +10,8 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of this shard is ignored. | | [`None`](../../types/#none) |
-| `Output ➡️` ||Returns a random float. | | [`Float`](../../types/#float) |
-| `Max` | :fontawesome-solid-circle-plus:{title="No"} No  | The maximum (if integer, not including) value to output. | `None` | [`None`](../../types/#none)[`Float`](../../types/#float)[`Var(Float)`](../../types/#contextvar) |
+| `Output ➡️` ||Outputs a random float. | | [`Float`](../../types/#float) |
+| `Max` | :fontawesome-solid-circle-plus:{title="No"} No  | The maximum (if integer, not including) value to output. | `none` | [`None`](../../types/#none)[`Float`](../../types/#float)[`Var(Float)`](../../types/#contextvar) |
 
 </div>
 

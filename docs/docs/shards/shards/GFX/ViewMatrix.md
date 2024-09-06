@@ -14,7 +14,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-This shard takes the input view object and returns its view matrix, which represents the camera's position and orientation in the world space.
+This shard takes the input view object and outputs its view matrix, which represents the camera's position and orientation in the world space.
 
 --8<-- "includes/license.md"
 

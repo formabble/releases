@@ -10,10 +10,10 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Any input type is accepted. The input value will either pass through unchanged or be ignored. | | [`None`](../../types/#none) |
-| `Output ➡️` ||If Passthrough is true, this shard outputs the input value, passed through unchanged. Otherwise, it returns the output of the Wire it waited for. | | [`Any`](../../types/#any) |
-| `Wire` | :fontawesome-solid-circle-plus:{title="No"} No  | The Wire to wait for. | `None` | [`Wire`](../../types/#wire)[`String`](../../types/#string)[`None`](../../types/#none)[`Var(Wire)`](../../types/#contextvar) |
+| `Output ➡️` ||If Passthrough is true, this shard outputs the input value, passed through unchanged. Otherwise, it outputs the output of the Wire it waited for. | | [`Any`](../../types/#any) |
+| `Wire` | :fontawesome-solid-circle-plus:{title="No"} No  | The Wire to wait for. | `none` | [`Wire`](../../types/#wire)[`String`](../../types/#string)[`None`](../../types/#none)[`Var(Wire)`](../../types/#contextvar) |
 | `Passthrough` | :fontawesome-solid-circle-plus:{title="No"} No  | If set to true, outputs the input value, passed through unchanged. | `false` | [`Bool`](../../types/#bool) |
-| `Timeout` | :fontawesome-solid-circle-plus:{title="No"} No  | The optional amount of time in seconds to wait for the specified Wire to complete. If the specified time elapses before the specified Wire is complete, the current Wire will fail with a Timeout error. | `None` | [`Float`](../../types/#float)[`Var(Float)`](../../types/#contextvar)[`None`](../../types/#none) |
+| `Timeout` | :fontawesome-solid-circle-plus:{title="No"} No  | The optional amount of time in seconds to wait for the specified Wire to complete. If the specified time elapses before the specified Wire is complete, the current Wire will fail with a Timeout error. | `none` | [`Float`](../../types/#float)[`Var(Float)`](../../types/#contextvar)[`None`](../../types/#none) |
 
 </div>
 

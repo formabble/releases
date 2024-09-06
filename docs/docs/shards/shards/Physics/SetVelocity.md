@@ -11,8 +11,8 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Physics.Body`](../../types/#physics.body) |
 | `Output ➡️` ||The resulting output of the shard | | [`Physics.Body`](../../types/#physics.body) |
-| `Linear` | :fontawesome-solid-circle-plus:{title="No"} No  | The linear velocity to set | `None` | [`None`](../../types/#none)[`Float3`](../../types/#float3)[`Var(Float3)`](../../types/#contextvar) |
-| `Angular` | :fontawesome-solid-circle-plus:{title="No"} No  | The angular velocity to set | `None` | [`None`](../../types/#none)[`Float3`](../../types/#float3)[`Var(Float3)`](../../types/#contextvar) |
+| `Linear` | :fontawesome-solid-circle-plus:{title="No"} No  | The linear velocity to set | `none` | [`None`](../../types/#none)[`Float3`](../../types/#float3)[`Var(Float3)`](../../types/#contextvar) |
+| `Angular` | :fontawesome-solid-circle-plus:{title="No"} No  | The angular velocity to set | `none` | [`None`](../../types/#none)[`Float3`](../../types/#float3)[`Var(Float3)`](../../types/#contextvar) |
 
 </div>
 

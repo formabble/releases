@@ -10,9 +10,9 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of this shard is ignored. | | [`Any`](../../types/#any) |
-| `Output ➡️` ||This shard returns a [Type::Float Type::Wire] pair. This pair represents the wire configuration from the current generation that scored the best fitness score and the fitness score itself. | | [`[Float Wire]`](../../types/#seq) |
-| `Wire` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The wire to optimize and evolve. | `None` | [`Wire`](../../types/#wire) |
-| `Fitness` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The fitness wire to run at the end of the main wire evaluation and using its last output; should output a Float fitness value. | `None` | [`Wire`](../../types/#wire) |
+| `Output ➡️` ||This shard outputs a [Type::Float Type::Wire] pair. This pair represents the wire configuration from the current generation that scored the best fitness score and the fitness score itself. | | [`[Float Wire]`](../../types/#seq) |
+| `Wire` | :fontawesome-solid-circle-plus:{title="No"} No  | The wire to optimize and evolve. | `none` | [`Wire`](../../types/#wire) |
+| `Fitness` | :fontawesome-solid-circle-plus:{title="No"} No  | The fitness wire to run at the end of the main wire evaluation and using its last output; should output a Float fitness value. | `none` | [`Wire`](../../types/#wire) |
 | `Population` | :fontawesome-solid-circle-plus:{title="No"} No  | The population size. | `64` | [`Int`](../../types/#int) |
 | `Mutation` | :fontawesome-solid-circle-plus:{title="No"} No  | The rate of mutation, 0.1 = 10%. | `0.2` | [`Float`](../../types/#float) |
 | `Crossover` | :fontawesome-solid-circle-plus:{title="No"} No  | The rate of crossover, 0.1 = 10%. | `0.2` | [`Float`](../../types/#float) |

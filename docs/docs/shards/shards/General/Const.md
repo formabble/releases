@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||Any input is ignored. | | [`None`](../../types/#none) |
 | `Output ➡️` ||The declared constant value. | | [`Any`](../../types/#any) |
-| `Value` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The constant value to insert in the wire. | `None` | [`Any`](../../types/#any) |
+| `Value` | :fontawesome-solid-circle-plus:{title="No"} No  | The constant value to insert in the wire. | `none` | [`Any`](../../types/#any) |
 
 </div>
 

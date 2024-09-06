@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input for this shard should be a string representing the path to the file to be sent. | | [`String`](../../types/#string) |
 | `Output ➡️` ||Outputs the input value, passed through unchanged. | | [`String`](../../types/#string) |
-| `Headers` | :fontawesome-solid-circle-plus:{title="No"} No  | The headers to attach to this response. | `None` | [`{String}`](../../types/#table)[`Var({String})`](../../types/#contextvar)[`None`](../../types/#none) |
+| `Headers` | :fontawesome-solid-circle-plus:{title="No"} No  | The headers to attach to this response. | `none` | [`{String}`](../../types/#table)[`Var({String})`](../../types/#contextvar)[`None`](../../types/#none) |
 
 </div>
 

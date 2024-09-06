@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input sequence or string to be reversed. | | [`[Any]`](../../types/#seq)[`String`](../../types/#string)[`Bytes`](../../types/#bytes) |
-| `Output ➡️` ||Returns the reversed sequence or string. | | [`[Any]`](../../types/#seq)[`String`](../../types/#string)[`Bytes`](../../types/#bytes) |
+| `Output ➡️` ||Outputs the reversed sequence or string. | | [`[Any]`](../../types/#seq)[`String`](../../types/#string)[`Bytes`](../../types/#bytes) |
 
 </div>
 

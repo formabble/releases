@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`{Any}`](../../types/#table) |
 | `Output ➡️` ||The resulting output of the shard | | [`{Any}`](../../types/#table) |
-| `Target` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The table to merge into. | `None` | [`Var({Any})`](../../types/#contextvar) |
+| `Target` | :fontawesome-solid-circle-plus:{title="No"} No  | The table to merge into. | `none` | [`Var({Any})`](../../types/#contextvar) |
 
 </div>
 

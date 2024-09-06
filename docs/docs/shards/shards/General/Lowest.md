@@ -10,11 +10,11 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||A sequence of elements of any type. | | [`[Any]`](../../types/#seq) |
-| `Output ➡️` ||Returns the element with the lowest value. | | [`Any`](../../types/#any) |
+| `Output ➡️` ||Outputs the element with the lowest value. | | [`Any`](../../types/#any) |
 
 </div>
 
-Takes a sequence and returns the element with the lowest value.
+Takes a sequence and outputs the element with the lowest value.
 
 ## Details
 

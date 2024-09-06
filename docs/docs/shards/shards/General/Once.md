@@ -11,8 +11,8 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
-| `Action` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The shard or sequence of shards to execute. | `None` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
-| `Every` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The number of seconds to wait until repeating the action, if 0 the action will happen only once per wire flow execution. | `None` | [`Float`](../../types/#float)[`Var(Float)`](../../types/#contextvar) |
+| `Action` | :fontawesome-solid-circle-plus:{title="No"} No  | The shard or sequence of shards to execute. | `none` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `Every` | :fontawesome-solid-circle-plus:{title="No"} No  | The number of seconds to wait until repeating the action, if 0 the action will happen only once per wire flow execution. | `none` | [`Float`](../../types/#float)[`Var(Float)`](../../types/#contextvar) |
 
 </div>
 

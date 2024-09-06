@@ -11,12 +11,12 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The resulting output of the shard | | [`GFX.Buffer`](../../types/#gfx.buffer) |
-| `Name` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The name of the buffer | `None` | [`String`](../../types/#string) |
-| `Pointer` | :fontawesome-solid-circle-plus:{title="No"} No  | Reference as pointer | `None` | [`None`](../../types/#none)[`Bool`](../../types/#bool) |
+| `Name` | :fontawesome-solid-circle-plus:{title="No"} No  | The name of the buffer | `none` | [`String`](../../types/#string) |
+| `Pointer` | :fontawesome-solid-circle-plus:{title="No"} No  | Reference as pointer | `none` | [`None`](../../types/#none)[`Bool`](../../types/#bool) |
 
 </div>
 
-Returns a reference to the default sampler object for a named texture.
+Outputs a reference to the default sampler object for a named texture.
 
 --8<-- "includes/license.md"
 

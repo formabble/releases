@@ -15,7 +15,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-This shard truncates the input sequence to the specified number of elements(specified by the Max parameter) and returns the truncated sequence.
+This shard truncates the input sequence to the specified number of elements(specified by the Max parameter) and outputs the truncated sequence.
 
 ## Details
 

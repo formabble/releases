@@ -11,8 +11,8 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||If a typed Form ID is provided, the specified form is checked for a specific trait. If none is provided, the current form is checked for a specific trait. | | [`None`](../../types/#none)[`Int16`](../../types/#int16)[`Fbl.TypedFormId`](../../types/#fbl.typedformid) |
 | `Output ➡️` ||The typed Form ID if the form possesses the specified trait. | | [`Fbl.TypedFormId`](../../types/#fbl.typedformid) |
-| `Behavior` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The Behavior to check | `None` | [`Behavior`](../../../enums/Behavior) |
-| `Trait` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The trait to check for | `None` | [`Trait`](../../types/#trait) |
+| `Behavior` | :fontawesome-solid-circle-plus:{title="No"} No  | The Behavior to check | `none` | [`Behavior`](../../../enums/Behavior) |
+| `Trait` | :fontawesome-solid-circle-plus:{title="No"} No  | The trait to check for | `none` | [`Trait`](../../types/#trait) |
 
 </div>
 

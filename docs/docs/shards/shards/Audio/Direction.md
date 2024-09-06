@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||A float3 vector representing the new direction (x, y, z components) of the sound. This vector should be normalized (have a magnitude of 1).  | | [`Float3`](../../types/#float3) |
 | `Output ➡️` ||Outputs the input value, passed through unchanged. | | [`Float3`](../../types/#float3) |
-| `Sound` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The sound object to manipulate | `None` | [`Object`](../../types/#object)[`Var(Object)`](../../types/#contextvar) |
+| `Sound` | :fontawesome-solid-circle-plus:{title="No"} No  | The sound object to manipulate | `none` | [`Object`](../../types/#object)[`Var(Object)`](../../types/#contextvar) |
 
 </div>
 

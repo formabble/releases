@@ -14,7 +14,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-This shard compresses the input byte array using the Snappy algorithm and returns the compressed byte array.
+This shard compresses the input byte array using the Snappy algorithm and outputs the compressed byte array.
 
 --8<-- "includes/license.md"
 

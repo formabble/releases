@@ -11,7 +11,7 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The resulting output of the shard | | [`GFX.RenderTarget`](../../types/#gfx.rendertarget) |
-| `Attachments` | :fontawesome-solid-circle-xmark:{title="Yes"} Yes  | The list of attachements to create. | `None` | [`{{String}}`](../../types/#table) |
+| `Attachments` | :fontawesome-solid-circle-plus:{title="No"} No  | The list of attachements to create. | `none` | [`{{String}}`](../../types/#table) |
 
 </div>
 

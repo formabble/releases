@@ -10,7 +10,7 @@ license: CC-BY-SA-4.0
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of this shard is ignored. | | [`None`](../../types/#none) |
-| `Output ➡️` ||Returns a 4x4 orthographic projection matrix (a sequence of four float4 vectors). | | [`[Float4](4)`](../../types/#seq) |
+| `Output ➡️` ||Outputs a 4x4 orthographic projection matrix (a sequence of four float4 vectors). | | [`[Float4](4)`](../../types/#seq) |
 | `Width` | :fontawesome-solid-circle-plus:{title="No"} No  | Width size. | `1280` | [`Int`](../../types/#int)[`Float`](../../types/#float) |
 | `Height` | :fontawesome-solid-circle-plus:{title="No"} No  | Height size. | `720` | [`Int`](../../types/#int)[`Float`](../../types/#float) |
 | `Near` | :fontawesome-solid-circle-plus:{title="No"} No  | Near plane. | `0` | [`Int`](../../types/#int)[`Float`](../../types/#float) |
