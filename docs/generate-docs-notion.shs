@@ -125,7 +125,32 @@
       "Regex.Replace", "Regex.Search", "Regex.Match", "String.Format", "String.Join", "String.ToUpper",
       "String.ToLower", "ParseInt", "ParseFloat", "String.Trim", "String.Contains", "String.Split",
       "String.Starts", "String.Ends", "UI.GetClipboard", "UI.SetClipboard", "UI.Variable", "UI.SaveState",
-      "UI.LoadState", "Replace", "Reverse" , "Merge", "IndexOf", "Bytes.Join"
+      "UI.LoadState", "Replace", "Reverse", "Merge", "IndexOf", "Bytes.Join",
+      "Highest", "Lowest", "Limit", "Profile", "Load Image", "Resize Image", "Convolve", "StripAlpha", "FillAlpha",
+      "GetPixel", "LastError", "IsValidNumber", "Hash.Keccak-256", "Hash.Keccak-512", "Hash.Sha3-256", "Hash.Sha3-512",
+      "Hash.Sha2-256", "Hash.Sha2-512", "Hash.Blake2-128", "Hash.Blake2-256", "Hash.XXH-64", "Hash.XXH-128",
+      "Hash.XXH3-64", "Hash.XXH3-128", "Hash", "Fbl.IsAgent", "Brotli.Compress", "Brotli.Decompress",
+      "ChaChaPoly.Decrypt", "ChaChaPoly.Encrypt", "DSP.FFT", "DSP.IFFT", "Network.Broadcast", "Network.SendRaw",
+      "Network.Send", "Network.Peer", "Network.PeerID", "Network.Server", "Network.Client", "Network.WS.Server",
+      "Network.WS.Client", "ONNX.Activate", "ONNX.Load", "Snappy.Compress", "Snappy.Decompress", "GFX.Feature",
+      "GFX.BuiltinFeature", "GFX.Drawable", "GFX.Draw", "GFX.DrawQueue", "GFX.ClearQueue", "GFX.QueueDrawables",
+      "GFX.DrawablePass", "GFX.EffectPass", "GFX.CopyPass", "GFX.View", "GFX.RenderInto", "GFX.ViewProjectionMatrix",
+      "GFX.ViewMatrix", "GFX.ViewRange", "GFX.Render", "GFX.BuiltinMesh", "GFX.Mesh", "GFX.glTF", "GLTF.PackGLB",
+      "GFX.Material", "GFX.UIPass", "GFX.WindowPosition", "GFX.WindowSize", "GFX.MoveWindow", "GFX.ResizeWindow",
+      "Shader.LinearizedDepth", "Shader.Literal", "Shader.ReadBuffer", "Shader.ReadGlobal", "Shader.ReadInput",
+      "Shader.WithInput", "Shader.WithTexture", "Shader.WriteOutput", "Shader.WriteGlobal",
+      "Math.Add", "Math.Subtract", "Math.Multiply", "Math.Divide", "Math.Xor", "Math.And", "Math.Or", "Math.Mod",
+      "Math.LShift", "Math.RShift", "Math.Abs", "Math.Exp", "Math.Exp2", "Math.Expm1", "Math.Log", "Math.Log10",
+      "Math.Log2", "Math.Log1p", "Math.Sqrt", "Math.FastSqrt", "Math.FastInvSqrt", "Math.Cbrt", "Math.Sin",
+      "Math.Cos", "Math.Tan", "Math.Asin", "Math.Acos", "Math.Atan", "Math.Sinh", "Math.Cosh", "Math.Tanh",
+      "Math.Asinh", "Math.Acosh", "Math.Atanh", "Math.Erf", "Math.Erfc", "Math.TGamma", "Math.LGamma", "Math.Ceil",
+      "Math.Floor", "Math.Trunc", "Math.Round", "Math.Mean", "Math.Inc", "Math.Dec", "Math.Negate", "Max", "Min",
+      "Clamp", "Math.Pow", "Math.Lerp",
+      "Physics.Body", "Physics.BoxShape", "Physics.SphereShape", "Physics.CapsuleShape", "Physics.HullShape",
+      "Physics.Context", "Physics.End", "Physics.WithContext", "Physics.Collisions", "Physics.Dump",
+      "Physics.LinearVelocity", "Physics.AngularVelocity", "Physics.InverseMass", "Physics.CenterOfMass",
+      "Physics.MotionType", "Physics.SetPose", "Physics.SetVelocity", "Physics.ApplyImpulse",
+      "Physics.ApplyForce", "Physics.ApplyForceAt"
     ] = done-seq
   }
 
@@ -325,7 +350,7 @@
     })
 
     parameters-seq | Map({
-      ExpectTable = param-table
+      ExpectTable >= param-table
       param-table:types | ExpectSeq
       Map({ExpectTable | Take("name")}) | ToString | Slice(1 -1) | Set(param-table "types")
       param-table
@@ -425,7 +450,7 @@
       parameters-seq | ForEach({
         ExpectTable
         {Take("name") | ExpectString = p-name}
-        {Take("types") | ExpectString = p-types}
+        {Take("types") | ToString | ExpectString = p-types}
         {Take("help") | ExpectString = p-help}
         {Take("default") | ExpectString = p-default}
         {Take("optional") | ExpectBool = p-optional}
