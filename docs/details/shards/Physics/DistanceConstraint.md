@@ -36,6 +36,6 @@ The `LimitSpringSettings` parameter defines how the slider behaves as it settles
 
 If either `MinDistance` or `MaxDistance` are set to a negative number and `Space` was set to `ConstraintSpace::WorldSpace`, the negative value will be replaced by the initial distance between the two points in world space.
 
-When `Space` is set to `ConstraintSpace::LocalToBodyCOM`, if `MinDistance` is set to a positive number, it will be ignored. If set to a negative number, it will be the minimum distance that has to be kept between the two bodies. Conversely, if `MaxDistance` is set to a negative number, it will treat the maximum distance between the two bodies as 0.0. If set to a positive number, it will be the maximum distance that can be kept between the two bodies.
+When `Space` is set to `ConstraintSpace::LocalToBodyCOM`, the `MinDistance` and `MaxDistance` will always take the absolute values set in the parameters.
 
 

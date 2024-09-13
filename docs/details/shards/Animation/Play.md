@@ -1,0 +1,1 @@
+This shard can only play existing animation obtained from a gltf model. It is usually used in the `AnimationController` parameter of the `GFX.glTF` shard.
