@@ -16,6 +16,11 @@ license: CC-BY-SA-4.0
 
 This shard calculates the base 2 logarithm for the given input. The output is the exponent to which 2 must be raised to obtain the input value.
 
+## Details
+
+--8<-- "details/shards/Math/Log2.md"
+
+
 ## Examples
 
 === "Code"

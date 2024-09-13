@@ -16,6 +16,11 @@ license: CC-BY-SA-4.0
 
 This shard rounds the input floating-point number to the nearest integer.
 
+## Details
+
+--8<-- "details/shards/Math/Round.md"
+
+
 ## Examples
 
 === "Code"

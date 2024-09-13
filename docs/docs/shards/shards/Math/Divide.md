@@ -17,6 +17,11 @@ license: CC-BY-SA-4.0
 
 This shard divides the input value by the value provided in the Operand parameter.
 
+## Details
+
+--8<-- "details/shards/Math/Divide.md"
+
+
 ## Examples
 
 === "Code"

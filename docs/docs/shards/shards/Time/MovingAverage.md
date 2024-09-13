@@ -12,6 +12,7 @@ license: CC-BY-SA-4.0
 | `⬅️ Input` ||The floating point number to compute the average of. | | [`Float`](../../types/#float) |
 | `Output ➡️` ||The average of the floating point number over the specified number of frames. | | [`Float`](../../types/#float) |
 | `Window` | :fontawesome-solid-circle-plus:{title="No"} No  | The sample size in frames | `16` | [`Int`](../../types/#int) |
+| `Clear` | :fontawesome-solid-circle-plus:{title="No"} No  | Set to true to clear the moving average | `none` | [`None`](../../types/#none)[`Var(Bool)`](../../types/#contextvar) |
 
 </div>
 

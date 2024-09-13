@@ -16,6 +16,11 @@ license: CC-BY-SA-4.0
 
 This shard calculates the inverse hyperbolic sine of the given input, where the input is the hyperbolic sine value. The output is the real number whose hyperbolic sine is the input value.
 
+## Details
+
+--8<-- "details/shards/Math/Asinh.md"
+
+
 ## Examples
 
 === "Code"

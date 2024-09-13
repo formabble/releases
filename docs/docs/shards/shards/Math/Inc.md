@@ -17,6 +17,11 @@ license: CC-BY-SA-4.0
 
 Increases the input by 1.
 
+## Details
+
+--8<-- "details/shards/Math/Inc.md"
+
+
 ## Examples
 
 === "Code"

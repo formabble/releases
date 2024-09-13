@@ -16,6 +16,11 @@ license: CC-BY-SA-4.0
 
 This shard calculates the complementary error function of the given input. The complementary error function is related to the probability that the absolute value of a random variable with normal distribution of mean 0 and variance 1/2 is greater than the input value.
 
+## Details
+
+--8<-- "details/shards/Math/Erfc.md"
+
+
 ## Examples
 
 === "Code"

@@ -16,6 +16,11 @@ license: CC-BY-SA-4.0
 
 This shard calculates the hyperbolic tangent of the given input, where the input is the real number. The hyperbolic tangent is a hyperbolic function that is analogous to the circular tangent function, but it uses exponential functions instead of angles.
 
+## Details
+
+--8<-- "details/shards/Math/Tanh.md"
+
+
 ## Examples
 
 === "Code"

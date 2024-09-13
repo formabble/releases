@@ -17,6 +17,11 @@ license: CC-BY-SA-4.0
 
 Decreases the input by 1.
 
+## Details
+
+--8<-- "details/shards/Math/Dec.md"
+
+
 ## Examples
 
 === "Code"

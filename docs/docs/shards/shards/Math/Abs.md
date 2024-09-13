@@ -16,6 +16,11 @@ license: CC-BY-SA-4.0
 
 This shard outputs the absolute value of the input.
 
+## Details
+
+--8<-- "details/shards/Math/Abs.md"
+
+
 ## Examples
 
 === "Code"

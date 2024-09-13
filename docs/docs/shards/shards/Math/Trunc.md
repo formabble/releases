@@ -16,6 +16,11 @@ license: CC-BY-SA-4.0
 
 This shard truncates the input floating-point number towards zero, removing any fractional part without rounding.
 
+## Details
+
+--8<-- "details/shards/Math/Trunc.md"
+
+
 ## Examples
 
 === "Code"

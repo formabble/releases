@@ -16,6 +16,11 @@ license: CC-BY-SA-4.0
 
 This shard calculates the inverse sine of the given input, where the input is the sine value. The output is the angle in radians whose sine is the input value.
 
+## Details
+
+--8<-- "details/shards/Math/Asin.md"
+
+
 ## Examples
 
 === "Code"

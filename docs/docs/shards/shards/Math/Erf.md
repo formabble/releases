@@ -16,6 +16,11 @@ license: CC-BY-SA-4.0
 
 This shard calculates the error function of the given input. The error function is related to the probability that a random variable with normal distribution of mean 0 and variance 1/2 falls in the range specified by the input value.
 
+## Details
+
+--8<-- "details/shards/Math/Erf.md"
+
+
 ## Examples
 
 === "Code"

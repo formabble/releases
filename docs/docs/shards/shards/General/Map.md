@@ -15,7 +15,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-Processes each element of a sequence or key-value pair of a table using the shards specified in the `Apply` parameter and outputs the modified sequence or table. Note that this shard is able to use the $0 and $1 internal variables.
+Processes each element of a sequence or key-value pair of a table using the shards specified in the `Apply` parameter and outputs the modified sequence or table. Note that this shard is able to use the $0 and $1 internal variables, as well as $i for the current index.
 
 ## Details
 

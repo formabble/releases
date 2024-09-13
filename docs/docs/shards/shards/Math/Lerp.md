@@ -18,5 +18,10 @@ license: CC-BY-SA-4.0
 
 Linearly interpolate between the start value specified in the `First` parameter and the end value specified in the `Second` parameter based on the factor provided as input.
 
+## Details
+
+--8<-- "details/shards/Math/Lerp.md"
+
+
 --8<-- "includes/license.md"
 

@@ -12,7 +12,7 @@ license: CC-BY-SA-4.0
 | `⬅️ Input` ||The value that will be passed to both the Contents and OnHover shards of the tooltip. | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The output of this shard will be its input. | | [`Any`](../../types/#any) |
 | `Contents` | :fontawesome-solid-circle-plus:{title="No"} No  | The UI contents. | `none` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
-| `OnHover` | :fontawesome-solid-circle-plus:{title="No"} No  | The tooltip contents. | `none` | [`String`](../../types/#string)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
+| `OnHover` | :fontawesome-solid-circle-plus:{title="No"} No  | The tooltip contents. | `none` | [`String`](../../types/#string)[`Var(String)`](../../types/#contextvar)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
 
 </div>
 

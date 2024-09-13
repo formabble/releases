@@ -16,6 +16,11 @@ license: CC-BY-SA-4.0
 
 This shard calculates the inverse hyperbolic tangent of the given input (atanh(x)), where x, outputs y such that tanh(y) = x.
 
+## Details
+
+--8<-- "details/shards/Math/Atanh.md"
+
+
 ## Examples
 
 === "Code"

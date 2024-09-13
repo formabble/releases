@@ -16,6 +16,11 @@ license: CC-BY-SA-4.0
 
 This shard calculates the inverse square root of the given input.
 
+## Details
+
+--8<-- "details/shards/Math/FastInvSqrt.md"
+
+
 ## Examples
 
 === "Code"

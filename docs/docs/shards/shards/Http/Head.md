@@ -18,7 +18,7 @@ license: CC-BY-SA-4.0
 | `FullResponse` | :fontawesome-solid-circle-plus:{title="No"} No  | If the output should be a table with the full response, including headers and status. | `false` | [`Bool`](../../types/#bool) |
 | `AcceptInvalidCerts` | :fontawesome-solid-circle-plus:{title="No"} No  | If we should ignore invalid certificates. This is useful for testing but should not be used in production. | `false` | [`Bool`](../../types/#bool) |
 | `Retry` | :fontawesome-solid-circle-plus:{title="No"} No  | How many times to retry the request if it fails. | `0` | [`Int`](../../types/#int) |
-| `KeepAlive` | :fontawesome-solid-circle-plus:{title="No"} No  | If the client instance should be kept alive, allowing connection reuse for multiple requests. The client won't be closed until this shard cleans up (including its worker thread). | `false` | [`Bool`](../../types/#bool) |
+| `KeepAlive` | :fontawesome-solid-circle-plus:{title="No"} No  | If the client instance should be kept alive, allowing connection reuse for multiple requests. The client won't be closed until this shard cleans up. | `false` | [`Bool`](../../types/#bool) |
 | `Streaming` | :fontawesome-solid-circle-plus:{title="No"} No  | If the response should be streamed, in which case the output will be an object to use with the Http.Stream shard. | `false` | [`Bool`](../../types/#bool) |
 
 </div>
