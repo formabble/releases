@@ -16,6 +16,11 @@ license: CC-BY-SA-4.0
 
 This shard calculates the gamma function of the given input. The gamma function is a mathematical function that extends the concept of factorial to non-integer and complex numbers.
 
+## Details
+
+--8<-- "details/shards/Math/TGamma.md"
+
+
 ## Examples
 
 === "Code"

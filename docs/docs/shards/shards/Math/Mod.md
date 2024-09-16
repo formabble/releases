@@ -17,6 +17,11 @@ license: CC-BY-SA-4.0
 
 This shard calculates the remainder of the division of the input value by the value provided in the Operand parameter.
 
+## Details
+
+--8<-- "details/shards/Math/Mod.md"
+
+
 ## Examples
 
 === "Code"

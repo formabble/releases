@@ -16,6 +16,11 @@ license: CC-BY-SA-4.0
 
 This shard calculates the log gamma function of the given input. The log gamma function is the natural logarithm of the absolute value of the gamma function.
 
+## Details
+
+--8<-- "details/shards/Math/LGamma.md"
+
+
 ## Examples
 
 === "Code"

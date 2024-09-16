@@ -16,6 +16,11 @@ license: CC-BY-SA-4.0
 
 This shard calculates the exponential function with base e (Euler's number) for the given input and subtracts 1 from the result.
 
+## Details
+
+--8<-- "details/shards/Math/Expm1.md"
+
+
 ## Examples
 
 === "Code"

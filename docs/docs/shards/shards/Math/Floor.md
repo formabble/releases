@@ -16,6 +16,11 @@ license: CC-BY-SA-4.0
 
 This shard rounds down the input to the nearest integer.
 
+## Details
+
+--8<-- "details/shards/Math/Floor.md"
+
+
 ## Examples
 
 === "Code"

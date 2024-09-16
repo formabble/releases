@@ -17,6 +17,11 @@ license: CC-BY-SA-4.0
 
 This shard compares the input with the value specified in the `Operand` parameter and outputs the smaller value.
 
+## Details
+
+--8<-- "details/shards/General/Min.md"
+
+
 ## Examples
 
 === "Code"

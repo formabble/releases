@@ -16,6 +16,11 @@ license: CC-BY-SA-4.0
 
 This shard calculates the exponential function with base e (Euler's number) for the given input. The exponential function is equivalent to raising Euler's number to the power of the input.
 
+## Details
+
+--8<-- "details/shards/Math/Exp.md"
+
+
 ## Examples
 
 === "Code"

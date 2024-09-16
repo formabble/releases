@@ -16,6 +16,11 @@ license: CC-BY-SA-4.0
 
 This shard calculates the exponential function with base 2 for the given input. The exponential function with base 2 is equivalent to raising 2 to the power of the input.
 
+## Details
+
+--8<-- "details/shards/Math/Exp2.md"
+
+
 ## Examples
 
 === "Code"

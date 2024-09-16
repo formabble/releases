@@ -16,6 +16,11 @@ license: CC-BY-SA-4.0
 
 This shard calculates the cube root of the given input.
 
+## Details
+
+--8<-- "details/shards/Math/Cbrt.md"
+
+
 ## Examples
 
 === "Code"

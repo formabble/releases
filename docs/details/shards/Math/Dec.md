@@ -1,0 +1,1 @@
+If a sequence of integers or floats was provided as input, the shard will decrease each element in the sequence by 1 and output a sequence.

@@ -16,5 +16,10 @@ license: CC-BY-SA-4.0
 
 This shard reverses the sign of the input. (A positive number becomes negative, and vice versa).
 
+## Details
+
+--8<-- "details/shards/Math/Negate.md"
+
+
 --8<-- "includes/license.md"
 

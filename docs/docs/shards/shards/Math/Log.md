@@ -16,6 +16,11 @@ license: CC-BY-SA-4.0
 
 This shard calculates the natural logarithm for the given input. The output is the exponent to which e must be raised to obtain the input value.
 
+## Details
+
+--8<-- "details/shards/Math/Log.md"
+
+
 ## Examples
 
 === "Code"

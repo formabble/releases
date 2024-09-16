@@ -17,6 +17,11 @@ license: CC-BY-SA-4.0
 
 This shard subtracts the value provided in the Operand parameter from the input value.
 
+## Details
+
+--8<-- "details/shards/Math/Subtract.md"
+
+
 ## Examples
 
 === "Code"

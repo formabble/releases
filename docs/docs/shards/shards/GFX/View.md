@@ -9,7 +9,7 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The input of this shard is ignored. | | [`None`](../../types/#none) |
+| `⬅️ Input` ||The input of this shard is ignored. | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The view object created. | | [`GFX.View`](../../types/#gfx.view) |
 | `View` | :fontawesome-solid-circle-plus:{title="No"} No  | The view matrix. | `none` | [`None`](../../types/#none)[`Var([Float4](4))`](../../types/#contextvar) |
 | `Fov` | :fontawesome-solid-circle-plus:{title="No"} No  | The vertical field of view. (In radians. Implies perspective projection) | `none` | [`None`](../../types/#none)[`Float`](../../types/#float)[`Var(Float)`](../../types/#contextvar) |

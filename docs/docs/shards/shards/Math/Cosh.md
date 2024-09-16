@@ -16,6 +16,11 @@ license: CC-BY-SA-4.0
 
 This shard calculates the hyperbolic cosine of the given input, where the input is the real number. The hyperbolic cosine is a hyperbolic function that is analogous to the circular cosine function, but it uses exponential functions instead of angles.
 
+## Details
+
+--8<-- "details/shards/Math/Cosh.md"
+
+
 ## Examples
 
 === "Code"

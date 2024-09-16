@@ -17,6 +17,11 @@ license: CC-BY-SA-4.0
 
 This shard shifts the bits of the input value to the right by the number of positions specified in the Operand parameter. The shard then outputs a value, whose binary representation is the resulting shifted binary.
 
+## Details
+
+--8<-- "details/shards/Math/RShift.md"
+
+
 ## Examples
 
 === "Code"

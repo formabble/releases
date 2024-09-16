@@ -16,6 +16,11 @@ license: CC-BY-SA-4.0
 
 This shard calculates the tangent of the given input, where the input is the angle in radians.
 
+## Details
+
+--8<-- "details/shards/Math/Tan.md"
+
+
 ## Examples
 
 === "Code"

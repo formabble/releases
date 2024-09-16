@@ -17,6 +17,11 @@ license: CC-BY-SA-4.0
 
 Calculates the average value of a sequence of floating point numbers.
 
+## Details
+
+--8<-- "details/shards/Math/Mean.md"
+
+
 ## Examples
 
 === "Code"

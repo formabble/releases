@@ -15,7 +15,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-Reduces a sequence to a single value by applying a an operation(specified in the Apply parameter) to each item of the sequence. Note that this shard is able to use the $0 internal variable.
+Reduces a sequence to a single value by applying an operation (specified in the Apply parameter) to each item of the sequence. Note that this shard is able to use the $0 internal variable for the current item and $i for the current index.
 
 ## Details
 

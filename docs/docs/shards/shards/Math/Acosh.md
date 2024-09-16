@@ -16,6 +16,11 @@ license: CC-BY-SA-4.0
 
 This shard calculates the inverse hyperbolic cosine of the given input, where the input is the hyperbolic cosine value. The output is the real number whose hyperbolic cosine is the input value.
 
+## Details
+
+--8<-- "details/shards/Math/Acosh.md"
+
+
 ## Examples
 
 === "Code"

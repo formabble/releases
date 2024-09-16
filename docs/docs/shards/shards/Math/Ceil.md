@@ -16,6 +16,11 @@ license: CC-BY-SA-4.0
 
 This shard rounds up the input to the nearest integer.
 
+## Details
+
+--8<-- "details/shards/Math/Ceil.md"
+
+
 ## Examples
 
 === "Code"

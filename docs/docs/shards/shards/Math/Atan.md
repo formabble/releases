@@ -16,6 +16,11 @@ license: CC-BY-SA-4.0
 
 This shard calculates the inverse tangent of the given input, where the input is the tangent value. The output is the angle in radians whose tangent is the input value.
 
+## Details
+
+--8<-- "details/shards/Math/Atan.md"
+
+
 ## Examples
 
 === "Code"

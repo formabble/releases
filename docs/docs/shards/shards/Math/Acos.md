@@ -16,6 +16,11 @@ license: CC-BY-SA-4.0
 
 This shard calculates the inverse cosine of the given input, where the input is the cosine value. The output is the angle in radians whose cosine is the input value.
 
+## Details
+
+--8<-- "details/shards/Math/Acos.md"
+
+
 ## Examples
 
 === "Code"

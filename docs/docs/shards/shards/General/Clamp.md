@@ -18,5 +18,10 @@ license: CC-BY-SA-4.0
 
 This shard ensures the input value falls within the specified range. If the value falls below the minimum, the Min value is returned. If the value exceeds the maximum, the Max value is returned. Otherwise, the value is returned unchanged.
 
+## Details
+
+--8<-- "details/shards/General/Clamp.md"
+
+
 --8<-- "includes/license.md"
 
