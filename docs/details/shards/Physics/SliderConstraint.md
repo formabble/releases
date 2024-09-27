@@ -32,7 +32,7 @@ When `MotorSettings` parameter is set, the `MaximumFriction` parameter will be i
 
 The `MaxFrictionForce` parameter defines the amount of force required to move the slider. In other words, how "stiff" the slider is.
 
-The `MotorSettings` parameter defines the minimum and maximum amount of force that is applied to the slider as it slides along the axis. In other words, it defines how fast or slow the slider can slide. This parameter will overwrite the `MaxFrictionForce` parameter.
+The `MotorSettings` parameter defines the minimum and maximum amount of force that is applied to the slider through the motor.
 
 The `MotorSettings` parameter accepts a table with the following parameters:
  - `minForceLimit`: The minimum amount of force that is applied on the slider. The slider will never move slower than what is defined here.
@@ -42,7 +42,7 @@ The `MotorSettings` parameter accepts a table with the following parameters:
 
 The `LimitSpringSettings` parameter defines how the slider behaves as it settles into its final position as it reaches the ends of the slider. 
 
-The `MotorSpringSettings` parameter on the otherhand defines how the slider behaves as it settles into its final position along the axis.
+The `MotorSpringSettings` parameter on the otherhand defines how the slider behaves as it settles into its final position along the axis when moved through the motor.
 
 Both parameters can take two different types of tables:
   - {damping: Float frequency: Float}
