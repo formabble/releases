@@ -1,0 +1,1 @@
+The location to apply the force to should be within the confines of the physics body or its surface.
