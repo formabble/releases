@@ -59,7 +59,7 @@ create virtual table vec_docs using vec0(
 
     @env("GEN_EMBEDDINGS") | When(Is("true") {
       DB.Transaction({
-        text | Do(ml/embed) | Map(Tensor.ToFloats) | ForEach({
+        text | Do(ml/embed) | ForEach({
           = floats
           Count(floats) | Assert.Is(384)
           [floats] | Pack("f32[384]") = floats-packed
