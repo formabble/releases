@@ -12,3 +12,4 @@ docs/shards.ml.embeddings.model.bin
 docs/shards.ml.embeddings.tokenizer.bin
 docs/shards.ml.embeddings.version.txt
 docs/enums_docs_merged.md
+docs/embeddings_v1.gguf

@@ -1,4 +1,4 @@
-@include("forbidden-shards.shs" Once: true)
+@include("/Users/sugar/devel/formabble-docs/docs/forbidden-shards.shs" Once: true)
 @include("../../shards/lib/ml/embeddings.shs" Once: true)
 
 @define(shards-path "docs/shards/shards/")
@@ -368,9 +368,9 @@ create virtual table vec_docs using vec0(
       })
 
       parameters-seq | Map({
-        ExpectTable = param-table
+        ExpectTable >= param-table
         param-table:types | ExpectSeq
-        Map({ExpectTable | Take("name")}) | Update(param-table "types")
+        Map({ExpectTable | Take("name")}) | Set(param-table "types")
         param-table
       }) = parameters-seq-edited
 
