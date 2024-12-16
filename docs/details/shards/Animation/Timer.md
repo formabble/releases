@@ -1,0 +1,1 @@
+Both the `Animation` and `Duration` parameters cant be set at the same time. The duration of the shard can only be defined by one of the two parameters.
