@@ -13,7 +13,7 @@ license: CC-BY-SA-4.0
 | `Output ➡️` ||Outputs the input value, passed through unchanged. | | [`Any`](../../types/#any) |
 | `Handler` | :fontawesome-solid-circle-plus:{title="No"} No  | The wire that will be spawned and handle a remote request. | `none` | [`Wire`](../../types/#wire)[`None`](../../types/#none) |
 | `Endpoint` | :fontawesome-solid-circle-plus:{title="No"} No  | The URL from where your service can be accessed by a client. | `0.0.0.0` | [`String`](../../types/#string) |
-| `Port` | :fontawesome-solid-circle-plus:{title="No"} No  | The port this service will use. | `7070` | [`Int`](../../types/#int) |
+| `Port` | :fontawesome-solid-circle-plus:{title="No"} No  | The port this service will use. | `7070` | [`Int`](../../types/#int)[`Var(Int)`](../../types/#contextvar) |
 
 </div>
 
