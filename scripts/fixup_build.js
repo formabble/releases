@@ -13,44 +13,46 @@ function updateFileReferences(filePath, oldNames, newNames) {
   let content = fs.readFileSync(filePath, 'utf8');
   oldNames.forEach((oldName, index) => {
     const regex = new RegExp('"' + oldName + '"', 'g');
-    content = content.replace(regex, '"' + newNames[index] + '"');
+    content = content.replace(regex, (match) => {
+      console.log(`${filePath}> Replaced ${match} with "${newNames[index]}"`);
+      return '"' + newNames[index] + '"';
+    });
   });
   fs.writeFileSync(filePath, content);
 }
 
 // Main function to process the directory
-function processDirectory(dir, uid) {
+function processDirectory(files, uid) {
   var oldNames = [];
   var newNames = [];
   oldNames.push("./fbl.js");
+  newNames.push(`./fbl-${uid}.js`);
+  oldNames.push("fbl.js");
   newNames.push(`./fbl-${uid}.js`);
   oldNames.push("fbl.wasm");
   newNames.push(`https://app-bin.formabble.com/fbl-${uid}.wasm`);
   oldNames.push("./fbl-loader.js");
   newNames.push(`./versions/fbl-loader-${uid}.js`);
 
-  // Update references in index.html
-  const indexPath = path.join(dir, 'index.html');
-  if (fs.existsSync(indexPath)) {
-    console.log("Updating index.html");
-    updateFileReferences(indexPath, oldNames, newNames);
-  }
 
   // Rename JS files
-  oldNames.forEach((file, index) => {
-    const oldPath = path.join(dir, file);
-    if (!fs.existsSync(oldPath)) {
-      console.warn(`File "${oldPath}" does not exist.`);
+  files.forEach((item, index) => {
+    const file = item.p;
+
+    console.log(`Attempting to update ${file}`);
+
+    if (!fs.existsSync(file)) {
+      console.warn(`File "${file}" does not exist.`);
       return;
     }
-    const baseNewName = path.basename(newNames[index]);
 
     // Update references in renamed files
-    updateFileReferences(oldPath, oldNames, newNames);
+    updateFileReferences(file, oldNames, newNames);
 
-    const newPath = path.join(dir, baseNewName);
-    fs.renameSync(oldPath, newPath);
-    console.log(`Renamed ${oldPath} to ${newPath}`);
+    if (typeof item.renameTo === 'string') {
+      fs.renameSync(file, item.renameTo);
+      console.log(`Renamed ${file} to ${item.renameTo}`);
+    }
   });
 
   console.log('Processing completed.');
@@ -72,5 +74,12 @@ if (!fs.existsSync(directory)) {
   process.exit(1);
 }
 
+const files = [
+  { p: `${directory}/index.html` },
+  { p: `${directory}/fbl.js`, renameTo: `${directory}/fbl-${uid}.js` },
+  { p: `${directory}/fbl.wasm`, renameTo: `${directory}/fbl-${uid}.wasm` },
+  { p: `${directory}/fbl-loader.js`, renameTo: `${directory}/fbl-loader-${uid}.js` },
+];
+
 // Process the directory
-processDirectory(directory, uid);
+processDirectory(files, uid);
