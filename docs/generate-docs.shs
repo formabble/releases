@@ -29,7 +29,7 @@
 @wire(main {
   @env("GEN_EMBEDDINGS") | When(Is("true") {
     DB.LoadExtension("sqlite-vec" @fbl-documentation-db)
-
+    
     """
 create table docs(
   id integer primary key autoincrement,
@@ -42,23 +42,24 @@ create virtual table vec_docs using vec0(
 """ | Maybe(DB.RawQuery(@fbl-documentation-db))
     Msg("Generating embeddings")
   })
-
+  
   @wire(embeddings-generator {
     @ml/embeddings/prepare
-
+    
     Once({
       @i2(0 0) >= docs-hash
     })
-
+    
     Consume("FBL.Embed" Type: @type(Type::String)) = text
+    ; this will simply rotate on overflow, so it's even better than XORs
     {Hash | Add(docs-hash) > docs-hash}
     When(Is("__DONE__") {
       Msg("Done")
       docs-hash | Stop
     })
-
+    
     Msg("Processing embedding")
-
+    
     @env("GEN_EMBEDDINGS") | When(Is("true") {
       DB.Transaction({
         text | Do(ml/embed) | ForEach({
@@ -70,12 +71,12 @@ create virtual table vec_docs using vec0(
         })
       } @fbl-documentation-db)
     })
-
+    
     docs-hash
   } Looped: true)
-
+  
   Detach(embeddings-generator)
-
+  
   @template(get-filename [path extension fallback-general] {
     = f
     Regex.Match("""(\w+)\.(.*)""") = match
@@ -89,16 +90,16 @@ create virtual table vec_docs using vec0(
       }
     )
   })
-
+  
   @template(print-type-info [buffer] {
     ExpectTable
     {Take("name") | ExpectString | Assert.IsNot("") = p-type-name}
     {Take("type") | ExpectInt = p-type-type}
-
+    
     "[`" >> buffer
     p-type-name >> buffer
     "`](" >> buffer
-
+    
     p-type-type
     Match([
       2 ; Enum
@@ -138,12 +139,12 @@ create virtual table vec_docs using vec0(
     ])
     ")" >> buffer
   })
-
+  
   @wire(document-shard {
     = shard-name | When(@is-forbidden-shards {
       shard-name | Stop
     })
-
+    
     {
       [
         "ToInt" "ToInt2" "ToInt3" "ToInt4" "ToInt8" "ToInt16" "ToColor" "ToFloat" "ToFloat2" "ToFloat3" "ToFloat4"
@@ -165,38 +166,39 @@ create virtual table vec_docs using vec0(
         "Fbl.Slot" "Fbl.RunMode" "Fbl.Users"
       ] = done-seq
     }
-
+    
     {
       false >= is-it-done
-
+      
       done-seq | ForEach({
         When(Predicate: {Is(shard-name)} Action: {
           true > is-it-done
         })
       })
     }
-
+    
     Set(shard-doc "name")
     Shards.Help
     {Take("help") | Set(shard-doc "help")}
-
+    
     {Take("inputHelp") | Set(shard-doc "input-help")}
     {Take("outputHelp") | Set(shard-doc "output-help")}
-
+    
     {Take("inputTypes") | ExpectSeq | Set(shard-doc "input-types")}
     {Take("outputTypes") | ExpectSeq | Set(shard-doc "output-types")}
-
+    
     {Take("parameters") | ExpectSeq = parameters}
-
+    
     {Take("properties") = properties}
-
+    
     Sequence(parameters-seq Type: @type([{none: Type::String}]))
     0 >= idx
     parameters | ForEach({
       ExpectTable
       {Take("default")
-      {Set(param-doc "real-default")}
-      ToString = default-value | Set(param-doc "default")}
+        {Set(param-doc "real-default")}
+        ToString = default-value | Set(param-doc "default")
+      }
       {Take("help") | Set(param-doc "help")}
       {Take("name") | Set(param-doc "name")}
       {Take("types") = types}
@@ -221,42 +223,42 @@ create virtual table vec_docs using vec0(
       param-doc >> parameters-seq
       Math.Inc(idx)
     })
-
+    
     shard-doc:name | @get-filename(@shards-path ".md" true) = file
     {String.Contains("General/") = is-general-shard}
     [""] >= o
-
+    
     ; metadata (front matter)
     "---\n" >> o
     "authors: Formabble & contributors\n" >> o
     "license: CC-BY-SA-4.0\n" >> o
     "---\n" >> o
     "\n\n" >> o
-
+    
     ; title
     "# " >> o
     shard-doc:name >> o
     "\n\n" >> o
-
+    
     ; ; Combined table showing the input/outpus and parameters
     "<div class=\"sh-parameters\" markdown=\"1\">\n" >> o
     "| Name | Mandatory | Description | Default | Type |\n" >> o
     "|------|---------------------|-------------|---------|------|\n" >> o
-
+    
     "| `⬅️ Input` ||" >> o
     shard-doc:input-help | @input-help-shards >> o
     " | " >> o
     "| " >> o
     shard-doc:input-types | ForEach(@print-type-info(o))
     " |\n" >> o
-
+    
     "| `Output ➡️` ||" >> o
     shard-doc:output-help | @output-help-shards >> o
     " | " >> o
     "| " >> o
     shard-doc:output-types | ForEach(@print-type-info(o))
     " |\n" >> o
-
+    
     parameters-seq | ForEach({
       ExpectTable
       {Take("name") | ExpectString = p-name}
@@ -280,10 +282,10 @@ create virtual table vec_docs using vec0(
       p-types | ForEach(@print-type-info(o))
       " |\n" >> o
     })
-
+    
     "\n</div>\n" >> o
     "\n" >> o
-
+    
     properties | When(IsNotNone {
       ExpectTable
       {
@@ -297,11 +299,11 @@ create virtual table vec_docs using vec0(
         })
       }
     })
-
+    
     ; Help text
     shard-doc:help | If({IsNotNone} {ExpectString} {"ToDo"}) >> o
     "\n\n" >> o
-
+    
     "" >= shard-details
     shard-doc:name | @get-filename(@shards-details-path ".md" true) = details-file-name
     When({details-file-name | FS.IsFile} {
@@ -312,7 +314,7 @@ create virtual table vec_docs using vec0(
       "\n\n" >> o
       details-file-name | FS.Read > shard-details
     })
-
+    
     shard-doc:name | @get-filename(@shards-sample-path "" true) = samples-dir
     When({samples-dir | FS.IsDirectory} {
       "## Examples\n\n" >> o
@@ -322,60 +324,60 @@ create virtual table vec_docs using vec0(
           [shard-doc:name "/" sample-filename ".shs"] | String.Join = sample-script-fname
           [shard-doc:name "/" sample-filename ".shs.log"] | String.Join = sample-log-fname
           [shard-doc:name "/" sample-filename ".out.md"] | String.Join = sample-out-md-fname
-
+          
           "=== \"Code\"\n\n" >> o
           "  ```x86asm linenums=\"1\"\n" >> o
           "  --8<-- \"" >> o
           sample-script-fname | @get-filename(@shards-sample-path "" true) >> o
           "\"\n" >> o
           "  ```\n\n" >> o
-
+          
           sample-out-md-fname | @get-filename(@shards-sample-path "" true) | FS.IsFile | When(IsTrue {
             "=== \"Output\"\n\n" >> o
             "  --8<-- \"" >> o
             sample-out-md-fname | @get-filename(@shards-sample-path "" true) >> o
             "\"\n\n" >> o
           })
-
+          
           "  ```\n" >> o
           "  --8<-- \"" >> o
           sample-log-fname | @get-filename(@shards-sample-path "" true) >> o
           "\"\n" >> o
           "  ```\n" >> o
-
+          
           "&nbsp;\n" >> o
         })
       })
     })
-
+    
     "--8<-- \"includes/license.md\"\n\n" >> o
-
+    
     o | String.Join = content
     file | FS.Write(content Overwrite: true)
-
+    
     {
       "" >= usage-example
-
+      
       ; for AI purposes
       shard-doc:input-help | @input-help-shards | Set(shard-doc "input-help")
       shard-doc:output-help | @output-help-shards | Set(shard-doc "output-help")
-
+      
       shard-doc:input-types | @params-types-shards | Set(shard-doc "input-types")
       shard-doc:output-types | @params-types-shards | Set(shard-doc "output-types")
-
+      
       false >= missing-help
       shard-doc:help | When(Is("") {
         "Help text is missing!" | Set(shard-doc "help")
         true > missing-help
       })
-
+      
       parameters-seq | Map({
         ExpectTable >= param-table
         param-table:types | ExpectSeq
         Map({ExpectTable | Take("name")}) | Set(param-table "types")
         param-table
       }) = parameters-seq-edited
-
+      
       "# " >= shard-doc-string
       Get(shard-doc "name") | AppendTo(shard-doc-string)
       " {.shard}\n\n" | AppendTo(shard-doc-string)
@@ -402,75 +404,75 @@ create virtual table vec_docs using vec0(
       })
       "\n" | AppendTo(shard-doc-string)
       Count(parameters-seq-edited) | If(IsMore(0) {
-        ["```shards\n" shard-name "(\n"] | String.Join | AppendTo(usage-example)
-
-        "## Shard Parameters\n\n" | AppendTo(shard-doc-string)
-        parameters-seq-edited | ForEach({
-          ExpectTable
-          {Take("name") | ExpectString = p-name}
-          {Take("types") | ExpectSeq = p-types}
-          {Take("help") | ExpectString = p-help}
-          {Take("default") | ExpectString = p-default}
-          {Take("real-default") = p-real-default}
-          {Take("optional") | ExpectBool = p-optional}
-
-          ; update usage example
-          ["  " p-name ": " (
-            p-real-default
-            Cond([
-              {IsString}
-              {["\"" p-default "\""] | String.Join}
-
-              {p-default | String.Starts(With: "Var: ")}
-              {["some-variable ; if omitted defaults to internal variable " p-real-default] | String.Format}
-
-              {true}
-              {p-default}
-            ] Passthrough: false)
-          ) "\n"] | String.Join | AppendTo(usage-example)
-
-          "### " | AppendTo(shard-doc-string)
-          p-name | AppendTo(shard-doc-string)
-          "\n" | AppendTo(shard-doc-string)
-          p-help | AppendTo(shard-doc-string)
-          "\n" | AppendTo(shard-doc-string)
-          "\n**Default parameter value:** " | AppendTo(shard-doc-string)
-          p-default | AppendTo(shard-doc-string)
-          "\n" | AppendTo(shard-doc-string)
-          "\n**Is the parameter optional?** " | AppendTo(shard-doc-string)
-          (p-optional | If(IsTrue {"Yes"} {"No"})) | AppendTo(shard-doc-string)
-          "\n" | AppendTo(shard-doc-string)
-          "\n**Possible parameter types:**\n" | AppendTo(shard-doc-string)
-          p-types | ForEach({
-            {"  * " | AppendTo(shard-doc-string)}
-            ExpectString | AppendTo(shard-doc-string)
+          ["```shards\n" shard-name "(\n"] | String.Join | AppendTo(usage-example)
+          
+          "## Shard Parameters\n\n" | AppendTo(shard-doc-string)
+          parameters-seq-edited | ForEach({
+            ExpectTable
+            {Take("name") | ExpectString = p-name}
+            {Take("types") | ExpectSeq = p-types}
+            {Take("help") | ExpectString = p-help}
+            {Take("default") | ExpectString = p-default}
+            {Take("real-default") = p-real-default}
+            {Take("optional") | ExpectBool = p-optional}
+            
+            ; update usage example
+            ["  " p-name ": " (
+             p-real-default
+             Cond([
+                  {IsString}
+                  {["\"" p-default "\""] | String.Join}
+                  
+                  {p-default | String.Starts(With: "Var: ")}
+                  {["some-variable ; if omitted defaults to internal variable " p-real-default] | String.Format}
+                  
+                  {true}
+                  {p-default}] Passthrough: false)
+             ) "\n"] | String.Join | AppendTo(usage-example)
+            
+            "### " | AppendTo(shard-doc-string)
+            p-name | AppendTo(shard-doc-string)
+            "\n" | AppendTo(shard-doc-string)
+            p-help | AppendTo(shard-doc-string)
+            "\n" | AppendTo(shard-doc-string)
+            "\n**Default parameter value:** " | AppendTo(shard-doc-string)
+            p-default | AppendTo(shard-doc-string)
+            "\n" | AppendTo(shard-doc-string)
+            "\n**Is the parameter optional?** " | AppendTo(shard-doc-string)
+            (p-optional | If(IsTrue {"Yes"} {"No"})) | AppendTo(shard-doc-string)
+            "\n" | AppendTo(shard-doc-string)
+            "\n**Possible parameter types:**\n" | AppendTo(shard-doc-string)
+            p-types | ForEach({
+              {"  * " | AppendTo(shard-doc-string)}
+              ExpectString | AppendTo(shard-doc-string)
+              "\n" | AppendTo(shard-doc-string)
+            })
             "\n" | AppendTo(shard-doc-string)
           })
-          "\n" | AppendTo(shard-doc-string)
-        })
-
-        ")\n```\n" | AppendTo(usage-example)
-      } {
-        ["```shards\n" shard-name "\n```\n"] | String.Join >= usage-example
-      })
-
+          
+          ")\n```\n" | AppendTo(usage-example)
+        } {
+          ["```shards\n" shard-name "\n```\n"] | String.Join >= usage-example
+        }
+      )
+      
       "## Example\n\n" | AppendTo(shard-doc-string)
       usage-example | AppendTo(shard-doc-string)
-
+      
       shard-details | When(IsNot("") {
         "## Shard Details\n" | AppendTo(shard-doc-string)
         shard-details | AppendTo(shard-doc-string)
         "\n" | AppendTo(shard-doc-string)
       })
-
+      
       @env("GEN_EMBEDDINGS") | When(Is("true") {
         shard-doc-string | Produce("FBL.Embed")
       })
-
+      
       "\n----\n\n" | AppendTo(shard-doc-string)
       "shards_docs_merged.md" | FS.Write(shard-doc-string Append: true)
     }
-
+    
     {
       @notion-api-key | When(IsNot("") {
         false >= invalid-defaults
@@ -591,7 +593,7 @@ create virtual table vec_docs using vec0(
             true > invalid-defaults
           })
         })
-
+        
         ; create a new page in the Notion database
         {
           "parent": {
@@ -655,42 +657,42 @@ create virtual table vec_docs using vec0(
         Http.Post(@url Headers: @headers Retry: 3 KeepAlive: true)
       })
     }
-
+    
     Log("Documented shard")
-
+    
     ""
   })
-
+  
   @notion-api-key | When(IsNot("") {
     @notion-db-id | Log("Populating notion database")
   })
-
+  
   @wire(document-enum {
     = enum-id
     enum-id | Shards.EnumTypeHelp = enum-help
-
+    
     enum-help | Take("labels") | ExpectSeq = labels
     enum-help | Take("descriptions") | ExpectSeq = descriptions
     Count(labels) = count
-
+    
     "" >> o
     "---\n" >> o
     "authors: Formabble & contributors\n" >> o
     "license: CC-BY-SA-4.0\n" >> o
     "---\n" >> o
     "\n\n" >> o
-
+    
     "# " >> o
     enum-help:name | ExpectString = name | Set(enum-doc "name")
     name >> o
     "\n\n" >> o
-
+    
     "<div class=\"sh-parameters\" markdown=\"1\">\n" >> o
     "| Value  | Description |\n" >> o
     "|------|---------------------|\n" >> o
-
+    
     ; Sequence(enum-doc "values")
-
+    
     0 >= idx
     Repeat({
       labels | Take(idx) | ExpectString = label
@@ -700,24 +702,24 @@ create virtual table vec_docs using vec0(
       "` | " >> o
       description >> o
       " |\n" >> o
-
+      
       {
         label: label
         description: description
       } | Push(enum-doc "values" Clear: false)
-
+      
       Inc(idx)
     } Times: count)
-
+    
     "\n</div>\n" >> o
     "\n" >> o
-
+    
     "--8<-- \"includes/license.md\"\n" >> o
-
+    
     o | String.Join = content
     name | @get-filename(@enums-path ".md" false) = file
     file | FS.Write(content Overwrite: true)
-
+    
     ["# " name " {.enum}\n\n"] | String.Join >= enum-doc-string
     enum-help:help | ExpectString | AppendTo(enum-doc-string)
     "\n\n" | AppendTo(enum-doc-string)
@@ -729,30 +731,30 @@ create virtual table vec_docs using vec0(
       {Take("description") | ExpectString = description}
       ["| `" label "` | " description " |\n"] | String.Join | AppendTo(enum-doc-string)
     })
-
+    
     @env("GEN_EMBEDDINGS") | When(Is("true") {
       enum-doc-string | Produce("FBL.Embed")
     })
-
+    
     "\n----\n" | AppendTo(enum-doc-string)
     "enums_docs_merged.md" | FS.Write(enum-doc-string Append: true)
-
+    
     none
   })
-
+  
   ; @wire(document-object {
   ;   = object-id
   ;   object-id | Shards.ObjectTypeHelp = object-help | Log
   ; })
-
+  
   ; ;;Deleta pages first
   ; Http.Post("https://api.notion.com/v1/databases/@notion-db-id/query" Headers: @headers) | Take("results") | ForEach({
   ;   Take("id") | Http.Delete("https://api.notion.com/v1/pages/" Headers: @headers)
   ; })
-
+  
   "shards_docs_merged.md" | FS.Remove
   "enums_docs_merged.md" | FS.Remove
-
+  
   ; process documentation in parallel
   ; Empty results indicate success, returning the shard name adds it to the skipped list
   Shards.Enumerate | TryMany(document-shard Threads: 4) = tmp-list
@@ -765,20 +767,20 @@ create virtual table vec_docs using vec0(
   ["};\n\n"] | String.Format >> out
   out | String.Join("") = file-content
   "forbidden_shards.inl" | FS.Write(file-content Overwrite: true)
-
+  
   Shards.EnumTypes | TryMany(document-enum Threads: 4)
-
+  
   ; Shards.ObjectTypes | TryMany(document-object Threads: 4)
-
+  
   "docs/guide/8-shards-architecture.md" | FS.Read | Produce("FBL.Embed")
-
+  
   "__DONE__" | Produce("FBL.Embed")
-
+  
   Wait(embeddings-generator) | ToBytes | Hash.Blake2-128 | ToHex = documentation-hash
   "fbl.documentation.hash.txt" | FS.Write(documentation-hash Overwrite: true)
-
+  
   Pause(2.0)
-
+  
   _Fbl.Shutdown
 })
 
