@@ -16,7 +16,7 @@ license: CC-BY-SA-4.0
 
 </div>
 
-This shard outputs the amount of time(nanoseconds) it took to execute the shards provided in the Action parameter.
+This shard outputs the amount of time it took to execute the shards provided in the Action parameter, automatically choosing the most appropriate time unit (ns, μs, ms, s).
 
 --8<-- "includes/license.md"
 

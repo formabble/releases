@@ -11,9 +11,9 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The value to be logged to the console. | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The same value that was inputted, unmodified. | | [`Any`](../../types/#any) |
-| `Prefix` | :fontawesome-solid-circle-plus:{title="No"} No  | The message to prefix to the logged output. Note: the prefix will include a colon ':' before the value. | `` | [`String`](../../types/#string) |
-| `Level` | :fontawesome-solid-circle-plus:{title="No"} No  | The level of logging. | `LogLevel::Info` | [`LogLevel`](../../../enums/LogLevel) |
-| `Name` | :fontawesome-solid-circle-plus:{title="No"} No  | The name of the logger to use, the default is 'shards'. | `shards` | [`String`](../../types/#string) |
+| `Prefix` | :fontawesome-solid-circle-plus:{title="No"} No  | A prefix string to be added to the log message. | `none` | [`String`](../../types/#string) |
+| `Level` | :fontawesome-solid-circle-plus:{title="No"} No  | The logging level to use. | `LogLevel::Info` | [`LogLevel`](../../../enums/LogLevel)[`Var(LogLevel)`](../../types/#contextvar) |
+| `Name` | :fontawesome-solid-circle-plus:{title="No"} No  | The name of the logger to use. | `shards` | [`String`](../../types/#string)[`Var(String)`](../../types/#contextvar) |
 
 </div>
 

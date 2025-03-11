@@ -11,8 +11,10 @@ license: CC-BY-SA-4.0
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input is ignored. This shard displays a static message. | | [`Any`](../../types/#any) |
 | `Output ➡️` ||The same variable that was inputted, unmodified. | | [`Any`](../../types/#any) |
-| `Message` | :fontawesome-solid-circle-plus:{title="No"} No  | The message to display on the user's screen or console. | `` | [`String`](../../types/#string) |
-| `Level` | :fontawesome-solid-circle-plus:{title="No"} No  | The level of logging. | `LogLevel::Info` | [`LogLevel`](../../../enums/LogLevel) |
+| `Message` | :fontawesome-solid-circle-plus:{title="No"} No  | The message to display on the user's screen or console. | `none` | [`String`](../../types/#string)[`Var(String)`](../../types/#contextvar) |
+| `Raw` | :fontawesome-solid-circle-plus:{title="No"} No  | Ignore all other formatting and output the message as-is. | `none` | [`Bool`](../../types/#bool) |
+| `Level` | :fontawesome-solid-circle-plus:{title="No"} No  | The logging level to use. | `LogLevel::Info` | [`LogLevel`](../../../enums/LogLevel)[`Var(LogLevel)`](../../types/#contextvar) |
+| `Name` | :fontawesome-solid-circle-plus:{title="No"} No  | The name of the logger to use. | `shards` | [`String`](../../types/#string)[`Var(String)`](../../types/#contextvar) |
 
 </div>
 

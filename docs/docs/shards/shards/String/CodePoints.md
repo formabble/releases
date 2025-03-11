@@ -4,18 +4,17 @@ license: CC-BY-SA-4.0
 ---
 
 
-# ML.Tokenizer
+# String.CodePoints
 
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
 | `⬅️ Input` ||The input of the shard, if any | | [`String`](../../types/#string) |
-| `Output ➡️` ||The resulting output of the shard | | [`Tokenizer`](../../types/#tokenizer) |
-| `Quantized` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether to use quantized tokenizer. | `false` | [`Bool`](../../types/#bool) |
+| `Output ➡️` ||The resulting output of the shard | | [`[Int]`](../../types/#seq) |
 
 </div>
 
-Loads a tokenizer from an input json string, ready to be used for tokenizing text.
+Converts a string into a sequence of integer codepoints.
 
 --8<-- "includes/license.md"
 

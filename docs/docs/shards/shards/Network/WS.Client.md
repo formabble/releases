@@ -13,7 +13,7 @@ license: CC-BY-SA-4.0
 | `Output ➡️` ||The peer object created. | | [`Object`](../../types/#object) |
 | `Address` | :fontawesome-solid-circle-plus:{title="No"} No  | The local bind address or the remote address. | `none` | [`String`](../../types/#string)[`Var(String)`](../../types/#contextvar) |
 | `Handler` | :fontawesome-solid-circle-plus:{title="No"} No  | The shards to execute when a packet is received. | `none` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq)[`None`](../../types/#none) |
-| `Raw` | :fontawesome-solid-circle-plus:{title="No"} No  | If set to true, the client will receive raw byte packets instead of serialized objects. | `none` | [`None`](../../types/#none)[`Bool`](../../types/#bool) |
+| `Raw` | :fontawesome-solid-circle-plus:{title="No"} No  | If set to true, the client will receive raw byte packets instead of serialized objects. | `false` | [`Bool`](../../types/#bool) |
 
 </div>
 

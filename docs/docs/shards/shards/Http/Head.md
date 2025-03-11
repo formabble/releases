@@ -21,6 +21,7 @@ license: CC-BY-SA-4.0
 | `KeepAlive` | :fontawesome-solid-circle-plus:{title="No"} No  | If the client instance should be kept alive, allowing connection reuse for multiple requests. The client won't be closed until this shard cleans up. | `false` | [`Bool`](../../types/#bool) |
 | `Streaming` | :fontawesome-solid-circle-plus:{title="No"} No  | If the response should be streamed, in which case the output will be an object to use with the Http.Stream shard. | `false` | [`Bool`](../../types/#bool) |
 | `Backoff` | :fontawesome-solid-circle-plus:{title="No"} No  | How many seconds to wait between retries. Defaults to 1 second. | `1` | [`Int`](../../types/#int) |
+| `ConnectionTimeout` | :fontawesome-solid-circle-plus:{title="No"} No  | How many seconds to wait for a connection to be established. Defaults to 10 seconds. | `10` | [`Int`](../../types/#int) |
 
 </div>
 

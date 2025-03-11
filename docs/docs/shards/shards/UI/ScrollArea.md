@@ -9,16 +9,19 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The value that will be passed to the Contents shards of the scroll area. | | [`Any`](../../types/#any) |
-| `Output ➡️` ||The output of this shard will be its input. | | [`Any`](../../types/#any) |
-| `Contents` | :fontawesome-solid-circle-plus:{title="No"} No  | The UI contents. | `none` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
-| `Horizontal` | :fontawesome-solid-circle-plus:{title="No"} No  | Enable horizontal scrolling. | `false` | [`Bool`](../../types/#bool) |
-| `Vertical` | :fontawesome-solid-circle-plus:{title="No"} No  | Enable vertical scrolling. | `true` | [`Bool`](../../types/#bool) |
-| `AlwaysShow` | :fontawesome-solid-circle-plus:{title="No"} No  | Always show the enabled scroll bars even if not needed. | `false` | [`Bool`](../../types/#bool) |
+| `⬅️ Input` ||The input of the shard, if any | | [`Any`](../../types/#any) |
+| `Output ➡️` ||The resulting output of the shard | | [`Any`](../../types/#any) |
+| `Contents` | :fontawesome-solid-circle-plus:{title="No"} No  | The UI contents to scroll. | `none` | [`None`](../../types/#none)[`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `Horizontal` | :fontawesome-solid-circle-plus:{title="No"} No  | Enable horizontal scrolling. | `false` | [`Bool`](../../types/#bool)[`Var(Bool)`](../../types/#contextvar)[`None`](../../types/#none) |
+| `Vertical` | :fontawesome-solid-circle-plus:{title="No"} No  | Enable vertical scrolling. | `true` | [`Bool`](../../types/#bool)[`Var(Bool)`](../../types/#contextvar)[`None`](../../types/#none) |
+| `AlwaysShow` | :fontawesome-solid-circle-plus:{title="No"} No  | Always show the enabled scroll bars even if not needed. | `false` | [`Bool`](../../types/#bool)[`Var(Bool)`](../../types/#contextvar)[`None`](../../types/#none) |
+| `AutoShrink` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether to automatically shrink the scroll area. | `false` | [`Bool`](../../types/#bool)[`Var(Bool)`](../../types/#contextvar)[`None`](../../types/#none) |
+| `MaxHeight` | :fontawesome-solid-circle-plus:{title="No"} No  | Maximum height of scroll area. | `none` | [`Float`](../../types/#float)[`Var(Float)`](../../types/#contextvar)[`None`](../../types/#none) |
+| `MaxWidth` | :fontawesome-solid-circle-plus:{title="No"} No  | Maximum width of scroll area. | `none` | [`Float`](../../types/#float)[`Var(Float)`](../../types/#contextvar)[`None`](../../types/#none) |
 
 </div>
 
-Add vertical and/or horizontal scrolling to a contained UI.
+Add scrolling to contained UI elements.
 
 ## Examples
 

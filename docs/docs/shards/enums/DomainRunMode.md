@@ -13,7 +13,6 @@ license: CC-BY-SA-4.0
 | `Edit` | Indicates the domain is in edit mode |
 | `Play` | Indicates the domain is in exclusive play mode |
 | `PlayLocal` | Indicates the domain is in local play mode |
-| `PlayMatch` | Indicates the domain is in remote play mode |
 
 </div>
 

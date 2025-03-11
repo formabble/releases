@@ -1,4 +1,6 @@
 @include("/Users/sugar/devel/formabble-docs/docs/forbidden-shards.shs" Once: true)
+
+@define(ml/gpu-layers 1000)
 @include("../../shards/lib/ml/embeddings.shs" Once: true)
 
 @define(shards-path "docs/shards/shards/")

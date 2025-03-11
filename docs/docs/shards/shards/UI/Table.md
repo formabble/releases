@@ -9,13 +9,17 @@ license: CC-BY-SA-4.0
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
 |------|---------------------|-------------|---------|------|
-| `⬅️ Input` ||The value that will be passed to the Columns and Rows shards of the table. | | [`[Any]`](../../types/#seq) |
-| `Output ➡️` ||The output of this shard will be its input. | | [`[Any]`](../../types/#seq) |
-| `Builder` | :fontawesome-solid-circle-plus:{title="No"} No  | Sequence of shards to build each column, repeated for each row. | `[]` | [`[None Shard [Shard]]`](../../types/#seq) |
-| `Columns` | :fontawesome-solid-circle-plus:{title="No"} No  | Configuration of the columns. | `none` | [`[{Any}]`](../../types/#seq)[`None`](../../types/#none) |
-| `Striped` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether to alternate a subtle background color to every other row. | `none` | [`Bool`](../../types/#bool)[`Var(Bool)`](../../types/#contextvar)[`None`](../../types/#none) |
-| `Resizable` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether columns can be resized within their specified range. | `none` | [`Bool`](../../types/#bool)[`Var(Bool)`](../../types/#contextvar)[`None`](../../types/#none) |
-| `RowIndex` | :fontawesome-solid-circle-plus:{title="No"} No  | Variable to hold the row index, to be used within Rows. | `Var: Table.RowIndex` | [`Int`](../../types/#int)[`Var(Int)`](../../types/#contextvar)[`None`](../../types/#none) |
+| `⬅️ Input` ||The values that will be passed to the Columns and Rows shards of the table, or number of items in the sequence. | | [`Int`](../../types/#int)[`[Any]`](../../types/#seq) |
+| `Output ➡️` ||The output of this shard will be its input. | | [`Int`](../../types/#int)[`[Any]`](../../types/#seq) |
+| `Columns` | :fontawesome-solid-circle-plus:{title="No"} No  | Column definitions with headers and content. | `none` | [`[Shard [Shard]]`](../../types/#seq) |
+| `Striped` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether to alternate a subtle background color to every other row. | `false` | [`Bool`](../../types/#bool)[`Var(Bool)`](../../types/#contextvar) |
+| `Resizable` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether columns can be resized within their specified range. | `false` | [`Bool`](../../types/#bool)[`Var(Bool)`](../../types/#contextvar) |
+| `Reversed` | :fontawesome-solid-circle-plus:{title="No"} No  | Whether the table is reversed. | `false` | [`Bool`](../../types/#bool)[`Var(Bool)`](../../types/#contextvar) |
+| `IsSelected` | :fontawesome-solid-circle-plus:{title="No"} No  | Callback function for checking if a row is currently selected. | `none` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `Clicked` | :fontawesome-solid-circle-plus:{title="No"} No  | Callback function for when a row is clicked. | `none` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `DoubleClicked` | :fontawesome-solid-circle-plus:{title="No"} No  | Callback function for when a row is double-clicked. | `none` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `ContextMenu` | :fontawesome-solid-circle-plus:{title="No"} No  | Callback function for the right-click context menu on rows. | `none` | [`Shard`](../../types/#object)[`[Shard]`](../../types/#seq) |
+| `RowHeight` | :fontawesome-solid-circle-plus:{title="No"} No  | Height of each row in pixels. Default is text height. | `none` | [`Float`](../../types/#float)[`Var(Float)`](../../types/#contextvar)[`None`](../../types/#none) |
 
 </div>
 

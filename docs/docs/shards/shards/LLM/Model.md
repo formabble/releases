@@ -12,6 +12,7 @@ license: CC-BY-SA-4.0
 | `⬅️ Input` ||The input of the shard, if any | | [`String`](../../types/#string) |
 | `Output ➡️` ||The resulting output of the shard | | [`LLM.Model`](../../types/#llm.model) |
 | `UseMmap` | :fontawesome-solid-circle-plus:{title="No"} No  | Use mmap to load the model | `true` | [`Bool`](../../types/#bool)[`Var(Bool)`](../../types/#contextvar) |
+| `GPULayers` | :fontawesome-solid-circle-plus:{title="No"} No  | Number of GPU layers to use | `0` | [`Int`](../../types/#int)[`Var(Int)`](../../types/#contextvar) |
 
 </div>
 

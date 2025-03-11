@@ -4,7 +4,7 @@ license: CC-BY-SA-4.0
 ---
 
 
-# Reduce
+# Fold
 
 <div class="sh-parameters" markdown="1">
 | Name | Mandatory | Description | Default | Type |
@@ -17,11 +17,6 @@ license: CC-BY-SA-4.0
 </div>
 
 Folds a sequence into a single value by applying an operation (specified in the Apply parameter) to each item of the sequence. The operation can transform the type. Note that this shard is able to use the $0 internal variable for the accumulated value, $1 for the current item, and $i for the current index.
-
-## Details
-
---8<-- "details/shards/General/Reduce.md"
-
 
 --8<-- "includes/license.md"
 

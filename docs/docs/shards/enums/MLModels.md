@@ -10,6 +10,7 @@ license: CC-BY-SA-4.0
 | Value  | Description |
 |------|---------------------|
 | `Bert` | A BERT model. |
+| `Whisper` | A Whisper speech recognition model. |
 
 </div>
 
